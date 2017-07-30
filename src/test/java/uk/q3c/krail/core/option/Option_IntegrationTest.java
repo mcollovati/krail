@@ -26,8 +26,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
-import uk.q3c.krail.core.i18n.LabelKey;
-import uk.q3c.krail.core.i18n.Translate;
 import uk.q3c.krail.core.persist.cache.common.GuavaCacheConfiguration;
 import uk.q3c.krail.core.persist.cache.option.DefaultOptionCache;
 import uk.q3c.krail.core.persist.cache.option.DefaultOptionCacheLoader;
@@ -46,6 +44,8 @@ import uk.q3c.krail.core.user.profile.RankOption;
 import uk.q3c.krail.core.user.profile.SimpleUserHierarchy;
 import uk.q3c.krail.core.user.profile.UserHierarchy;
 import uk.q3c.krail.core.view.component.LocaleContainer;
+import uk.q3c.krail.i18n.LabelKey;
+import uk.q3c.krail.i18n.api.Translate;
 import uk.q3c.krail.testutil.option.TestOptionModule;
 
 import java.lang.annotation.Annotation;
@@ -53,9 +53,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 /**
  * Running this test through the debugger sometimes causes random failures - running normally doesn't

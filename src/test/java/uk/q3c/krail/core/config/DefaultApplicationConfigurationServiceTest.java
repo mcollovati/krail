@@ -27,13 +27,17 @@ import uk.q3c.krail.core.eventbus.EventBusModule;
 import uk.q3c.krail.core.eventbus.GlobalBusProvider;
 import uk.q3c.krail.core.guice.uiscope.UIScopeModule;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
-import uk.q3c.krail.core.i18n.*;
 import uk.q3c.krail.core.services.DefaultServicesModel;
 import uk.q3c.krail.core.services.RelatedServicesExecutor;
 import uk.q3c.krail.core.services.Service.Cause;
 import uk.q3c.krail.core.services.Service.State;
 import uk.q3c.krail.core.services.ServiceStatus;
 import uk.q3c.krail.core.services.ServicesModule;
+import uk.q3c.krail.i18n.DescriptionKey;
+import uk.q3c.krail.i18n.I18NProcessor;
+import uk.q3c.krail.i18n.LabelKey;
+import uk.q3c.krail.i18n.api.CurrentLocale;
+import uk.q3c.krail.i18n.api.Translate;
 import uk.q3c.krail.testutil.i18n.MockCurrentLocale;
 import uk.q3c.krail.util.ResourceUtils;
 import uk.q3c.krail.util.UtilsModule;
@@ -44,10 +48,9 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static com.google.common.base.Preconditions.*;
+import static org.assertj.core.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({EventBusModule.class, UIScopeModule.class, VaadinSessionScopeModule.class, UtilsModule.class, ApplicationConfigurationModule.class,

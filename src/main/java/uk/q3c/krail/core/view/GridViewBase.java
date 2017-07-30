@@ -17,9 +17,9 @@ import com.google.inject.Inject;
 import com.vaadin.ui.GridLayout;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import uk.q3c.krail.core.i18n.Translate;
 import uk.q3c.krail.core.ui.ScopedUI;
 import uk.q3c.krail.core.view.component.ViewChangeBusMessage;
+import uk.q3c.krail.i18n.api.Translate;
 import uk.q3c.util.ID;
 
 import java.util.Optional;

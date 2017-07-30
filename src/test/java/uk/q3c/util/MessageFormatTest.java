@@ -14,7 +14,7 @@ package uk.q3c.util;
 
 import org.junit.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
 public class MessageFormatTest {
     @Test
@@ -29,33 +29,8 @@ public class MessageFormatTest {
         assertThat(result).isEqualTo("This is a simple pattern where the parameters can be in any order");
 
     }
-    
-    @Test
-    public void formatValidRepeatedArgument() {
 
-        // given
-        String pattern = "This is a {0} pattern where the same argument is {0}";
-        Object[] arguments = new Object[]{"repeated"};
-        // when
-        String result = MessageFormat.format(pattern, arguments);
-        // then
-        assertThat(result).isEqualTo("This is a repeated pattern where the same argument is repeated");
 
-    }
-
-    @Test
-    public void formatValidRepeatedArgument_MultipleArguments() {
-
-        // given
-        String pattern = "This is a {0} pattern where the same argument is {0} and has {1}, and {0} again";
-        Object[] arguments = new Object[]{"repeated", "arg1"};
-        // when
-        String result = MessageFormat.format(pattern, arguments);
-        // then
-        assertThat(result).isEqualTo("This is a repeated pattern where the same argument is repeated and has arg1");
-
-    }
-    
     @Test
     public void formatValidContiguous() {
 

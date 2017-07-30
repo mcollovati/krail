@@ -24,8 +24,6 @@ import org.mockito.Mock;
 import uk.q3c.krail.core.eventbus.EventBusModule;
 import uk.q3c.krail.core.guice.uiscope.UIScopeModule;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
-import uk.q3c.krail.core.i18n.DefaultI18NProcessor;
-import uk.q3c.krail.core.i18n.I18NProcessor;
 import uk.q3c.krail.core.navigate.NavigationState;
 import uk.q3c.krail.core.navigate.StrictURIFragmentHandler;
 import uk.q3c.krail.core.navigate.URIFragmentHandler;
@@ -34,6 +32,8 @@ import uk.q3c.krail.core.persist.inmemory.option.DefaultInMemoryOptionStore;
 import uk.q3c.krail.core.persist.inmemory.option.InMemoryOptionStore;
 import uk.q3c.krail.core.view.LoginView;
 import uk.q3c.krail.core.view.PublicHomeView;
+import uk.q3c.krail.i18n.DefaultI18NProcessor;
+import uk.q3c.krail.i18n.I18NProcessor;
 import uk.q3c.krail.testutil.i18n.TestI18NModule;
 import uk.q3c.krail.testutil.i18n.TestLabelKey;
 import uk.q3c.krail.testutil.persist.TestPersistenceModule;
@@ -41,11 +41,10 @@ import uk.q3c.krail.testutil.persist.TestPersistenceModule;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.when;
-import static uk.q3c.krail.core.navigate.sitemap.StandardPageKey.Public_Home;
-import static uk.q3c.krail.core.shiro.PageAccessControl.AUTHENTICATION;
-import static uk.q3c.krail.core.shiro.PageAccessControl.PUBLIC;
+import static org.assertj.core.api.Assertions.*;
+import static org.mockito.Mockito.*;
+import static uk.q3c.krail.core.navigate.sitemap.StandardPageKey.*;
+import static uk.q3c.krail.core.shiro.PageAccessControl.*;
 
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({TestI18NModule.class, VaadinSessionScopeModule.class, EventBusModule.class, TestPersistenceModule.class, UIScopeModule.class, })

@@ -12,7 +12,8 @@
  */
 package uk.q3c.krail.core.navigate.sitemap;
 
-import uk.q3c.krail.core.i18n.I18NKey;
+
+import uk.q3c.krail.i18n.api.I18NKey;
 
 /**
  * @author David Sowerby 24 Mar 2013

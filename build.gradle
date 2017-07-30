@@ -66,6 +66,7 @@ repositories {
 
 dependencies {
 
+    compile "uk.q3c.krail:krail-i18n-api:0.0.1.0.820e9bd"
 
     //Dependency Injection
     compile 'com.google.inject.extensions:guice-servlet:' + guiceVersion
@@ -234,7 +235,7 @@ bintray {
 }
 
 def versionFromFile(File projectRoot) {
-    def Properties props = new Properties()
+    Properties props = new Properties()
     def propFile = new File(projectRoot, 'version.properties')
     if (propFile.canRead()) {
         props.load(new FileInputStream(propFile))
@@ -254,3 +255,5 @@ def getKeyForBintray() {
         return bintrayKey
     }
 }
+
+sourceCompatibility = "1.8"

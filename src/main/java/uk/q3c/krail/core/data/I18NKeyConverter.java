@@ -13,7 +13,7 @@
 
 package uk.q3c.krail.core.data;
 
-import uk.q3c.krail.core.i18n.I18NKey;
+import uk.q3c.krail.i18n.api.I18NKey;
 
 import javax.annotation.Nonnull;
 

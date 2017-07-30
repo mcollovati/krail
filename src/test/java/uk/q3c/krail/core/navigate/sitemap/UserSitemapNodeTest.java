@@ -21,10 +21,10 @@ import org.junit.runner.RunWith;
 import uk.q3c.krail.core.eventbus.EventBusModule;
 import uk.q3c.krail.core.guice.uiscope.UIScopeModule;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
-import uk.q3c.krail.core.i18n.CurrentLocale;
-import uk.q3c.krail.core.i18n.LabelKey;
-import uk.q3c.krail.core.i18n.Translate;
 import uk.q3c.krail.core.shiro.PageAccessControl;
+import uk.q3c.krail.i18n.LabelKey;
+import uk.q3c.krail.i18n.api.CurrentLocale;
+import uk.q3c.krail.i18n.api.Translate;
 import uk.q3c.krail.testutil.i18n.TestI18NModule;
 import uk.q3c.krail.testutil.option.TestOptionModule;
 import uk.q3c.krail.testutil.persist.TestPersistenceModule;
@@ -32,7 +32,7 @@ import uk.q3c.krail.testutil.persist.TestPersistenceModule;
 import java.text.Collator;
 import java.util.Locale;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({TestI18NModule.class, VaadinSessionScopeModule.class, TestOptionModule.class, TestPersistenceModule.class, EventBusModule.class, UIScopeModule

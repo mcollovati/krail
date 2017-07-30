@@ -16,11 +16,13 @@ package uk.q3c.krail.core.persist.cache.i18n;
 import com.google.common.cache.CacheLoader;
 import com.google.inject.Inject;
 import com.vaadin.data.Property;
-import uk.q3c.krail.core.i18n.*;
 import uk.q3c.krail.core.option.Option;
 import uk.q3c.krail.core.option.OptionContext;
 import uk.q3c.krail.core.option.OptionKey;
-import uk.q3c.krail.core.persist.common.i18n.PatternDao;
+import uk.q3c.krail.i18n.*;
+import uk.q3c.krail.i18n.api.I18NKey;
+import uk.q3c.krail.i18n.api.PatternCacheKey;
+import uk.q3c.krail.i18n.api.PatternDao;
 
 import javax.annotation.Nonnull;
 import java.lang.annotation.Annotation;
@@ -28,7 +30,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.*;
 
 /**
  * Loads the cache from potentially multiple sources by calling each of the DAOs in turn to provide a pattern.

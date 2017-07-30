@@ -16,17 +16,17 @@ import com.google.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScoped;
-import uk.q3c.krail.core.i18n.CurrentLocale;
-import uk.q3c.krail.core.i18n.Translate;
 import uk.q3c.krail.core.shiro.PageAccessController;
 import uk.q3c.krail.core.shiro.SubjectProvider;
+import uk.q3c.krail.i18n.api.CurrentLocale;
+import uk.q3c.krail.i18n.api.Translate;
 import uk.q3c.util.NodeModifier;
 
 import javax.annotation.Nonnull;
 import java.text.Collator;
 import java.util.Comparator;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.*;
 
 public class UserSitemapNodeModifier implements NodeModifier<MasterSitemapNode, UserSitemapNode> {
     private static Logger log = LoggerFactory.getLogger(UserSitemapNodeModifier.class);

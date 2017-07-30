@@ -22,7 +22,7 @@ addEntry("i18n", I18NDemoView.class, LabelKey.I18N, PageAccessControl.PUBLIC);
 package com.example.tutorial.pages;
 
 import com.google.inject.Inject;
-import uk.q3c.krail.core.i18n.Translate;
+import uk.q3c.krail.i18n.api.Translate;
 import uk.q3c.krail.core.view.ViewBase;
 import uk.q3c.krail.core.view.component.ViewChangeBusMessage;
 
@@ -139,7 +139,7 @@ import com.example.tutorial.i18n.DescriptionKey;
 import com.example.tutorial.i18n.LabelKey;
 import com.google.inject.Inject;
 import com.vaadin.ui.*;
-import uk.q3c.krail.core.i18n.Translate;
+import uk.q3c.krail.i18n.api.Translate;
 import uk.q3c.krail.core.view.ViewBase;
 import uk.q3c.krail.core.view.component.ViewChangeBusMessage;
 
@@ -214,7 +214,7 @@ For the Tutorial, we will create a **@Value** annotation, which has only a ```va
 ```
 package com.example.tutorial.i18n;
 
-import uk.q3c.krail.core.i18n.I18NAnnotation;
+import uk.q3c.krail.i18n.api.I18NAnnotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -303,7 +303,7 @@ package com.example.tutorial.i18n;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Panel;
-import uk.q3c.krail.core.i18n.I18N;
+import uk.q3c.krail.i18n.api.I18N;
 
 @Caption(caption = LabelKey.News, description = DescriptionKey.Interesting_Things)
 @I18N
@@ -441,8 +441,8 @@ import com.vaadin.ui.Panel;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
-import uk.q3c.krail.core.i18n.I18N;
-import uk.q3c.krail.core.i18n.I18NProcessor;
+import uk.q3c.krail.i18n.api.I18N;
+import uk.q3c.krail.i18n.I18NProcessor;
 import uk.q3c.krail.core.option.Option;
 import uk.q3c.krail.core.ui.form.BeanFieldGroupBase;
 import uk.q3c.krail.core.validation.BeanValidator;

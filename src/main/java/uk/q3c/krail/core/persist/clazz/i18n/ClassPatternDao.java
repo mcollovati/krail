@@ -13,8 +13,8 @@
 
 package uk.q3c.krail.core.persist.clazz.i18n;
 
-import uk.q3c.krail.core.persist.cache.i18n.PatternCacheKey;
-import uk.q3c.krail.core.persist.common.i18n.PatternDao;
+import uk.q3c.krail.i18n.api.PatternCacheKey;
+import uk.q3c.krail.i18n.api.PatternDao;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

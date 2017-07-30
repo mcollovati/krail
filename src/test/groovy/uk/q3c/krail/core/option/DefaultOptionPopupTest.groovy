@@ -16,10 +16,10 @@ package uk.q3c.krail.core.option
 import com.vaadin.data.Property
 import com.vaadin.ui.*
 import spock.lang.Specification
-import uk.q3c.krail.core.i18n.LabelKey
-import uk.q3c.krail.core.i18n.Translate
 import uk.q3c.krail.core.ui.DataTypeToUI
 import uk.q3c.krail.core.ui.DefaultDataTypeToUI
+import uk.q3c.krail.i18n.LabelKey
+import uk.q3c.krail.i18n.api.Translate
 import uk.q3c.krail.testutil.i18n.TestLabelKey
 import uk.q3c.krail.testutil.option.MockOption
 
@@ -73,7 +73,7 @@ class DefaultOptionPopupTest extends Specification {
 
     def "popup"() {
         when:
-        popup.popup(context2, LabelKey.Authorisation);
+        popup.popup(context2, LabelKey.Authorisation)
 
         then:
         popup.getWindow().getCaption().equals("Authorisation")
@@ -89,7 +89,7 @@ class DefaultOptionPopupTest extends Specification {
 
     def "popup with empty context displays label"() {
         when:
-        popup.popup(context0, LabelKey.Authorisation);
+        popup.popup(context0, LabelKey.Authorisation)
 
         then:
         GridLayout content = getWindowContent(popup)
@@ -100,7 +100,7 @@ class DefaultOptionPopupTest extends Specification {
 
     def "component and button presented for an OptionKey, component contains option value"() {
         when:
-        popup.popup(context2, LabelKey.Authorisation);
+        popup.popup(context2, LabelKey.Authorisation)
 
         then:
         GridLayout content = getWindowContent(popup)
@@ -118,7 +118,7 @@ class DefaultOptionPopupTest extends Specification {
 
     def "user changes value in UI component, option is updated"() {
         when:
-        popup.popup(context2, LabelKey.Authorisation);
+        popup.popup(context2, LabelKey.Authorisation)
 
         then:
         AbstractField field = getField(popup, 0)
@@ -128,7 +128,7 @@ class DefaultOptionPopupTest extends Specification {
 
     def "reset to default button resets the option value"() {
         when:
-        popup.popup(context2, LabelKey.Authorisation);
+        popup.popup(context2, LabelKey.Authorisation)
 
         then:
         AbstractField field = getField(popup, 0)
@@ -139,7 +139,7 @@ class DefaultOptionPopupTest extends Specification {
 
     def "reset to default button resets the option value, using a converted value"() {
         when:
-        popup.popup(context2, LabelKey.Authorisation);
+        popup.popup(context2, LabelKey.Authorisation)
 
         then:
         AbstractField field = getField(popup, 3)
@@ -150,12 +150,12 @@ class DefaultOptionPopupTest extends Specification {
 
     def "loading second time closed first window"() {
         given:
-        popup.popup(context2, LabelKey.Authorisation);
+        popup.popup(context2, LabelKey.Authorisation)
         Window firstWindow = popup.getWindow()
         firstWindow.setParent(ui)
 
         when:
-        popup.popup(context2, LabelKey.Authorisation);
+        popup.popup(context2, LabelKey.Authorisation)
         Window secondWindow = popup.getWindow()
 
         then:
@@ -186,12 +186,12 @@ class DefaultOptionPopupTest extends Specification {
 
         @Nonnull
         @Override
-        public Option getOption() {
-            return option;
+        Option getOption() {
+            return option
         }
 
         @Override
-        public void optionValueChanged(Property.ValueChangeEvent event) {
+        void optionValueChanged(Property.ValueChangeEvent event) {
 
         }
     }
@@ -200,20 +200,20 @@ class DefaultOptionPopupTest extends Specification {
         Option option = new MockOption()
 
         public static
-        final OptionKey<Boolean> key3 = new OptionKey<>(false, MockContext2.class, TestLabelKey.Static, TestLabelKey.Large);
+        final OptionKey<Boolean> key3 = new OptionKey<>(false, MockContext2.class, TestLabelKey.Static, TestLabelKey.Large)
         private static
-        final OptionKey<Integer> key4 = new OptionKey<>(126, MockContext2.class, TestLabelKey.Private_Static, TestLabelKey.Large);
-        public final OptionKey<Integer> key2 = new OptionKey<>(124, this, TestLabelKey.key2, TestLabelKey.Blank);
-        private final OptionKey<Integer> key1 = new OptionKey<Integer>(123, this, TestLabelKey.key1);
+        final OptionKey<Integer> key4 = new OptionKey<>(126, MockContext2.class, TestLabelKey.Private_Static, TestLabelKey.Large)
+        public final OptionKey<Integer> key2 = new OptionKey<>(124, this, TestLabelKey.key2, TestLabelKey.Blank)
+        private final OptionKey<Integer> key1 = new OptionKey<Integer>(123, this, TestLabelKey.key1)
 
         @Nonnull
         @Override
-        public Option getOption() {
-            return option;
+        Option getOption() {
+            return option
         }
 
         @Override
-        public void optionValueChanged(Property.ValueChangeEvent event) {
+        void optionValueChanged(Property.ValueChangeEvent event) {
 
         }
     }
@@ -224,12 +224,12 @@ class DefaultOptionPopupTest extends Specification {
 
         @Nonnull
         @Override
-        public Option getOption() {
-            return option;
+        Option getOption() {
+            return option
         }
 
         @Override
-        public void optionValueChanged(Property.ValueChangeEvent event) {
+        void optionValueChanged(Property.ValueChangeEvent event) {
 
         }
     }

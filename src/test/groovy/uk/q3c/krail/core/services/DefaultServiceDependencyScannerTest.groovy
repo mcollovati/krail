@@ -17,8 +17,8 @@ import com.google.inject.Inject
 import spock.guice.UseModules
 import spock.lang.Specification
 import uk.q3c.krail.core.eventbus.GlobalBusProvider
-import uk.q3c.krail.core.i18n.LabelKey
-import uk.q3c.krail.core.i18n.Translate
+import uk.q3c.krail.i18n.LabelKey
+import uk.q3c.krail.i18n.api.Translate
 import uk.q3c.krail.util.UtilsModule
 import uk.q3c.util.ClassNameUtils
 import uk.q3c.util.testutil.LogMonitor
@@ -92,7 +92,7 @@ class DefaultServiceDependencyScannerTest extends Specification {
         1 * model.optionallyUses(service.getServiceKey(), mockB.getServiceKey())
         1 * model.requiresOnlyAtStart(service.getServiceKey(), mockC.getServiceKey())
         1 * model.optionallyUses(service.getServiceKey(), mockD.getServiceKey())
-        logMonitor.warnLogs().contains("Field is annotated with @Dependency but is null, dependency not set");
+        logMonitor.warnLogs().contains("Field is annotated with @Dependency but is null, dependency not set")
     }
 
 

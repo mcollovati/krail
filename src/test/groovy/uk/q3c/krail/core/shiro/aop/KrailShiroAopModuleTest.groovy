@@ -25,11 +25,11 @@ import org.apache.shiro.subject.Subject
 import org.apache.shiro.util.ThreadContext
 import spock.lang.Specification
 import uk.q3c.krail.core.eventbus.EventBusModule
-import uk.q3c.krail.core.i18n.Caption
 import uk.q3c.krail.core.persist.inmemory.common.InMemoryModule
 import uk.q3c.krail.core.shiro.DefaultShiroModule
 import uk.q3c.krail.core.shiro.KrailSecurityManager
 import uk.q3c.krail.core.shiro.SubjectProvider
+import uk.q3c.krail.i18n.Caption
 import uk.q3c.krail.testutil.guice.uiscope.TestUIScopeModule
 import uk.q3c.krail.testutil.guice.vsscope.TestVaadinSessionScopeModule
 import uk.q3c.krail.testutil.i18n.TestI18NModule
@@ -49,8 +49,8 @@ class KrailShiroAopModuleTest extends Specification {
     Injector injector
 
     def setup() {
-        SecurityUtils.setSecurityManager(krailSecurityManager);
-        ThreadContext.unbindSubject();
+        SecurityUtils.setSecurityManager(krailSecurityManager)
+        ThreadContext.unbindSubject()
     }
 
     def "PermissionsMethodInterceptor throws exception when invoked through AOP"() {
@@ -331,6 +331,6 @@ class KrailShiroAopModuleTest extends Specification {
 
     private void createInjector(Module module) {
         injector = Guice.createInjector(module, new DefaultShiroModule(), new TestI18NModule(), new TestVaadinSessionScopeModule(), new EventBusModule(), new TestOptionModule(), new UtilsModule(), new TestUIScopeModule(), new InMemoryModule())
-        VaadinSession.setCurrent(vaadinSession);
+        VaadinSession.setCurrent(vaadinSession)
     }
 }

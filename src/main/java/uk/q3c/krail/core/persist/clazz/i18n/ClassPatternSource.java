@@ -14,13 +14,13 @@
 package uk.q3c.krail.core.persist.clazz.i18n;
 
 import com.google.inject.BindingAnnotation;
-import uk.q3c.krail.core.persist.common.i18n.PatternDao;
+import uk.q3c.krail.i18n.api.PatternDao;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 import static java.lang.annotation.ElementType.*;
-import static java.lang.annotation.RetentionPolicy.RUNTIME;
+import static java.lang.annotation.RetentionPolicy.*;
 
 /**
  * Identifies a {@link PatternDao} which handles I18N patterns located in Java classes

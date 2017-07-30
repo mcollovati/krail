@@ -18,10 +18,10 @@ import net.engio.mbassy.bus.common.PubSubSupport;
 import org.slf4j.Logger;
 import uk.q3c.krail.core.config.ApplicationConfiguration;
 import uk.q3c.krail.core.config.ConfigKeys;
-import uk.q3c.krail.core.eventbus.BusMessage;
 import uk.q3c.krail.core.eventbus.BusProvider;
 import uk.q3c.krail.core.navigate.sitemap.Sitemap;
 import uk.q3c.krail.core.navigate.sitemap.SitemapLockedException;
+import uk.q3c.krail.eventbus.api.BusMessage;
 
 import javax.annotation.Nonnull;
 import java.time.Duration;
@@ -29,8 +29,8 @@ import java.time.LocalDateTime;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-import static org.slf4j.LoggerFactory.getLogger;
+import static com.google.common.base.Preconditions.*;
+import static org.slf4j.LoggerFactory.*;
 
 /**
  * Created by David Sowerby on 05 Jan 2016

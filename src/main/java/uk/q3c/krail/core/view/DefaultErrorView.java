@@ -18,10 +18,10 @@ import com.vaadin.ui.TextArea;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import uk.q3c.krail.core.i18n.DescriptionKey;
-import uk.q3c.krail.core.i18n.LabelKey;
-import uk.q3c.krail.core.i18n.Translate;
 import uk.q3c.krail.core.view.component.ViewChangeBusMessage;
+import uk.q3c.krail.i18n.DescriptionKey;
+import uk.q3c.krail.i18n.LabelKey;
+import uk.q3c.krail.i18n.api.Translate;
 
 /**
  * @author David Sowerby 4 Aug 2013

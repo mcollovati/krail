@@ -12,8 +12,8 @@
  */
 package uk.q3c.krail.core.navigate.sitemap;
 
-import uk.q3c.krail.core.i18n.Descriptions;
 import uk.q3c.krail.core.persist.clazz.i18n.EnumResourceBundle;
+import uk.q3c.krail.i18n.Descriptions;
 
 /**
  * The base for the resource bundle of {@link StandardPageLabels}. The separation between them is arbitrary, but helps

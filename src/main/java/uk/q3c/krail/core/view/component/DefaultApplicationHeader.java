@@ -16,8 +16,8 @@ import com.google.inject.Inject;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
-import uk.q3c.krail.core.i18n.Translate;
 import uk.q3c.krail.core.ui.ApplicationTitle;
+import uk.q3c.krail.i18n.api.Translate;
 import uk.q3c.util.ID;
 
 import java.util.Optional;

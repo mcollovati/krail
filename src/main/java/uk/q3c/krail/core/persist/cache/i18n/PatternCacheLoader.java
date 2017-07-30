@@ -13,8 +13,8 @@
 
 package uk.q3c.krail.core.persist.cache.i18n;
 
-import uk.q3c.krail.core.i18n.I18NModule;
-import uk.q3c.krail.core.i18n.PatternSourceProvider;
+import uk.q3c.krail.i18n.I18NModule;
+import uk.q3c.krail.i18n.PatternSourceProvider;
 
 /**
  * Implementations load the I18N pattern cache from potentially multiple sources.  Configuration of the order in which sources are accessed is held in {@link

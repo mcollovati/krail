@@ -14,8 +14,8 @@
 package uk.q3c.krail.core.persist.clazz.i18n
 
 import spock.lang.Specification
-import uk.q3c.krail.core.i18n.LabelKey
-import uk.q3c.krail.core.i18n.Labels_de
+import uk.q3c.krail.i18n.LabelKey
+import uk.q3c.krail.i18n.Labels_de
 
 /**
  *
