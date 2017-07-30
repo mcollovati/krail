@@ -62,7 +62,8 @@ public class DirectSitemapEntry {
      ** @param moduleName
      * the name of the Guice module the entry was made in
      * @param viewClass
-     *         the class of KrailView used to display the page
+     *         the class of the KrailView for this page. This can be null if a redirection will prevent it from
+     *         actually being displayed, but it is up to the developer to ensure that the redirection is in place
      * @param labelKey
      *         the I18Nkey used to describe the node, typically in a navigation component
      * @param pageAccessControl
@@ -73,7 +74,7 @@ public class DirectSitemapEntry {
      *         the position of a page in relation to its siblings.  Used as a sort order, relative numbering does not need to be sequential. A positionIndex < 0
      *         indicates that the page should not be displayed in a navigation component
      */
-    public DirectSitemapEntry(String moduleName, @Nonnull Class<? extends KrailView> viewClass, @Nonnull I18NKey labelKey, @Nonnull PageAccessControl
+    public DirectSitemapEntry(String moduleName, Class<? extends KrailView> viewClass, @Nonnull I18NKey labelKey, @Nonnull PageAccessControl
             pageAccessControl,
                               @Nullable String roles, int positionIndex) {
         super();
