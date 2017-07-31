@@ -18,12 +18,12 @@ import com.google.inject.TypeLiteral;
 import com.google.inject.multibindings.MapBinder;
 import com.google.inject.multibindings.Multibinder;
 import uk.q3c.krail.core.config.ConfigurationException;
-import uk.q3c.krail.core.i18n.I18NKey;
+import uk.q3c.krail.i18n.api.I18NKey;
 
 import javax.annotation.Nonnull;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-import static com.google.inject.multibindings.Multibinder.newSetBinder;
+import static com.google.common.base.Preconditions.*;
+import static com.google.inject.multibindings.Multibinder.*;
 
 /**
  * A useful base class which can be used where the developer wishes to declare dependencies between Service classes using Guice.

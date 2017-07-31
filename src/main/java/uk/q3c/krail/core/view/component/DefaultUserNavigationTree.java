@@ -24,8 +24,6 @@ import uk.q3c.krail.core.eventbus.SessionBus;
 import uk.q3c.krail.core.eventbus.SubscribeTo;
 import uk.q3c.krail.core.eventbus.UIBus;
 import uk.q3c.krail.core.guice.uiscope.UIScoped;
-import uk.q3c.krail.core.i18n.DescriptionKey;
-import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.navigate.Navigator;
 import uk.q3c.krail.core.navigate.sitemap.*;
 import uk.q3c.krail.core.navigate.sitemap.comparator.DefaultUserSitemapSorters.SortType;
@@ -34,6 +32,8 @@ import uk.q3c.krail.core.option.Option;
 import uk.q3c.krail.core.option.OptionContext;
 import uk.q3c.krail.core.option.OptionKey;
 import uk.q3c.krail.core.view.KrailView;
+import uk.q3c.krail.i18n.DescriptionKey;
+import uk.q3c.krail.i18n.LabelKey;
 import uk.q3c.util.ID;
 
 import javax.annotation.Nonnull;
@@ -41,7 +41,7 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.Optional;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.*;
 
 /**
  * A navigation tree for users to find their way around the site. Uses {@link UserSitemap} to provide the structure

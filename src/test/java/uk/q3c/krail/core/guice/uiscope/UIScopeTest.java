@@ -31,9 +31,6 @@ import uk.q3c.krail.core.data.DataModule;
 import uk.q3c.krail.core.eventbus.EventBusModule;
 import uk.q3c.krail.core.eventbus.GlobalBusProvider;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
-import uk.q3c.krail.core.i18n.I18NKey;
-import uk.q3c.krail.core.i18n.LabelKey;
-import uk.q3c.krail.core.i18n.Translate;
 import uk.q3c.krail.core.navigate.NavigationModule;
 import uk.q3c.krail.core.navigate.sitemap.SitemapModule;
 import uk.q3c.krail.core.navigate.sitemap.SitemapService;
@@ -49,6 +46,9 @@ import uk.q3c.krail.core.ui.*;
 import uk.q3c.krail.core.user.UserModule;
 import uk.q3c.krail.core.view.ViewModule;
 import uk.q3c.krail.core.view.component.DefaultComponentModule;
+import uk.q3c.krail.i18n.LabelKey;
+import uk.q3c.krail.i18n.api.I18NKey;
+import uk.q3c.krail.i18n.api.Translate;
 import uk.q3c.krail.testutil.i18n.TestI18NModule;
 import uk.q3c.krail.testutil.persist.TestPersistenceModule;
 import uk.q3c.krail.testutil.ui.TestUIModule;
@@ -59,11 +59,10 @@ import uk.q3c.krail.util.UtilsModule;
 import java.util.Locale;
 import java.util.Optional;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyString;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 public class UIScopeTest {
     static Optional<CacheManager> cacheManagerOpt = Optional.empty();

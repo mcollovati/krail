@@ -31,20 +31,20 @@ import uk.q3c.krail.core.config.ConfigurationException;
 import uk.q3c.krail.core.guice.uiscope.UIKey;
 import uk.q3c.krail.core.guice.uiscope.UIScope;
 import uk.q3c.krail.core.guice.uiscope.UIScoped;
-import uk.q3c.krail.core.i18n.CurrentLocale;
-import uk.q3c.krail.core.i18n.I18NProcessor;
-import uk.q3c.krail.core.i18n.LocaleChangeBusMessage;
-import uk.q3c.krail.core.i18n.Translate;
 import uk.q3c.krail.core.navigate.Navigator;
 import uk.q3c.krail.core.push.Broadcaster;
 import uk.q3c.krail.core.push.Broadcaster.BroadcastListener;
 import uk.q3c.krail.core.push.PushMessageRouter;
 import uk.q3c.krail.core.view.KrailView;
 import uk.q3c.krail.core.view.KrailViewHolder;
+import uk.q3c.krail.i18n.I18NProcessor;
+import uk.q3c.krail.i18n.api.CurrentLocale;
+import uk.q3c.krail.i18n.api.LocaleChangeBusMessage;
+import uk.q3c.krail.i18n.api.Translate;
 
 import javax.annotation.Nonnull;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.*;
 
 /**
  * The base class for all Krail UIs, it provides an essential part of the {@link UIScoped} mechanism. It also provides

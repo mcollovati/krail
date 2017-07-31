@@ -25,7 +25,8 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import uk.q3c.krail.core.guice.uiscope.UIScoped;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScoped;
-import uk.q3c.krail.core.i18n.I18N;
+import uk.q3c.krail.eventbus.api.BusMessage;
+import uk.q3c.krail.i18n.api.I18N;
 
 import static org.mockito.Matchers.anyObject;
 import static org.mockito.Mockito.*;

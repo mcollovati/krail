@@ -13,8 +13,8 @@
 
 package uk.q3c.krail.core.view
 
-import uk.q3c.krail.core.i18n.DescriptionKey
-import uk.q3c.krail.core.i18n.LabelKey
+import uk.q3c.krail.i18n.DescriptionKey
+import uk.q3c.krail.i18n.LabelKey
 
 /**
  * Created by David Sowerby on 09 Feb 2016
@@ -31,7 +31,7 @@ class DefaultErrorViewTest extends ViewTest {
 
     def "set and get error"() {
         given:
-        Throwable error = new RuntimeException();
+        Throwable error = new RuntimeException()
         when:
         thisView.setError(error)
 
@@ -49,7 +49,7 @@ class DefaultErrorViewTest extends ViewTest {
 
     def "do build with error set, shows error stack"() {
         given:
-        Throwable error = new RuntimeException();
+        Throwable error = new RuntimeException()
         thisView.setError(error)
 
         when:

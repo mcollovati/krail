@@ -12,9 +12,9 @@
  */
 package uk.q3c.krail.core.navigate.sitemap;
 
-import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.shiro.PageAccessControl;
 import uk.q3c.krail.core.view.*;
+import uk.q3c.krail.i18n.LabelKey;
 
 /**
  * A set of pages to support user account management.

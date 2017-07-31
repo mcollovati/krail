@@ -13,11 +13,12 @@
 
 package uk.q3c.krail.core.push;
 
-import uk.q3c.krail.core.eventbus.BusMessage;
+
+import uk.q3c.krail.eventbus.api.BusMessage;
 
 import javax.annotation.Nonnull;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.*;
 
 /**
  * Created by David Sowerby on 26/05/15.

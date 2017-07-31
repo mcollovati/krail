@@ -18,7 +18,7 @@ import com.google.inject.Injector
 import com.google.inject.Key
 import com.google.inject.TypeLiteral
 import spock.lang.Specification
-import uk.q3c.krail.core.i18n.LabelKey
+import uk.q3c.krail.i18n.LabelKey
 
 /**
  * Created by David Sowerby on 08 Feb 2016
@@ -27,7 +27,7 @@ class DefaultUIModuleTest extends Specification {
 
     def "configure with defaults"() {
         given:
-        DefaultUIModule module = new DefaultUIModule();
+        DefaultUIModule module = new DefaultUIModule()
         TypeLiteral<Map<String, Class<? extends ScopedUI>>> mapTypeLiteral = new TypeLiteral<Map<String, Class<? extends ScopedUI>>>() {
         }
         Key<Map<String, Class<? extends ScopedUI>>> mapKey = Key.get(mapTypeLiteral)
@@ -46,7 +46,7 @@ class DefaultUIModuleTest extends Specification {
 
     def "configure with defaults changed"() {
         given:
-        DefaultUIModule module = new DefaultUIModule().uiClass(BasicUI).applicationTitleKey(LabelKey.Yes);
+        DefaultUIModule module = new DefaultUIModule().uiClass(BasicUI).applicationTitleKey(LabelKey.Yes)
         TypeLiteral<Map<String, Class<? extends ScopedUI>>> mapTypeLiteral = new TypeLiteral<Map<String, Class<? extends ScopedUI>>>() {
         }
         Key<Map<String, Class<? extends ScopedUI>>> mapKey = Key.get(mapTypeLiteral)

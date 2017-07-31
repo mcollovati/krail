@@ -13,7 +13,7 @@
 
 package fixture1;
 
-import uk.q3c.krail.core.i18n.TestLabelKey3;
+import uk.q3c.krail.i18n.TestLabelKey3;
 
 /**
  * Created by David Sowerby on 10/12/14.

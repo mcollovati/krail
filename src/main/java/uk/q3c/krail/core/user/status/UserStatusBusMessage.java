@@ -11,12 +11,12 @@
 
 package uk.q3c.krail.core.user.status;
 
-import uk.q3c.krail.core.eventbus.BusMessage;
 import uk.q3c.krail.core.view.LoginView;
+import uk.q3c.krail.eventbus.api.BusMessage;
 
 import javax.annotation.Nonnull;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.*;
 
 /**
  * A bus message published when a user logs in or logs out.

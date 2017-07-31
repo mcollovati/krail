@@ -19,7 +19,6 @@ import com.vaadin.data.util.converter.ConverterFactory;
 import com.vaadin.server.ErrorHandler;
 import com.vaadin.ui.*;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import uk.q3c.krail.core.i18n.*;
 import uk.q3c.krail.core.navigate.Navigator;
 import uk.q3c.krail.core.option.Option;
 import uk.q3c.krail.core.option.OptionContext;
@@ -28,6 +27,11 @@ import uk.q3c.krail.core.push.Broadcaster;
 import uk.q3c.krail.core.push.PushMessageRouter;
 import uk.q3c.krail.core.user.notify.VaadinNotification;
 import uk.q3c.krail.core.view.component.*;
+import uk.q3c.krail.i18n.DescriptionKey;
+import uk.q3c.krail.i18n.I18NProcessor;
+import uk.q3c.krail.i18n.LabelKey;
+import uk.q3c.krail.i18n.api.CurrentLocale;
+import uk.q3c.krail.i18n.api.Translate;
 
 import javax.annotation.Nonnull;
 

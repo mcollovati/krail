@@ -15,6 +15,7 @@ package uk.q3c.krail.core.eventbus
 
 import net.engio.mbassy.bus.common.PubSubSupport
 import spock.lang.Specification
+import uk.q3c.krail.eventbus.api.BusMessage
 
 /**
  * Created by David Sowerby on 17 Jan 2016

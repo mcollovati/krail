@@ -13,12 +13,12 @@
 
 package uk.q3c.krail.core.option;
 
-import uk.q3c.krail.core.i18n.I18NKey;
+import uk.q3c.krail.i18n.api.I18NKey;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.*;
 
 /**
  * Describes an {@link Option} - used to support the presentation of  information about an option in the user interface, and provided by implementers of {@link

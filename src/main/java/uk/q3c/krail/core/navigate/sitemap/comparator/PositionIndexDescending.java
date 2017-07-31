@@ -13,16 +13,16 @@
 package uk.q3c.krail.core.navigate.sitemap.comparator;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import uk.q3c.krail.core.i18n.I18NKey;
-import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.navigate.sitemap.MasterSitemapNode;
 import uk.q3c.krail.core.navigate.sitemap.UserSitemapNode;
+import uk.q3c.krail.i18n.LabelKey;
+import uk.q3c.krail.i18n.api.I18NKey;
 
 import javax.annotation.Nonnull;
 import java.io.Serializable;
 import java.util.Comparator;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.*;
 
 /**
  * Comparator which can be used to sort SitemapNode by insertion order, based on {@link MasterSitemapNode#getId()}

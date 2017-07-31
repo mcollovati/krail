@@ -13,7 +13,7 @@
 
 package uk.q3c.krail.core.persist.common.common;
 
-import uk.q3c.krail.core.i18n.I18NKey;
+import uk.q3c.krail.i18n.api.I18NKey;
 
 /**
  * Provides a common set of persistence information across all type of persistence.  Usually implemented by a persistence-related Guice module or a persistence

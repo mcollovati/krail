@@ -13,7 +13,7 @@
 
 package uk.q3c.krail.core.persist.clazz.i18n;
 
-import uk.q3c.krail.core.i18n.DefaultPatternSource;
+import uk.q3c.krail.i18n.DefaultPatternSource;
 
 import java.util.Arrays;
 import java.util.List;

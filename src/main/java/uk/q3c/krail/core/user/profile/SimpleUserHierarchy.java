@@ -15,16 +15,16 @@ package uk.q3c.krail.core.user.profile;
 
 import com.google.common.collect.ImmutableList;
 import com.google.inject.Inject;
-import uk.q3c.krail.core.i18n.LabelKey;
-import uk.q3c.krail.core.i18n.Translate;
 import uk.q3c.krail.core.option.Option;
 import uk.q3c.krail.core.shiro.SubjectIdentifier;
 import uk.q3c.krail.core.shiro.SubjectProvider;
+import uk.q3c.krail.i18n.LabelKey;
+import uk.q3c.krail.i18n.api.Translate;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.ThreadSafe;
 
-import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.*;
 
 /**
  * The most basic of {@link UserHierarchy} implementations, with just two ranks, the 'system' and the 'user'.  The

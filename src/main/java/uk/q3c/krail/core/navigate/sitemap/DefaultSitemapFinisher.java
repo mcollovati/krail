@@ -16,9 +16,9 @@ import com.google.common.collect.ImmutableMap;
 import com.google.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import uk.q3c.krail.core.i18n.CurrentLocale;
-import uk.q3c.krail.core.i18n.I18NKey;
 import uk.q3c.krail.core.view.KrailView;
+import uk.q3c.krail.i18n.api.CurrentLocale;
+import uk.q3c.krail.i18n.api.I18NKey;
 import uk.q3c.util.CycleDetectedException;
 import uk.q3c.util.DynamicDAG;
 import uk.q3c.util.MessageFormat;
@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.*;
 
 /**
  * Checks the Sitemap for inconsistencies after it has been loaded. The following are considered:

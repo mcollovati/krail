@@ -15,8 +15,8 @@ package uk.q3c.krail.core.shiro;
 
 import com.google.inject.Inject;
 import com.vaadin.ui.Notification;
-import uk.q3c.krail.core.i18n.DescriptionKey;
 import uk.q3c.krail.core.user.notify.UserNotifier;
+import uk.q3c.krail.i18n.DescriptionKey;
 
 import java.io.Serializable;
 

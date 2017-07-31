@@ -15,13 +15,13 @@ package uk.q3c.krail.core.persist.inmemory.i18n;
 
 
 import com.google.inject.Inject;
-import uk.q3c.krail.core.persist.cache.i18n.PatternCacheKey;
-import uk.q3c.krail.core.persist.common.i18n.PatternDao;
+import uk.q3c.krail.i18n.api.PatternCacheKey;
+import uk.q3c.krail.i18n.api.PatternDao;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.*;
 
 public class InMemoryPatternDao implements PatternDao {
 

@@ -15,9 +15,9 @@ package uk.q3c.krail.core.view.component
 
 import com.vaadin.ui.HorizontalLayout
 import spock.lang.Specification
-import uk.q3c.krail.core.i18n.LabelKey
-import uk.q3c.krail.core.i18n.Translate
 import uk.q3c.krail.core.ui.ApplicationTitle
+import uk.q3c.krail.i18n.LabelKey
+import uk.q3c.krail.i18n.api.Translate
 
 /**
  * Created by David Sowerby on 08 Feb 2016

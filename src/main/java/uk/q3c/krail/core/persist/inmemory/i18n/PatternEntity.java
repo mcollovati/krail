@@ -14,8 +14,8 @@
 package uk.q3c.krail.core.persist.inmemory.i18n;
 
 import uk.q3c.krail.core.data.EnumConverter;
-import uk.q3c.krail.core.persist.cache.i18n.PatternCacheKey;
 import uk.q3c.krail.core.persist.inmemory.common.InMemoryContainer;
+import uk.q3c.krail.i18n.api.PatternCacheKey;
 
 /**
  * An entity for I18N pattern for use with the {@link InMemoryContainer}

@@ -14,8 +14,8 @@
 package uk.q3c.krail.testutil.view;
 
 import com.vaadin.ui.Component;
-import uk.q3c.krail.core.i18n.Caption;
 import uk.q3c.krail.core.view.ViewBase;
+import uk.q3c.krail.i18n.Caption;
 
 import java.lang.reflect.Field;
 import java.util.HashSet;

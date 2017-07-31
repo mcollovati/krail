@@ -15,7 +15,7 @@ package uk.q3c.krail.core.option;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
-import uk.q3c.krail.core.i18n.I18NKey;
+import uk.q3c.krail.i18n.api.I18NKey;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.*;
 
 /**
  * Represents the elements which go together to make up a unique {@link Option} key within its context
