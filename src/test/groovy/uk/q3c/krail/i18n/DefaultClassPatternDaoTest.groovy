@@ -17,6 +17,8 @@ import org.apache.commons.io.FileUtils
 import org.junit.Rule
 import org.junit.rules.TemporaryFolder
 import spock.lang.Specification
+import uk.q3c.krail.core.i18n.LabelKey
+import uk.q3c.krail.core.i18n.MessageKey
 import uk.q3c.krail.core.option.Option
 import uk.q3c.krail.core.option.OptionKey
 import uk.q3c.krail.core.persist.clazz.i18n.ClassBundleControl
@@ -123,7 +125,7 @@ class DefaultClassPatternDaoTest extends Specification {
         option.get(optionKey) >> true
 
         expect:
-        dao.expandFromKey(LabelKey.Yes).equals("uk.q3c.krail.i18n.Labels")
+        dao.expandFromKey(LabelKey.Yes).equals("uk.q3c.krail.core.i18n.Labels")
     }
 
 
@@ -135,7 +137,7 @@ class DefaultClassPatternDaoTest extends Specification {
 
 
         expect:
-        dao.expandFromKey(LabelKey.Yes).equals("uk.q3c.krail.i18n.Labels")
+        dao.expandFromKey(LabelKey.Yes).equals("uk.q3c.krail.core.i18n.Labels")
     }
 
     def "expandFromKey() returns path same as the key when optionKeyUseKeyPath is false and optionPathToValues is set to '.'"() {
@@ -146,7 +148,7 @@ class DefaultClassPatternDaoTest extends Specification {
 
 
         expect:
-        dao.expandFromKey(LabelKey.Yes).equals("uk.q3c.krail.i18n.Labels")
+        dao.expandFromKey(LabelKey.Yes).equals("uk.q3c.krail.core.i18n.Labels")
     }
 
     def "expandFromKey() returns optionPathToValues when optionKeyUseKeyPath is false and not empty or '.'"() {

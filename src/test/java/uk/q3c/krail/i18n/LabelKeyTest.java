@@ -17,6 +17,7 @@ import com.mycila.testing.junit.MycilaJunitRunner;
 import com.mycila.testing.plugin.guice.GuiceContext;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import uk.q3c.krail.core.i18n.LabelKey;
 
 import static org.assertj.core.api.Assertions.*;
 

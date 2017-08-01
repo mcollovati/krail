@@ -23,10 +23,10 @@ import org.slf4j.LoggerFactory;
 import uk.q3c.krail.core.eventbus.SubscribeTo;
 import uk.q3c.krail.core.eventbus.UIBus;
 import uk.q3c.krail.core.guice.uiscope.UIScoped;
+import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.user.notify.ErrorNotificationMessage;
 import uk.q3c.krail.core.user.notify.InformationNotificationMessage;
 import uk.q3c.krail.core.user.notify.WarningNotificationMessage;
-import uk.q3c.krail.i18n.LabelKey;
 import uk.q3c.krail.i18n.api.Translate;
 import uk.q3c.util.ID;
 

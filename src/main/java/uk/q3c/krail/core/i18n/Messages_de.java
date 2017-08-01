@@ -10,7 +10,7 @@
  *  * specific language governing permissions and limitations under the License.
  *
  */
-package uk.q3c.krail.i18n;
+package uk.q3c.krail.core.i18n;
 
 /**
  * The base for the resource bundle of {@link Messages_de}. The separation between them is arbitrary, but helps break

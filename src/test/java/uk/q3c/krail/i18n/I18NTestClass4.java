@@ -14,6 +14,8 @@
 package uk.q3c.krail.i18n;
 
 import com.vaadin.ui.Button;
+import uk.q3c.krail.core.i18n.DescriptionKey;
+import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.util.NotOnWeekends;
 
 /**

@@ -14,14 +14,14 @@
 package uk.q3c.krail.core.persist.inmemory.option
 
 import spock.lang.Specification
+import uk.q3c.krail.core.i18n.DescriptionKey
+import uk.q3c.krail.core.i18n.LabelKey
 import uk.q3c.krail.core.option.OptionKey
 import uk.q3c.krail.core.persist.cache.option.OptionCacheKey
 import uk.q3c.krail.core.sysadmin.option.SourcePanel
 import uk.q3c.krail.core.user.profile.RankOption
 import uk.q3c.krail.core.user.profile.UserHierarchy
 import uk.q3c.krail.core.view.component.LocaleContainer
-import uk.q3c.krail.i18n.DescriptionKey
-import uk.q3c.krail.i18n.LabelKey
 
 /**
  * Created by David Sowerby on 21 Jan 2016

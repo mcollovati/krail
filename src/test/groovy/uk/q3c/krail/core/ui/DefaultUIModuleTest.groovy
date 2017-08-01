@@ -18,7 +18,7 @@ import com.google.inject.Injector
 import com.google.inject.Key
 import com.google.inject.TypeLiteral
 import spock.lang.Specification
-import uk.q3c.krail.i18n.LabelKey
+import uk.q3c.krail.core.i18n.LabelKey
 
 /**
  * Created by David Sowerby on 08 Feb 2016

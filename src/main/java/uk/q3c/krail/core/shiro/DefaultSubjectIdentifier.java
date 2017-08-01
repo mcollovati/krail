@@ -16,7 +16,7 @@ import com.google.inject.Inject;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.subject.Subject;
-import uk.q3c.krail.i18n.LabelKey;
+import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.i18n.api.Translate;
 
 /**

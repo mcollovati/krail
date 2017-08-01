@@ -13,7 +13,7 @@
 package uk.q3c.krail.core.navigate;
 
 import org.junit.Test;
-import uk.q3c.krail.i18n.LabelKey;
+import uk.q3c.krail.core.i18n.LabelKey;
 
 import java.util.HashSet;
 import java.util.Set;

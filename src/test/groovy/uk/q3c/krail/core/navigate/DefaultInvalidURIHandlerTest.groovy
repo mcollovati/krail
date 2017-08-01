@@ -14,9 +14,9 @@
 package uk.q3c.krail.core.navigate
 
 import spock.lang.Specification
+import uk.q3c.krail.core.i18n.MessageKey
 import uk.q3c.krail.core.navigate.sitemap.StandardPageKey
 import uk.q3c.krail.core.user.notify.UserNotifier
-import uk.q3c.krail.i18n.MessageKey
 
 /**
  * Created by David Sowerby on 28 Dec 2015

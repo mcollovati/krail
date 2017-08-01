@@ -22,6 +22,8 @@ import org.slf4j.LoggerFactory;
 import uk.q3c.krail.core.eventbus.SessionBusProvider;
 import uk.q3c.krail.core.guice.uiscope.UIScoped;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScoped;
+import uk.q3c.krail.core.i18n.DescriptionKey;
+import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.option.Option;
 import uk.q3c.krail.core.option.OptionContext;
 import uk.q3c.krail.core.option.OptionKey;
@@ -67,11 +69,11 @@ import java.util.Set;
  * @date 5 May 2014
  */
 
-public class DefaultCurrentLocale implements CurrentLocale, OptionContext {
+public class VaadinCurrentLocale implements CurrentLocale, OptionContext {
 
-    public static final OptionKey<Locale> optionPreferredLocale = new OptionKey<>(Locale.UK, DefaultCurrentLocale.class, LabelKey.Preferred_Locale,
+    public static final OptionKey<Locale> optionPreferredLocale = new OptionKey<>(Locale.UK, VaadinCurrentLocale.class, LabelKey.Preferred_Locale,
             DescriptionKey.Preferred_Locale);
-    private static Logger log = LoggerFactory.getLogger(DefaultCurrentLocale.class);
+    private static Logger log = LoggerFactory.getLogger(VaadinCurrentLocale.class);
 
     private final BrowserProvider browserProvider;
     private final Locale defaultLocale;
@@ -82,8 +84,8 @@ public class DefaultCurrentLocale implements CurrentLocale, OptionContext {
     private Set<Locale> supportedLocales;
 
     @Inject
-    protected DefaultCurrentLocale(BrowserProvider browserProvider, @SupportedLocales Set<Locale> supportedLocales, @DefaultLocale Locale defaultLocale,
-                                   SessionBusProvider eventBusProvider, SubjectProvider subjectProvider, Option option) {
+    protected VaadinCurrentLocale(BrowserProvider browserProvider, @SupportedLocales Set<Locale> supportedLocales, @DefaultLocale Locale defaultLocale,
+                                  SessionBusProvider eventBusProvider, SubjectProvider subjectProvider, Option option) {
         super();
         this.browserProvider = browserProvider;
         this.supportedLocales = supportedLocales;

@@ -13,6 +13,7 @@
 package uk.q3c.krail.i18n;
 
 import com.vaadin.data.Property;
+import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.i18n.api.CurrentLocale;
 import uk.q3c.krail.i18n.api.I18NAnnotation;
 

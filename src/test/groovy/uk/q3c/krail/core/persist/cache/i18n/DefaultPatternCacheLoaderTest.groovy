@@ -15,10 +15,10 @@ package uk.q3c.krail.core.persist.cache.i18n
 
 import com.google.common.collect.ImmutableSet
 import spock.lang.Specification
+import uk.q3c.krail.core.i18n.LabelKey
 import uk.q3c.krail.core.option.Option
 import uk.q3c.krail.core.persist.clazz.i18n.ClassPatternDao
 import uk.q3c.krail.core.persist.clazz.i18n.ClassPatternSource
-import uk.q3c.krail.i18n.LabelKey
 import uk.q3c.krail.i18n.PatternSourceProvider
 import uk.q3c.krail.i18n.api.PatternCacheKey
 import uk.q3c.krail.i18n.i18nModule.TestPatternSource

@@ -13,10 +13,10 @@
 
 package uk.q3c.krail.core.sysadmin;
 
+import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.navigate.sitemap.DirectSitemapModule;
 import uk.q3c.krail.core.shiro.PageAccessControl;
 import uk.q3c.krail.core.sysadmin.option.OptionView;
-import uk.q3c.krail.i18n.LabelKey;
 import uk.q3c.krail.util.Experimental;
 
 /**

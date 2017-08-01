@@ -16,11 +16,11 @@ package uk.q3c.krail.core.data
 import org.apache.shiro.authz.annotation.RequiresAuthentication
 import spock.lang.Specification
 import uk.q3c.krail.core.config.DefaultApplicationConfiguration
+import uk.q3c.krail.core.i18n.LabelKey
 import uk.q3c.krail.core.option.AnnotationOptionList
 import uk.q3c.krail.core.option.OptionList
 import uk.q3c.krail.core.persist.clazz.i18n.ClassPatternSource
 import uk.q3c.krail.core.services.Service
-import uk.q3c.krail.i18n.LabelKey
 import uk.q3c.krail.i18n.api.I18NKey
 
 import java.time.LocalDateTime
@@ -44,7 +44,7 @@ class DefaultOptionElementConverterTest extends Specification {
         converter.convertValueToString(true).equals('true')
         converter.convertValueToString(Locale.UK).equals('en-GB')
         converter.convertValueToString(LocalDateTime.of(2014, 07, 13, 12, 15)).equals('2014-07-13T12:15:00')
-        converter.convertValueToString(LabelKey.Yes).equals('uk.q3c.krail.i18n.LabelKey.Yes')
+        converter.convertValueToString(LabelKey.Yes).equals('uk.q3c.krail.core.i18n.LabelKey.Yes')
         converter.convertValueToString(Service.State.FAILED).equals('uk.q3c.krail.core.services.Service$State.FAILED')
         converter.convertValueToString(BigDecimal.valueOf(433)).equals('433')
         converter.convertValueToString(new OptionList<>(Integer.class, 1, 3)).equals('1~~3')
@@ -59,7 +59,7 @@ class DefaultOptionElementConverterTest extends Specification {
         converter.convertStringToValue(Boolean, 'true').equals(true)
         converter.convertStringToValue(Locale, 'en-GB').equals(Locale.UK)
         converter.convertStringToValue(LocalDateTime, '2014-07-13T12:15:00').equals(LocalDateTime.of(2014, 07, 13, 12, 15))
-        converter.convertStringToValue(I18NKey, 'uk.q3c.krail.i18n.LabelKey.Yes').equals(LabelKey.Yes)
+        converter.convertStringToValue(I18NKey, 'uk.q3c.krail.core.i18n.LabelKey.Yes').equals(LabelKey.Yes)
         converter.convertStringToValue(Enum, 'uk.q3c.krail.core.services.Service$State.FAILED').equals(Service.State.FAILED)
         converter.convertStringToValue(BigDecimal, '433').equals(BigDecimal.valueOf(433))
         converter.convertStringToValue(AnnotationOptionList, 'uk.q3c.krail.core.persist.clazz.i18n.ClassPatternSource~~org.apache.shiro.authz.annotation.RequiresAuthentication').equals(new AnnotationOptionList(ClassPatternSource, RequiresAuthentication))

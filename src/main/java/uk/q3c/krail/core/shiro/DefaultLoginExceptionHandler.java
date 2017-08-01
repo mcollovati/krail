@@ -14,8 +14,8 @@ package uk.q3c.krail.core.shiro;
 
 import com.google.inject.Inject;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import uk.q3c.krail.core.i18n.DescriptionKey;
 import uk.q3c.krail.core.view.LoginView;
-import uk.q3c.krail.i18n.DescriptionKey;
 
 public class DefaultLoginExceptionHandler implements LoginExceptionHandler {
 

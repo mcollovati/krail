@@ -21,6 +21,8 @@ import uk.q3c.krail.core.eventbus.EventBusModule
 import uk.q3c.krail.core.guice.GuiceModuleTestBase
 import uk.q3c.krail.core.guice.uiscope.UIScopeModule
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule
+import uk.q3c.krail.core.i18n.DescriptionKey
+import uk.q3c.krail.core.i18n.LabelKey
 import uk.q3c.krail.core.option.InMemory
 import uk.q3c.krail.core.persist.clazz.i18n.ClassPatternDao
 import uk.q3c.krail.core.persist.clazz.i18n.ClassPatternSource

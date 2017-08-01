@@ -16,13 +16,13 @@ package uk.q3c.krail.core.ui
 import com.vaadin.data.util.converter.ConverterFactory
 import com.vaadin.server.ErrorHandler
 import spock.lang.Specification
+import uk.q3c.krail.core.i18n.LabelKey
 import uk.q3c.krail.core.navigate.Navigator
 import uk.q3c.krail.core.option.Option
 import uk.q3c.krail.core.push.Broadcaster
 import uk.q3c.krail.core.push.PushMessageRouter
 import uk.q3c.krail.core.view.DefaultPublicHomeView
 import uk.q3c.krail.i18n.I18NProcessor
-import uk.q3c.krail.i18n.LabelKey
 import uk.q3c.krail.i18n.api.CurrentLocale
 import uk.q3c.krail.i18n.api.Translate
 import uk.q3c.krail.testutil.i18n.MockTranslate

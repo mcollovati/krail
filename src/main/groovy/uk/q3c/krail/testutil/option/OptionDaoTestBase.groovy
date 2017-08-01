@@ -20,6 +20,7 @@ import com.google.inject.Singleton
 import org.apache.commons.collections15.ListUtils
 import spock.lang.Specification
 import uk.q3c.krail.core.data.OptionElementConverter
+import uk.q3c.krail.core.i18n.LabelKey
 import uk.q3c.krail.core.navigate.sitemap.comparator.DefaultUserSitemapSorters
 import uk.q3c.krail.core.option.*
 import uk.q3c.krail.core.persist.cache.option.OptionCacheKey
@@ -28,7 +29,6 @@ import uk.q3c.krail.core.persist.common.option.OptionDao
 import uk.q3c.krail.core.persist.common.option.OptionSource
 import uk.q3c.krail.core.user.profile.UserHierarchy
 import uk.q3c.krail.core.view.component.LocaleContainer
-import uk.q3c.krail.i18n.LabelKey
 
 import static uk.q3c.krail.core.user.profile.RankOption.*
 

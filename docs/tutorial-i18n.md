@@ -101,7 +101,7 @@ This is going to be a long message, and because it has parameters, the default t
 ```
 package com.example.tutorial.i18n;
 
-import uk.q3c.krail.core.persist.clazz.i18n.EnumResourceBundle;
+import uk.q3c.krail.i18n.api.EnumResourceBundle;
 
 public class Messages extends EnumResourceBundle<MessageKey> {
     
@@ -119,7 +119,7 @@ Here you will see that we are extending ```EnumResourceBundle``` but for type sa
 ```
 package com.example.tutorial.i18n;
 
-import uk.q3c.krail.core.persist.clazz.i18n.EnumResourceBundle;
+import uk.q3c.krail.i18n.api.EnumResourceBundle;
 
 import static com.example.tutorial.i18n.MessageKey.*;
 
@@ -324,7 +324,7 @@ To translate the keys used for parameter *{0}* we need to do the same for ```Lab
 ```
 package com.example.tutorial.i18n;
 
-import uk.q3c.krail.core.persist.clazz.i18n.EnumResourceBundle;
+import uk.q3c.krail.i18n.api.EnumResourceBundle;
 
 public class Labels extends EnumResourceBundle<LabelKey> {
     @Override

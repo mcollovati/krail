@@ -13,9 +13,9 @@
 package uk.q3c.krail.core.navigate.sitemap.comparator;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.navigate.sitemap.MasterSitemapNode;
 import uk.q3c.krail.core.navigate.sitemap.UserSitemapNode;
-import uk.q3c.krail.i18n.LabelKey;
 import uk.q3c.krail.i18n.api.I18NKey;
 
 import java.io.Serializable;

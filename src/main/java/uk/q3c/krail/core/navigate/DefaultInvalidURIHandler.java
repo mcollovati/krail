@@ -15,9 +15,9 @@ package uk.q3c.krail.core.navigate;
 import com.google.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import uk.q3c.krail.core.i18n.MessageKey;
 import uk.q3c.krail.core.navigate.sitemap.StandardPageKey;
 import uk.q3c.krail.core.user.notify.UserNotifier;
-import uk.q3c.krail.i18n.MessageKey;
 
 public class DefaultInvalidURIHandler implements InvalidURIHandler {
     private static Logger log = LoggerFactory.getLogger(DefaultInvalidURIHandler.class);

@@ -21,12 +21,12 @@ import com.google.inject.multibindings.Multibinder;
 import org.apache.commons.lang3.LocaleUtils;
 import uk.q3c.krail.core.guice.uiscope.UIScoped;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScoped;
+import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.option.Option;
 import uk.q3c.krail.core.persist.cache.i18n.DefaultPatternCacheLoader;
 import uk.q3c.krail.core.persist.cache.i18n.PatternCacheLoader;
 import uk.q3c.krail.core.persist.clazz.i18n.ClassPatternDao;
 import uk.q3c.krail.core.persist.clazz.i18n.ClassPatternSource;
-import uk.q3c.krail.core.persist.clazz.i18n.EnumResourceBundle;
 import uk.q3c.krail.core.persist.common.common.KrailPersistenceUnitHelper;
 import uk.q3c.krail.i18n.api.*;
 
@@ -221,7 +221,7 @@ public class I18NModule extends AbstractModule {
      * language for each browser tab or each browser instance, respectively.
      */
     protected void bindCurrentLocale() {
-        bind(CurrentLocale.class).to(DefaultCurrentLocale.class)
+        bind(CurrentLocale.class).to(VaadinCurrentLocale.class)
                                  .in(VaadinSessionScoped.class);
     }
 
@@ -268,7 +268,7 @@ public class I18NModule extends AbstractModule {
     }
 
     /**
-     * This locale is used when all else fails - that is, when the neither the browser locale or user option is valid. See {@link DefaultCurrentLocale} for
+     * This locale is used when all else fails - that is, when the neither the browser locale or user option is valid. See {@link VaadinCurrentLocale} for
      * more
      * detail. This is also added to {@link #supportedLocales}, so if you only ant to support one Locale, just call this method.
      *
@@ -288,7 +288,7 @@ public class I18NModule extends AbstractModule {
     }
 
     /**
-     * This locale is used when all else fails - that is, when the neither the browser locale or user option is valid.  See {@link DefaultCurrentLocale} for
+     * This locale is used when all else fails - that is, when the neither the browser locale or user option is valid.  See {@link VaadinCurrentLocale} for
      * more
      * detail. This is also added to {@link #supportedLocales}, so if you only want to support one Locale, just call this method.
      *

@@ -17,6 +17,8 @@ import com.vaadin.data.Property;
 import net.engio.mbassy.listener.Handler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import uk.q3c.krail.core.i18n.DescriptionKey;
+import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.navigate.Navigator;
 import uk.q3c.krail.core.navigate.sitemap.UserSitemap;
 import uk.q3c.krail.core.navigate.sitemap.UserSitemapLabelChangeMessage;
@@ -27,8 +29,6 @@ import uk.q3c.krail.core.navigate.sitemap.comparator.UserSitemapSorters;
 import uk.q3c.krail.core.option.Option;
 import uk.q3c.krail.core.option.OptionContext;
 import uk.q3c.krail.core.option.OptionKey;
-import uk.q3c.krail.i18n.DescriptionKey;
-import uk.q3c.krail.i18n.LabelKey;
 import uk.q3c.krail.i18n.api.I18N;
 
 import javax.annotation.Nonnull;

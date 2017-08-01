@@ -28,6 +28,8 @@ import org.mockito.Mock;
 import uk.q3c.krail.core.eventbus.EventBusModule;
 import uk.q3c.krail.core.eventbus.SessionBusProvider;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
+import uk.q3c.krail.core.i18n.DescriptionKey;
+import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.option.Option;
 import uk.q3c.krail.core.option.OptionKey;
 import uk.q3c.krail.core.shiro.SubjectProvider;
@@ -53,7 +55,7 @@ public class DefaultCurrentLocaleTest {
 
     boolean listenerFired = false;
 
-    DefaultCurrentLocale currentLocale;
+    VaadinCurrentLocale currentLocale;
 
     @Mock
     Annotation annotation;
@@ -109,8 +111,8 @@ public class DefaultCurrentLocaleTest {
         assertThat(currentLocale.getLocale()).isEqualTo(Locale.GERMANY);
     }
 
-    private DefaultCurrentLocale createCurrentLocale() {
-        return new DefaultCurrentLocale(browserProvider, supportedLocales, defaultLocale, eventBusProvider, subjectProvider, option);
+    private VaadinCurrentLocale createCurrentLocale() {
+        return new VaadinCurrentLocale(browserProvider, supportedLocales, defaultLocale, eventBusProvider, subjectProvider, option);
     }
 
     @Test
@@ -130,7 +132,7 @@ public class DefaultCurrentLocaleTest {
     }
 
     private void setOption(Locale userPref) {
-        OptionKey<Locale> optionPreferredLocale = new OptionKey<>(currentLocale.getLocale(), DefaultCurrentLocale.class, LabelKey.Preferred_Locale,
+        OptionKey<Locale> optionPreferredLocale = new OptionKey<>(currentLocale.getLocale(), VaadinCurrentLocale.class, LabelKey.Preferred_Locale,
                 DescriptionKey.Preferred_Locale);
         when(option.get(optionPreferredLocale)).thenReturn(userPref);
     }

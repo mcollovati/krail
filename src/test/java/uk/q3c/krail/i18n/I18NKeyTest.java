@@ -17,6 +17,7 @@ import com.mycila.testing.junit.MycilaJunitRunner;
 import com.mycila.testing.plugin.guice.GuiceContext;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.i18n.api.I18NKey;
 
 import static org.assertj.core.api.Assertions.*;
@@ -28,7 +29,7 @@ public class I18NKeyTest {
     @Test
     public void fullName() {
         //given
-        String expected = "uk.q3c.krail.i18n.LabelKey.Yes";
+        String expected = "uk.q3c.krail.core.i18n.LabelKey.Yes";
         //when
         String actual = I18NKey.fullName(LabelKey.Yes);
         //then

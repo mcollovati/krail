@@ -14,7 +14,7 @@
 package uk.q3c.krail.core.services
 
 import spock.lang.Specification
-import uk.q3c.krail.i18n.LabelKey
+import uk.q3c.krail.core.i18n.LabelKey
 
 class ServiceKeyTest extends Specification {
 

@@ -58,7 +58,7 @@ put(LabelKey.Yes, "Ja");
 ```
 package com.example.tutorial.i18n;
 
-import uk.q3c.krail.core.persist.clazz.i18n.EnumResourceBundle;
+import uk.q3c.krail.i18n.api.EnumResourceBundle;
 
 import static com.example.tutorial.i18n.DescriptionKey.*;
 

@@ -10,11 +10,11 @@
  *  * specific language governing permissions and limitations under the License.
  *
  */
-package uk.q3c.krail.i18n;
+package uk.q3c.krail.core.i18n;
 
-import uk.q3c.krail.core.persist.clazz.i18n.EnumResourceBundle;
+import uk.q3c.krail.i18n.api.EnumResourceBundle;
 
-import static uk.q3c.krail.i18n.DescriptionKey.*;
+import static uk.q3c.krail.core.i18n.DescriptionKey.*;
 
 /**
  * The base for the resource bundle of {@link Descriptions}. The separation between them is arbitrary, but helps break

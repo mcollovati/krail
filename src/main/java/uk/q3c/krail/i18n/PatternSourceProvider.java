@@ -14,6 +14,8 @@
 package uk.q3c.krail.i18n;
 
 import com.google.common.collect.ImmutableSet;
+import uk.q3c.krail.core.i18n.DescriptionKey;
+import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.option.AnnotationOptionList;
 import uk.q3c.krail.core.option.Option;
 import uk.q3c.krail.core.option.OptionContext;

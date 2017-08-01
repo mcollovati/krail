@@ -15,6 +15,9 @@ package uk.q3c.krail.i18n;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.inject.Inject;
+import uk.q3c.krail.core.i18n.DescriptionKey;
+import uk.q3c.krail.core.i18n.LabelKey;
+import uk.q3c.krail.core.i18n.MessageKey;
 import uk.q3c.krail.core.validation.ValidationKey;
 import uk.q3c.krail.i18n.api.*;
 

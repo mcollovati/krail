@@ -13,8 +13,8 @@
 
 package uk.q3c.krail.core.view
 
-import uk.q3c.krail.i18n.DescriptionKey
-import uk.q3c.krail.i18n.LabelKey
+import uk.q3c.krail.core.i18n.DescriptionKey
+import uk.q3c.krail.core.i18n.LabelKey
 
 /**
  * Created by David Sowerby on 09 Feb 2016

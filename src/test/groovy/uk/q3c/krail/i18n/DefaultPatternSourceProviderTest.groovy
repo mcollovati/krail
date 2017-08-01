@@ -16,6 +16,7 @@ package uk.q3c.krail.i18n
 import com.google.inject.Provider
 import org.apache.commons.collections15.ListUtils
 import spock.lang.Specification
+import uk.q3c.krail.core.i18n.LabelKey
 import uk.q3c.krail.core.option.AnnotationOptionList
 import uk.q3c.krail.core.option.Option
 import uk.q3c.krail.core.persist.clazz.i18n.ClassPatternSource

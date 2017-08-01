@@ -14,8 +14,8 @@
 package uk.q3c.krail.core.shiro;
 
 import com.google.inject.Inject;
+import uk.q3c.krail.core.i18n.DescriptionKey;
 import uk.q3c.krail.core.user.notify.UserNotifier;
-import uk.q3c.krail.i18n.DescriptionKey;
 
 /**
  * Created by David Sowerby on 11/06/15.

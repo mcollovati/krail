@@ -14,6 +14,9 @@
 package uk.q3c.krail.i18n;
 
 
+import uk.q3c.krail.core.i18n.DescriptionKey;
+import uk.q3c.krail.core.i18n.LabelKey;
+
 /**
  * To support test cases of:<ol> <li>field caption overriding class caption</li>
  * <p>

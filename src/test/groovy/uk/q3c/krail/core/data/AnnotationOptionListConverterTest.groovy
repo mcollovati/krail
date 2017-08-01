@@ -18,7 +18,7 @@ import spock.lang.Specification
 import uk.q3c.krail.core.eventbus.SessionBus
 import uk.q3c.krail.core.option.AnnotationOptionList
 import uk.q3c.krail.core.persist.clazz.i18n.ClassPatternSource
-import uk.q3c.krail.i18n.DefaultCurrentLocale
+import uk.q3c.krail.i18n.VaadinCurrentLocale
 
 /**
  *
@@ -72,7 +72,7 @@ class AnnotationOptionListConverterTest extends Specification {
 
     def "Convert non-annotation class value throws ConversionException"() {
         when:
-        converter.convertToModel(DefaultCurrentLocale.class.getName())
+        converter.convertToModel(VaadinCurrentLocale.class.getName())
 
         then:
         thrown(ConversionException)

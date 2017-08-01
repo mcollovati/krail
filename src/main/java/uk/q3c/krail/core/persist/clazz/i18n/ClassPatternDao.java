@@ -13,6 +13,7 @@
 
 package uk.q3c.krail.core.persist.clazz.i18n;
 
+import uk.q3c.krail.i18n.api.EnumResourceBundle;
 import uk.q3c.krail.i18n.api.PatternCacheKey;
 import uk.q3c.krail.i18n.api.PatternDao;
 

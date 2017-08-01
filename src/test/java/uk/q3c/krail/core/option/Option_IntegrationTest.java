@@ -26,6 +26,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
+import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.persist.cache.common.GuavaCacheConfiguration;
 import uk.q3c.krail.core.persist.cache.option.DefaultOptionCache;
 import uk.q3c.krail.core.persist.cache.option.DefaultOptionCacheLoader;
@@ -44,7 +45,6 @@ import uk.q3c.krail.core.user.profile.RankOption;
 import uk.q3c.krail.core.user.profile.SimpleUserHierarchy;
 import uk.q3c.krail.core.user.profile.UserHierarchy;
 import uk.q3c.krail.core.view.component.LocaleContainer;
-import uk.q3c.krail.i18n.LabelKey;
 import uk.q3c.krail.i18n.api.Translate;
 import uk.q3c.krail.testutil.option.TestOptionModule;
 

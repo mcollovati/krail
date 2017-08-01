@@ -16,6 +16,8 @@ package uk.q3c.krail.core.persist.inmemory.common;
 import com.google.inject.AbstractModule;
 import com.google.inject.TypeLiteral;
 import com.google.inject.multibindings.MapBinder;
+import uk.q3c.krail.core.i18n.DescriptionKey;
+import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.option.InMemory;
 import uk.q3c.krail.core.persist.common.common.*;
 import uk.q3c.krail.core.persist.common.i18n.PatternDaoProviders;
@@ -25,8 +27,6 @@ import uk.q3c.krail.core.persist.inmemory.i18n.DefaultInMemoryPatternStore;
 import uk.q3c.krail.core.persist.inmemory.i18n.InMemoryPatternDao;
 import uk.q3c.krail.core.persist.inmemory.i18n.InMemoryPatternStore;
 import uk.q3c.krail.core.persist.inmemory.option.*;
-import uk.q3c.krail.i18n.DescriptionKey;
-import uk.q3c.krail.i18n.LabelKey;
 import uk.q3c.krail.i18n.api.I18NKey;
 import uk.q3c.krail.i18n.api.PatternDao;
 

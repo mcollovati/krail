@@ -23,6 +23,7 @@ import org.junit.runner.RunWith;
 import uk.q3c.krail.core.eventbus.EventBusModule;
 import uk.q3c.krail.core.guice.uiscope.UIScopeModule;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
+import uk.q3c.krail.core.i18n.DescriptionKey;
 import uk.q3c.krail.core.persist.inmemory.option.DefaultInMemoryOptionStore;
 import uk.q3c.krail.core.persist.inmemory.option.InMemoryOptionStore;
 import uk.q3c.krail.i18n.api.CurrentLocale;
