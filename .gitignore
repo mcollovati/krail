@@ -6,7 +6,9 @@ build
 gradle
 logs
 
-krail.iml
+*.iml
+*.ipr
+*.iws
 .classpath
 .project
 

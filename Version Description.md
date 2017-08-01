@@ -1,1 +1,3 @@
-This version updates to Vaadin 7.6.3.  Changes concentrate on separating the build from the master project to prepare move to continuous delivery.  Some small fixes included, Tutorial updated
+This release is a major refactor to extract some elements which can actually stand alone from Krail itself - notably this includes I18N and Options
+
+There will, regrettably be quite a few changes in Krail apps, but with one or two exceptions will be limited to package changes.  See Release Notes.md for details
