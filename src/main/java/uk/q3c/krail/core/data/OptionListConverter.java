@@ -19,7 +19,7 @@ import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.*;
 
 
 /**
@@ -44,7 +44,7 @@ public class OptionListConverter<E> {
      * {@inheritDoc}
      */
 
-    public String convertToString(@Nonnull OptionList<E> value) {
+    public String convertToString(OptionList<E> value) {
         checkNotNull(value);
         if (value.isEmpty()) {
             return "";

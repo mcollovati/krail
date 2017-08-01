@@ -20,7 +20,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.concurrent.Immutable;
 import java.util.List;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.*;
 
 /**
  * Encapsulates a list for {@link Option} - the element class needs to be specified so that conversion to and from String can be performed
@@ -39,7 +39,7 @@ public class OptionList<E> implements OptionCollection<E> {
         this.elementClass = elementClass;
     }
 
-    public OptionList(@Nonnull List<E> list, @Nonnull Class<E> elementClass) {
+    public OptionList(List<E> list, Class<E> elementClass) {
         checkNotNull(list);
         checkNotNull(elementClass);
         this.list = ImmutableList.copyOf(list);

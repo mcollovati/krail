@@ -24,7 +24,7 @@ import uk.q3c.krail.core.user.profile.UserHierarchy;
 import javax.annotation.Nonnull;
 import java.util.Optional;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.*;
 
 /**
  * Extends {@link CacheLoader} implementation which finds the options appropriate for the key provided (see {@link
@@ -62,7 +62,7 @@ public class DefaultOptionCacheLoader extends CacheLoader<OptionCacheKey, Option
      */
     @Override
     @Nonnull
-    public Optional<?> load(@Nonnull final OptionCacheKey cacheKey) throws Exception {
+    public Optional<?> load(final OptionCacheKey cacheKey) throws Exception {
         checkNotNull(cacheKey);
         log.debug("retrieving value for {}", cacheKey);
         return daoWrapper.getValue(cacheKey);

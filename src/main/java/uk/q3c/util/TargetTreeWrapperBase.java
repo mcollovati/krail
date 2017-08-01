@@ -16,7 +16,7 @@ import javax.annotation.Nonnull;
 import java.io.Serializable;
 import java.util.Comparator;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.*;
 
 public abstract class TargetTreeWrapperBase<S, T> implements TargetTreeWrapper<S, T>, Serializable {
     protected NodeModifier<S, T> nodeModifier;
@@ -76,7 +76,7 @@ public abstract class TargetTreeWrapperBase<S, T> implements TargetTreeWrapper<S
     }
 
     @Override
-    public void setNodeModifier(@Nonnull NodeModifier<S, T> nodeModifier) {
+    public void setNodeModifier(NodeModifier<S, T> nodeModifier) {
         checkNotNull(nodeModifier);
         this.nodeModifier = nodeModifier;
     }

@@ -16,7 +16,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Comparator;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.*;
 
 /**
  * A default implementation for {@link NodeModifier} which assumes that the source and target nodes are the same type.
@@ -32,7 +32,7 @@ public class DefaultNodeModifier<S, T> implements NodeModifier<S, T> {
 
     @SuppressWarnings("unchecked")
     @Override
-    public S sourceNodeFor(@Nonnull T target) {
+    public S sourceNodeFor(T target) {
         checkNotNull(target);
         return (S) target;
     }
