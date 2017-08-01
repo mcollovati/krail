@@ -66,12 +66,15 @@ repositories {
 
 dependencies {
 
-    compile "uk.q3c.krail:krail-i18n-api:0.0.1.0.820e9bd"
-
     //Dependency Injection
     compile 'com.google.inject.extensions:guice-servlet:' + guiceVersion
     compile 'com.google.inject.extensions:guice-assistedinject:' + guiceVersion
     compile 'com.google.inject.extensions:guice-multibindings:' + guiceVersion
+
+    compile "uk.q3c.krail:krail-i18n-api:0.0.0.1"
+
+
+
 
     //event bus
     compile 'net.engio:mbassador:1.2.1'
