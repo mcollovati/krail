@@ -15,7 +15,6 @@ import com.google.common.base.Splitter;
 import org.apache.commons.lang3.StringEscapeUtils;
 import uk.q3c.krail.core.option.OptionList;
 
-import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +33,7 @@ public class OptionListConverter<E> {
     private OptionElementConverter converter;
 
 
-    public OptionListConverter(@Nonnull OptionElementConverter converter) {
+    public OptionListConverter(OptionElementConverter converter) {
         checkNotNull(converter);
         this.converter = converter;
     }
@@ -65,7 +64,7 @@ public class OptionListConverter<E> {
     }
 
 
-    public <E> OptionList<E> convertToModel(@Nonnull OptionList<E> defaultValue, @Nonnull String value) {
+    public <E> OptionList<E> convertToModel(OptionList<E> defaultValue, String value) {
         checkNotNull(value);
         checkNotNull(defaultValue);
         Class<E> elementClass = defaultValue.getElementClass();

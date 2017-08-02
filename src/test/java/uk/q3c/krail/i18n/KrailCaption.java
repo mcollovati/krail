@@ -15,7 +15,6 @@ package uk.q3c.krail.i18n;
 
 import uk.q3c.krail.i18n.api.CurrentLocale;
 import uk.q3c.krail.i18n.api.I18NAnnotation;
-import uk.q3c.krail.testutil.i18n.TestLabelKey;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

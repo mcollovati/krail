@@ -19,8 +19,8 @@ import com.google.inject.Inject;
 import com.vaadin.data.util.converter.ConverterFactory;
 import uk.q3c.krail.core.option.AnnotationOptionList;
 import uk.q3c.krail.core.option.OptionList;
+import uk.q3c.krail.i18n.MessageFormat;
 import uk.q3c.krail.i18n.api.I18NKey;
-import uk.q3c.util.MessageFormat;
 
 import javax.annotation.Nonnull;
 import java.math.BigDecimal;

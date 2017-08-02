@@ -34,8 +34,8 @@ import uk.q3c.krail.core.view.LoginView;
 import uk.q3c.krail.core.view.PublicHomeView;
 import uk.q3c.krail.i18n.DefaultI18NProcessor;
 import uk.q3c.krail.i18n.I18NProcessor;
+import uk.q3c.krail.i18n.TestLabelKey;
 import uk.q3c.krail.testutil.i18n.TestI18NModule;
-import uk.q3c.krail.testutil.i18n.TestLabelKey;
 import uk.q3c.krail.testutil.persist.TestPersistenceModule;
 
 import java.util.ArrayList;

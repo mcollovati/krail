@@ -21,10 +21,10 @@ import org.apache.commons.lang3.ClassUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import uk.q3c.krail.core.config.ConfigurationException;
+import uk.q3c.krail.i18n.MessageFormat;
 import uk.q3c.krail.i18n.api.CurrentLocale;
 import uk.q3c.krail.i18n.api.I18NKey;
 import uk.q3c.krail.i18n.api.Translate;
-import uk.q3c.util.MessageFormat;
 
 import javax.validation.MessageInterpolator;
 import javax.validation.constraints.Min;

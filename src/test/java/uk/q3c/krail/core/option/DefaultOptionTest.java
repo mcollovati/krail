@@ -30,8 +30,8 @@ import uk.q3c.krail.core.shiro.SubjectIdentifier;
 import uk.q3c.krail.core.shiro.SubjectProvider;
 import uk.q3c.krail.core.ui.DataTypeToUI;
 import uk.q3c.krail.core.user.profile.UserHierarchy;
+import uk.q3c.krail.i18n.TestLabelKey;
 import uk.q3c.krail.i18n.api.Translate;
-import uk.q3c.krail.testutil.i18n.TestLabelKey;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;

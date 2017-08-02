@@ -40,7 +40,7 @@ import java.lang.annotation.Annotation
  *
  * Created by David Sowerby on 21/07/15.
  */
-class I18NModuleTest extends GuiceModuleTestBase {
+class VaadinI18NModuleTest extends GuiceModuleTestBase {
 
 
 
@@ -48,7 +48,7 @@ class I18NModuleTest extends GuiceModuleTestBase {
     def " Using Locale objects, supported locales set, setting defaultLocale also adds to supported locales"() {
         when:
 
-        injector = createInjector(new I18NModule().defaultLocale(Locale.ITALY).supportedLocales(Locale.GERMANY))
+        injector = createInjector(new VaadinI18NModule().defaultLocale(Locale.ITALY).supportedLocales(Locale.GERMANY))
 
 
         then:
@@ -64,7 +64,7 @@ class I18NModuleTest extends GuiceModuleTestBase {
     def "Using Locale language tags, supported locales set, setting defaultLocale also adds to supported locales"() {
         when:
 
-        injector = createInjector(new I18NModule().defaultLocale("it_IT").supportedLocales("de_DE"))
+        injector = createInjector(new VaadinI18NModule().defaultLocale("it_IT").supportedLocales("de_DE"))
 
 
         then:
@@ -79,7 +79,7 @@ class I18NModuleTest extends GuiceModuleTestBase {
     def "default to Locale.UK if no locales set"() {
         when:
 
-        injector = createInjector(new I18NModule())
+        injector = createInjector(new VaadinI18NModule())
 
 
         then:
@@ -93,7 +93,7 @@ class I18NModuleTest extends GuiceModuleTestBase {
     def "Throw an IllegalArgumentException for an invalid Locale language tag in defaultLocale()"() {
 
         when:
-        injector = createInjector(new I18NModule().defaultLocale("rubbish"))
+        injector = createInjector(new VaadinI18NModule().defaultLocale("rubbish"))
 
         then:
 
@@ -103,7 +103,7 @@ class I18NModuleTest extends GuiceModuleTestBase {
     def "Throw an IllegalArgumentException for an invalid Locale language tag in supportedLocales()"() {
 
         when:
-        injector = createInjector(new I18NModule().supportedLocales("rubbish"))
+        injector = createInjector(new VaadinI18NModule().supportedLocales("rubbish"))
 
         then:
 
@@ -112,7 +112,7 @@ class I18NModuleTest extends GuiceModuleTestBase {
 
     def "I18N targets explicitly set"() {
         when:
-        injector = createInjector(new I18NModule().target(ClassPatternSource.class).target(InMemory.class))
+        injector = createInjector(new VaadinI18NModule().target(ClassPatternSource.class).target(InMemory.class))
 
         then:
 
@@ -123,7 +123,7 @@ class I18NModuleTest extends GuiceModuleTestBase {
 
     def "I18N targets not set, should be an empty map"() {
         when:
-        injector = createInjector(new I18NModule())
+        injector = createInjector(new VaadinI18NModule())
 
         then:
 
@@ -133,7 +133,7 @@ class I18NModuleTest extends GuiceModuleTestBase {
 
     def "I18N sources explicitly set"() {
         when:
-        injector = createInjector(new I18NModule().source(ClassPatternSource.class).source(InMemory.class))
+        injector = createInjector(new VaadinI18NModule().source(ClassPatternSource.class).source(InMemory.class))
 
         then:
 
@@ -145,7 +145,7 @@ class I18NModuleTest extends GuiceModuleTestBase {
 
     def "I18N sources not set, default should be 'class'"() {
         when:
-        injector = createInjector(new I18NModule())
+        injector = createInjector(new VaadinI18NModule())
 
         then:
 
@@ -156,7 +156,7 @@ class I18NModuleTest extends GuiceModuleTestBase {
 
     def "I18N sources default order explicitly set"() {
         when:
-        injector = createInjector(new I18NModule().sourcesDefaultOrder(TestPatternSource.class, ClassPatternSource.class, InMemory.class))
+        injector = createInjector(new VaadinI18NModule().sourcesDefaultOrder(TestPatternSource.class, ClassPatternSource.class, InMemory.class))
 
         then:
 
@@ -170,7 +170,7 @@ class I18NModuleTest extends GuiceModuleTestBase {
 
     def "I18N source order set for individual bundles (key classes)"() {
         when:
-        injector = createInjector(new I18NModule().sourcesOrderByBundle(LabelKey.class, TestPatternSource.class, ClassPatternSource.class).sourcesOrderByBundle(DescriptionKey.class, InMemory.class, TestPatternSource.class, ClassPatternSource.class))
+        injector = createInjector(new VaadinI18NModule().sourcesOrderByBundle(LabelKey.class, TestPatternSource.class, ClassPatternSource.class).sourcesOrderByBundle(DescriptionKey.class, InMemory.class, TestPatternSource.class, ClassPatternSource.class))
 
         then:
 

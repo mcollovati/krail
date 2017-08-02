@@ -25,9 +25,9 @@ import uk.q3c.krail.core.navigate.sitemap.StandardPageKey;
 import uk.q3c.krail.core.navigate.sitemap.UserSitemapNode;
 import uk.q3c.krail.core.shiro.PageAccessControl;
 import uk.q3c.krail.core.view.KrailView;
+import uk.q3c.krail.i18n.TestLabelKey;
 import uk.q3c.krail.i18n.api.I18NKey;
 import uk.q3c.krail.i18n.api.Translate;
-import uk.q3c.krail.testutil.i18n.TestLabelKey;
 
 import java.text.CollationKey;
 import java.text.Collator;

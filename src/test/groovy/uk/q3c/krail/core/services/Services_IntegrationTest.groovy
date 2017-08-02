@@ -24,7 +24,7 @@ import uk.q3c.krail.testutil.option.TestOptionModule
 import uk.q3c.krail.testutil.persist.TestPersistenceModule
 import uk.q3c.krail.util.UtilsModule
 
-import static uk.q3c.krail.testutil.i18n.TestLabelKey.*
+import static uk.q3c.krail.i18n.TestLabelKey.*
 
 /**
  *
@@ -113,20 +113,20 @@ class Services_IntegrationTest extends Specification {
 
         when:
 
-        serviceD.start();
+        serviceD.start()
 
         then:
 
-        serviceD.isStarted();
-        serviceC.isStarted();
+        serviceD.isStarted()
+        serviceC.isStarted()
 
         when:
 
         serviceC.stop()
 
         then:
-        serviceD.isStopped();
-        serviceC.isStopped();
+        serviceD.isStopped()
+        serviceC.isStopped()
 
     }
 
@@ -142,7 +142,7 @@ class Services_IntegrationTest extends Specification {
 
         when:
 
-        serviceD.start();
+        serviceD.start()
         List<DependencyInstanceDefinition> dependencies = model.findInstanceDependencyDefinitions(serviceD)
 
         then:

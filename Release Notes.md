@@ -6,8 +6,10 @@ There will, regrettably be quite a few changes in Krail apps, but with one or tw
 
 #### I18N
 
-- generic I18N capability moved from `uk.q3c.krail.core.i18n` to `uk.q3c.krail.i18n.api` and `uk.q3c.krail.i18n` as appropriate, in projects **krail-i18n-api** and **krail-i18n** respectively
-- `DefaultCurrentLocale` is now `VaadinCurrentLocale` as it assumes the use of Vaadin.  A generic DefaultCurrentLocale is included in **krail-i18n**
--`uk.q3c.krail.i18n.api.EnumResourceBundle` to  
+- generic I18N capability moved from `uk.q3c.krail.core.i18n` to `uk.q3c.krail.i18n.api` and `uk.q3c.krail.i18n` as appropriate, in project **krail-i18n** 
+- `DefaultCurrentLocale` in **krail** is now `VaadinCurrentLocale` as it assumes the use of Vaadin.  A generic `DefaultCurrentLocale` added to **krail-i18n**
+-`uk.q3c.krail.i18n.api.EnumResourceBundle` moved to **krail-i18n**
+- `uk.q3c.util.MessageFormat` moved to `uk.q3c.krail.i18n.MessageFormat`
+- `I18NModule` split, new `I18NModule` in **krail-i18n**, `VaadinI18NModule` in core
 
 

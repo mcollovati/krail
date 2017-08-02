@@ -102,7 +102,7 @@ public class OptionKey<T> {
      * @param context the class which uses the option
      * @param nameKey used as part of the overall key, and also as an I18N label for displaying options values to users
      */
-    public OptionKey(@Nonnull T defaultValue, @Nonnull Class<? extends OptionContext> context, @Nonnull I18NKey nameKey) {
+    public OptionKey(T defaultValue, Class<? extends OptionContext> context, I18NKey nameKey) {
         this.defaultValue = defaultValue;
         checkNotNull(context);
         checkNotNull(nameKey);

@@ -19,8 +19,8 @@ import spock.lang.Specification
 import uk.q3c.krail.core.i18n.LabelKey
 import uk.q3c.krail.core.ui.DataTypeToUI
 import uk.q3c.krail.core.ui.DefaultDataTypeToUI
+import uk.q3c.krail.i18n.TestLabelKey
 import uk.q3c.krail.i18n.api.Translate
-import uk.q3c.krail.testutil.i18n.TestLabelKey
 import uk.q3c.krail.testutil.option.MockOption
 
 import javax.annotation.Nonnull

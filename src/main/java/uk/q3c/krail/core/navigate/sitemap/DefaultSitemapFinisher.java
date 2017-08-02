@@ -17,11 +17,11 @@ import com.google.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import uk.q3c.krail.core.view.KrailView;
+import uk.q3c.krail.i18n.MessageFormat;
 import uk.q3c.krail.i18n.api.CurrentLocale;
 import uk.q3c.krail.i18n.api.I18NKey;
 import uk.q3c.util.CycleDetectedException;
 import uk.q3c.util.DynamicDAG;
-import uk.q3c.util.MessageFormat;
 
 import javax.annotation.Nonnull;
 import java.util.HashSet;

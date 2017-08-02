@@ -15,11 +15,11 @@ package uk.q3c.krail.core.data;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.lang3.ClassUtils;
-import uk.q3c.util.MessageFormat;
+import uk.q3c.krail.i18n.MessageFormat;
 
 import javax.annotation.Nonnull;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.*;
 
 /**
  * Converts an Enum in full - that is, the class and constant as a single String.

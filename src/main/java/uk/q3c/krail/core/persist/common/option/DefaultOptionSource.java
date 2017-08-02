@@ -20,13 +20,13 @@ import com.vaadin.data.Container;
 import uk.q3c.krail.core.config.ConfigurationException;
 import uk.q3c.krail.core.persist.common.common.OptionDaoProviders;
 import uk.q3c.krail.core.persist.common.common.PersistenceInfo;
-import uk.q3c.util.MessageFormat;
+import uk.q3c.krail.i18n.MessageFormat;
 
 import javax.annotation.Nonnull;
 import java.lang.annotation.Annotation;
 import java.util.Map;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.*;
 
 /**
  * Default implementation for {@link OptionSource}.

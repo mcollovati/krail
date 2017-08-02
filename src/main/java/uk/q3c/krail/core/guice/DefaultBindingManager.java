@@ -53,6 +53,7 @@ import uk.q3c.krail.core.validation.KrailValidationModule;
 import uk.q3c.krail.core.view.ViewModule;
 import uk.q3c.krail.core.view.component.DefaultComponentModule;
 import uk.q3c.krail.i18n.I18NModule;
+import uk.q3c.krail.i18n.VaadinI18NModule;
 import uk.q3c.krail.util.UtilsModule;
 
 import javax.servlet.ServletContextEvent;
@@ -262,7 +263,7 @@ public abstract class DefaultBindingManager extends GuiceServletContextListener 
      * @return a Module fr I18N
      */
     protected Module i18NModule() {
-        return new I18NModule();
+        return new VaadinI18NModule();
     }
 
     /**
