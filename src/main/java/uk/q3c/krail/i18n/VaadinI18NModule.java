@@ -17,7 +17,6 @@ import com.google.inject.Key;
 import com.google.inject.TypeLiteral;
 import com.google.inject.multibindings.MapBinder;
 import com.google.inject.multibindings.Multibinder;
-import org.apache.commons.lang3.LocaleUtils;
 import uk.q3c.krail.core.guice.uiscope.UIScoped;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScoped;
 import uk.q3c.krail.core.i18n.LabelKey;
@@ -51,28 +50,28 @@ public class VaadinI18NModule extends I18NModule {
     private final TypeLiteral<Class<? extends Annotation>> annotationLiteral = KrailPersistenceUnitHelper.annotationClassLiteral();
     private final TypeLiteral<PatternDao> patternDaoTypeLiteral = new TypeLiteral<PatternDao>() {
     };
-    private Locale defaultLocale = Locale.UK;
+
     private LinkedHashSet<Class<? extends Annotation>> prepSources = new LinkedHashSet<>(); // retain order;
     private Set<Class<? extends Annotation>> prepSourcesDefaultOrder = new LinkedHashSet<>();
     private Map<Class<? extends I18NKey>, LinkedHashSet<Class<? extends Annotation>>> prepSourcesOrderByBundle = new LinkedHashMap<>();
-    private Set<Locale> prepSupportedLocales = new LinkedHashSet<>();
+
     private LinkedHashSet<Class<? extends Annotation>> prepTargets = new LinkedHashSet<>();
     private MapBinder<Class<? extends Annotation>, PatternDao> sources;
     private Multibinder<Class<? extends Annotation>> sourcesDefaultOrder;
     private MapBinder<Class<? extends I18NKey>, LinkedHashSet<Class<? extends Annotation>>> sourcesOrderByBundle;
-    private Multibinder<Locale> supportedLocales;
+
     private MapBinder<Class<? extends Annotation>, PatternDao> targets;
 
     @Override
     protected void configure() {
-        super.configure();
+
 
         TypeLiteral<LinkedHashSet<Class<? extends Annotation>>> setOfAnnotationsTypeLiteral = new TypeLiteral<LinkedHashSet<Class<? extends Annotation>>>() {
         };
         TypeLiteral<Class<? extends I18NKey>> keyClassTypeLiteral = new TypeLiteral<Class<? extends I18NKey>>() {
         };
 
-        supportedLocales = Multibinder.newSetBinder(binder(), Locale.class, SupportedLocales.class);
+
         sourcesDefaultOrder = Multibinder.newSetBinder(binder(), annotationLiteral, PatternSourceOrderDefault.class);
         sources = MapBinder.newMapBinder(binder(), annotationLiteral, patternDaoTypeLiteral, PatternSources.class);
         targets = MapBinder.newMapBinder(binder(), annotationLiteral, patternDaoTypeLiteral, PatternTargets.class);
@@ -83,7 +82,7 @@ public class VaadinI18NModule extends I18NModule {
 
         bindProcessor();
 
-        bindDefaultLocale();
+
         bindPatternSource();
         bindPatternCacheLoader();
         bindPatternUtility();
@@ -91,7 +90,7 @@ public class VaadinI18NModule extends I18NModule {
         bindHostClassIdentifier();
         //        bindDatabaseBundleReader();
 
-        bindSupportedLocales();
+
         bindSources();
         bindSourcesDefaultOrder();
         bindSourceOrderByBundle();
@@ -99,6 +98,7 @@ public class VaadinI18NModule extends I18NModule {
         bindClassPatternDao();
         bindPatternDao();
         bindI18NSourceProvider();
+        super.configure(); // This must be at the end
     }
 
 
@@ -148,18 +148,6 @@ public class VaadinI18NModule extends I18NModule {
         }
     }
 
-    /**
-     * Binds {@link Locale} in {@link SupportedLocales} as defined by {@link #prepSupportedLocales}, setting {@link Locale#UK} as default if nothing defined.
-     */
-    protected void bindSupportedLocales() {
-        if (prepSupportedLocales.isEmpty()) {
-            prepSupportedLocales.add(Locale.UK);
-        }
-        for (Locale locale : prepSupportedLocales) {
-            supportedLocales.addBinding()
-                    .toInstance(locale);
-        }
-    }
 
     /**
      * See javadoc for {@link I18NHostClassIdentifier} for an explanation of what this is for.  Override this method if you provide your own implementation
@@ -218,8 +206,8 @@ public class VaadinI18NModule extends I18NModule {
     }
 
     /**
-     * If you don't wish to configure this module from your Binding Manager, sub-class and override this method to define calls to {@link
-     * #supportedLocales(Locale...)}, {@link #defaultLocale(Locale)} etc - then modify your Binding Manager to use your sub-class
+     * If you don't wish to configure this module from your Binding Manager, sub-class and override this method to define calls to @link
+     * #supportedLocales(Locale...)}, @link #defaultLocale(Locale)} etc - then modify your Binding Manager to use your sub-class
      * <p>
      * If you are only using more than one I18N source, the order which you want them accessed needs to be specified using {@link #sourcesDefaultOrder}
      * and/or {@link #sourcesOrderByBundle}.  This is because Guice does not guarantee order if multiple MapBinders are combined (through the use of multiple
@@ -235,13 +223,6 @@ public class VaadinI18NModule extends I18NModule {
         bind(I18NProcessor.class).to(DefaultI18NProcessor.class);
     }
 
-    /**
-     * Binds {{@link #defaultLocale} to annotation {@link DefaultLocale}
-     */
-    protected void bindDefaultLocale() {
-        bind(Locale.class).annotatedWith(DefaultLocale.class)
-                .toInstance(defaultLocale);
-    }
 
     protected void bindSourcesDefaultOrder() {
         for (Class<? extends Annotation> source : prepSourcesDefaultOrder) {
@@ -259,73 +240,6 @@ public class VaadinI18NModule extends I18NModule {
 
     }
 
-    /**
-     * This locale is used when all else fails - that is, when the neither the browser locale or user option is valid. See {@link VaadinCurrentLocale} for
-     * more
-     * detail. This is also added to {@link #supportedLocales}, so if you only ant to support one Locale, just call this method.
-     *
-     * @param localeString valid locale string to be used as default
-     * @return this for fluency
-     * @throws IllegalArgumentException if the locale string is invalid (see {@link LocaleUtils#toLocale(String)} for format)
-     */
-    public VaadinI18NModule defaultLocale(@Nonnull String localeString) {
-        checkNotNull(localeString);
-        checkArgument(!localeString.isEmpty());
-        defaultLocale(localeFromString(localeString));
-        return this;
-    }
-
-    /**
-     * This locale is used when all else fails - that is, when the neither the browser locale or user option is valid.  See {@link VaadinCurrentLocale} for
-     * more
-     * detail. This is also added to {@link #supportedLocales}, so if you only want to support one Locale, just call this method.
-     *
-     * @param locale Locale object for the default
-     */
-    public VaadinI18NModule defaultLocale(@Nonnull Locale locale) {
-        checkNotNull(locale);
-        defaultLocale = locale;
-        prepSupportedLocales.add(defaultLocale);
-        return this;
-    }
-
-    /**
-     * Converts String to Locale, strictly
-     *
-     * @param localeString the String to convert, see {@link LocaleUtils#toLocale(String)} for format
-     * @return selected Locale
-     * @throws IllegalArgumentException if the {@code localeString} is not valid
-     */
-    protected Locale localeFromString(String localeString) {
-        return LocaleUtils.toLocale(localeString);
-    }
-
-    /**
-     * These are the locales that you will provide language support for.  Attempts to change to any other Locale will throw an exception.  {@link
-     * #defaultLocale} is automatically added
-     *
-     * @param locales the locales to support
-     * @return this for fluency
-     */
-    public VaadinI18NModule supportedLocales(@Nonnull Locale... locales) {
-        Collections.addAll(prepSupportedLocales, locales);
-        return this;
-    }
-
-    /**
-     * These are the locales that you will provide language support for.  Attempts to change to any other Locale will throw an exception.  {@link
-     * #defaultLocale} is automatically added
-     *
-     * @param localeStrings the locales to support
-     * @return this for fluency
-     * @throws IllegalArgumentException if a locale string is invalid (see {@link LocaleUtils#toLocale(String)} for format)
-     */
-    public VaadinI18NModule supportedLocales(@Nonnull String... localeStrings) {
-        for (String localeString : localeStrings) {
-            prepSupportedLocales.add(localeFromString(localeString));
-        }
-        return this;
-    }
 
     /**
      * If you are using one source for I18N, there is no need to use this method

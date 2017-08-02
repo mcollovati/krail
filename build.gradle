@@ -69,9 +69,8 @@ dependencies {
     //Dependency Injection
     compile 'com.google.inject.extensions:guice-servlet:' + guiceVersion
     compile 'com.google.inject.extensions:guice-assistedinject:' + guiceVersion
-    compile 'com.google.inject.extensions:guice-multibindings:' + guiceVersion
-
     compile "uk.q3c.krail:krail-i18n:0.0.2.0"
+
 
 
 
