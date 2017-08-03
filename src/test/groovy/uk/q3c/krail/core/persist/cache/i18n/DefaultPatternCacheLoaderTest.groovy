@@ -20,7 +20,7 @@ import uk.q3c.krail.core.option.Option
 import uk.q3c.krail.i18n.PatternSourceProvider
 import uk.q3c.krail.i18n.api.PatternCacheKey
 import uk.q3c.krail.i18n.api.clazz.ClassPatternDao
-import uk.q3c.krail.i18n.api.clazz.ClassPatternSource
+import uk.q3c.krail.i18n.clazz.ClassPatternSource
 import uk.q3c.krail.i18n.i18nModule.TestPatternSource
 import uk.q3c.util.testutil.LogMonitor
 
@@ -170,7 +170,7 @@ class DefaultPatternCacheLoaderTest extends Specification {
 
     def "getOption"() {
         expect:
-        loader.getOption() == option
+        loader.optionInstance() == option
     }
 
     def "optionValueChanged does nothing, call for coverage"() {

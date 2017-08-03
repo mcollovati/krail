@@ -279,7 +279,7 @@ public class DefaultUserNavigationTree extends Tree implements OptionContext, Us
 
     @Nonnull
     @Override
-    public Option getOption() {
+    public Option optionInstance() {
         return option;
     }
 

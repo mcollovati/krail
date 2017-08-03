@@ -24,10 +24,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.common.base.Preconditions.checkNotNull;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static com.google.common.base.Preconditions.*;
+import static org.mockito.Mockito.*;
 
 /**
  * Note that this wil lnto necessarily convert data types correctly
@@ -40,7 +38,7 @@ public class MockOption implements Option {
     private Map<OptionKey, Optional<Object>> optionMap;
 
     @Inject
-    protected MockOption() {
+    public MockOption() {
         optionMap = new HashMap<>();
         when(hierarchy.lowestRank()).thenReturn(5);
     }

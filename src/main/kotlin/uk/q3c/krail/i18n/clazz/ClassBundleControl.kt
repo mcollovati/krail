@@ -11,19 +11,25 @@
  *
  */
 
-package uk.q3c.krail.i18n.api;
+package uk.q3c.krail.i18n.clazz
+
+import java.util.*
+
+/**
+ * Bundle control to allow loading from classes only, and only the requested locale (that is, it does not look at other candidate locales - that is managed through [DefaultPatternSource] instead
+ *
+ *
+ * Created by David Sowerby on 08/12/14.
+ */
+class ClassBundleControl : ResourceBundle.Control() {
 
 
-public class PatternWriteException extends RuntimeException {
-
-    public PatternWriteException(String msg) {
-        super(msg);
+    override fun getFormats(baseName: String): List<String> {
+        return ResourceBundle.Control.FORMAT_CLASS
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    public PatternWriteException(String message, Throwable cause) {
-        super(message, cause);
+
+    override fun getCandidateLocales(baseName: String, locale: Locale): List<Locale> {
+        return Arrays.asList(locale)
     }
 }

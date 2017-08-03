@@ -26,6 +26,7 @@ import org.apache.shiro.util.ThreadContext
 import spock.lang.Specification
 import uk.q3c.krail.core.eventbus.EventBusModule
 import uk.q3c.krail.core.i18n.Caption
+import uk.q3c.krail.core.i18n.KrailI18NConfigModule
 import uk.q3c.krail.core.persist.inmemory.common.InMemoryModule
 import uk.q3c.krail.core.shiro.DefaultShiroModule
 import uk.q3c.krail.core.shiro.KrailSecurityManager
@@ -330,7 +331,7 @@ class KrailShiroAopModuleTest extends Specification {
 
 
     private void createInjector(Module module) {
-        injector = Guice.createInjector(module, new DefaultShiroModule(), new TestI18NModule(), new TestVaadinSessionScopeModule(), new EventBusModule(), new TestOptionModule(), new UtilsModule(), new TestUIScopeModule(), new InMemoryModule())
+        injector = Guice.createInjector(module, new DefaultShiroModule(), new KrailI18NConfigModule(), new TestI18NModule(), new TestVaadinSessionScopeModule(), new EventBusModule(), new TestOptionModule(), new UtilsModule(), new TestUIScopeModule(), new InMemoryModule())
         VaadinSession.setCurrent(vaadinSession)
     }
 }

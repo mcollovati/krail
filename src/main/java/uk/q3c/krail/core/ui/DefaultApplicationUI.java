@@ -273,7 +273,7 @@ public class DefaultApplicationUI extends ScopedUI implements OptionContext {
      */
     @Nonnull
     @Override
-    public Option getOption() {
+    public Option optionInstance() {
         return option;
     }
 

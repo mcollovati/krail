@@ -107,7 +107,7 @@ public abstract class BeanFieldGroupBase<T extends KrailEntity> extends FieldGro
 
     @Override
     @Nonnull
-    public Option getOption() {
+    public Option optionInstance() {
         return option;
     }
 

@@ -21,6 +21,7 @@ import uk.q3c.krail.core.config.ApplicationConfigurationModule;
 import uk.q3c.krail.core.eventbus.EventBusModule;
 import uk.q3c.krail.core.guice.uiscope.UIScopeModule;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
+import uk.q3c.krail.core.i18n.KrailI18NConfigModule;
 import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.navigate.NavigationModule;
 import uk.q3c.krail.core.navigate.sitemap.DirectSitemapModuleTest.TestDirectSitemapModule1;
@@ -50,7 +51,7 @@ import static org.assertj.core.api.Assertions.*;
 @GuiceContext({ServicesModule.class, TestDirectSitemapModule1.class, TestDirectSitemapModule2.class, DataTypeModule.class, UIScopeModule
         .class, EventBusModule.class, ViewModule.class, ShiroVaadinModule.class, VaadinI18NModule.class, SitemapModule.class, UserModule.class,
         ApplicationConfigurationModule.class, DefaultShiroModule.class, DefaultComponentModule.class, TestPersistenceModule.class, TestOptionModule.class,
-        VaadinSessionScopeModule.class, NavigationModule.class, DefaultUIModule.class, UtilsModule.class})
+        VaadinSessionScopeModule.class, NavigationModule.class, DefaultUIModule.class, UtilsModule.class, KrailI18NConfigModule.class})
 public class DirectSitemapModuleTest {
 
     @Inject

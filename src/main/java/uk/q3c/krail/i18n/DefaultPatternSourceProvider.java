@@ -77,7 +77,7 @@ public class DefaultPatternSourceProvider implements PatternSourceProvider {
      */
     @Nonnull
     @Override
-    public Option getOption() {
+    public Option optionInstance() {
         return option;
     }
 

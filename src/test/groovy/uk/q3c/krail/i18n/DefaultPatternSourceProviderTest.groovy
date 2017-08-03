@@ -21,7 +21,7 @@ import uk.q3c.krail.core.option.AnnotationOptionList
 import uk.q3c.krail.core.option.Option
 import uk.q3c.krail.i18n.api.I18NKey
 import uk.q3c.krail.i18n.api.PatternDao
-import uk.q3c.krail.i18n.api.clazz.ClassPatternSource
+import uk.q3c.krail.i18n.clazz.ClassPatternSource
 import uk.q3c.krail.i18n.i18nModule.TestPatternSource
 import uk.q3c.krail.i18n.i18nModule.TestPatternSource1
 
@@ -249,7 +249,7 @@ class DefaultPatternSourceProviderTest extends Specification {
         provider = new DefaultPatternSourceProvider(sources, targets, option, sourceOrderByBundle, sourceOrderDefault)
 
         expect:
-        provider.getOption() == option
+        provider.optionInstance() == option
     }
 
     def "optionValueChanged does nothing but need to complete coverage"() {

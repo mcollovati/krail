@@ -26,6 +26,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import uk.q3c.krail.core.eventbus.EventBusModule;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
+import uk.q3c.krail.core.i18n.KrailI18NConfigModule;
 import uk.q3c.krail.core.navigate.StrictURIFragmentHandler;
 import uk.q3c.krail.core.navigate.URIFragmentHandler;
 import uk.q3c.krail.i18n.api.CurrentLocale;
@@ -40,7 +41,7 @@ import static org.assertj.core.api.Assertions.*;
 
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({TestI18NModule.class, VaadinSessionScopeModule.class, TestPersistenceModule.class, EventBusModule.class,
-        TestUIScopeModule.class, TestOptionModule.class})
+        TestUIScopeModule.class, TestOptionModule.class, KrailI18NConfigModule.class})
 @Listener
 public class DefaultUserSitemapTest {
 

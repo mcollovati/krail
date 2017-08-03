@@ -27,6 +27,7 @@ import org.mockito.Mock;
 import uk.q3c.krail.core.eventbus.EventBusAutoSubscriber;
 import uk.q3c.krail.core.eventbus.EventBusModule;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
+import uk.q3c.krail.core.i18n.KrailI18NConfigModule;
 import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.navigate.Navigator;
 import uk.q3c.krail.core.navigate.StrictURIFragmentHandler;
@@ -48,7 +49,7 @@ import static org.mockito.Mockito.*;
 
 
 @RunWith(MycilaJunitRunner.class)
-@GuiceContext({TestUIScopeModule.class, VaadinSessionScopeModule.class, TestI18NModule.class, TestOptionModule.class, TestPersistenceModule.class,
+@GuiceContext({TestUIScopeModule.class, VaadinSessionScopeModule.class, TestI18NModule.class, KrailI18NConfigModule.class, TestOptionModule.class, TestPersistenceModule.class,
         EventBusModule.class})
 public class DefaultUserNavigationMenuTest {
 
@@ -306,7 +307,7 @@ public class DefaultUserNavigationMenuTest {
         // then
         assertThat(userNavigationMenu.getOptionMaxDepth()).isEqualTo(3);
         // option has been set
-        int result = userNavigationMenu.getOption()
+        int result = userNavigationMenu.optionInstance()
                                        .get(DefaultUserNavigationMenu.optionKeyMaximumDepth);
         assertThat(result).isEqualTo(3);
     }

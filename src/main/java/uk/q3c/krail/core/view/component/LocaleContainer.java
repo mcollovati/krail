@@ -110,7 +110,7 @@ public class LocaleContainer extends IndexedContainer implements OptionContext {
 
     @Nonnull
     @Override
-    public Option getOption() {
+    public Option optionInstance() {
         return option;
     }
 

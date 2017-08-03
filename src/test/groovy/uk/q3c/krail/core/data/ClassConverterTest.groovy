@@ -14,7 +14,8 @@
 package uk.q3c.krail.core.data
 
 import spock.lang.Specification
-import uk.q3c.krail.i18n.api.clazz.ClassPatternSource
+import uk.q3c.krail.i18n.clazz.ClassPatternSource
+
 /**
  *
  * Created by David Sowerby on 08/08/15.

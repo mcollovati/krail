@@ -20,6 +20,7 @@ import org.apache.bval.guice.ValidationModule
 import spock.lang.Specification
 import uk.q3c.krail.core.data.TestEntity2
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule
+import uk.q3c.krail.core.i18n.KrailI18NConfigModule
 import uk.q3c.krail.core.persist.inmemory.common.InMemoryModule
 import uk.q3c.krail.testutil.eventbus.TestEventBusModule
 import uk.q3c.krail.testutil.guice.uiscope.TestUIScopeModule
@@ -31,7 +32,7 @@ import javax.validation.ConstraintViolationException
 import javax.validation.MessageInterpolator
 import javax.validation.ValidationException
 
-import static com.vaadin.data.Validator.InvalidValueException
+import static com.vaadin.data.Validator.*
 
 /**
  * Integration test for Apache BVal validation
@@ -43,14 +44,14 @@ class Validation_IntegrationTest extends Specification {
 
     Injector injector
 
-    MessageInterpolator interpolator;
+    MessageInterpolator interpolator
 
     TestEntity2 te1
 
     BeanValidator beanValidator
 
     def setup() {
-        injector = Guice.createInjector(new VaadinSessionScopeModule(), new TestUIScopeModule(), new TestOptionModule(), new TestEventBusModule(), new InMemoryModule(), new TestI18NModule(), Modules.override(new ValidationModule()).with(new KrailValidationModule()))
+        injector = Guice.createInjector(new VaadinSessionScopeModule(), new KrailI18NConfigModule(), new TestUIScopeModule(), new TestOptionModule(), new TestEventBusModule(), new InMemoryModule(), new TestI18NModule(), Modules.override(new ValidationModule()).with(new KrailValidationModule()))
         interpolator = injector.getInstance(MessageInterpolator.class)
         te1 = new TestEntity2()
         beanValidator = injector.getInstance(BeanValidator.class)
@@ -224,7 +225,7 @@ class Validation_IntegrationTest extends Specification {
 
         then:
         ConstraintViolationException exception = thrown()
-        def Set<ConstraintViolation<?>> violations = exception.getConstraintViolations()
+        Set<ConstraintViolation<?>> violations = exception.getConstraintViolations()
         violations.iterator().next().message.equals("must be greater than or equal to 100")
     }
 
@@ -238,7 +239,7 @@ class Validation_IntegrationTest extends Specification {
 
         then:
         ConstraintViolationException exception = thrown()
-        def Set<ConstraintViolation<?>> violations = exception.getConstraintViolations()
+        Set<ConstraintViolation<?>> violations = exception.getConstraintViolations()
         violations.iterator().next().message.equals("Must be an Adult")
     }
 

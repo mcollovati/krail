@@ -16,7 +16,8 @@ package uk.q3c.krail.core.option
 import com.google.common.collect.ImmutableList
 import com.google.inject.Inject
 import spock.lang.Specification
-import uk.q3c.krail.i18n.api.clazz.ClassPatternSource
+import uk.q3c.krail.i18n.clazz.ClassPatternSource
+
 /**
  *
  * Created by David Sowerby on 08/08/15.

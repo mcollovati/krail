@@ -36,7 +36,7 @@ import static com.google.common.cache.CacheBuilder.*;
  * A cached, single access point for I18N patterns, which may ultimately come from multiple sources.  The patterns are actually loaded into the cache by a
  * {@link PatternCacheLoader}  Note that the scope of this class is set in {@link I18NModule#bindPatternSource()} or its sub-class.
  *
- * This class does NOT check that Locales requested are supported Locales as defined by {@link I18NModule}.  This is the responsibility of {@link CurrentLocale}
+ * This class does NOT check that Locales requested are supported Locales as defined by {@link I18NModule}.  This is the responsibility of the {@link CurrentLocale} implementation
  * <p>
  * Created by David Sowerby on 07/12/14.
  */

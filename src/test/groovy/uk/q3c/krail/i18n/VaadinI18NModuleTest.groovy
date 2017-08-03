@@ -22,6 +22,7 @@ import uk.q3c.krail.core.guice.GuiceModuleTestBase
 import uk.q3c.krail.core.guice.uiscope.UIScopeModule
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule
 import uk.q3c.krail.core.i18n.DescriptionKey
+import uk.q3c.krail.core.i18n.KrailI18NConfigModule
 import uk.q3c.krail.core.i18n.LabelKey
 import uk.q3c.krail.core.option.InMemory
 import uk.q3c.krail.core.persist.inmemory.common.InMemoryModule
@@ -29,12 +30,11 @@ import uk.q3c.krail.core.persist.inmemory.i18n.InMemoryPatternDao
 import uk.q3c.krail.core.shiro.DefaultShiroModule
 import uk.q3c.krail.i18n.api.*
 import uk.q3c.krail.i18n.api.clazz.ClassPatternDao
-import uk.q3c.krail.i18n.api.clazz.ClassPatternSource
+import uk.q3c.krail.i18n.clazz.ClassPatternSource
 import uk.q3c.krail.i18n.i18nModule.TestPatternSource
 import uk.q3c.krail.testutil.option.TestOptionModule
 
 import java.lang.annotation.Annotation
-
 /**
  * Unit tests for {@link I18NModule}
  *
@@ -48,7 +48,7 @@ class VaadinI18NModuleTest extends GuiceModuleTestBase {
     def " Using Locale objects, supported locales set, setting defaultLocale also adds to supported locales"() {
         when:
 
-        injector = createInjector(new VaadinI18NModule().defaultLocale(Locale.ITALY).supportedLocales(Locale.GERMANY))
+        injector = createInjector(new VaadinI18NModule().defaultLocale(Locale.ITALY).supportedLocales(Locale.GERMANY),)
 
 
         then:
@@ -220,6 +220,8 @@ class VaadinI18NModuleTest extends GuiceModuleTestBase {
         modules.add(new DefaultShiroModule())
         modules.add(new InMemoryModule().providePatternDao())
         modules.add(new EventBusModule())
+        modules.add(new KrailI18NConfigModule())
+
         return modules
     }
 

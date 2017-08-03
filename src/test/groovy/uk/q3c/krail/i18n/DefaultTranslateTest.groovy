@@ -20,6 +20,7 @@ import uk.q3c.krail.core.data.DataModule
 import uk.q3c.krail.core.eventbus.EventBusModule
 import uk.q3c.krail.core.guice.uiscope.UIScopeModule
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule
+import uk.q3c.krail.core.i18n.KrailI18NConfigModule
 import uk.q3c.krail.core.i18n.LabelKey
 import uk.q3c.krail.i18n.api.CurrentLocale
 import uk.q3c.krail.i18n.api.Translate
@@ -34,7 +35,7 @@ import uk.q3c.krail.testutil.persist.TestPersistenceModule
  *
  * Created by David Sowerby on 14/07/15.
  */
-@UseModules([TestI18NModule, TestOptionModule, TestPersistenceModule, EventBusModule, UIScopeModule, VaadinSessionScopeModule, DataModule])
+@UseModules([TestI18NModule, TestOptionModule, TestPersistenceModule, EventBusModule, UIScopeModule, VaadinSessionScopeModule, DataModule, KrailI18NConfigModule])
 class DefaultTranslateTest extends Specification {
 
     @Inject

@@ -12,6 +12,7 @@
  */
 package uk.q3c.krail.core.guice;
 
+import com.google.common.collect.ImmutableList;
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -33,6 +34,7 @@ import uk.q3c.krail.core.eventbus.EventBusModule;
 import uk.q3c.krail.core.guice.threadscope.ThreadScopeModule;
 import uk.q3c.krail.core.guice.uiscope.UIScopeModule;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
+import uk.q3c.krail.core.i18n.KrailI18NConfigModule;
 import uk.q3c.krail.core.navigate.NavigationModule;
 import uk.q3c.krail.core.navigate.sitemap.MasterSitemap;
 import uk.q3c.krail.core.navigate.sitemap.SitemapModule;
@@ -127,7 +129,7 @@ public abstract class DefaultBindingManager extends GuiceServletContextListener 
         List<Module> coreModules = new ArrayList<>(30);
 
         coreModules.add(uiModule());
-        coreModules.add(i18NModule());
+        coreModules.addAll(i18NModules());
         coreModules.add(applicationConfigurationModule());
         coreModules.add(new SitemapModule());
 
@@ -258,12 +260,12 @@ public abstract class DefaultBindingManager extends GuiceServletContextListener 
     }
 
     /**
-     * Override this if you have provided your own {@link I18NModule}
+     * Override this if you have provided your own {@link I18NModule}s
      *
      * @return a Module fr I18N
      */
-    protected Module i18NModule() {
-        return new VaadinI18NModule();
+    protected List<Module> i18NModules() {
+        return ImmutableList.of(new KrailI18NConfigModule(), new VaadinI18NModule());
     }
 
     /**

@@ -29,6 +29,7 @@ import uk.q3c.krail.core.eventbus.EventBusModule;
 import uk.q3c.krail.core.guice.uiscope.UIScopeModule;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
 import uk.q3c.krail.core.i18n.DescriptionKey;
+import uk.q3c.krail.core.i18n.KrailI18NConfigModule;
 import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.navigate.NavigationModule;
 import uk.q3c.krail.core.navigate.sitemap.DefaultSitemapServiceTest.TestDirectSitemapModule;
@@ -69,7 +70,7 @@ import static org.mockito.Mockito.*;
 @GuiceContext({TestDirectSitemapModule.class, UIScopeModule.class, ViewModule.class, EventBusModule.class, ServicesModule.class,
         ShiroVaadinModule.class, TestI18NModule.class, SitemapModule.class, UserModule.class, ApplicationConfigurationModule.class, DefaultShiroModule.class,
         DefaultComponentModule.class, TestPersistenceModule.class, StandardPagesModule.class, VaadinSessionScopeModule.class,
-        NavigationModule.class, UtilsModule.class, DefaultUIModule.class, TestOptionModule.class})
+        NavigationModule.class, UtilsModule.class, DefaultUIModule.class, TestOptionModule.class, KrailI18NConfigModule.class})
 public class DefaultSitemapServiceTest {
 
     static VaadinService vaadinService;

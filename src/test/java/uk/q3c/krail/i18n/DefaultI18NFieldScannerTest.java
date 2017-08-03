@@ -42,7 +42,7 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.*;
 
 @RunWith(MycilaJunitRunner.class)
-@GuiceContext({TestI18NModule.class, EventBusModule.class, UIScopeModule.class, TestOptionModule.class, TestPersistenceModule.class,
+@GuiceContext({TestI18NModule.class, KrailI18NConfigModule.class, EventBusModule.class, UIScopeModule.class, TestOptionModule.class, TestPersistenceModule.class,
         VaadinSessionScopeModule.class,
         TestByteEnhancementModule.class})
 public class DefaultI18NFieldScannerTest {

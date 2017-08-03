@@ -161,7 +161,7 @@ public class DefaultPatternCacheLoader extends CacheLoader<PatternCacheKey, Stri
      */
     @Nonnull
     @Override
-    public Option getOption() {
+    public Option optionInstance() {
         return option;
     }
 

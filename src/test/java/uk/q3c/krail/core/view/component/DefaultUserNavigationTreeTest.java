@@ -26,6 +26,7 @@ import org.mockito.Mock;
 import uk.q3c.krail.core.eventbus.EventBusAutoSubscriber;
 import uk.q3c.krail.core.eventbus.EventBusModule;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
+import uk.q3c.krail.core.i18n.KrailI18NConfigModule;
 import uk.q3c.krail.core.navigate.Navigator;
 import uk.q3c.krail.core.navigate.StrictURIFragmentHandler;
 import uk.q3c.krail.core.navigate.URIFragmentHandler;
@@ -50,7 +51,7 @@ import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @RunWith(MycilaJunitRunner.class)
-@GuiceContext({TestUIScopeModule.class, TestI18NModule.class, TestOptionModule.class, TestPersistenceModule.class, VaadinSessionScopeModule.class,
+@GuiceContext({TestUIScopeModule.class, TestI18NModule.class, KrailI18NConfigModule.class, TestOptionModule.class, TestPersistenceModule.class, VaadinSessionScopeModule.class,
         EventBusModule.class})
 public class DefaultUserNavigationTreeTest {
 
@@ -212,7 +213,7 @@ public class DefaultUserNavigationTreeTest {
         // then
         assertThat(userNavigationTree.getOptionMaxDepth()).isEqualTo(3);
         // option has been set
-        int result = userNavigationTree.getOption()
+        int result = userNavigationTree.optionInstance()
                                        .get(DefaultUserNavigationTree.optionKeyMaximumDepth);
         assertThat(result).isEqualTo(3);
     }
@@ -228,7 +229,7 @@ public class DefaultUserNavigationTreeTest {
         // then
         assertThat(userNavigationTree.getOptionMaxDepth()).isEqualTo(2);
         // option has been set
-        int result = userNavigationTree.getOption()
+        int result = userNavigationTree.optionInstance()
                                        .get(DefaultUserNavigationTree.optionKeyMaximumDepth);
         assertThat(result).isEqualTo(2);
     }
@@ -406,9 +407,9 @@ public class DefaultUserNavigationTreeTest {
         userNavigationTree.setOptionSortAscending(true);
         userNavigationTree.setOptionKeySortType(SortType.INSERTION);
         // then
-        assertThat(userNavigationTree.getOption()
+        assertThat(userNavigationTree.optionInstance()
                                      .get(DefaultUserNavigationTree.optionKeySortAscending)).isTrue();
-        assertThat(userNavigationTree.getOption()
+        assertThat(userNavigationTree.optionInstance()
                                      .get(DefaultUserNavigationTree.optionKeySortType)).isEqualTo(SortType.INSERTION);
 
     }

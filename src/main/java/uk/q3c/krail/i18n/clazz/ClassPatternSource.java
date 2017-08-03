@@ -11,14 +11,24 @@
  *
  */
 
-package uk.q3c.krail.i18n;
+package uk.q3c.krail.i18n.clazz;
+
+import com.google.inject.BindingAnnotation;
+import uk.q3c.krail.i18n.api.PatternDao;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.Target;
+
+import static java.lang.annotation.ElementType.*;
+import static java.lang.annotation.RetentionPolicy.*;
 
 /**
- * Any class which contains I18N annotations may also have been subject to byte enhancement.  If it has, the original, un-enhanced class is needed in order to
- * access the field / class annotations.  Implementations of this interface must identify the original class, from an enhanced object.
+ * Identifies a {@link PatternDao} which handles I18N patterns located in Java classes
  * <p>
- * Created by David Sowerby on 10/05/15.
+ * Created by David Sowerby on 26/07/15.
  */
-public interface I18NHostClassIdentifier {
-    Class<?> getOriginalClassFor(Object target);
+@BindingAnnotation
+@Target({FIELD, PARAMETER, METHOD})
+@Retention(RUNTIME)
+public @interface ClassPatternSource {
 }

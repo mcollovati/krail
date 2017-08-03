@@ -15,8 +15,6 @@ package uk.q3c.krail.core.option;
 
 import com.vaadin.data.Property;
 
-import javax.annotation.Nonnull;
-
 /**
  * Any context using {@link Option} is required to implement this interface, it is used to identify the class which is
  * using an option, and forms part of a key to define that option
@@ -30,8 +28,7 @@ public interface OptionContext {
      *
      * @return the {@link Option} instance being used by this context
      */
-    @Nonnull
-    Option getOption();
+    Option optionInstance();
 
     /**
      * Called when an option value is changed in response to a property change - usually a Field which has been modified by the user

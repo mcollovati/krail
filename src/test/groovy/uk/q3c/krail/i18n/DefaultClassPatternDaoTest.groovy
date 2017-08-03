@@ -20,11 +20,10 @@ import spock.lang.Specification
 import uk.q3c.krail.core.i18n.LabelKey
 import uk.q3c.krail.core.i18n.MessageKey
 import uk.q3c.krail.core.option.Option
-import uk.q3c.krail.core.option.OptionKey
+import uk.q3c.krail.i18n.api.ClassPatternDaoConfig
 import uk.q3c.krail.i18n.api.PatternCacheKey
 import uk.q3c.krail.i18n.api.PatternWriteException
 import uk.q3c.krail.i18n.clazz.ClassBundleControl
-
 /**
  * Unit test for {@link DefaultClassPatternDao}
  *
@@ -43,16 +42,18 @@ class DefaultClassPatternDaoTest extends Specification {
     Option option = Mock()
     @SuppressWarnings("GroovyAssignabilityCheck")
     PatternCacheKey patternCacheKey = Mock()
+    ClassPatternDaoConfig config = new DefaultClassPatternDaoConfig("", true)
 
 
     def setup() {
-        dao = new DefaultClassPatternDao(new ClassBundleControl(), option)
+        dao = new DefaultClassPatternDao(new ClassBundleControl(), config)
     }
 
 
     def "count is not supported"() {
         when:
         dao.count()
+
         then:
         thrown UnsupportedOperationException
     }
@@ -119,32 +120,28 @@ class DefaultClassPatternDaoTest extends Specification {
     }
 
 
-    def "expandFromKey() returns key path when optionKeyUseKeyPath is true"() {
+    def "expandFromKey() returns key path when useKeyPath is true"() {
         given:
-        OptionKey optionKey = DefaultClassPatternDao.optionKeyUseKeyPath.qualifiedWith(dao.getSourceString())
-        option.get(optionKey) >> true
+        config.useKeyPath = true
 
         expect:
         dao.expandFromKey(LabelKey.Yes).equals("uk.q3c.krail.core.i18n.Labels")
     }
 
 
-    def "expandFromKey() returns path same as the key when optionKeyUseKeyPath is false and optionPathToValues is not set"() {
-        OptionKey optionKey = DefaultClassPatternDao.optionKeyUseKeyPath.qualifiedWith(dao.getSourceString())
-        OptionKey optionKey1 = DefaultClassPatternDao.optionPathToValues.qualifiedWith(dao.getSourceString())
-        option.get(optionKey) >> false
-        option.get(optionKey1) >> ""
-
+    def "expandFromKey() returns path same as the key when useKeyPath is false and pathToValues is not set"() {
+        given:
+        config.useKeyPath = false
+        config.pathToValues = ""
 
         expect:
         dao.expandFromKey(LabelKey.Yes).equals("uk.q3c.krail.core.i18n.Labels")
     }
 
-    def "expandFromKey() returns path same as the key when optionKeyUseKeyPath is false and optionPathToValues is set to '.'"() {
-        OptionKey optionKey = DefaultClassPatternDao.optionKeyUseKeyPath.qualifiedWith(dao.getSourceString())
-        OptionKey optionKey1 = DefaultClassPatternDao.optionPathToValues.qualifiedWith(dao.getSourceString())
-        option.get(optionKey) >> false
-        option.get(optionKey1) >> "."
+    def "expandFromKey() returns path same as the key when useKeyPath is false and pathToValues is set to '.'"() {
+        given:
+        config.useKeyPath = false
+        config.pathToValues = "."
 
 
         expect:
@@ -153,10 +150,8 @@ class DefaultClassPatternDaoTest extends Specification {
 
     def "expandFromKey() returns optionPathToValues when optionKeyUseKeyPath is false and not empty or '.'"() {
         given:
-        OptionKey optionKey = DefaultClassPatternDao.optionKeyUseKeyPath.qualifiedWith(dao.getSourceString())
-        OptionKey optionKey1 = DefaultClassPatternDao.optionPathToValues.qualifiedWith(dao.getSourceString())
-        option.get(optionKey) >> false
-        option.get(optionKey1) >> "com.example.i18n"
+        config.useKeyPath = false
+        config.pathToValues = "com.example.i18n"
 
 
         expect:
@@ -168,8 +163,7 @@ class DefaultClassPatternDaoTest extends Specification {
         given:
         patternCacheKey.key >> LabelKey.Yes
         patternCacheKey.getKeyAsEnum() >> (Enum) patternCacheKey.key
-        OptionKey optionKey = DefaultClassPatternDao.optionKeyUseKeyPath.qualifiedWith(dao.getSourceString())
-        option.get(optionKey) >> true
+        config.useKeyPath = true
 
         expect:
         dao.getValue(patternCacheKey).equals(Optional.empty())
@@ -181,8 +175,7 @@ class DefaultClassPatternDaoTest extends Specification {
         patternCacheKey.key >> MessageKey.Invalid_URI
         patternCacheKey.getKeyAsEnum() >> (Enum) patternCacheKey.key
         patternCacheKey.getActualLocale() >> Locale.forLanguageTag("")
-        OptionKey optionKey = DefaultClassPatternDao.optionKeyUseKeyPath.qualifiedWith(dao.getSourceString())
-        option.get(optionKey) >> true
+        config.useKeyPath = true
 
         expect:
         dao.getValue(patternCacheKey).equals(Optional.of("{0} is not a valid page"))
@@ -193,22 +186,12 @@ class DefaultClassPatternDaoTest extends Specification {
         patternCacheKey.key >> MessageKey.Invalid_URI
         patternCacheKey.getKeyAsEnum() >> (Enum) patternCacheKey.key
         patternCacheKey.getActualLocale() >> Locale.forLanguageTag("de")
-        OptionKey optionKey = DefaultClassPatternDao.optionKeyUseKeyPath.qualifiedWith(dao.getSourceString())
-        option.get(optionKey) >> true
+        config.useKeyPath = true
 
         expect:
         dao.getValue(patternCacheKey).equals(Optional.of("{0} ist keine gültige Seite"))
     }
 
-    def "optionValueChanged not used but called to complete coverage"() {
-        expect:
-        dao.optionValueChanged(null)
-    }
-
-    def "getOption()"() {
-        expect:
-        dao.getOption() == option
-    }
 
     def "set and get write file"() {
         given:

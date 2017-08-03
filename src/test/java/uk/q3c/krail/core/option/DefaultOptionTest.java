@@ -224,21 +224,7 @@ public class DefaultOptionTest {
         //then
     }
 
-    static class MockContext implements OptionContext {
 
-        @Nonnull
-        @Override
-        public Option getOption() {
-            return null;
-        }
-
-        @Override
-        public void optionValueChanged(Property.ValueChangeEvent event) {
-
-        }
-
-
-    }
 
     static class MockContext2 implements OptionContext {
 
@@ -249,7 +235,7 @@ public class DefaultOptionTest {
 
         @Nonnull
         @Override
-        public Option getOption() {
+        public Option optionInstance() {
             return null;
         }
 

@@ -143,7 +143,7 @@ public class DefaultSubPagePanel extends NavigationButtonPanel implements Option
 
     @Nonnull
     @Override
-    public Option getOption() {
+    public Option optionInstance() {
         return option;
     }
 

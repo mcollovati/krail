@@ -43,7 +43,7 @@ public class DefaultI18NFieldScanner implements I18NFieldScanner {
     private List<Object> processedDrillDowns;
 
     @Inject
-    protected DefaultI18NFieldScanner(UnenhancedClassIdentifier i18NHostClassIdentifier) {
+    public DefaultI18NFieldScanner(UnenhancedClassIdentifier i18NHostClassIdentifier) {
         this.i18NHostClassIdentifier = i18NHostClassIdentifier;
         components = new HashMap<>();
         drillDowns = new LinkedList<>();

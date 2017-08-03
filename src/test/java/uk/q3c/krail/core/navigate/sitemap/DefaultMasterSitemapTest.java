@@ -24,6 +24,7 @@ import org.mockito.Mock;
 import uk.q3c.krail.core.eventbus.EventBusModule;
 import uk.q3c.krail.core.guice.uiscope.UIScopeModule;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
+import uk.q3c.krail.core.i18n.KrailI18NConfigModule;
 import uk.q3c.krail.core.navigate.NavigationState;
 import uk.q3c.krail.core.navigate.StrictURIFragmentHandler;
 import uk.q3c.krail.core.navigate.URIFragmentHandler;
@@ -47,7 +48,7 @@ import static uk.q3c.krail.core.navigate.sitemap.StandardPageKey.*;
 import static uk.q3c.krail.core.shiro.PageAccessControl.*;
 
 @RunWith(MycilaJunitRunner.class)
-@GuiceContext({TestI18NModule.class, VaadinSessionScopeModule.class, EventBusModule.class, TestPersistenceModule.class, UIScopeModule.class, })
+@GuiceContext({TestI18NModule.class, VaadinSessionScopeModule.class, EventBusModule.class, TestPersistenceModule.class, UIScopeModule.class, KrailI18NConfigModule.class,})
 public class DefaultMasterSitemapTest {
 
     @Mock

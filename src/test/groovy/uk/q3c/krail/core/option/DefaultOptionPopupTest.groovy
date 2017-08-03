@@ -13,7 +13,6 @@
 
 package uk.q3c.krail.core.option
 
-import com.vaadin.data.Property
 import com.vaadin.ui.*
 import spock.lang.Specification
 import uk.q3c.krail.core.i18n.LabelKey
@@ -21,10 +20,6 @@ import uk.q3c.krail.core.ui.DataTypeToUI
 import uk.q3c.krail.core.ui.DefaultDataTypeToUI
 import uk.q3c.krail.i18n.TestLabelKey
 import uk.q3c.krail.i18n.api.Translate
-import uk.q3c.krail.testutil.option.MockOption
-
-import javax.annotation.Nonnull
-
 /**
  * Created by David Sowerby on 07 Feb 2016
  */
@@ -37,7 +32,7 @@ class DefaultOptionPopupTest extends Specification {
     UI ui = Mock()
 
     Translate translate = Mock()
-    OptionContext context0
+    MockContext context0
 
     def setup() {
         translate.from(LabelKey.Authorisation) >> "Authorisation"
@@ -50,6 +45,8 @@ class DefaultOptionPopupTest extends Specification {
         context0 = new MockContext0()
         context1 = new MockContext()
         context2 = new MockContext2()
+        // set to null first because Vaadin sometimes complains about a non-inheritable UI otherwise (usually only when run from Gradle)
+        UI.setCurrent(null)
         UI.setCurrent(ui)
 
     }
@@ -123,7 +120,7 @@ class DefaultOptionPopupTest extends Specification {
         then:
         AbstractField field = getField(popup, 0)
         field.setValue("333")
-        context2.getOption().get(MockContext2.key4).equals('333') //MockOption does not convert data type correctly
+        context2.optionInstance().get(MockContext2.key4).equals('333') //MockOption does not convert data type correctly
     }
 
     def "reset to default button resets the option value"() {
@@ -134,7 +131,7 @@ class DefaultOptionPopupTest extends Specification {
         AbstractField field = getField(popup, 0)
         field.setValue("333")
         getResetButton(popup, 0).click()
-        context2.getOption().get(MockContext2.key4).equals('126') //MockOption does not convert data type correctly
+        context2.optionInstance().get(MockContext2.key4).equals('126') //MockOption does not convert data type correctly
     }
 
     def "reset to default button resets the option value, using a converted value"() {
@@ -145,7 +142,7 @@ class DefaultOptionPopupTest extends Specification {
         AbstractField field = getField(popup, 3)
         field.setValue(true)
         getResetButton(popup, 3).click()
-        context2.getOption().get(MockContext2.key3).equals(false) //MockOption does not convert data type correctly
+        context2.optionInstance().get(MockContext2.key3).equals(false) //MockOption does not convert data type correctly
     }
 
     def "loading second time closed first window"() {
@@ -180,57 +177,8 @@ class DefaultOptionPopupTest extends Specification {
         return (Button) formLayout.getComponent(0)
     }
 
-    static class MockContext implements OptionContext {
-
-        Option option = new MockOption()
-
-        @Nonnull
-        @Override
-        Option getOption() {
-            return option
-        }
-
-        @Override
-        void optionValueChanged(Property.ValueChangeEvent event) {
-
-        }
-    }
-
-    static class MockContext2 implements OptionContext {
-        Option option = new MockOption()
-
-        public static
-        final OptionKey<Boolean> key3 = new OptionKey<>(false, MockContext2.class, TestLabelKey.Static, TestLabelKey.Large)
-        private static
-        final OptionKey<Integer> key4 = new OptionKey<>(126, MockContext2.class, TestLabelKey.Private_Static, TestLabelKey.Large)
-        public final OptionKey<Integer> key2 = new OptionKey<>(124, this, TestLabelKey.key2, TestLabelKey.Blank)
-        private final OptionKey<Integer> key1 = new OptionKey<Integer>(123, this, TestLabelKey.key1)
-
-        @Nonnull
-        @Override
-        Option getOption() {
-            return option
-        }
-
-        @Override
-        void optionValueChanged(Property.ValueChangeEvent event) {
-
-        }
-    }
-
-    static class MockContext0 implements OptionContext {
-        Option option = new MockOption()
 
 
-        @Nonnull
-        @Override
-        Option getOption() {
-            return option
-        }
 
-        @Override
-        void optionValueChanged(Property.ValueChangeEvent event) {
 
-        }
-    }
 }

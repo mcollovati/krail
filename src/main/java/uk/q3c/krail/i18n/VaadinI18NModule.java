@@ -27,7 +27,7 @@ import uk.q3c.krail.core.persist.cache.i18n.PatternCacheLoader;
 import uk.q3c.krail.core.persist.common.common.KrailPersistenceUnitHelper;
 import uk.q3c.krail.i18n.api.*;
 import uk.q3c.krail.i18n.api.clazz.ClassPatternDao;
-import uk.q3c.krail.i18n.api.clazz.ClassPatternSource;
+import uk.q3c.krail.i18n.clazz.ClassPatternSource;
 import uk.q3c.util.clazz.DefaultUnenhancedClassIdentifier;
 import uk.q3c.util.clazz.UnenhancedClassIdentifier;
 

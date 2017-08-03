@@ -26,6 +26,7 @@ import uk.q3c.krail.core.eventbus.EventBusModule;
 import uk.q3c.krail.core.eventbus.SessionBusProvider;
 import uk.q3c.krail.core.guice.uiscope.UIScopeModule;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
+import uk.q3c.krail.core.i18n.KrailI18NConfigModule;
 import uk.q3c.krail.core.navigate.Navigator;
 import uk.q3c.krail.core.navigate.sitemap.StandardPageKey;
 import uk.q3c.krail.core.shiro.DefaultSubjectIdentifier;
@@ -45,7 +46,7 @@ import java.util.Locale;
 import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.*;
 @RunWith(MycilaJunitRunner.class)
-@GuiceContext({UIScopeModule.class, TestI18NModule.class, TestOptionModule.class, TestPersistenceModule.class, VaadinSessionScopeModule.class, EventBusModule
+@GuiceContext({UIScopeModule.class, TestI18NModule.class, KrailI18NConfigModule.class, TestOptionModule.class, TestPersistenceModule.class, VaadinSessionScopeModule.class, EventBusModule
         .class})
 public class DefaultUserStatusPanelTest {
 

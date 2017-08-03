@@ -207,7 +207,7 @@ public class VaadinCurrentLocale implements CurrentLocale, OptionContext {
 
     @Nonnull
     @Override
-    public Option getOption() {
+    public Option optionInstance() {
         return option;
     }
 
