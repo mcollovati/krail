@@ -17,6 +17,7 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.VerticalLayout;
+import uk.q3c.krail.core.i18n.Caption;
 import uk.q3c.krail.core.i18n.DescriptionKey;
 import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.i18n.api.I18N;

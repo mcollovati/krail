@@ -11,18 +11,18 @@
  *
  */
 
-package uk.q3c.krail.i18n;
+package uk.q3c.util.clazz;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * This implementation of {@link I18NHostClassIdentifier} identifies classes enhanced by Guice AOP and returns the origin, un-enhanced class.
+ * This implementation of {@link UnenhancedClassIdentifier} identifies classes enhanced by Guice AOP and returns the origin, un-enhanced class.
  * <p>
  * Created by David Sowerby on 10/05/15.
  */
-public class DefaultI18NHostClassIdentifier implements I18NHostClassIdentifier {
-    private static Logger log = LoggerFactory.getLogger(DefaultI18NHostClassIdentifier.class);
+public class DefaultUnenhancedClassIdentifier implements UnenhancedClassIdentifier {
+    private static Logger log = LoggerFactory.getLogger(DefaultUnenhancedClassIdentifier.class);
 
     @Override
     public Class<?> getOriginalClassFor(Object target) {

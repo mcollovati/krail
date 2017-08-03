@@ -11,7 +11,7 @@
  *
  */
 
-package uk.q3c.krail.i18n;
+package uk.q3c.krail.core.i18n;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;

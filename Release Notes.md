@@ -6,12 +6,18 @@ There will, regrettably be quite a few changes in Krail apps, but with one or tw
 
 #### I18N
 
-- generic I18N capability moved from `uk.q3c.krail.core.i18n` to `uk.q3c.krail.i18n.api` and `uk.q3c.krail.i18n` as appropriate, in project **krail-i18n** 
+- generic I18N capability moved from `uk.q3c.krail.core.i18n` to `uk.q3c.krail.i18n.api` and `uk.q3c.krail.i18n` as appropriate, in project **krail-i18n**, Krail specific (mostly Vaadin related) i18n remains in `uk.q3c.krail.core`  
 - `DefaultCurrentLocale` in **krail** is now `VaadinCurrentLocale` as it assumes the use of Vaadin.  A generic `DefaultCurrentLocale` added to **krail-i18n**
 -`uk.q3c.krail.i18n.api.EnumResourceBundle` moved to **krail-i18n**
 - `uk.q3c.util.MessageFormat` moved to `uk.q3c.krail.i18n.MessageFormat`
 - `I18NModule` split, new `I18NModule` in **krail-i18n**, `VaadinI18NModule` in core
 - contents of `uk.q3c.krail.core.persist.clazz.i18n` moved to `uk.q3c.krail.i18n.clazz` or `uk.q3c.krail.i18n.api.clazz`
 - contents of `uk.q3c.krail.core.persist.common.i18n` moved to `uk.q3c.krail.i18n` or `uk.q3c.krail.i18n.api`
+- `uk.q3c.util.guava.GuavaCacheConfiguration` moved to `uk.q3c.util.guava`
+- `uk.q3c.krail.i18n.I18NHostClassIdentifier` is now `uk.q3c.util.clazz.UnenhancedClassIdentifier`
 
+#### Option
 
+Moved:
+
+- uk.q3c.krail.option.api

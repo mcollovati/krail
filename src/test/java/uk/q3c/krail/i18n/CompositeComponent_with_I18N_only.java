@@ -14,6 +14,7 @@ package uk.q3c.krail.i18n;
 
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Panel;
+import uk.q3c.krail.core.i18n.Description;
 import uk.q3c.krail.core.i18n.DescriptionKey;
 import uk.q3c.krail.i18n.api.I18N;
 

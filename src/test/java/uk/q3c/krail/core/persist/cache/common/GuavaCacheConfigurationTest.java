@@ -24,10 +24,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import uk.q3c.krail.core.persist.cache.option.DefaultOptionCacheLoader;
+import uk.q3c.util.guava.GuavaCacheConfiguration;
 
 import java.util.concurrent.TimeUnit;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({})

@@ -24,7 +24,7 @@ import org.junit.runner.RunWith;
 import uk.q3c.krail.core.eventbus.EventBusModule;
 import uk.q3c.krail.core.guice.uiscope.UIScopeModule;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
-import uk.q3c.krail.core.i18n.DescriptionKey;
+import uk.q3c.krail.core.i18n.*;
 import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.i18n.api.CurrentLocale;
 import uk.q3c.krail.testutil.i18n.TestI18NModule;
@@ -32,6 +32,7 @@ import uk.q3c.krail.testutil.option.MockOption;
 import uk.q3c.krail.testutil.option.TestOptionModule;
 import uk.q3c.krail.testutil.persist.TestPersistenceModule;
 import uk.q3c.util.TestByteEnhancementModule;
+import uk.q3c.util.clazz.UnenhancedClassIdentifier;
 
 import java.lang.annotation.Annotation;
 import java.util.ArrayList;
@@ -64,7 +65,7 @@ public class DefaultI18NFieldScannerTest {
     DefaultI18NFieldScanner scanner;
 
     @Inject
-    I18NHostClassIdentifier i18NHostClassIdentifier;
+    UnenhancedClassIdentifier i18NHostClassIdentifier;
 
     @Before
     public void setup() {

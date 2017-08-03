@@ -10,17 +10,17 @@
  *  * specific language governing permissions and limitations under the License.
  *
  */
-package uk.q3c.krail.i18n;
 
-import com.vaadin.ui.Button;
-import uk.q3c.krail.core.i18n.Caption;
-import uk.q3c.krail.core.i18n.DescriptionKey;
-import uk.q3c.krail.core.i18n.LabelKey;
+package uk.q3c.util.clazz;
 
-public class I18NTestClass2 {
-
-    // keep field as null make sure nothing breaks;
-    @Caption(caption = LabelKey.Cancel, description = DescriptionKey.Field)
-    private Button unconstructed;
-
+/**
+ * Returns the un-enhanced original class from a byte enhanced instance.  Often needed when the instance is subject to reflection to identify field / class annotations.
+ * <p>
+ * If {@code target} is not enhanced, returns target.getClass()
+ * <p>
+ * <p>
+ * Created by David Sowerby on 10/05/15.
+ */
+public interface UnenhancedClassIdentifier {
+    Class<?> getOriginalClassFor(Object target);
 }

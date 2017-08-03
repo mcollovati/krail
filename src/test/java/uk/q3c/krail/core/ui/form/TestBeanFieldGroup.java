@@ -16,11 +16,11 @@ import com.google.inject.Provider;
 import com.vaadin.data.Property;
 import com.vaadin.ui.TextField;
 import uk.q3c.krail.core.data.TestEntity;
+import uk.q3c.krail.core.i18n.Caption;
 import uk.q3c.krail.core.i18n.DescriptionKey;
 import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.option.Option;
 import uk.q3c.krail.core.validation.BeanValidator;
-import uk.q3c.krail.i18n.Caption;
 import uk.q3c.krail.i18n.I18NProcessor;
 
 public class TestBeanFieldGroup extends BeanFieldGroupBase<TestEntity> {

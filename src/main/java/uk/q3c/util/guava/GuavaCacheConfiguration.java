@@ -11,7 +11,7 @@
  *
  */
 
-package uk.q3c.krail.core.persist.cache.common;
+package uk.q3c.util.guava;
 
 import com.google.common.base.Ticker;
 import com.google.common.cache.CacheBuilder;

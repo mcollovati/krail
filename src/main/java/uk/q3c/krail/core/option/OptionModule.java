@@ -18,10 +18,10 @@ import com.google.inject.Binder;
 import uk.q3c.krail.core.data.DefaultOptionElementConverter;
 import uk.q3c.krail.core.data.OptionElementConverter;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScoped;
-import uk.q3c.krail.core.persist.cache.common.GuavaCacheConfiguration;
 import uk.q3c.krail.core.persist.cache.option.*;
 import uk.q3c.krail.core.persist.common.common.KrailPersistenceUnitHelper;
 import uk.q3c.krail.core.persist.common.option.*;
+import uk.q3c.util.guava.GuavaCacheConfiguration;
 
 import java.lang.annotation.Annotation;
 

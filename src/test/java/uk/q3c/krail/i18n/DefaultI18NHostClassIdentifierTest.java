@@ -20,6 +20,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import uk.q3c.util.TestByteEnhancementModule;
+import uk.q3c.util.clazz.DefaultUnenhancedClassIdentifier;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -27,7 +28,7 @@ import static org.assertj.core.api.Assertions.*;
 @GuiceContext({TestByteEnhancementModule.class})
 public class DefaultI18NHostClassIdentifierTest {
 
-    DefaultI18NHostClassIdentifier identifier;
+    DefaultUnenhancedClassIdentifier identifier;
 
 
     @Inject
@@ -38,7 +39,7 @@ public class DefaultI18NHostClassIdentifierTest {
 
     @Before
     public void setup() {
-        identifier = new DefaultI18NHostClassIdentifier();
+        identifier = new DefaultUnenhancedClassIdentifier();
     }
 
     @Test
