@@ -20,12 +20,15 @@ import spock.lang.Specification
 import uk.q3c.krail.core.i18n.LabelKey
 import uk.q3c.krail.core.i18n.MessageKey
 import uk.q3c.krail.core.option.Option
-import uk.q3c.krail.i18n.api.ClassPatternDaoConfig
 import uk.q3c.krail.i18n.api.PatternCacheKey
 import uk.q3c.krail.i18n.api.PatternWriteException
+import uk.q3c.krail.i18n.api.clazz.ClassPatternDaoConfig
 import uk.q3c.krail.i18n.clazz.ClassBundleControl
+import uk.q3c.krail.i18n.clazz.DefaultClassPatternDao
+import uk.q3c.krail.i18n.clazz.DefaultClassPatternDaoConfig
+
 /**
- * Unit test for {@link DefaultClassPatternDao}
+ * Unit test for {@link uk.q3c.krail.i18n.clazz.DefaultClassPatternDao}
  *
  * Created by David Sowerby on 27/07/15.
  */

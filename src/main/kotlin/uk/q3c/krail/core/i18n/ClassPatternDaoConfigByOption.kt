@@ -5,8 +5,8 @@ import com.vaadin.data.Property
 import uk.q3c.krail.core.option.Option
 import uk.q3c.krail.core.option.OptionKey
 import uk.q3c.krail.core.option.VaadinOptionContext
-import uk.q3c.krail.i18n.api.ClassPatternDaoConfig
 import uk.q3c.krail.i18n.api.clazz.ClassPatternDao
+import uk.q3c.krail.i18n.api.clazz.ClassPatternDaoConfig
 import uk.q3c.krail.i18n.clazz.ClassPatternSource
 
 /**
