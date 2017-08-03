@@ -19,9 +19,9 @@ import spock.lang.Specification
 import uk.q3c.krail.core.i18n.LabelKey
 import uk.q3c.krail.core.option.AnnotationOptionList
 import uk.q3c.krail.core.option.Option
-import uk.q3c.krail.core.persist.clazz.i18n.ClassPatternSource
 import uk.q3c.krail.i18n.api.I18NKey
 import uk.q3c.krail.i18n.api.PatternDao
+import uk.q3c.krail.i18n.api.clazz.ClassPatternSource
 import uk.q3c.krail.i18n.i18nModule.TestPatternSource
 import uk.q3c.krail.i18n.i18nModule.TestPatternSource1
 

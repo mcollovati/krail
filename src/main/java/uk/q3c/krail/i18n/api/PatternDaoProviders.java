@@ -11,19 +11,24 @@
  *
  */
 
-package uk.q3c.krail.core.persist.common.i18n;
+package uk.q3c.krail.i18n.api;
 
+import com.google.inject.BindingAnnotation;
 
-public class PatternWriteException extends RuntimeException {
+import java.lang.annotation.Retention;
+import java.lang.annotation.Target;
 
-    public PatternWriteException(String msg) {
-        super(msg);
-    }
+import static java.lang.annotation.ElementType.*;
+import static java.lang.annotation.RetentionPolicy.*;
 
-    /**
-     * {@inheritDoc}
-     */
-    public PatternWriteException(String message, Throwable cause) {
-        super(message, cause);
-    }
+/**
+ * Binding annotation to a set of annotations which identify all the active Provider<PatternDao>s available
+ * <p>
+ * <p>
+ * Created by David Sowerby on 06/02/15.
+ */
+@BindingAnnotation
+@Target({FIELD, PARAMETER, METHOD})
+@Retention(RUNTIME)
+public @interface PatternDaoProviders {
 }

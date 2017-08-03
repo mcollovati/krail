@@ -11,24 +11,19 @@
  *
  */
 
-package uk.q3c.krail.core.persist.clazz.i18n;
+package uk.q3c.krail.i18n.api;
 
-import com.google.inject.BindingAnnotation;
-import uk.q3c.krail.i18n.api.PatternDao;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.Target;
+public class PatternWriteException extends RuntimeException {
 
-import static java.lang.annotation.ElementType.*;
-import static java.lang.annotation.RetentionPolicy.*;
+    public PatternWriteException(String msg) {
+        super(msg);
+    }
 
-/**
- * Identifies a {@link PatternDao} which handles I18N patterns located in Java classes
- * <p>
- * Created by David Sowerby on 26/07/15.
- */
-@BindingAnnotation
-@Target({FIELD, PARAMETER, METHOD})
-@Retention(RUNTIME)
-public @interface ClassPatternSource {
+    /**
+     * {@inheritDoc}
+     */
+    public PatternWriteException(String message, Throwable cause) {
+        super(message, cause);
+    }
 }

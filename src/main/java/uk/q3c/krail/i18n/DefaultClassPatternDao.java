@@ -24,14 +24,10 @@ import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.option.Option;
 import uk.q3c.krail.core.option.OptionContext;
 import uk.q3c.krail.core.option.OptionKey;
-import uk.q3c.krail.core.persist.clazz.i18n.ClassBundleControl;
-import uk.q3c.krail.core.persist.clazz.i18n.ClassPatternDao;
-import uk.q3c.krail.core.persist.clazz.i18n.ClassPatternSource;
-import uk.q3c.krail.core.persist.common.i18n.PatternWriteException;
-import uk.q3c.krail.i18n.api.EnumResourceBundle;
-import uk.q3c.krail.i18n.api.I18NKey;
-import uk.q3c.krail.i18n.api.PatternCacheKey;
-import uk.q3c.krail.i18n.api.PatternDao;
+import uk.q3c.krail.i18n.api.*;
+import uk.q3c.krail.i18n.api.clazz.ClassPatternDao;
+import uk.q3c.krail.i18n.api.clazz.ClassPatternSource;
+import uk.q3c.krail.i18n.clazz.ClassBundleControl;
 
 import javax.annotation.Nonnull;
 import java.io.BufferedWriter;

@@ -11,18 +11,19 @@
  *
  */
 
-package uk.q3c.krail.core.persist.common.i18n;
+package uk.q3c.krail.i18n;
 
 import com.google.inject.BindingAnnotation;
+import uk.q3c.krail.i18n.api.PatternDao;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 import static java.lang.annotation.ElementType.*;
-import static java.lang.annotation.RetentionPolicy.RUNTIME;
+import static java.lang.annotation.RetentionPolicy.*;
 
 /**
- * Binding annotation to a set of annotations which identify all the active Provider<PatternDao>s available
+ * Binding annotation to identify the active {@link PatternDao} (where active is the one used by Krail core)
  * <p>
  * <p>
  * Created by David Sowerby on 06/02/15.
@@ -30,5 +31,5 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @BindingAnnotation
 @Target({FIELD, PARAMETER, METHOD})
 @Retention(RUNTIME)
-public @interface PatternDaoProviders {
+public @interface DefaultActivePatternDao {
 }

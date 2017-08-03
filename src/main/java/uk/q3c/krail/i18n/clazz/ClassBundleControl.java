@@ -11,7 +11,7 @@
  *
  */
 
-package uk.q3c.krail.core.persist.clazz.i18n;
+package uk.q3c.krail.i18n.clazz;
 
 import uk.q3c.krail.i18n.DefaultPatternSource;
 

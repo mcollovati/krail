@@ -11,7 +11,7 @@
  *
  */
 
-package uk.q3c.krail.core.persist.common.i18n;
+package uk.q3c.krail.i18n.api.clazz;
 
 import com.google.inject.BindingAnnotation;
 import uk.q3c.krail.i18n.api.PatternDao;
@@ -23,13 +23,12 @@ import static java.lang.annotation.ElementType.*;
 import static java.lang.annotation.RetentionPolicy.*;
 
 /**
- * Binding annotation to identify the active {@link PatternDao} (where active is the one used by Krail core)
+ * Identifies a {@link PatternDao} which handles I18N patterns located in Java classes
  * <p>
- * <p>
- * Created by David Sowerby on 06/02/15.
+ * Created by David Sowerby on 26/07/15.
  */
 @BindingAnnotation
 @Target({FIELD, PARAMETER, METHOD})
 @Retention(RUNTIME)
-public @interface DefaultActivePatternDao {
+public @interface ClassPatternSource {
 }

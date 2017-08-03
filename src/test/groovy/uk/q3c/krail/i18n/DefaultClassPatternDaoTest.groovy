@@ -21,9 +21,9 @@ import uk.q3c.krail.core.i18n.LabelKey
 import uk.q3c.krail.core.i18n.MessageKey
 import uk.q3c.krail.core.option.Option
 import uk.q3c.krail.core.option.OptionKey
-import uk.q3c.krail.core.persist.clazz.i18n.ClassBundleControl
-import uk.q3c.krail.core.persist.common.i18n.PatternWriteException
 import uk.q3c.krail.i18n.api.PatternCacheKey
+import uk.q3c.krail.i18n.api.PatternWriteException
+import uk.q3c.krail.i18n.clazz.ClassBundleControl
 
 /**
  * Unit test for {@link DefaultClassPatternDao}

@@ -23,10 +23,10 @@ import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.option.Option;
 import uk.q3c.krail.core.persist.cache.i18n.DefaultPatternCacheLoader;
 import uk.q3c.krail.core.persist.cache.i18n.PatternCacheLoader;
-import uk.q3c.krail.core.persist.clazz.i18n.ClassPatternDao;
-import uk.q3c.krail.core.persist.clazz.i18n.ClassPatternSource;
 import uk.q3c.krail.core.persist.common.common.KrailPersistenceUnitHelper;
 import uk.q3c.krail.i18n.api.*;
+import uk.q3c.krail.i18n.api.clazz.ClassPatternDao;
+import uk.q3c.krail.i18n.api.clazz.ClassPatternSource;
 
 import javax.annotation.Nonnull;
 import java.lang.annotation.Annotation;
@@ -293,7 +293,7 @@ public class VaadinI18NModule extends I18NModule {
      * Adds an I18N target, identified by {@code target} (target is roughly equivalent to 'format' in the native Java I18N support, except that it does not
      * imply any particular type of target - it is just an identifier).  Within Krail the target is expected to be the equivalent of a persistence unit
      * <p>
-     * Note that if targets are set in multiple Guice modules, they will be merged by Guice into a
+     * Note that if targets are set in multiple Guice modules, they will be merged by Guice into a single set
      *
      * @param target A BindingAnnotation identifying a Persistence Unit (or equivalent) that is providing a DAO as a source
      * @return this for fluency
