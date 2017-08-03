@@ -31,8 +31,8 @@ import uk.q3c.krail.core.navigate.sitemap.*;
 import uk.q3c.krail.core.navigate.sitemap.comparator.DefaultUserSitemapSorters.SortType;
 import uk.q3c.krail.core.navigate.sitemap.comparator.UserSitemapSorters;
 import uk.q3c.krail.core.option.Option;
-import uk.q3c.krail.core.option.OptionContext;
 import uk.q3c.krail.core.option.OptionKey;
+import uk.q3c.krail.core.option.VaadinOptionContext;
 import uk.q3c.krail.core.view.KrailView;
 import uk.q3c.util.ID;
 
@@ -55,7 +55,7 @@ import static com.google.common.base.Preconditions.*;
  */
 @Listener
 @SubscribeTo({UIBus.class, SessionBus.class})
-public class DefaultUserNavigationTree extends Tree implements OptionContext, UserNavigationTree {
+public class DefaultUserNavigationTree extends Tree implements VaadinOptionContext, UserNavigationTree {
 
     public static final OptionKey<SortType> optionKeySortType = new OptionKey<>(SortType.ALPHA, DefaultUserNavigationTree.class, LabelKey.Sort_Type,
             DescriptionKey.Sort_Type);

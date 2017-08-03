@@ -25,8 +25,8 @@ import uk.q3c.krail.core.guice.vsscope.VaadinSessionScoped;
 import uk.q3c.krail.core.i18n.DescriptionKey;
 import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.option.Option;
-import uk.q3c.krail.core.option.OptionContext;
 import uk.q3c.krail.core.option.OptionKey;
+import uk.q3c.krail.core.option.VaadinOptionContext;
 import uk.q3c.krail.core.shiro.SubjectProvider;
 import uk.q3c.krail.core.ui.BrowserProvider;
 import uk.q3c.krail.core.user.status.UserStatusBusMessage;
@@ -69,7 +69,7 @@ import java.util.Set;
  * @date 5 May 2014
  */
 
-public class VaadinCurrentLocale implements CurrentLocale, OptionContext {
+public class VaadinCurrentLocale implements CurrentLocale, VaadinOptionContext {
 
     public static final OptionKey<Locale> optionPreferredLocale = new OptionKey<>(Locale.UK, VaadinCurrentLocale.class, LabelKey.Preferred_Locale,
             DescriptionKey.Preferred_Locale);

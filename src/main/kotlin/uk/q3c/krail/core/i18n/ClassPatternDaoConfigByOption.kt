@@ -3,8 +3,8 @@ package uk.q3c.krail.core.i18n
 import com.google.inject.Inject
 import com.vaadin.data.Property
 import uk.q3c.krail.core.option.Option
-import uk.q3c.krail.core.option.OptionContext
 import uk.q3c.krail.core.option.OptionKey
+import uk.q3c.krail.core.option.VaadinOptionContext
 import uk.q3c.krail.i18n.api.ClassPatternDaoConfig
 import uk.q3c.krail.i18n.api.clazz.ClassPatternDao
 import uk.q3c.krail.i18n.clazz.ClassPatternSource
@@ -12,7 +12,7 @@ import uk.q3c.krail.i18n.clazz.ClassPatternSource
 /**
  * Created by David Sowerby on 03 Aug 2017
  */
-class ClassPatternDaoConfigByOption @Inject constructor(val option: Option) : ClassPatternDaoConfig, OptionContext {
+class ClassPatternDaoConfigByOption @Inject constructor(val option: Option) : ClassPatternDaoConfig, VaadinOptionContext {
 
     val sourceString: String = ClassPatternSource::class.java.simpleName
     override lateinit var dao: ClassPatternDao

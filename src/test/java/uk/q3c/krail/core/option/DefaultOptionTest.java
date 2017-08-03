@@ -15,7 +15,6 @@ package uk.q3c.krail.core.option;
 
 import com.mycila.testing.junit.MycilaJunitRunner;
 import com.mycila.testing.plugin.guice.GuiceContext;
-import com.vaadin.data.Property;
 import org.apache.shiro.authz.AuthorizationException;
 import org.apache.shiro.subject.Subject;
 import org.junit.Before;
@@ -225,8 +224,7 @@ public class DefaultOptionTest {
     }
 
 
-
-    static class MockContext2 implements OptionContext {
+    static class MockContext2 implements OptionContext<Object> {
 
         public static final OptionKey<Integer> key3 = new OptionKey<>(125, MockContext2.class, TestLabelKey.Static, TestLabelKey.Large);
         private static final OptionKey<Integer> key4 = new OptionKey<>(126, MockContext2.class, TestLabelKey.Private_Static, TestLabelKey.Large);
@@ -240,7 +238,7 @@ public class DefaultOptionTest {
         }
 
         @Override
-        public void optionValueChanged(Property.ValueChangeEvent event) {
+        public void optionValueChanged(Object event) {
 
         }
 

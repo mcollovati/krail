@@ -23,8 +23,8 @@ import org.slf4j.LoggerFactory;
 import uk.q3c.krail.core.i18n.DescriptionKey;
 import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.option.Option;
-import uk.q3c.krail.core.option.OptionContext;
 import uk.q3c.krail.core.option.OptionKey;
+import uk.q3c.krail.core.option.VaadinOptionContext;
 import uk.q3c.krail.i18n.api.SupportedLocales;
 import uk.q3c.krail.util.ResourceUtils;
 
@@ -33,7 +33,7 @@ import java.io.File;
 import java.util.Locale;
 import java.util.Set;
 
-public class LocaleContainer extends IndexedContainer implements OptionContext {
+public class LocaleContainer extends IndexedContainer implements VaadinOptionContext {
 
 
     public enum PropertyName {

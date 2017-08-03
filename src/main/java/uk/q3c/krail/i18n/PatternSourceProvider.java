@@ -50,7 +50,7 @@ import java.util.Optional;
  * <p>
  * Created by David Sowerby on 01/08/15.
  */
-public interface PatternSourceProvider extends OptionContext {
+public interface PatternSourceProvider extends OptionContext<Object> {
 
     OptionKey<AnnotationOptionList> optionKeySourceOrder = new OptionKey<>(new AnnotationOptionList(), PatternSourceProvider.class, LabelKey
             .Source_Order, DescriptionKey.Source_Order);

@@ -26,8 +26,8 @@ import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.navigate.sitemap.UserSitemapLabelChangeMessage;
 import uk.q3c.krail.core.navigate.sitemap.UserSitemapStructureChangeMessage;
 import uk.q3c.krail.core.option.Option;
-import uk.q3c.krail.core.option.OptionContext;
 import uk.q3c.krail.core.option.OptionKey;
+import uk.q3c.krail.core.option.VaadinOptionContext;
 import uk.q3c.util.ID;
 
 import javax.annotation.Nonnull;
@@ -35,7 +35,7 @@ import java.util.Optional;
 
 @Listener
 @SubscribeTo(SessionBus.class)
-public class DefaultUserNavigationMenu extends MenuBar implements OptionContext, UserNavigationMenu {
+public class DefaultUserNavigationMenu extends MenuBar implements VaadinOptionContext, UserNavigationMenu {
 
     protected static final OptionKey<Integer> optionKeyMaximumDepth = new OptionKey<>(10, DefaultUserNavigationMenu.class, LabelKey.Maxiumum_Depth,
             DescriptionKey.Maximum_Menu_Depth);

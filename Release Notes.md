@@ -28,6 +28,7 @@ Where such assertions as are required, they will be replaced either by using Kot
 #### Option
 
 - `OptionContext.getOption` is now `OptionContext.optionInstance()`
+- `OptionContext` is parameterised
 
 Moved:
 

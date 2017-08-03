@@ -22,7 +22,7 @@ import com.vaadin.ui.Field;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import uk.q3c.krail.core.data.KrailEntity;
 import uk.q3c.krail.core.option.Option;
-import uk.q3c.krail.core.option.OptionContext;
+import uk.q3c.krail.core.option.VaadinOptionContext;
 import uk.q3c.krail.core.validation.BeanValidator;
 import uk.q3c.krail.i18n.I18NProcessor;
 
@@ -49,7 +49,7 @@ import java.util.Map;
  * <p>
  * Created by David Sowerby on 03/02/15.
  */
-public abstract class BeanFieldGroupBase<T extends KrailEntity> extends FieldGroup implements BeanFieldGroup<T>, OptionContext {
+public abstract class BeanFieldGroupBase<T extends KrailEntity> extends FieldGroup implements BeanFieldGroup<T>, VaadinOptionContext {
 
     private final I18NProcessor i18NProcessor;
     private final Map<Field<?>, BeanValidator<T>> defaultValidators;

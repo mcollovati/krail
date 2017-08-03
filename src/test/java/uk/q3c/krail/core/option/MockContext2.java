@@ -1,6 +1,5 @@
 package uk.q3c.krail.core.option;
 
-import com.vaadin.data.Property;
 import uk.q3c.krail.i18n.TestLabelKey;
 import uk.q3c.krail.testutil.option.MockOption;
 
@@ -25,7 +24,7 @@ public class MockContext2 extends MockContext {
     }
 
     @Override
-    public void optionValueChanged(Property.ValueChangeEvent event) {
+    public void optionValueChanged(Object event) {
 
     }
 }

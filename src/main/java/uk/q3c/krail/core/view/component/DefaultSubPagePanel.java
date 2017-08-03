@@ -27,8 +27,8 @@ import uk.q3c.krail.core.navigate.sitemap.UserSitemapStructureChangeMessage;
 import uk.q3c.krail.core.navigate.sitemap.comparator.DefaultUserSitemapSorters.SortType;
 import uk.q3c.krail.core.navigate.sitemap.comparator.UserSitemapSorters;
 import uk.q3c.krail.core.option.Option;
-import uk.q3c.krail.core.option.OptionContext;
 import uk.q3c.krail.core.option.OptionKey;
+import uk.q3c.krail.core.option.VaadinOptionContext;
 import uk.q3c.krail.i18n.api.I18N;
 
 import javax.annotation.Nonnull;
@@ -39,7 +39,7 @@ import java.util.List;
 import static com.google.common.base.Preconditions.*;
 
 @I18N
-public class DefaultSubPagePanel extends NavigationButtonPanel implements OptionContext, SubPagePanel {
+public class DefaultSubPagePanel extends NavigationButtonPanel implements VaadinOptionContext, SubPagePanel {
     public static final OptionKey<SortType> optionSortType = new OptionKey<>(SortType.ALPHA, DefaultSubPagePanel.class, LabelKey.Sort_Type, DescriptionKey
             .Sort_Type);
     public static final OptionKey<Boolean> optionSortAscending = new OptionKey<>(Boolean.TRUE, DefaultSubPagePanel.class, LabelKey.Sort_Ascending,

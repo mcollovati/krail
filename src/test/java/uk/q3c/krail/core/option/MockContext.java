@@ -1,6 +1,5 @@
 package uk.q3c.krail.core.option;
 
-import com.vaadin.data.Property;
 import uk.q3c.krail.testutil.option.MockOption;
 
 import javax.annotation.Nonnull;
@@ -8,7 +7,7 @@ import javax.annotation.Nonnull;
 /**
  * Created by David Sowerby on 03 Aug 2017
  */
-class MockContext implements OptionContext {
+class MockContext implements OptionContext<Object> {
 
     Option option = new MockOption();
 
@@ -19,7 +18,7 @@ class MockContext implements OptionContext {
     }
 
     @Override
-    public void optionValueChanged(Property.ValueChangeEvent event) {
+    public void optionValueChanged(Object event) {
 
     }
 }
