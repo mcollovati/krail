@@ -11,22 +11,18 @@
  *
  */
 
-package uk.q3c.krail.core.persist.cache.i18n;
+package uk.q3c.krail.i18n;
 
 import com.google.common.cache.CacheLoader;
 import com.google.inject.Inject;
 import com.vaadin.data.Property;
 import uk.q3c.krail.core.i18n.DescriptionKey;
+import uk.q3c.krail.core.i18n.KrailResourceBundleControl;
 import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.option.Option;
 import uk.q3c.krail.core.option.OptionKey;
 import uk.q3c.krail.core.option.VaadinOptionContext;
-import uk.q3c.krail.i18n.I18NModule;
-import uk.q3c.krail.i18n.KrailResourceBundleControl;
-import uk.q3c.krail.i18n.PatternSourceProvider;
-import uk.q3c.krail.i18n.api.I18NKey;
-import uk.q3c.krail.i18n.api.PatternCacheKey;
-import uk.q3c.krail.i18n.api.PatternDao;
+import uk.q3c.krail.i18n.api.*;
 
 import javax.annotation.Nonnull;
 import java.lang.annotation.Annotation;

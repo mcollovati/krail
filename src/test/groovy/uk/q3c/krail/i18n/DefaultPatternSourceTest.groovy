@@ -18,8 +18,8 @@ import spock.lang.Specification
 import uk.q3c.krail.core.i18n.DescriptionKey
 import uk.q3c.krail.core.i18n.LabelKey
 import uk.q3c.krail.core.option.Option
-import uk.q3c.krail.core.persist.cache.i18n.DefaultPatternCacheLoader
 import uk.q3c.krail.i18n.api.PatternCacheKey
+import uk.q3c.krail.i18n.api.PatternSourceProvider
 import uk.q3c.krail.i18n.api.clazz.ClassPatternDao
 import uk.q3c.krail.i18n.clazz.ClassPatternSource
 import uk.q3c.krail.i18n.i18nModule.TestPatternSource

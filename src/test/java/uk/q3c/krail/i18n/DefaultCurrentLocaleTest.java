@@ -36,6 +36,7 @@ import uk.q3c.krail.core.shiro.SubjectProvider;
 import uk.q3c.krail.core.ui.BrowserProvider;
 import uk.q3c.krail.core.user.status.UserStatusBusMessage;
 import uk.q3c.krail.core.user.status.UserStatusChangeSource;
+import uk.q3c.krail.i18n.api.DefaultLocale;
 import uk.q3c.krail.i18n.api.LocaleChangeBusMessage;
 import uk.q3c.krail.i18n.api.UnsupportedLocaleException;
 import uk.q3c.krail.testutil.guice.uiscope.TestUIScopeModule;

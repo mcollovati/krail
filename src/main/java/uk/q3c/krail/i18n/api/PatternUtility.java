@@ -11,12 +11,10 @@
  *
  */
 
-package uk.q3c.krail.i18n;
+package uk.q3c.krail.i18n.api;
 
 import uk.q3c.krail.core.option.Option;
-import uk.q3c.krail.i18n.api.I18NKey;
-import uk.q3c.krail.i18n.api.PatternDao;
-import uk.q3c.krail.i18n.api.PatternSource;
+import uk.q3c.krail.i18n.I18NModule;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

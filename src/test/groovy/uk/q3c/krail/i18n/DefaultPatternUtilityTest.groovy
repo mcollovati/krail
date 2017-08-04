@@ -21,6 +21,7 @@ import uk.q3c.krail.core.i18n.MessageKey
 import uk.q3c.krail.core.validation.ValidationKey
 import uk.q3c.krail.i18n.api.I18NKey
 import uk.q3c.krail.i18n.api.PatternSource
+import uk.q3c.krail.i18n.api.PatternSourceProvider
 import uk.q3c.krail.i18n.api.clazz.ClassPatternDao
 import uk.q3c.krail.i18n.clazz.ClassPatternSource
 

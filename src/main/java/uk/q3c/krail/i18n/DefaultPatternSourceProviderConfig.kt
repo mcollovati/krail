@@ -2,6 +2,7 @@ package uk.q3c.krail.i18n
 
 import com.google.inject.Inject
 import uk.q3c.krail.core.option.AnnotationOptionList
+import uk.q3c.krail.i18n.api.PatternSourceProvider
 import uk.q3c.krail.i18n.api.PatternSourceProviderConfig
 
 /**

@@ -204,7 +204,7 @@ class VaadinI18NModuleTest extends GuiceModuleTestBase {
 
 
     Locale defaultLocale() {
-        getBinding new TypeLiteral<Locale>() {}, DefaultLocale.class
+        getBinding new TypeLiteral<Locale>() {}, uk.q3c.krail.i18n.api.DefaultLocale.class
     }
 
     Set<Locale> supportedLocales() {

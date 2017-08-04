@@ -10,19 +10,30 @@
  *  * specific language governing permissions and limitations under the License.
  *
  */
-package uk.q3c.krail.i18n;
 
-import com.google.inject.BindingAnnotation;
+package uk.q3c.krail.core.i18n;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.Target;
+import uk.q3c.krail.i18n.DefaultPatternSource;
 
-import static java.lang.annotation.ElementType.*;
-import static java.lang.annotation.RetentionPolicy.*;
+import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
-@BindingAnnotation
-@Target({FIELD, PARAMETER, METHOD})
-@Retention(RUNTIME)
-public @interface PatternSourceOrderDefault {
+/**
+ * Created by David Sowerby on 08/12/14.
+ */
+public class KrailResourceBundleControl extends ResourceBundle.Control {
 
+    /**
+     * Makes this method public so it can be used by {@link DefaultPatternSource}
+     *
+     * @param baseName
+     * @param locale
+     *
+     * @return
+     */
+    @Override
+    public List<Locale> getCandidateLocales(String baseName, Locale locale) {
+        return super.getCandidateLocales(baseName, locale);
+    }
 }

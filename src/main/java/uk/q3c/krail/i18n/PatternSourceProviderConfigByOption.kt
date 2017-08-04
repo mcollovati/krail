@@ -7,6 +7,7 @@ import uk.q3c.krail.core.option.AnnotationOptionList
 import uk.q3c.krail.core.option.Option
 import uk.q3c.krail.core.option.OptionContext
 import uk.q3c.krail.core.option.OptionKey
+import uk.q3c.krail.i18n.api.PatternSourceProvider
 import uk.q3c.krail.i18n.api.PatternSourceProviderConfig
 
 /**

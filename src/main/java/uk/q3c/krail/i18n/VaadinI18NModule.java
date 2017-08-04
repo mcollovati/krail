@@ -22,8 +22,6 @@ import uk.q3c.krail.core.guice.vsscope.VaadinSessionScoped;
 import uk.q3c.krail.core.i18n.DefaultI18NFieldScanner;
 import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.option.Option;
-import uk.q3c.krail.core.persist.cache.i18n.DefaultPatternCacheLoader;
-import uk.q3c.krail.core.persist.cache.i18n.PatternCacheLoader;
 import uk.q3c.krail.core.persist.common.common.KrailPersistenceUnitHelper;
 import uk.q3c.krail.i18n.api.*;
 import uk.q3c.krail.i18n.api.clazz.ClassPatternDao;
