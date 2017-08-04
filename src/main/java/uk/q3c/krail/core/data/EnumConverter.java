@@ -15,7 +15,7 @@ package uk.q3c.krail.core.data;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.lang3.ClassUtils;
-import uk.q3c.krail.i18n.MessageFormat;
+import uk.q3c.krail.i18n.DefaultMessageFormat;
 
 import javax.annotation.Nonnull;
 
@@ -42,7 +42,7 @@ public class EnumConverter implements OptionConverter<Enum> {
             @SuppressWarnings("unchecked") final Class<? extends Enum> clazz = (Class<? extends Enum>) Class.forName(className);
             return Enum.valueOf(clazz, constantName);
         } catch (Exception e) {
-            String msg = MessageFormat.format("Failed to convert String '{0}' to Enum", value);
+            String msg = new DefaultMessageFormat().format("Failed to convert String '{0}' to Enum", value);
             throw new ConversionException(msg, e);
         }
     }

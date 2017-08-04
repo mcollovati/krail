@@ -11,20 +11,34 @@
  *
  */
 
-package uk.q3c.krail.i18n;
+package uk.q3c.krail.core.validation
 
-import uk.q3c.krail.i18n.api.I18NKey;
+
+import uk.q3c.krail.i18n.api.I18NKey
 
 /**
- * Created by David Sowerby on 10/12/14.
+ * [I18NKey] for Apache Bval validation messages.  The messages themselves have been transposed from BVal to [Validations], with some
+ * translations (See sub-classes of [Validations]}
+ *
+ *
+ * Created by David Sowerby on 14/07/15.
  */
-public enum TestLabelKey2 implements I18NKey {
+enum class ValidationKey : I18NKey {
 
-    Key1, Key_2;
+    Null,
+    NotNull,
+    AssertTrue,
+    AssertFalse,
+    Min,
+    Max,
+    Size,
+    Digits,
+    Past,
+    Future,
+    Pattern,
+    DecimalMax,
+    DecimalMin,
+    NotEmpty,
+    Email
 
-
-    @Override
-    public String bundleName() {
-        return "TestLbls2";
-    }
 }

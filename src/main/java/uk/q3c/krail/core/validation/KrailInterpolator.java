@@ -21,9 +21,9 @@ import org.apache.commons.lang3.ClassUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import uk.q3c.krail.core.config.ConfigurationException;
-import uk.q3c.krail.i18n.MessageFormat;
 import uk.q3c.krail.i18n.api.CurrentLocale;
 import uk.q3c.krail.i18n.api.I18NKey;
+import uk.q3c.krail.i18n.api.MessageFormat2;
 import uk.q3c.krail.i18n.api.Translate;
 
 import javax.validation.MessageInterpolator;
@@ -41,7 +41,7 @@ import java.util.Optional;
  * brackets, for example '{com.example.i18n.LabelKey.Misty}' - this will find the appropriate key (assuming it exists of course) and use that with the Krail
  * I18N translation process</li>
  * <li>A custom pattern, a String without curly brackets, which is used as it is - arguments can be placed within it using the format defined by {@link
- * MessageFormat}, but no translation takes place</li>
+ * uk.q3c.krail.i18n.api.MessageFormat2}, but no translation takes place</li>
  * <li>A custom annotation, which should use an I18NKey</li>
  * <p>
  * </ol>
@@ -58,14 +58,16 @@ public class KrailInterpolator implements MessageInterpolator {
     private final Translate translate;
 
     private Map<Class<? extends Annotation>, I18NKey> javaxValidationSubstitutes;
+    private MessageFormat2 messageFormat;
 
     @Inject
     protected KrailInterpolator(CurrentLocale currentLocale, Translate translate, @JavaxValidationSubstitutes Map<Class<? extends Annotation>, I18NKey>
-            javaxValidationSubstitutes) {
+            javaxValidationSubstitutes, MessageFormat2 messageFormat) {
         this.currentLocale = currentLocale;
         this.translate = translate;
 
         this.javaxValidationSubstitutes = javaxValidationSubstitutes;
+        this.messageFormat = messageFormat;
     }
 
     /**
@@ -153,7 +155,7 @@ public class KrailInterpolator implements MessageInterpolator {
      */
     protected String processStandardAnnotationWithCustomMessage(String patternOrKey, Context context, Locale locale) {
         if (isPattern(patternOrKey)) {
-            return MessageFormat.format(patternOrKey, context.getConstraintDescriptor()
+            return messageFormat.format(patternOrKey, context.getConstraintDescriptor()
                                                              .getAttributes()
                                                              .get("value"));
         }
@@ -303,7 +305,7 @@ public class KrailInterpolator implements MessageInterpolator {
      * @return
      */
     private String formatPattern(String patternOrKey) {
-        return MessageFormat.format(patternOrKey);
+        return messageFormat.format(patternOrKey);
     }
 
     /**

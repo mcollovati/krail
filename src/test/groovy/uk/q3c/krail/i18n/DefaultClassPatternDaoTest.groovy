@@ -44,7 +44,7 @@ class DefaultClassPatternDaoTest extends Specification {
     @SuppressWarnings("GroovyAssignabilityCheck")
     Option option = Mock()
     @SuppressWarnings("GroovyAssignabilityCheck")
-    PatternCacheKey patternCacheKey = Mock()
+    PatternCacheKey patternCacheKey = new PatternCacheKey(uk.q3c.krail.i18n.LabelKey.Yes, Locale.UK)
     ClassPatternDaoConfig config = new DefaultClassPatternDaoConfig("", true)
 
 
@@ -175,9 +175,7 @@ class DefaultClassPatternDaoTest extends Specification {
 
     def "getValue() with populated value should return Optional.of(value)"() {
         given:
-        patternCacheKey.key >> MessageKey.Invalid_URI
-        patternCacheKey.getKeyAsEnum() >> (Enum) patternCacheKey.key
-        patternCacheKey.getActualLocale() >> Locale.forLanguageTag("")
+        patternCacheKey = new PatternCacheKey(MessageKey.Invalid_URI, Locale.forLanguageTag(""))
         config.useKeyPath = true
 
         expect:
@@ -186,9 +184,7 @@ class DefaultClassPatternDaoTest extends Specification {
 
     def "getValue() from alternative Locale should return correct pattern for the Locale"() {
         given:
-        patternCacheKey.key >> MessageKey.Invalid_URI
-        patternCacheKey.getKeyAsEnum() >> (Enum) patternCacheKey.key
-        patternCacheKey.getActualLocale() >> Locale.forLanguageTag("de")
+        patternCacheKey = new PatternCacheKey(MessageKey.Invalid_URI, Locale.forLanguageTag("de"))
         config.useKeyPath = true
 
         expect:

@@ -19,8 +19,8 @@ import com.google.inject.Inject;
 import com.vaadin.data.util.converter.ConverterFactory;
 import uk.q3c.krail.core.option.AnnotationOptionList;
 import uk.q3c.krail.core.option.OptionList;
-import uk.q3c.krail.i18n.MessageFormat;
 import uk.q3c.krail.i18n.api.I18NKey;
+import uk.q3c.krail.i18n.api.MessageFormat2;
 
 import javax.annotation.Nonnull;
 import java.math.BigDecimal;
@@ -36,9 +36,11 @@ import java.util.Locale;
 public class DefaultOptionElementConverter implements OptionElementConverter {
 
 
-    @Inject
-    public DefaultOptionElementConverter() {
+    private MessageFormat2 messageFormat;
 
+    @Inject
+    public DefaultOptionElementConverter(MessageFormat2 messageFormat) {
+        this.messageFormat = messageFormat;
     }
 
 
@@ -75,7 +77,7 @@ public class DefaultOptionElementConverter implements OptionElementConverter {
         } else if (AnnotationOptionList.class.isAssignableFrom(modelType)) {
             return new AnnotationOptionListConverter().convertToString((AnnotationOptionList) value);
         }
-        String msg = MessageFormat.format("Data type of {0} is not supported in Option", value.getClass());
+        String msg = messageFormat.format("Data type of {0} is not supported in Option", value.getClass());
         throw new ConverterException(msg);
     }
 
@@ -107,7 +109,7 @@ public class DefaultOptionElementConverter implements OptionElementConverter {
         } else if (elementClass == AnnotationOptionList.class) {
             return (V) new AnnotationOptionListConverter().convertToModel(valueString);
         }
-        String msg = MessageFormat.format("Data type of {0} is not supported in Option", elementClass);
+        String msg = messageFormat.format("Data type of {0} is not supported in Option", elementClass);
         throw new ConverterException(msg);
     }
 

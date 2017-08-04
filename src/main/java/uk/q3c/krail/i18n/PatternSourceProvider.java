@@ -14,12 +14,8 @@
 package uk.q3c.krail.i18n;
 
 import com.google.common.collect.ImmutableSet;
-import uk.q3c.krail.core.i18n.DescriptionKey;
-import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.option.AnnotationOptionList;
 import uk.q3c.krail.core.option.Option;
-import uk.q3c.krail.core.option.OptionContext;
-import uk.q3c.krail.core.option.OptionKey;
 import uk.q3c.krail.i18n.api.I18NKey;
 import uk.q3c.krail.i18n.api.PatternDao;
 import uk.q3c.krail.i18n.api.PatternSource;
@@ -50,16 +46,9 @@ import java.util.Optional;
  * <p>
  * Created by David Sowerby on 01/08/15.
  */
-public interface PatternSourceProvider extends OptionContext<Object> {
+public interface PatternSourceProvider {
 
-    OptionKey<AnnotationOptionList> optionKeySourceOrder = new OptionKey<>(new AnnotationOptionList(), PatternSourceProvider.class, LabelKey
-            .Source_Order, DescriptionKey.Source_Order);
 
-    OptionKey<AnnotationOptionList> optionKeySourceOrderDefault = new OptionKey<>(new AnnotationOptionList(), PatternSourceProvider.class,
-            LabelKey.Source_Order_Default, DescriptionKey.Source_Order_Default);
-
-    OptionKey<AnnotationOptionList> optionKeySelectedTargets = new OptionKey<>(new AnnotationOptionList(), PatternSourceProvider.class,
-            LabelKey.Selected_Pattern_Targets, DescriptionKey.Selected_Pattern_Targets);
 
 
     Optional<PatternDao> sourceFor(Class<? extends Annotation> sourceAnnotation);

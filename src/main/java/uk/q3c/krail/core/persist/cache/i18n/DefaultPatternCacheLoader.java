@@ -21,7 +21,6 @@ import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.option.Option;
 import uk.q3c.krail.core.option.OptionKey;
 import uk.q3c.krail.core.option.VaadinOptionContext;
-import uk.q3c.krail.i18n.DefaultPatternSourceProvider;
 import uk.q3c.krail.i18n.I18NModule;
 import uk.q3c.krail.i18n.KrailResourceBundleControl;
 import uk.q3c.krail.i18n.PatternSourceProvider;
@@ -44,11 +43,11 @@ import static com.google.common.base.Preconditions.*;
  * Created by David Sowerby on 08/12/14.
  */
 public class DefaultPatternCacheLoader extends CacheLoader<PatternCacheKey, String> implements PatternCacheLoader, VaadinOptionContext {
-    public static final OptionKey<Boolean> optionKeyAutoStub = new OptionKey<>(Boolean.FALSE, DefaultPatternSourceProvider.class, LabelKey.Auto_Stub,
+    public static final OptionKey<Boolean> optionKeyAutoStub = new OptionKey<>(Boolean.FALSE, DefaultPatternCacheLoader.class, LabelKey.Auto_Stub,
             DescriptionKey.Auto_Stub);
-    public static final OptionKey<Boolean> optionKeyStubWithKeyName = new OptionKey<>(Boolean.TRUE, DefaultPatternSourceProvider.class, LabelKey
+    public static final OptionKey<Boolean> optionKeyStubWithKeyName = new OptionKey<>(Boolean.TRUE, DefaultPatternCacheLoader.class, LabelKey
             .Stub_with_Key_Name, DescriptionKey.Stub_with_Key_Name);
-    public static final OptionKey<String> optionKeyStubValue = new OptionKey<>("undefined", DefaultPatternSourceProvider.class, LabelKey.Stub_Value,
+    public static final OptionKey<String> optionKeyStubValue = new OptionKey<>("undefined", DefaultPatternCacheLoader.class, LabelKey.Stub_Value,
             DescriptionKey.Stub_Value);
     private Option option;
     private PatternSourceProvider sourceProvider;

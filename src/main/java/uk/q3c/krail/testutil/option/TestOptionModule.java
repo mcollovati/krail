@@ -18,11 +18,18 @@ import uk.q3c.krail.core.option.Option;
 import uk.q3c.krail.core.option.OptionModule;
 import uk.q3c.krail.core.persist.cache.option.DefaultOptionCache;
 import uk.q3c.krail.core.persist.cache.option.OptionCache;
+import uk.q3c.krail.i18n.DefaultMessageFormat;
+import uk.q3c.krail.i18n.api.MessageFormat2;
 
 /**
  * Created by David Sowerby on 05/12/14.
  */
 public class TestOptionModule extends OptionModule {
+    @Override
+    protected void configure() {
+        super.configure();
+        bind(MessageFormat2.class).to(DefaultMessageFormat.class);
+    }
 
     public TestOptionModule() {
         activeSource(InMemory.class);

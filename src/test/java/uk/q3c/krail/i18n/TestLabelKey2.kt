@@ -10,15 +10,20 @@
  *  * specific language governing permissions and limitations under the License.
  *
  */
-package uk.q3c.krail.i18n;
+
+package uk.q3c.krail.i18n
+
+import uk.q3c.krail.i18n.api.I18NKey
+
+/**
+ * Created by David Sowerby on 10/12/14.
+ */
+enum class TestLabelKey2 : I18NKey {
+
+    Key1, Key_2;
 
 
-public enum TestLabelKey_Invalid {
-
-    home,
-    transfers,
-    login,
-    moneyInOut,
-    opt
-
+    override fun bundleName(): String {
+        return "TestLbls2"
+    }
 }

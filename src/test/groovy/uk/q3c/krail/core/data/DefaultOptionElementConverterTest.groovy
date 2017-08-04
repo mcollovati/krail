@@ -20,6 +20,7 @@ import uk.q3c.krail.core.i18n.LabelKey
 import uk.q3c.krail.core.option.AnnotationOptionList
 import uk.q3c.krail.core.option.OptionList
 import uk.q3c.krail.core.services.Service
+import uk.q3c.krail.i18n.DefaultMessageFormat
 import uk.q3c.krail.i18n.api.I18NKey
 import uk.q3c.krail.i18n.clazz.ClassPatternSource
 
@@ -33,7 +34,7 @@ class DefaultOptionElementConverterTest extends Specification {
     DefaultOptionElementConverter converter
 
     def setup() {
-        converter = new DefaultOptionElementConverter()
+        converter = new DefaultOptionElementConverter(new DefaultMessageFormat())
     }
 
     def "from other to String"() {

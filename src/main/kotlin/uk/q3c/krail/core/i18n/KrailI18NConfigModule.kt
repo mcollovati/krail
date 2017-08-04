@@ -1,6 +1,8 @@
 package uk.q3c.krail.core.i18n
 
 import uk.q3c.krail.i18n.I18NConfigModule
+import uk.q3c.krail.i18n.PatternSourceProviderConfigByOption
+import uk.q3c.krail.i18n.api.PatternSourceProviderConfig
 import uk.q3c.krail.i18n.api.clazz.ClassPatternDaoConfig
 
 /**
@@ -10,5 +12,6 @@ class KrailI18NConfigModule : I18NConfigModule() {
 
     override fun bindClassPatternDaoConfig() {
         bind(ClassPatternDaoConfig::class.java).to(ClassPatternDaoConfigByOption::class.java)
+        bind(PatternSourceProviderConfig::class.java).to(PatternSourceProviderConfigByOption::class.java)
     }
 }

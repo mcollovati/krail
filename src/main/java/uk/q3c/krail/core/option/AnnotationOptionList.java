@@ -19,6 +19,7 @@ import org.apache.commons.collections15.ListUtils;
 import java.io.Serializable;
 import java.lang.annotation.Annotation;
 import java.util.List;
+import java.util.Set;
 
 /**
  * The syntax of getting the Generics right to create an {@link OptionList} for Class<? extends Annotation> is clumsy - this class just makes it clearer and
@@ -51,6 +52,10 @@ public class AnnotationOptionList implements Serializable {
     public AnnotationOptionList(Class<? extends Annotation>... elements) {
         super();
         this.list = (elements == null) ? ImmutableList.of() : ImmutableList.copyOf(elements);
+    }
+
+    public AnnotationOptionList(Set<? extends Class<? extends Annotation>> set) {
+        this.list = ImmutableList.copyOf(set);
     }
 
 

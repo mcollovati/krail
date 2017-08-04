@@ -20,7 +20,7 @@ import com.vaadin.data.Container;
 import uk.q3c.krail.core.config.ConfigurationException;
 import uk.q3c.krail.core.persist.common.common.OptionDaoProviders;
 import uk.q3c.krail.core.persist.common.common.PersistenceInfo;
-import uk.q3c.krail.i18n.MessageFormat;
+import uk.q3c.krail.i18n.api.MessageFormat2;
 
 import javax.annotation.Nonnull;
 import java.lang.annotation.Annotation;
@@ -36,15 +36,17 @@ import static com.google.common.base.Preconditions.*;
 public class DefaultOptionSource implements OptionSource {
 
     private Class<? extends Annotation> activeSource;
+    private MessageFormat2 messageFormat;
     private Injector injector;
     private Map<Class<? extends Annotation>, PersistenceInfo<?>> optionDaoProviders;
 
     @Inject
     protected DefaultOptionSource(Injector injector, @OptionDaoProviders Map<Class<? extends Annotation>, PersistenceInfo<?>> optionDaoProviders,
-                                  @DefaultActiveOptionSource Class<? extends Annotation> activeSource) {
+                                  @DefaultActiveOptionSource Class<? extends Annotation> activeSource, MessageFormat2 messageFormat) {
         this.injector = injector;
         this.optionDaoProviders = optionDaoProviders;
         this.activeSource = activeSource;
+        this.messageFormat = messageFormat;
     }
 
     @Override
@@ -63,7 +65,7 @@ public class DefaultOptionSource implements OptionSource {
     protected void checkAnnotationKey(Class<? extends Annotation> annotationClass) {
         checkNotNull(annotationClass);
         if (!optionDaoProviders.containsKey(annotationClass)) {
-            String msg = MessageFormat.format("The OptionDaoDelegate annotation of '{0}' does not match any of the providers.", annotationClass.getSimpleName
+            String msg = messageFormat.format("The OptionDaoDelegate annotation of '{0}' does not match any of the providers.", annotationClass.getSimpleName
                     ());
             throw new ConfigurationException(msg);
         }

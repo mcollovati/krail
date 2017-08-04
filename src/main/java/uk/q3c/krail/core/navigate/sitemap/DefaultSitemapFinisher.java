@@ -17,7 +17,7 @@ import com.google.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import uk.q3c.krail.core.view.KrailView;
-import uk.q3c.krail.i18n.MessageFormat;
+import uk.q3c.krail.i18n.DefaultMessageFormat;
 import uk.q3c.krail.i18n.api.CurrentLocale;
 import uk.q3c.krail.i18n.api.I18NKey;
 import uk.q3c.util.CycleDetectedException;
@@ -209,7 +209,7 @@ public class DefaultSitemapFinisher implements SitemapFinisher {
             try {
                 dag.addChild(entry.getKey(), entry.getValue());
             } catch (CycleDetectedException cde) {
-                String msg = MessageFormat.format("Redirecting {0} to {1} would cause a loop", entry.getKey(), entry.getValue());
+                String msg = new DefaultMessageFormat().format("Redirecting {0} to {1} would cause a loop", entry.getKey(), entry.getValue());
                 redirectLoops.add(msg);
                 // throw new CycleDetectedException(msg);
             }

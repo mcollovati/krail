@@ -10,12 +10,12 @@
  *  * specific language governing permissions and limitations under the License.
  *
  */
-package uk.q3c.krail.i18n;
+package uk.q3c.krail.i18n
 
 
-import uk.q3c.krail.i18n.api.I18NKey;
+import uk.q3c.krail.i18n.api.I18NKey
 
-public enum TestLabelKey implements I18NKey {
+enum class TestLabelKey : I18NKey {
 
     Large, Home, My_Account, Transfers, Login, MoneyInOut, Private, Public, Opt, Yes, No, View1, View2, ViewA,
     ViewA1, ViewA11, ViewB, ViewB1, ViewB11, pattern_with_embedded_key, Blank, key1, Static, Private_Static, ServiceA, ServiceB, ServiceC, ServiceD,

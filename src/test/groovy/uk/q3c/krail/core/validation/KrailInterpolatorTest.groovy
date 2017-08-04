@@ -15,6 +15,7 @@ package uk.q3c.krail.core.validation
 
 import org.apache.bval.constraints.Email
 import spock.lang.Specification
+import uk.q3c.krail.i18n.DefaultMessageFormat
 import uk.q3c.krail.i18n.api.CurrentLocale
 import uk.q3c.krail.i18n.api.I18NKey
 import uk.q3c.krail.i18n.api.Translate
@@ -44,7 +45,7 @@ class KrailInterpolatorTest extends Specification {
 
     def setup() {
 
-        interpolator = new KrailInterpolator(currentLocale, translate, javaxValidationSubstitutes)
+        interpolator = new KrailInterpolator(currentLocale, translate, javaxValidationSubstitutes, new DefaultMessageFormat())
         context.getConstraintDescriptor() >> constraintDescriptor
         constraintDescriptor.getAnnotation() >> annotation
     }

@@ -10,11 +10,11 @@
  *  * specific language governing permissions and limitations under the License.
  *
  */
-package uk.q3c.krail.core.i18n;
+package uk.q3c.krail.core.i18n
 
-import uk.q3c.krail.i18n.api.I18NKey;
+import uk.q3c.krail.i18n.api.I18NKey
 
-public enum MessageKey implements I18NKey {
+enum class MessageKey : I18NKey {
     Invalid_URI, Locale_Change, Service_not_Started, Use_Key_Path, Bundle_Path, Option_Auto_Stub, Setup_I18NKey_export,
     Option_Stub_with_Key_Name, Option_Stub_Value, Option_Source_Order_Default, Button_is_Visible, I18NKey_export_failed, Needs_at_least_one_database_writer,
     Currently_limited_to_supporting_one_database_writer, Invalid_Locale_Langugage_Tag, There_are_no_Locales_to_process, Keys_exported, All_Keys_exported,

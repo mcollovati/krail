@@ -11,20 +11,19 @@
  *
  */
 
-package uk.q3c.krail.i18n;
+package uk.q3c.krail.i18n
 
-import uk.q3c.krail.i18n.api.I18NKey;
+import uk.q3c.krail.i18n.api.I18NKey
 
 /**
  * Created by David Sowerby on 10/12/14.
  */
-public enum TestLabelKey3 implements I18NKey {
+enum class TestLabelKey3 : I18NKey {
 
     Key1, Key_2;
 
 
-    @Override
-    public String bundleName() {
-        return "TestLbls3";
+    override fun bundleName(): String {
+        return "TestLbls3"
     }
 }

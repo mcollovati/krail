@@ -1,18 +1,18 @@
-### Release Notes for krail 10.0.0.0
+## Release Notes for krail 10.0.0.0
 
 This release is a major refactor to extract some elements which can actually stand alone from Krail itself - notably this includes I18N and Options
 
 Unfortunately there are a lot of changes which will affect existing Krail apps, many are limited to package changes, but some code changes
 were needed to separate Option and I18N
 
-#### General
+### General
 
 @Nonnull annotations are gradually being removed - they can cause different results to occur in the IDE than when running in Gradle.
 Where such assertions as are required, they will be replaced either by using Kotlin or using Guava's *checkNotNull* (many methods already use the latter)
 
 - `DefaultBindingManager.i18nModule()` changed to `DefaultBindingManager.i18nModules()` and returns a list
 
-#### I18N
+### I18N
 
 - generic I18N capability moved from `uk.q3c.krail.core.i18n` to `uk.q3c.krail.i18n.api` and `uk.q3c.krail.i18n` as appropriate, in project **krail-i18n**, Krail specific (mostly Vaadin related) i18n remains in `uk.q3c.krail.core`  
 - `DefaultCurrentLocale` in **krail** is now `VaadinCurrentLocale` as it assumes the use of Vaadin.  A generic `DefaultCurrentLocale` added to **krail-i18n**
@@ -25,7 +25,15 @@ Where such assertions as are required, they will be replaced either by using Kot
 - `uk.q3c.krail.i18n.I18NHostClassIdentifier` is now `uk.q3c.util.clazz.UnenhancedClassIdentifier`
 - contents of `uk.q3c.krail.core.persist.cache.i18n` moved to `uk.q3c.krail.i18n` or `uk.q3c.krail.i18n.api`
 
-#### Option
+#### Translate and MessageFormat
+
+The `MessageFormat` utility class has been deprecated and replaced by interface `MessageFormat2` and implementation `DefaultMessageFormat`.
+`Translate` uses the new implementation 
+`Translate` (and `DefaultMessageFormat` if used directly) offers 3 levels of strictness when handling mis-matches between arguments and parameters, **STRICT**, **STRICT_EXCEPTION** and **LENIENT**
+The default, **STRICT** behaves the same way as the previous version, except that: 
+
+
+### Option
 
 - `OptionContext.getOption` is now `OptionContext.optionInstance()`
 - `OptionContext` is parameterised
