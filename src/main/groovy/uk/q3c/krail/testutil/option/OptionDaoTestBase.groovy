@@ -22,13 +22,17 @@ import spock.lang.Specification
 import uk.q3c.krail.core.data.OptionElementConverter
 import uk.q3c.krail.core.i18n.LabelKey
 import uk.q3c.krail.core.navigate.sitemap.comparator.DefaultUserSitemapSorters
-import uk.q3c.krail.core.option.*
+import uk.q3c.krail.core.option.InMemory
+import uk.q3c.krail.core.option.OptionKey
+import uk.q3c.krail.core.option.OptionKeyException
+import uk.q3c.krail.core.option.OptionList
 import uk.q3c.krail.core.persist.cache.option.OptionCacheKey
 import uk.q3c.krail.core.persist.common.option.OptionDao
 import uk.q3c.krail.core.persist.common.option.OptionSource
 import uk.q3c.krail.core.user.profile.UserHierarchy
 import uk.q3c.krail.core.view.component.LocaleContainer
 import uk.q3c.krail.i18n.clazz.ClassPatternSource
+import uk.q3c.util.collection.AnnotationList
 
 import static uk.q3c.krail.core.user.profile.RankOption.*
 
@@ -63,7 +67,7 @@ abstract class OptionDaoTestBase extends Specification {
     OptionKey<Locale> optionKeyLocale = new OptionKey<>(Locale.CHINA, LocaleContainer.class, LabelKey.Yes, "g")
 
     OptionKey<OptionList<String>> optionKeyStringImmutableSet = new OptionKey<>(new OptionList<String>(String.class), LocaleContainer.class, LabelKey.Yes, "h")
-    OptionKey<AnnotationOptionList> optionKeyAnnotationList = new OptionKey<>(new AnnotationOptionList(Inject.class, Singleton.class), LocaleContainer.class, LabelKey.Yes, "i")
+    OptionKey<AnnotationList> optionKeyAnnotationList = new OptionKey<>(new AnnotationList(Inject.class, Singleton.class), LocaleContainer.class, LabelKey.Yes, "i")
 
 
     def setup() {
@@ -303,13 +307,13 @@ abstract class OptionDaoTestBase extends Specification {
 
     def "AnnotationList conversion round trip"() {
         given:
-        OptionKey<AnnotationOptionList> listKey = new OptionKey(new AnnotationOptionList(), LocaleContainer.class, LabelKey.Yes)
-        OptionCacheKey<AnnotationOptionList> cacheKey = new OptionCacheKey<>(hierarchy1, SPECIFIC_RANK, 0, listKey)
-        AnnotationOptionList list = new AnnotationOptionList(InMemory, Inject)
+        OptionKey<AnnotationList> listKey = new OptionKey(new AnnotationList(), LocaleContainer.class, LabelKey.Yes)
+        OptionCacheKey<AnnotationList> cacheKey = new OptionCacheKey<>(hierarchy1, SPECIFIC_RANK, 0, listKey)
+        AnnotationList list = new AnnotationList(InMemory, Inject)
 
         when:
         dao.write(cacheKey, Optional.of(list))
-        Optional<AnnotationOptionList> result = dao.getValue(cacheKey)
+        Optional<AnnotationList> result = dao.getValue(cacheKey)
 
         then:
         ListUtils.isEqualList(list.getList(), result.get().getList())
@@ -375,12 +379,12 @@ abstract class OptionDaoTestBase extends Specification {
 
     def "round trip AnnotationOptionList"() {
         given:
-        AnnotationOptionList optionList = new AnnotationOptionList(ClassPatternSource, Inject)
+        AnnotationList optionList = new AnnotationList(ClassPatternSource, Inject)
         OptionCacheKey cacheKey = new OptionCacheKey(hierarchy1, SPECIFIC_RANK, optionKeyAnnotationList)
 
         when:
         dao.write(cacheKey, Optional.of(optionList))
-        Optional<AnnotationOptionList> result = dao.getValue(cacheKey)
+        Optional<AnnotationList> result = dao.getValue(cacheKey)
         then:
         ListUtils.isEqualList(result.get().getList(), optionList.getList())
     }

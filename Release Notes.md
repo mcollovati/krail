@@ -34,7 +34,7 @@ The default, **STRICT** behaves the same way as the previous version, except tha
 
 
 ### Option
-
+- `AnnotationOptionList` had nothing to do with `Option`.  Renamed `AnnotationList` and moved to `uk.q3c.util.collection`
 - `OptionContext.getOption` is now `OptionContext.optionInstance()`
 - `OptionContext` is parameterised
 

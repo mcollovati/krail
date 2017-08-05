@@ -14,9 +14,9 @@
 package uk.q3c.krail.i18n.api;
 
 import com.google.common.collect.ImmutableSet;
-import uk.q3c.krail.core.option.AnnotationOptionList;
 import uk.q3c.krail.core.option.Option;
 import uk.q3c.krail.i18n.I18NModule;
+import uk.q3c.util.collection.AnnotationList;
 
 import java.lang.annotation.Annotation;
 import java.util.Optional;
@@ -60,5 +60,5 @@ public interface PatternSourceProvider {
      *
      * @return targets selected, but removes any which are not declared as targets in the {@link I18NModule}
      */
-    AnnotationOptionList selectedTargets();
+    AnnotationList selectedTargets();
 }

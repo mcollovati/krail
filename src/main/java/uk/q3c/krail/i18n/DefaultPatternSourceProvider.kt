@@ -18,9 +18,9 @@ import com.google.common.collect.ImmutableSet
 import com.google.common.collect.Lists
 import com.google.inject.Inject
 import com.google.inject.Provider
-import uk.q3c.krail.core.option.AnnotationOptionList
 import uk.q3c.krail.core.option.Option
 import uk.q3c.krail.i18n.api.*
+import uk.q3c.util.collection.AnnotationList
 import java.util.*
 
 /**
@@ -39,7 +39,7 @@ class DefaultPatternSourceProvider @Inject constructor(
 
     : PatternSourceProvider, PatternSourceProviderConfig by config {
 
-    override var sourceOrderDefault: AnnotationOptionList = AnnotationOptionList(sourceOrderDefault)
+    override var sourceOrderDefault: AnnotationList = AnnotationList(sourceOrderDefault)
 
     init {
         config.patternSourceProvider = this
@@ -142,15 +142,15 @@ class DefaultPatternSourceProvider @Inject constructor(
         return ImmutableSet.copyOf(newOrder)
     }
 
-    private fun getSourceOrderFromOption(bundleName: String): AnnotationOptionList {
+    private fun getSourceOrderFromOption(bundleName: String): AnnotationList {
         checkNotNull(bundleName)
         return config.sourceOrder
     }
 
-    private val sourceOrderDefaultFromOption: AnnotationOptionList
+    private val sourceOrderDefaultFromOption: AnnotationList
         get() = config.sourceOrderDefault
 
-    override fun selectedTargets(): AnnotationOptionList {
+    override fun selectedTargets(): AnnotationList {
         val optionTargets = config.selectedTargets
         //use a copy to iterate over, otherwise removing from iterated set
         if (!optionTargets.isEmpty) {
@@ -161,9 +161,9 @@ class DefaultPatternSourceProvider @Inject constructor(
                             copyTargets.remove(t)
                         }
                     }
-            return AnnotationOptionList(copyTargets)
+            return AnnotationList(copyTargets)
         }
-        return AnnotationOptionList(Lists.newArrayList(targets.keys))
+        return AnnotationList(Lists.newArrayList(targets.keys))
     }
 
 

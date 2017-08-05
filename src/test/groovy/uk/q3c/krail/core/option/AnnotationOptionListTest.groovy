@@ -17,6 +17,7 @@ import com.google.common.collect.ImmutableList
 import com.google.inject.Inject
 import spock.lang.Specification
 import uk.q3c.krail.i18n.clazz.ClassPatternSource
+import uk.q3c.util.collection.AnnotationList
 
 /**
  *
@@ -24,11 +25,11 @@ import uk.q3c.krail.i18n.clazz.ClassPatternSource
  */
 class AnnotationOptionListTest extends Specification {
 
-    AnnotationOptionList list
+    AnnotationList list
 
     def "create empty list"() {
         when:
-        list = new AnnotationOptionList()
+        list = new AnnotationList()
 
         then:
 
@@ -37,7 +38,7 @@ class AnnotationOptionListTest extends Specification {
 
     def "create with elements"() {
         when:
-        list = new AnnotationOptionList(ClassPatternSource)
+        list = new AnnotationList(ClassPatternSource)
 
         then:
         list.size() == 1
@@ -46,7 +47,7 @@ class AnnotationOptionListTest extends Specification {
 
     def "create with list"() {
         when:
-        list = new AnnotationOptionList(ImmutableList.of(ClassPatternSource))
+        list = new AnnotationList(ImmutableList.of(ClassPatternSource))
 
         then:
         list.size() == 1
@@ -55,7 +56,7 @@ class AnnotationOptionListTest extends Specification {
 
     def "create with empty list"() {
         when:
-        list = new AnnotationOptionList(ImmutableList.of())
+        list = new AnnotationList(ImmutableList.of())
 
         then:
 
@@ -64,11 +65,11 @@ class AnnotationOptionListTest extends Specification {
 
     def "equals and hashcode"() {
         given:
-        AnnotationOptionList ref = new AnnotationOptionList(InMemory, Inject)
-        AnnotationOptionList refEmpty = new AnnotationOptionList()
-        AnnotationOptionList different = new AnnotationOptionList(Inject)
-        AnnotationOptionList empty = new AnnotationOptionList()
-        AnnotationOptionList same = new AnnotationOptionList(InMemory, Inject)
+        AnnotationList ref = new AnnotationList(InMemory, Inject)
+        AnnotationList refEmpty = new AnnotationList()
+        AnnotationList different = new AnnotationList(Inject)
+        AnnotationList empty = new AnnotationList()
+        AnnotationList same = new AnnotationList(InMemory, Inject)
 
         expect:
         ref.equals(same)

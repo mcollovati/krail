@@ -17,7 +17,6 @@ import com.google.inject.Provider
 import org.apache.commons.collections15.ListUtils
 import spock.lang.Specification
 import uk.q3c.krail.core.i18n.LabelKey
-import uk.q3c.krail.core.option.AnnotationOptionList
 import uk.q3c.krail.core.option.Option
 import uk.q3c.krail.i18n.api.I18NKey
 import uk.q3c.krail.i18n.api.PatternDao
@@ -25,6 +24,7 @@ import uk.q3c.krail.i18n.api.PatternSourceProviderConfig
 import uk.q3c.krail.i18n.clazz.ClassPatternSource
 import uk.q3c.krail.i18n.i18nModule.TestPatternSource
 import uk.q3c.krail.i18n.i18nModule.TestPatternSource1
+import uk.q3c.util.collection.AnnotationList
 
 import java.lang.annotation.Annotation
 
@@ -43,7 +43,7 @@ class DefaultPatternSourceProviderTest extends Specification {
 
     PatternDao classPatternDao = Mock()
     PatternDao testPatternDao = Mock()
-    PatternSourceProviderConfig config = new DefaultPatternSourceProviderConfig(new AnnotationOptionList(), new AnnotationOptionList(), new AnnotationOptionList())
+    PatternSourceProviderConfig config = new DefaultPatternSourceProviderConfig(new AnnotationList(), new AnnotationList(), new AnnotationList())
 
     def setup() {
         sources = new LinkedHashMap<>()
@@ -60,8 +60,8 @@ class DefaultPatternSourceProviderTest extends Specification {
         sources.put(TestPatternSource1.class, testPatternDaoProvider)
         sources.put(ClassPatternSource.class, classPatternDaoProvider)
         sources.put(TestPatternSource.class, testPatternDaoProvider)
-        config.sourceOrder = new AnnotationOptionList()
-        config.sourceOrderDefault = new AnnotationOptionList()
+        config.sourceOrder = new AnnotationList()
+        config.sourceOrderDefault = new AnnotationList()
         provider = new DefaultPatternSourceProvider(sources, targets, sourceOrderByBundle, sourceOrderDefault, config)
         LinkedHashSet<Class<? extends Annotation>> expected = new LinkedHashSet<>()
         expected.addAll(TestPatternSource1, ClassPatternSource, TestPatternSource)
@@ -75,8 +75,8 @@ class DefaultPatternSourceProviderTest extends Specification {
         sources.put(ClassPatternSource.class, classPatternDaoProvider)
         sources.put(TestPatternSource.class, testPatternDaoProvider)
 
-        config.sourceOrder = new AnnotationOptionList()
-        config.sourceOrderDefault = new AnnotationOptionList()
+        config.sourceOrder = new AnnotationList()
+        config.sourceOrderDefault = new AnnotationList()
 
         LinkedHashSet<Class<? extends Annotation>> expected = new LinkedHashSet<>()
         expected.addAll(ClassPatternSource, TestPatternSource1, TestPatternSource)
@@ -99,8 +99,8 @@ class DefaultPatternSourceProviderTest extends Specification {
         sourceOrderDefault.add(TestPatternSource)
         sourceOrderDefault.add(TestPatternSource1)
 
-        config.sourceOrder = new AnnotationOptionList()
-        config.sourceOrderDefault = new AnnotationOptionList()
+        config.sourceOrder = new AnnotationList()
+        config.sourceOrderDefault = new AnnotationList()
         provider = new DefaultPatternSourceProvider(sources, targets, sourceOrderByBundle, sourceOrderDefault, config)
 
         LinkedHashSet<Class<? extends Annotation>> expected = new LinkedHashSet<>()
@@ -119,8 +119,8 @@ class DefaultPatternSourceProviderTest extends Specification {
 
         sourceOrderDefault.add(ClassPatternSource)
 
-        config.sourceOrder = new AnnotationOptionList()
-        config.sourceOrderDefault = new AnnotationOptionList()
+        config.sourceOrder = new AnnotationList()
+        config.sourceOrderDefault = new AnnotationList()
         provider = new DefaultPatternSourceProvider(sources, targets, sourceOrderByBundle, sourceOrderDefault, config)
 
         LinkedHashSet<Class<? extends Annotation>> expected = new LinkedHashSet<>()
@@ -139,8 +139,8 @@ class DefaultPatternSourceProviderTest extends Specification {
         sourceOrderDefault.add(TestPatternSource)
         sourceOrderDefault.add(TestPatternSource1)
 
-        config.sourceOrder = new AnnotationOptionList()
-        config.sourceOrderDefault = new AnnotationOptionList()
+        config.sourceOrder = new AnnotationList()
+        config.sourceOrderDefault = new AnnotationList()
         provider = new DefaultPatternSourceProvider(sources, targets, sourceOrderByBundle, sourceOrderDefault, config)
 
         LinkedHashSet<Class<? extends Annotation>> expected = new LinkedHashSet<>()
@@ -157,10 +157,10 @@ class DefaultPatternSourceProviderTest extends Specification {
         sources.put(ClassPatternSource.class, classPatternDaoProvider)
         sources.put(TestPatternSource.class, testPatternDaoProvider)
 
-        AnnotationOptionList fromOption = new AnnotationOptionList(ClassPatternSource.class, TestPatternSource1.class)
+        AnnotationList fromOption = new AnnotationList(ClassPatternSource.class, TestPatternSource1.class)
 
         config.sourceOrder = fromOption
-        config.sourceOrderDefault = new AnnotationOptionList()
+        config.sourceOrderDefault = new AnnotationList()
         provider = new DefaultPatternSourceProvider(sources, targets, sourceOrderByBundle, sourceOrderDefault, config)
 
         LinkedHashSet<Class<? extends Annotation>> expected = new LinkedHashSet<>()
@@ -176,9 +176,9 @@ class DefaultPatternSourceProviderTest extends Specification {
         sources.put(ClassPatternSource.class, classPatternDaoProvider)
         sources.put(TestPatternSource.class, testPatternDaoProvider)
 
-        AnnotationOptionList fromOption = new AnnotationOptionList(ClassPatternSource.class, TestPatternSource1.class)
+        AnnotationList fromOption = new AnnotationList(ClassPatternSource.class, TestPatternSource1.class)
 
-        config.sourceOrder = new AnnotationOptionList()
+        config.sourceOrder = new AnnotationList()
         config.sourceOrderDefault = fromOption
         provider = new DefaultPatternSourceProvider(sources, targets, sourceOrderByBundle, sourceOrderDefault, config)
 
@@ -196,10 +196,10 @@ class DefaultPatternSourceProviderTest extends Specification {
         sources.put(TestPatternSource1.class, testPatternDaoProvider)
 
 
-        AnnotationOptionList fromOption = new AnnotationOptionList(ClassPatternSource.class, TestPatternSource1.class)
+        AnnotationList fromOption = new AnnotationList(ClassPatternSource.class, TestPatternSource1.class)
 
         config.sourceOrder = fromOption
-        config.sourceOrderDefault = new AnnotationOptionList()
+        config.sourceOrderDefault = new AnnotationList()
         provider = new DefaultPatternSourceProvider(sources, targets, sourceOrderByBundle, sourceOrderDefault, config)
 
         LinkedHashSet<Class<? extends Annotation>> expected = new LinkedHashSet<>()
@@ -215,9 +215,9 @@ class DefaultPatternSourceProviderTest extends Specification {
         sources.put(TestPatternSource1.class, testPatternDaoProvider)
 
 
-        AnnotationOptionList fromOption = new AnnotationOptionList(ClassPatternSource.class, TestPatternSource1.class)
+        AnnotationList fromOption = new AnnotationList(ClassPatternSource.class, TestPatternSource1.class)
 
-        config.sourceOrder = new AnnotationOptionList()
+        config.sourceOrder = new AnnotationList()
         config.sourceOrderDefault = fromOption
         provider = new DefaultPatternSourceProvider(sources, targets, sourceOrderByBundle, sourceOrderDefault, config)
 
@@ -246,7 +246,7 @@ class DefaultPatternSourceProviderTest extends Specification {
         given:
         targets.put(ClassPatternSource, classPatternDaoProvider)
         targets.put(TestPatternSource, testPatternDaoProvider)
-        AnnotationOptionList fromOption = new AnnotationOptionList()
+        AnnotationList fromOption = new AnnotationList()
         config.selectedTargets = fromOption
         provider = new DefaultPatternSourceProvider(sources, targets, sourceOrderByBundle, sourceOrderDefault, config)
 
@@ -262,7 +262,7 @@ class DefaultPatternSourceProviderTest extends Specification {
         given:
         targets.put(ClassPatternSource, classPatternDaoProvider)
         targets.put(TestPatternSource, testPatternDaoProvider)
-        AnnotationOptionList fromOption = new AnnotationOptionList(TestPatternSource, ClassPatternSource)
+        AnnotationList fromOption = new AnnotationList(TestPatternSource, ClassPatternSource)
         config.selectedTargets = fromOption
         provider = new DefaultPatternSourceProvider(sources, targets, sourceOrderByBundle, sourceOrderDefault, config)
 
@@ -276,7 +276,7 @@ class DefaultPatternSourceProviderTest extends Specification {
         given:
         targets.put(ClassPatternSource, classPatternDaoProvider)
         targets.put(TestPatternSource, testPatternDaoProvider)
-        AnnotationOptionList fromOption = new AnnotationOptionList(TestPatternSource.class, TestPatternSource1.class, ClassPatternSource.class)
+        AnnotationList fromOption = new AnnotationList(TestPatternSource.class, TestPatternSource1.class, ClassPatternSource.class)
         config.selectedTargets = fromOption
         provider = new DefaultPatternSourceProvider(sources, targets, sourceOrderByBundle, sourceOrderDefault, config)
 

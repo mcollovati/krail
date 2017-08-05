@@ -11,10 +11,11 @@
  *
  */
 
-package uk.q3c.krail.core.option;
+package uk.q3c.util.collection;
 
 import com.google.common.collect.ImmutableList;
 import org.apache.commons.collections15.ListUtils;
+import uk.q3c.krail.core.option.OptionList;
 
 import java.io.Serializable;
 import java.lang.annotation.Annotation;
@@ -27,7 +28,7 @@ import java.util.Set;
  * <p>
  * Created by David Sowerby on 07/08/15.
  */
-public class AnnotationOptionList implements Serializable {
+public class AnnotationList implements Serializable {
 
     protected final ImmutableList<Class<? extends Annotation>> list;
 
@@ -37,7 +38,7 @@ public class AnnotationOptionList implements Serializable {
      * @param list
      *         containing required values - may be empty
      */
-    public AnnotationOptionList(List<Class<? extends Annotation>> list) {
+    public AnnotationList(List<Class<? extends Annotation>> list) {
         super();
         this.list = ImmutableList.copyOf(list);
     }
@@ -49,12 +50,12 @@ public class AnnotationOptionList implements Serializable {
      *         containing required values - may be empty
      */
     @SafeVarargs
-    public AnnotationOptionList(Class<? extends Annotation>... elements) {
+    public AnnotationList(Class<? extends Annotation>... elements) {
         super();
         this.list = (elements == null) ? ImmutableList.of() : ImmutableList.copyOf(elements);
     }
 
-    public AnnotationOptionList(Set<? extends Class<? extends Annotation>> set) {
+    public AnnotationList(Set<? extends Class<? extends Annotation>> set) {
         this.list = ImmutableList.copyOf(set);
     }
 
@@ -77,7 +78,7 @@ public class AnnotationOptionList implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        AnnotationOptionList that = (AnnotationOptionList) o;
+        AnnotationList that = (AnnotationList) o;
 
         return ListUtils.isEqualList(this.list, that.list);
     }

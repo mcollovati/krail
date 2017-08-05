@@ -16,9 +16,9 @@ package uk.q3c.krail.core.data
 import org.apache.commons.collections15.ListUtils
 import spock.lang.Specification
 import uk.q3c.krail.core.eventbus.SessionBus
-import uk.q3c.krail.core.option.AnnotationOptionList
 import uk.q3c.krail.i18n.VaadinCurrentLocale
 import uk.q3c.krail.i18n.clazz.ClassPatternSource
+import uk.q3c.util.collection.AnnotationList
 
 /**
  *
@@ -34,12 +34,12 @@ class AnnotationOptionListConverterTest extends Specification {
 
     def "round trip empty list"() {
         given:
-        AnnotationOptionList testList = new AnnotationOptionList()
+        AnnotationList testList = new AnnotationList()
 
         when:
 
         String string = converter.convertToString(testList)
-        AnnotationOptionList returnedList = converter.convertToModel(string)
+        AnnotationList returnedList = converter.convertToModel(string)
 
         then:
 
@@ -49,12 +49,12 @@ class AnnotationOptionListConverterTest extends Specification {
 
     def "round trip list has elements"() {
         given:
-        AnnotationOptionList testList = new AnnotationOptionList(ClassPatternSource, SessionBus)
+        AnnotationList testList = new AnnotationList(ClassPatternSource, SessionBus)
 
         when:
 
         String string = converter.convertToString(testList)
-        AnnotationOptionList returnedList = converter.convertToModel(string)
+        AnnotationList returnedList = converter.convertToModel(string)
 
         then:
 

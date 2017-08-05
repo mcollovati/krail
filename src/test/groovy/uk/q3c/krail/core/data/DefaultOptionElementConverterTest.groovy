@@ -17,12 +17,12 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication
 import spock.lang.Specification
 import uk.q3c.krail.core.config.DefaultApplicationConfiguration
 import uk.q3c.krail.core.i18n.LabelKey
-import uk.q3c.krail.core.option.AnnotationOptionList
 import uk.q3c.krail.core.option.OptionList
 import uk.q3c.krail.core.services.Service
 import uk.q3c.krail.i18n.DefaultMessageFormat
 import uk.q3c.krail.i18n.api.I18NKey
 import uk.q3c.krail.i18n.clazz.ClassPatternSource
+import uk.q3c.util.collection.AnnotationList
 
 import java.time.LocalDateTime
 
@@ -49,7 +49,7 @@ class DefaultOptionElementConverterTest extends Specification {
         converter.convertValueToString(Service.State.FAILED).equals('uk.q3c.krail.core.services.Service$State.FAILED')
         converter.convertValueToString(BigDecimal.valueOf(433)).equals('433')
         converter.convertValueToString(new OptionList<>(Integer.class, 1, 3)).equals('1~~3')
-        converter.convertValueToString(new AnnotationOptionList(ClassPatternSource, RequiresAuthentication)).equals('uk.q3c.krail.i18n.clazz.ClassPatternSource~~org.apache.shiro.authz.annotation.RequiresAuthentication')
+        converter.convertValueToString(new AnnotationList(ClassPatternSource, RequiresAuthentication)).equals('uk.q3c.krail.i18n.clazz.ClassPatternSource~~org.apache.shiro.authz.annotation.RequiresAuthentication')
     }
 
     def "from String to other"() {
@@ -63,7 +63,7 @@ class DefaultOptionElementConverterTest extends Specification {
         converter.convertStringToValue(I18NKey, 'uk.q3c.krail.core.i18n.LabelKey.Yes').equals(LabelKey.Yes)
         converter.convertStringToValue(Enum, 'uk.q3c.krail.core.services.Service$State.FAILED').equals(Service.State.FAILED)
         converter.convertStringToValue(BigDecimal, '433').equals(BigDecimal.valueOf(433))
-        converter.convertStringToValue(AnnotationOptionList, 'uk.q3c.krail.i18n.clazz.ClassPatternSource~~org.apache.shiro.authz.annotation.RequiresAuthentication').equals(new AnnotationOptionList(ClassPatternSource, RequiresAuthentication))
+        converter.convertStringToValue(AnnotationList, 'uk.q3c.krail.i18n.clazz.ClassPatternSource~~org.apache.shiro.authz.annotation.RequiresAuthentication').equals(new AnnotationList(ClassPatternSource, RequiresAuthentication))
     }
 
     def "convertToString, unknown converter type throws ConverterException "() {
