@@ -28,9 +28,8 @@ Where such assertions as are required, they will be replaced either by using Kot
 #### Translate and MessageFormat
 
 The `MessageFormat` utility class has been deprecated and replaced by interface `MessageFormat2` and implementation `DefaultMessageFormat`.
-`Translate` uses the new implementation 
-`Translate` (and `DefaultMessageFormat` if used directly) offers 3 levels of strictness when handling mis-matches between arguments and parameters, **STRICT**, **STRICT_EXCEPTION** and **LENIENT**
-The default, **STRICT** behaves the same way as the previous version, except that: 
+- `Translate` uses the new implementation 
+- `Translate` (and `DefaultMessageFormat` if used directly) offers 3 levels of strictness when handling mis-matches between arguments and parameters, **STRICT**, **STRICT_EXCEPTION** and **LENIENT**. The default, **STRICT**, behaves the same way as the previous version.
 
 
 ### Option
