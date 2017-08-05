@@ -17,13 +17,12 @@ import com.google.common.collect.ImmutableSet
 import spock.lang.Specification
 import uk.q3c.krail.core.i18n.DescriptionKey
 import uk.q3c.krail.core.i18n.LabelKey
-import uk.q3c.krail.core.option.Option
 import uk.q3c.krail.i18n.api.PatternCacheKey
+import uk.q3c.krail.i18n.api.PatternCacheLoaderConfig
 import uk.q3c.krail.i18n.api.PatternSourceProvider
 import uk.q3c.krail.i18n.api.clazz.ClassPatternDao
 import uk.q3c.krail.i18n.clazz.ClassPatternSource
 import uk.q3c.krail.i18n.i18nModule.TestPatternSource
-
 /**
  * This test had to be changed to use a real DefaultPatternCacheLoader rather than a mock, although oddly the Mock did work originally
  * There are some issues with CGLib https://groups.google.com/forum/#!topic/spockframework/59WIHGgcSNE
@@ -37,14 +36,14 @@ class DefaultPatternSourceTest extends Specification {
 
 
     DefaultPatternSource patternSource
-
+    PatternCacheLoaderConfig config
     def patternCacheLoader
-    def option = Mock(Option)
     def sourceProvider = Mock(PatternSourceProvider)
     def classPatternDao = Mock(ClassPatternDao)
 
     def setup() {
-        patternCacheLoader = new DefaultPatternCacheLoader(sourceProvider, option)
+        config = new DefaultPatternCacheLoaderConfig()
+        patternCacheLoader = new DefaultPatternCacheLoader(sourceProvider, config)
         patternSource = new DefaultPatternSource(patternCacheLoader)
     }
 
@@ -61,7 +60,7 @@ class DefaultPatternSourceTest extends Specification {
         sourceProvider.orderedSources(LabelKey.Active_Source) >> ImmutableSet.of(ClassPatternSource)
         sourceProvider.sourceFor(ClassPatternSource.class) >> Optional.of(classPatternDao)
         classPatternDao.getValue(key) >> Optional.of("a value")
-        option.get(DefaultPatternCacheLoader.optionKeyAutoStub.qualifiedWith(ClassPatternSource.class.simpleName)) >> false
+        config.setAutoStub(ClassPatternSource.class, false)
 
         when:
 
@@ -82,7 +81,7 @@ class DefaultPatternSourceTest extends Specification {
         sourceProvider.sourceFor(ClassPatternSource.class) >> Optional.of(classPatternDao)
         classPatternDao.getValue(key1) >> Optional.of("a value")
         classPatternDao.getValue(key2) >> Optional.of("a value")
-        option.get(DefaultPatternCacheLoader.optionKeyAutoStub.qualifiedWith(ClassPatternSource.class.simpleName)) >> false
+        config.setAutoStub(ClassPatternSource.class, false)
 
 
         when:

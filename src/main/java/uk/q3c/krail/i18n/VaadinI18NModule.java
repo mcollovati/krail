@@ -181,10 +181,11 @@ public class VaadinI18NModule extends I18NModule {
     }
 
     /**
-     * See javadoc for {@link DefaultPatternCacheLoader} for an explanation of what this is for.  Override this method if you provide your own implementation
+     * See javadoc for {@link DefaultPatternCacheLoaderConfig} for an explanation of what this is for.  Override this method if you provide your own implementation
      */
     protected void bindPatternCacheLoader() {
         bind(PatternCacheLoader.class).to(DefaultPatternCacheLoader.class);
+        bind(PatternCacheLoaderConfig.class).to(PatternCacheLoaderConfigByOption.class);
     }
 
     /**

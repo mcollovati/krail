@@ -15,16 +15,9 @@ package uk.q3c.krail.i18n;
 
 import com.google.common.cache.CacheLoader;
 import com.google.inject.Inject;
-import com.vaadin.data.Property;
-import uk.q3c.krail.core.i18n.DescriptionKey;
 import uk.q3c.krail.core.i18n.KrailResourceBundleControl;
-import uk.q3c.krail.core.i18n.LabelKey;
-import uk.q3c.krail.core.option.Option;
-import uk.q3c.krail.core.option.OptionKey;
-import uk.q3c.krail.core.option.VaadinOptionContext;
 import uk.q3c.krail.i18n.api.*;
 
-import javax.annotation.Nonnull;
 import java.lang.annotation.Annotation;
 import java.util.List;
 import java.util.Locale;
@@ -38,20 +31,16 @@ import static com.google.common.base.Preconditions.*;
  * PatternSourceProvider}.  David Sowerby 26/07/15
  * Created by David Sowerby on 08/12/14.
  */
-public class DefaultPatternCacheLoader extends CacheLoader<PatternCacheKey, String> implements PatternCacheLoader, VaadinOptionContext {
-    public static final OptionKey<Boolean> optionKeyAutoStub = new OptionKey<>(Boolean.FALSE, DefaultPatternCacheLoader.class, LabelKey.Auto_Stub,
-            DescriptionKey.Auto_Stub);
-    public static final OptionKey<Boolean> optionKeyStubWithKeyName = new OptionKey<>(Boolean.TRUE, DefaultPatternCacheLoader.class, LabelKey
-            .Stub_with_Key_Name, DescriptionKey.Stub_with_Key_Name);
-    public static final OptionKey<String> optionKeyStubValue = new OptionKey<>("undefined", DefaultPatternCacheLoader.class, LabelKey.Stub_Value,
-            DescriptionKey.Stub_Value);
-    private Option option;
+public class DefaultPatternCacheLoader extends CacheLoader<PatternCacheKey, String> implements PatternCacheLoader {
+
     private PatternSourceProvider sourceProvider;
+    private PatternCacheLoaderConfig config;
 
     @Inject
-    public DefaultPatternCacheLoader(PatternSourceProvider sourceProvider, Option option) {
+    public DefaultPatternCacheLoader(PatternSourceProvider sourceProvider, PatternCacheLoaderConfig config) {
         this.sourceProvider = sourceProvider;
-        this.option = option;
+        this.config = config;
+        config.setPatternCacheLoader(this);
     }
 
 
@@ -78,9 +67,8 @@ public class DefaultPatternCacheLoader extends CacheLoader<PatternCacheKey, Stri
      *                              the thread's interrupt status is set
      */
     @Override
-    public String load(@Nonnull PatternCacheKey cacheKey) throws Exception {
+    public String load(PatternCacheKey cacheKey) throws Exception {
         checkNotNull(cacheKey);
-
         I18NKey i18NKey = cacheKey.getKey();
 
 
@@ -98,7 +86,7 @@ public class DefaultPatternCacheLoader extends CacheLoader<PatternCacheKey, Stri
 
                 //get the Dao - we don't need to check that it is present, as we are using sources from sourceProvider
                 PatternDao dao = sourceProvider.sourceFor(source)
-                                               .get();
+                        .get();
 
                 //get value from dao, break out if present
                 value = dao.getValue(cacheKey);
@@ -109,18 +97,18 @@ public class DefaultPatternCacheLoader extends CacheLoader<PatternCacheKey, Stri
                 //value is not present, auto-stub if required
 
                 // auto-stubbing if required
-                Boolean autoStub = option.get(optionKeyAutoStub.qualifiedWith(source.getSimpleName()));
+                Boolean autoStub = config.autoStub(source);
                 /* autosSub to the selected target */
                 if (autoStub) {
                     sourceProvider.selectedTargets()
-                                  .getList()
-                                  .forEach(t -> {
-                                      Optional<PatternDao> target = sourceProvider.targetFor(t);
-                                      if (target.isPresent()) {
-                                          target.get()
-                                                .write(cacheKey, stubValue(source, cacheKey));
-                                      }
-                                  });
+                            .getList()
+                            .forEach(t -> {
+                                Optional<PatternDao> target = sourceProvider.targetFor(t);
+                                if (target.isPresent()) {
+                                    target.get()
+                                            .write(cacheKey, stubValue(source, cacheKey));
+                                }
+                            });
                 }
 
             }
@@ -131,40 +119,24 @@ public class DefaultPatternCacheLoader extends CacheLoader<PatternCacheKey, Stri
         }
         if (!value.isPresent()) {
             value = Optional.of(cacheKey.getKeyAsEnum()
-                                        .name()
-                                        .replace('_', ' '));
+                    .name()
+                    .replace('_', ' '));
             cacheKey.setSource(null);
         }
         return value.get();
     }
 
     /**
-     * When auto-stubbing the value used can either be the key name or a value specified by {@link #optionKeyStubValue}
+     * When auto-stubbing the value used can either be the key name or a value specified by {@link PatternCacheLoaderConfig#stubValue}
      *
      * @param source   the pattern source
      * @param cacheKey the key to identify the entry
      * @return the value to assign to the key
      */
     protected String stubValue(Class<? extends Annotation> source, PatternCacheKey cacheKey) {
-        Boolean stubWithKeyName = option.get(optionKeyStubWithKeyName.qualifiedWith(source.getSimpleName()));
-        return (stubWithKeyName) ? cacheKey.getKeyAsEnum()
-                                           .name() : option.get(optionKeyStubValue.qualifiedWith(source.getSimpleName()));
+        Boolean stubWithKeyName = config.stubWithKeyName(source);
+        return (stubWithKeyName) ? cacheKey.getKeyAsEnum().name() : config.stubValue(source);
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    @Nonnull
-    @Override
-    public Option optionInstance() {
-        return option;
-    }
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void optionValueChanged(Property.ValueChangeEvent event) {
-        // do nothing, Option called as needed
-    }
 }

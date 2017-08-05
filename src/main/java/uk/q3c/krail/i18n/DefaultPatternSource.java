@@ -54,7 +54,7 @@ public class DefaultPatternSource implements PatternSource<LoadingCache<PatternC
 
     /**
      * Retrieves a pattern string from cache, or loads the cache with a value from persistence if needed (see {@link
-     * DefaultPatternCacheLoader}. This method always returns a value.  Keys without values will have a value
+     * DefaultPatternCacheLoaderConfig}. This method always returns a value.  Keys without values will have a value
      * assigned of the key.name(), with underscores replaced by spaces.
      * <p>
      * Note that this method does not check that the {@code locale} is supported ... it is assumed that by this stage

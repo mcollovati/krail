@@ -48,6 +48,10 @@ apply plugin: 'uk.q3c.kaytee'
 
 group = 'uk.q3c.krail'
 
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
 kaytee {
     baseVersion = "0.10.0.0"
 }

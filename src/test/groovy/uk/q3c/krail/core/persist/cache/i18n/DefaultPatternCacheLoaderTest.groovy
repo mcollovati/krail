@@ -16,15 +16,15 @@ package uk.q3c.krail.core.persist.cache.i18n
 import com.google.common.collect.ImmutableSet
 import spock.lang.Specification
 import uk.q3c.krail.core.i18n.LabelKey
-import uk.q3c.krail.core.option.Option
 import uk.q3c.krail.i18n.DefaultPatternCacheLoader
+import uk.q3c.krail.i18n.DefaultPatternCacheLoaderConfig
 import uk.q3c.krail.i18n.api.PatternCacheKey
+import uk.q3c.krail.i18n.api.PatternCacheLoaderConfig
 import uk.q3c.krail.i18n.api.PatternSourceProvider
 import uk.q3c.krail.i18n.api.clazz.ClassPatternDao
 import uk.q3c.krail.i18n.clazz.ClassPatternSource
 import uk.q3c.krail.i18n.i18nModule.TestPatternSource
 import uk.q3c.util.testutil.LogMonitor
-
 /**
  *
  * Created by David Sowerby on 30/07/15.
@@ -33,7 +33,7 @@ import uk.q3c.util.testutil.LogMonitor
 class DefaultPatternCacheLoaderTest extends Specification {
 
     DefaultPatternCacheLoader loader
-    def option = Mock(Option)
+    PatternCacheLoaderConfig config
     def sourceProvider = Mock(PatternSourceProvider)
 
     LogMonitor logMonitor
@@ -41,7 +41,8 @@ class DefaultPatternCacheLoaderTest extends Specification {
     def setup() {
         logMonitor = new LogMonitor()
         logMonitor.addClassFilter(this.getClass())
-        loader = new DefaultPatternCacheLoader(sourceProvider, option)
+        config = new DefaultPatternCacheLoaderConfig()
+        loader = new DefaultPatternCacheLoader(sourceProvider, config)
     }
 
     def cleanup() {
@@ -69,9 +70,9 @@ class DefaultPatternCacheLoaderTest extends Specification {
         sourceProvider.targetFor(ClassPatternSource) >> optionalTargetPatternDao1
         sourceProvider.targetFor(TestPatternSource) >> optionalTargetPatternDao2
 
-        option.get(DefaultPatternCacheLoader.optionKeyAutoStub.qualifiedWith(ClassPatternSource.class.simpleName)) >> true
-        option.get(DefaultPatternCacheLoader.optionKeyStubWithKeyName.qualifiedWith(ClassPatternSource.class.simpleName)) >> true
-        option.get(DefaultPatternCacheLoader.optionKeyStubValue.qualifiedWith(ClassPatternSource.class.simpleName)) >> "stubby value"
+        config.setAutoStub(ClassPatternSource.class, true)
+        config.setStubWithKeyName(ClassPatternSource.class, true)
+        config.setStubValue(ClassPatternSource.class, "stubby value")
 
         when:
         loader.load(cacheKey)
@@ -103,10 +104,9 @@ class DefaultPatternCacheLoaderTest extends Specification {
         sourceProvider.targetFor(ClassPatternSource) >> optionalTargetPatternDao1
         sourceProvider.targetFor(TestPatternSource) >> optionalTargetPatternDao2
 
-        option.get(DefaultPatternCacheLoader.optionKeyAutoStub.qualifiedWith(ClassPatternSource.class.simpleName)) >> true
-        option.get(DefaultPatternCacheLoader.optionKeyStubWithKeyName.qualifiedWith(ClassPatternSource.class.simpleName)) >> false
-        option.get(DefaultPatternCacheLoader.optionKeyStubValue.qualifiedWith(ClassPatternSource.class.simpleName)) >> "stubby value"
-
+        config.setAutoStub(ClassPatternSource.class, true)
+        config.setStubWithKeyName(ClassPatternSource.class, false)
+        config.setStubValue(ClassPatternSource.class, "stubby value")
         when:
         loader.load(cacheKey)
 
@@ -135,7 +135,9 @@ class DefaultPatternCacheLoaderTest extends Specification {
         sourceProvider.targetFor(ClassPatternSource) >> optionalTargetPatternDao1
         sourceProvider.targetFor(TestPatternSource) >> optionalTargetPatternDao2
 
-        option.get(DefaultPatternCacheLoader.optionKeyAutoStub.qualifiedWith(ClassPatternSource.class.simpleName)) >> false
+        config.setAutoStub(ClassPatternSource.class, false)
+        config.setStubWithKeyName(ClassPatternSource.class, true)
+        config.setStubValue(ClassPatternSource.class, "stubby value")
 
         when:
         loader.load(cacheKey)
@@ -150,9 +152,9 @@ class DefaultPatternCacheLoaderTest extends Specification {
         given:
 
         PatternCacheKey cacheKey = new PatternCacheKey(LabelKey.Yes, Locale.UK)
-        option.get(DefaultPatternCacheLoader.optionKeyStubWithKeyName.qualifiedWith(ClassPatternSource.class.simpleName)) >> true
-        option.get(DefaultPatternCacheLoader.optionKeyStubValue.qualifiedWith(ClassPatternSource.class.simpleName)) >> "stubby value"
-
+        config.setAutoStub(ClassPatternSource.class, true)
+        config.setStubWithKeyName(ClassPatternSource.class, true)
+        config.setStubValue(ClassPatternSource.class, "stubby value")
         expect:
         loader.stubValue(ClassPatternSource.class, cacheKey).equals("Yes")
     }
@@ -162,21 +164,12 @@ class DefaultPatternCacheLoaderTest extends Specification {
         given:
 
         PatternCacheKey cacheKey = new PatternCacheKey(LabelKey.Yes, Locale.UK)
-        option.get(DefaultPatternCacheLoader.optionKeyStubWithKeyName.qualifiedWith(ClassPatternSource.class.simpleName)) >> false
-        option.get(DefaultPatternCacheLoader.optionKeyStubValue.qualifiedWith(ClassPatternSource.class.simpleName)) >> "stubby value"
+        config.setAutoStub(ClassPatternSource.class, true)
+        config.setStubWithKeyName(ClassPatternSource.class, false)
+        config.setStubValue(ClassPatternSource.class, "stubby value")
 
         expect:
         loader.stubValue(ClassPatternSource.class, cacheKey).equals("stubby value")
-    }
-
-    def "getOption"() {
-        expect:
-        loader.optionInstance() == option
-    }
-
-    def "optionValueChanged does nothing, call for coverage"() {
-        expect:
-        loader.optionValueChanged(null)
     }
 
 
@@ -195,7 +188,6 @@ class DefaultPatternCacheLoaderTest extends Specification {
         1 * sourceProvider.orderedSources(LabelKey.Yes) >> ImmutableSet.of(ClassPatternSource)
         1 * sourceProvider.sourceFor(ClassPatternSource) >> optionalClassPatternDao
         1 * classPatternDao.getValue(cacheKey) >> daoGetValueResult
-        0 * option.get(DefaultPatternCacheLoader.optionKeyAutoStub.qualifiedWith(ClassPatternSource.class.simpleName)) >> true
         0 * sourceProvider.selectedTargets() >> new LinkedHashSet<>()
         result == "value"
         cacheKey.getRequestedLocale() == Locale.UK
@@ -219,7 +211,6 @@ class DefaultPatternCacheLoaderTest extends Specification {
         2 * sourceProvider.sourceFor(ClassPatternSource) >> optionalClassPatternDao
         1 * classPatternDao.getValue(cacheKey) >> Optional.empty()
         1 * classPatternDao.getValue(cacheKey) >> daoGetValueResult
-        1 * option.get(DefaultPatternCacheLoader.optionKeyAutoStub.qualifiedWith(ClassPatternSource.class.simpleName)) >> false
         0 * sourceProvider.selectedTargets() >> new LinkedHashSet<>()
         result == "value"
         cacheKey.getRequestedLocale() == Locale.UK
@@ -241,7 +232,6 @@ class DefaultPatternCacheLoaderTest extends Specification {
         3 * sourceProvider.orderedSources(LabelKey.Active_Source) >> ImmutableSet.of(ClassPatternSource)
         3 * sourceProvider.sourceFor(ClassPatternSource) >> optionalClassPatternDao
         3 * classPatternDao.getValue(cacheKey) >> Optional.empty()
-        3 * option.get(DefaultPatternCacheLoader.optionKeyAutoStub.qualifiedWith(ClassPatternSource.class.simpleName)) >> false
         0 * sourceProvider.selectedTargets() >> new LinkedHashSet<>()
         result == "Active Source"
         cacheKey.getRequestedLocale() == Locale.UK
