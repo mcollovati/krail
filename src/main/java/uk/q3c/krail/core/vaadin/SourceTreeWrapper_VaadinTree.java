@@ -10,9 +10,10 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package uk.q3c.util;
+package uk.q3c.krail.core.vaadin;
 
 import com.vaadin.ui.Tree;
+import uk.q3c.util.forest.SourceTreeWrapper;
 
 import java.util.ArrayList;
 import java.util.Collection;

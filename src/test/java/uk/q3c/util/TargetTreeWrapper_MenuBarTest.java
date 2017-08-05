@@ -17,8 +17,11 @@ import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.MenuBar.MenuItem;
 import org.junit.Before;
 import org.junit.Test;
+import uk.q3c.krail.core.vaadin.TargetTreeWrapper_MenuBar;
+import uk.q3c.util.forest.CaptionReader;
+import uk.q3c.util.forest.TreeCopyException;
 
-import static org.assertj.core.api.Assertions.fail;
+import static org.assertj.core.api.Assertions.*;
 
 public class TargetTreeWrapper_MenuBarTest {
 

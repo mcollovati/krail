@@ -10,8 +10,15 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package uk.q3c.util;
+package uk.q3c.krail.core.navigate.sitemap;
 
-public interface CaptionReader<S> {
-    String getCaption(S sourceNode);
+import uk.q3c.util.forest.CaptionReader;
+
+public class UserSitemapNodeCaption implements CaptionReader<UserSitemapNode> {
+
+    @Override
+    public String getCaption(UserSitemapNode sourceNode) {
+        return sourceNode.getLabel();
+    }
+
 }

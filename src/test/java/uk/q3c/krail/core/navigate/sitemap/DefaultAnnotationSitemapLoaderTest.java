@@ -43,7 +43,7 @@ import uk.q3c.krail.testutil.i18n.TestI18NModule;
 import uk.q3c.krail.testutil.option.TestOptionModule;
 import uk.q3c.krail.testutil.persist.TestPersistenceModule;
 import uk.q3c.krail.util.UtilsModule;
-import uk.q3c.util.ClassNameUtils;
+import uk.q3c.util.clazz.ClassNameUtils;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -15,10 +15,11 @@ package uk.q3c.util;
 import com.vaadin.ui.MenuBar;
 import com.vaadin.ui.MenuBar.MenuItem;
 import org.junit.Test;
+import uk.q3c.krail.core.vaadin.MenuItemComparator;
 
 import java.util.Collections;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
 public class MenuItemComparatorTest {
 

@@ -15,13 +15,14 @@ package uk.q3c.util;
 
 import org.junit.Before;
 import org.junit.Test;
+import uk.q3c.util.forest.*;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Comparator;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-import static org.assertj.core.api.Assertions.assertThat;
+import static com.google.common.base.Preconditions.*;
+import static org.assertj.core.api.Assertions.*;
 
 public class TargetTreeWrapper_BasicForestTest {
     private TestCaptionReader captionReader;

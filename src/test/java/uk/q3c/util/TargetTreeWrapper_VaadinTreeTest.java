@@ -16,8 +16,11 @@ package uk.q3c.util;
 import com.vaadin.ui.Tree;
 import org.junit.Before;
 import org.junit.Test;
+import uk.q3c.krail.core.vaadin.TargetTreeWrapper_VaadinTree;
+import uk.q3c.util.forest.CaptionReader;
+import uk.q3c.util.forest.TreeCopyException;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
 public class TargetTreeWrapper_VaadinTreeTest {
 

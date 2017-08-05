@@ -10,7 +10,10 @@
  *  * specific language governing permissions and limitations under the License.
  *
  */
-package uk.q3c.util;
+package uk.q3c.krail.core.vaadin;
+
+import uk.q3c.util.forest.TargetTreeWrapperBase;
+import uk.q3c.util.forest.TreeCopyException;
 
 public class TargetTreeWrapper_MenuBar<S, T> extends TargetTreeWrapperBase<S, T> {
 

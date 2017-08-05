@@ -14,6 +14,9 @@
 package uk.q3c.util
 
 import spock.lang.Specification
+import uk.q3c.util.forest.NodeModifier
+import uk.q3c.util.forest.TargetTreeWrapperBase
+import uk.q3c.util.forest.TreeCopyException
 
 /**
  * Created by David Sowerby on 18 Jan 2016

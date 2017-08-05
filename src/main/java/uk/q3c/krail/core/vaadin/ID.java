@@ -10,13 +10,15 @@
  *  * specific language governing permissions and limitations under the License.
  *
  */
-package uk.q3c.util;
+package uk.q3c.krail.core.vaadin;
 
+
+import uk.q3c.util.clazz.DefaultClassNameUtils;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.*;
 
 /**
  * Utility class used to standardise id setting (setId methods in Components).

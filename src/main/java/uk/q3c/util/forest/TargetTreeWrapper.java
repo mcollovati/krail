@@ -10,7 +10,7 @@
  *  * specific language governing permissions and limitations under the License.
  *
  */
-package uk.q3c.util;
+package uk.q3c.util.forest;
 
 import com.vaadin.ui.Tree;
 
@@ -33,7 +33,7 @@ public interface TargetTreeWrapper<S, T> {
     /**
      * Creates a new target node based on {@code sourceChildNode}. It may also add the resultant target node as a child
      * of the {@code parentNode}. However, remember that if it does so, the
-     * {@link TreeCopy#setSortOption(uk.q3c.util.TreeCopy.SortOption)} must be appropriately set. If the target tree
+     * {@link TreeCopy#setSortOption(TreeCopy.SortOption)} must be appropriately set. If the target tree
      * implementation does not support a sort after nodes have been added (and most do not) then the sort must have
      * been
      * performed on the source nodes before they are added.

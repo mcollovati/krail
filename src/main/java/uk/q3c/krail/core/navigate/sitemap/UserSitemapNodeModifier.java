@@ -20,7 +20,7 @@ import uk.q3c.krail.core.shiro.PageAccessController;
 import uk.q3c.krail.core.shiro.SubjectProvider;
 import uk.q3c.krail.i18n.api.CurrentLocale;
 import uk.q3c.krail.i18n.api.Translate;
-import uk.q3c.util.NodeModifier;
+import uk.q3c.util.forest.NodeModifier;
 
 import javax.annotation.Nonnull;
 import java.text.Collator;

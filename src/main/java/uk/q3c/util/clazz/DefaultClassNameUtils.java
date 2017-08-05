@@ -10,11 +10,11 @@
  *  * specific language governing permissions and limitations under the License.
  *
  */
-package uk.q3c.util;
+package uk.q3c.util.clazz;
 
 import javax.annotation.Nonnull;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.*;
 
 public class DefaultClassNameUtils implements ClassNameUtils {
 

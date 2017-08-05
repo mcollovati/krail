@@ -16,8 +16,9 @@ package uk.q3c.util;
 import com.vaadin.ui.Tree;
 import org.junit.Before;
 import org.junit.Test;
+import uk.q3c.krail.core.vaadin.SourceTreeWrapper_VaadinTree;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
 public class SourceTreeWrapper_VaadinTreeTest {
     SourceTreeWrapper_VaadinTree<SourceTestNode> wrapper;

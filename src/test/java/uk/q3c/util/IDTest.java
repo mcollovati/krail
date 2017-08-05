@@ -19,10 +19,11 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.Panel;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import uk.q3c.krail.core.vaadin.ID;
 
 import java.util.Optional;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({TestByteEnhancementModule.class})

@@ -20,14 +20,13 @@ import org.slf4j.LoggerFactory;
 import uk.q3c.krail.core.navigate.NavigationState;
 import uk.q3c.krail.core.navigate.URIFragmentHandler;
 import uk.q3c.krail.core.shiro.PagePermission;
-import uk.q3c.util.BasicForest;
+import uk.q3c.util.forest.BasicForest;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.*;
 
-import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.*;
 
 public abstract class DefaultSitemapBase<T extends SitemapNode> implements Sitemap<T> {
     private static Logger log = LoggerFactory.getLogger(DefaultSitemapBase.class);

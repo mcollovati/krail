@@ -14,7 +14,7 @@
 package uk.q3c.krail.core.services;
 
 import com.google.common.collect.ImmutableList;
-import uk.q3c.util.CycleDetectedException;
+import uk.q3c.util.dag.CycleDetectedException;
 
 import javax.annotation.Nonnull;
 import java.util.List;

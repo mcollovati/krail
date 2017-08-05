@@ -14,8 +14,8 @@
 package uk.q3c.krail.util;
 
 import com.google.inject.AbstractModule;
-import uk.q3c.util.ClassNameUtils;
-import uk.q3c.util.DefaultClassNameUtils;
+import uk.q3c.util.clazz.ClassNameUtils;
+import uk.q3c.util.clazz.DefaultClassNameUtils;
 
 /**
  * Bindings fo utility classes

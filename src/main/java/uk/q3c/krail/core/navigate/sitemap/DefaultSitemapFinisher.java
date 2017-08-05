@@ -20,8 +20,8 @@ import uk.q3c.krail.core.view.KrailView;
 import uk.q3c.krail.i18n.DefaultMessageFormat;
 import uk.q3c.krail.i18n.api.CurrentLocale;
 import uk.q3c.krail.i18n.api.I18NKey;
-import uk.q3c.util.CycleDetectedException;
-import uk.q3c.util.DynamicDAG;
+import uk.q3c.util.dag.CycleDetectedException;
+import uk.q3c.util.dag.DynamicDAG;
 
 import javax.annotation.Nonnull;
 import java.util.HashSet;

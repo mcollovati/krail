@@ -11,7 +11,7 @@
  *
  */
 
-package uk.q3c.util;
+package uk.q3c.krail.core.vaadin;
 
 import com.vaadin.ui.MenuBar.MenuItem;
 

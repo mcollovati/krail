@@ -15,8 +15,10 @@ package uk.q3c.util;
 
 import org.junit.Before;
 import org.junit.Test;
+import uk.q3c.util.forest.BasicForest;
+import uk.q3c.util.forest.SourceTreeWrapper_BasicForest;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
 public class SourceTreeWrapper_BasicForestTest {
 

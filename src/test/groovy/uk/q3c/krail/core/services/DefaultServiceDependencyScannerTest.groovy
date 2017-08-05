@@ -20,7 +20,7 @@ import uk.q3c.krail.core.eventbus.GlobalBusProvider
 import uk.q3c.krail.core.i18n.LabelKey
 import uk.q3c.krail.i18n.api.Translate
 import uk.q3c.krail.util.UtilsModule
-import uk.q3c.util.ClassNameUtils
+import uk.q3c.util.clazz.ClassNameUtils
 import uk.q3c.util.testutil.LogMonitor
 /**
  *

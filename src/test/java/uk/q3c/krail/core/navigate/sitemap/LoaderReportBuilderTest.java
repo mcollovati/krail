@@ -23,7 +23,7 @@ import org.junit.rules.TemporaryFolder;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import uk.q3c.krail.util.UtilsModule;
-import uk.q3c.util.ClassNameUtils;
+import uk.q3c.util.clazz.ClassNameUtils;
 import uk.q3c.util.testutil.FileTestUtil;
 import uk.q3c.util.testutil.TestResource;
 
@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({UtilsModule.class})

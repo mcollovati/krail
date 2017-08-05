@@ -11,7 +11,7 @@
  *
  */
 
-package uk.q3c.util;
+package uk.q3c.util.clazz;
 
 import javax.annotation.Nonnull;
 

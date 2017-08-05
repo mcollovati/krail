@@ -13,11 +13,12 @@
 package uk.q3c.util;
 
 import org.junit.Test;
+import uk.q3c.util.reflect.ReflectionUtils;
 
 import java.io.Serializable;
 import java.util.Set;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
 public class ReflectionUtilsTest {
 
@@ -34,11 +35,11 @@ public class ReflectionUtilsTest {
 
     }
 
-    static interface Wiggly {
+    interface Wiggly {
 
     }
 
-    static interface Wobbly {
+    interface Wobbly {
 
     }
 

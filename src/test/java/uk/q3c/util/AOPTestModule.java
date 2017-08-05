@@ -25,6 +25,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import uk.q3c.krail.core.services.DefaultServicesMonitor;
 import uk.q3c.krail.core.services.Service;
+import uk.q3c.util.reflect.ReflectionUtils;
 
 import java.lang.reflect.Method;
 import java.util.Set;

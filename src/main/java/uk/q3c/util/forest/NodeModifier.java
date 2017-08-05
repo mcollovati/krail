@@ -10,7 +10,7 @@
  *  * specific language governing permissions and limitations under the License.
  *
  */
-package uk.q3c.util;
+package uk.q3c.util.forest;
 
 import com.vaadin.ui.MenuBar.MenuItem;
 

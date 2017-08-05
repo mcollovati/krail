@@ -31,7 +31,7 @@ import uk.q3c.krail.core.services.RelatedServicesExecutor;
 import uk.q3c.krail.i18n.api.I18NKey;
 import uk.q3c.krail.i18n.api.Translate;
 import uk.q3c.krail.util.ResourceUtils;
-import uk.q3c.util.ClassNameUtils;
+import uk.q3c.util.clazz.ClassNameUtils;
 
 import java.util.ArrayList;
 import java.util.List;

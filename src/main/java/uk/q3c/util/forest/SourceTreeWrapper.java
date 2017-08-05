@@ -10,7 +10,7 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  */
-package uk.q3c.util;
+package uk.q3c.util.forest;
 
 import com.vaadin.ui.Tree;
 
@@ -33,7 +33,7 @@ public interface SourceTreeWrapper<N> {
 
     // public abstract int getChildCount(N parentNode);
 
-    public abstract List<N> getRoots();
+    List<N> getRoots();
 
     /**
      * Returns an empty list of there are no children. Implementations must not return null
@@ -42,7 +42,7 @@ public interface SourceTreeWrapper<N> {
      *
      * @return
      */
-    public abstract List<N> getChildren(N parentNode);
+    List<N> getChildren(N parentNode);
 
     // public abstract void addNode(N parentNode, N childNode);
 

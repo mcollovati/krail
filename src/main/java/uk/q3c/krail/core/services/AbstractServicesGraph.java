@@ -18,15 +18,15 @@ import edu.uci.ics.jung.graph.DelegateForest;
 import edu.uci.ics.jung.graph.DirectedOrderedSparseMultigraph;
 import edu.uci.ics.jung.graph.Forest;
 import org.slf4j.Logger;
-import uk.q3c.util.CycleDetectedException;
+import uk.q3c.util.dag.CycleDetectedException;
 
 import javax.annotation.Nonnull;
 import javax.annotation.concurrent.ThreadSafe;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-import static org.slf4j.LoggerFactory.getLogger;
+import static com.google.common.base.Preconditions.*;
+import static org.slf4j.LoggerFactory.*;
 
 /**
  * Default implementation of {@link ServicesGraph}

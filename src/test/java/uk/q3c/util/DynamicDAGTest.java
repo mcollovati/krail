@@ -15,6 +15,8 @@ package uk.q3c.util;
 
 import org.junit.Before;
 import org.junit.Test;
+import uk.q3c.util.dag.CycleDetectedException;
+import uk.q3c.util.dag.DynamicDAG;
 
 public class DynamicDAGTest {
 

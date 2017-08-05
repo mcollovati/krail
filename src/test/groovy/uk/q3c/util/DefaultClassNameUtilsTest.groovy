@@ -20,6 +20,8 @@ import uk.q3c.krail.core.services.Service
 import uk.q3c.krail.core.services.ServiceKey
 import uk.q3c.krail.core.services.ServiceStatus
 import uk.q3c.krail.i18n.api.I18NKey
+import uk.q3c.util.clazz.ClassNameUtils
+import uk.q3c.util.clazz.DefaultClassNameUtils
 
 /**
 

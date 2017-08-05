@@ -38,6 +38,8 @@ The default, **STRICT** behaves the same way as the previous version, except tha
 - `OptionContext.getOption` is now `OptionContext.optionInstance()`
 - `OptionContext` is parameterised
 
-Moved:
+### Util
+All of `uk.q3c.util` has been reviewed and either allocated to sub-packages or moved to somewhere more appropriate. Of particular note:
 
-- uk.q3c.krail.option.api
+- `uk.q3c.util.ID` moved to `uk.q3c.krail.core.vaadin.ID`
+

@@ -14,6 +14,7 @@
 package uk.q3c.util
 
 import spock.lang.Specification
+import uk.q3c.util.forest.DefaultNodeModifier
 
 /**
  * Created by David Sowerby on 18 Jan 2016

@@ -19,9 +19,9 @@ import org.apache.commons.collections15.map.HashedMap;
 import uk.q3c.krail.core.navigate.Navigator;
 import uk.q3c.krail.core.navigate.sitemap.UserSitemap;
 import uk.q3c.krail.core.navigate.sitemap.UserSitemapNode;
-import uk.q3c.util.CaptionReader;
-import uk.q3c.util.NodeModifier;
-import uk.q3c.util.TreeCopyException;
+import uk.q3c.util.forest.CaptionReader;
+import uk.q3c.util.forest.NodeModifier;
+import uk.q3c.util.forest.TreeCopyException;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -30,7 +30,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.*;
 
 public class MenuBarNodeModifier implements NodeModifier<UserSitemapNode, MenuItem> {
 

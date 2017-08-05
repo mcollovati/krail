@@ -26,10 +26,10 @@ import uk.q3c.krail.core.i18n.Description;
 import uk.q3c.krail.core.i18n.DescriptionKey;
 import uk.q3c.krail.core.i18n.MessageKey;
 import uk.q3c.krail.core.user.notify.UserNotifier;
+import uk.q3c.krail.core.vaadin.ID;
 import uk.q3c.krail.i18n.api.CurrentLocale;
 import uk.q3c.krail.i18n.api.I18N;
 import uk.q3c.krail.i18n.api.LocaleChangeBusMessage;
-import uk.q3c.util.ID;
 
 import java.util.Locale;
 import java.util.Optional;
