@@ -13,12 +13,7 @@
 
 package uk.q3c.krail.i18n;
 
-import com.google.common.collect.ImmutableSet;
 import com.google.inject.Inject;
-import uk.q3c.krail.core.i18n.DescriptionKey;
-import uk.q3c.krail.core.i18n.LabelKey;
-import uk.q3c.krail.core.i18n.MessageKey;
-import uk.q3c.krail.core.validation.ValidationKey;
 import uk.q3c.krail.i18n.api.*;
 
 import javax.annotation.Nonnull;
@@ -92,14 +87,6 @@ public class DefaultPatternUtility implements PatternUtility {
         return ((stubWithKeyName) ? key.name() : stubValue).replace('_', ' ');
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public long exportCoreKeys(@Nonnull PatternDao target) {
-        ImmutableSet<Class<? extends I18NKey>> bundles = ImmutableSet.of(LabelKey.class, DescriptionKey.class, MessageKey.class, ValidationKey.class);
-        return export(target, bundles, supportedLocales);
-    }
 
     /**
      * {@inheritDoc}

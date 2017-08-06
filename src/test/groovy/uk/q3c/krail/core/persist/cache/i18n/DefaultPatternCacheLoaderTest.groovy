@@ -23,7 +23,7 @@ import uk.q3c.krail.i18n.api.PatternCacheLoaderConfig
 import uk.q3c.krail.i18n.api.PatternSourceProvider
 import uk.q3c.krail.i18n.api.clazz.ClassPatternDao
 import uk.q3c.krail.i18n.clazz.ClassPatternSource
-import uk.q3c.krail.i18n.i18nModule.TestPatternSource
+import uk.q3c.krail.i18n.test.TestPatternSource
 import uk.q3c.util.testutil.LogMonitor
 /**
  *

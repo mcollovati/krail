@@ -21,6 +21,7 @@ import org.apache.bval.constraints.Email;
 import org.apache.bval.constraints.NotEmpty;
 import org.apache.bval.guice.ValidationModule;
 import uk.q3c.krail.i18n.api.I18NKey;
+import uk.q3c.krail.i18n.validation.ValidationKey;
 
 import javax.validation.MessageInterpolator;
 import javax.validation.constraints.*;

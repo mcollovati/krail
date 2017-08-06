@@ -11,9 +11,7 @@
  *
  */
 
-package uk.q3c.krail.core.i18n;
-
-import uk.q3c.krail.i18n.DefaultPatternSource;
+package uk.q3c.krail.i18n;
 
 import java.util.List;
 import java.util.Locale;

@@ -15,7 +15,6 @@ package uk.q3c.krail.i18n;
 
 import com.google.common.cache.CacheLoader;
 import com.google.inject.Inject;
-import uk.q3c.krail.core.i18n.KrailResourceBundleControl;
 import uk.q3c.krail.i18n.api.*;
 
 import java.lang.annotation.Annotation;

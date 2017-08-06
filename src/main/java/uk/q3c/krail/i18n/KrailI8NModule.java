@@ -20,6 +20,8 @@ import com.google.inject.multibindings.Multibinder;
 import uk.q3c.krail.core.guice.uiscope.UIScoped;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScoped;
 import uk.q3c.krail.core.i18n.DefaultI18NFieldScanner;
+import uk.q3c.krail.core.i18n.DefaultKrailPatternUtility;
+import uk.q3c.krail.core.i18n.KrailPatternUtility;
 import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.option.Option;
 import uk.q3c.krail.core.persist.common.common.KrailPersistenceUnitHelper;
@@ -47,7 +49,7 @@ import static com.google.common.base.Preconditions.*;
  * An I18NKey implementation - for example, {@link LabelKey}, and its associated {@link EnumResourceBundle}s, are the equivalent to a Java Resource bundle
  */
 
-public class VaadinI18NModule extends I18NModule {
+public class KrailI8NModule extends I18NModule {
 
     private final TypeLiteral<Class<? extends Annotation>> annotationLiteral = KrailPersistenceUnitHelper.annotationClassLiteral();
     private final TypeLiteral<PatternDao> patternDaoTypeLiteral = new TypeLiteral<PatternDao>() {
@@ -87,10 +89,8 @@ public class VaadinI18NModule extends I18NModule {
 
         bindPatternSource();
         bindPatternCacheLoader();
-        bindPatternUtility();
         bindFieldScanner();
         bindHostClassIdentifier();
-        //        bindDatabaseBundleReader();
 
 
         bindSources();
@@ -100,6 +100,7 @@ public class VaadinI18NModule extends I18NModule {
         bindClassPatternDao();
         bindPatternDao();
         bindI18NSourceProvider();
+        bindKrailPatternUtility();
         super.configure(); // This must be at the end
     }
 
@@ -120,6 +121,13 @@ public class VaadinI18NModule extends I18NModule {
      */
     protected void bindClassPatternDao() {
         bind(ClassPatternDao.class).to(DefaultClassPatternDao.class);
+    }
+
+    /**
+     * See javadoc for {@link PatternUtility} for an explanation of what this is for.  Override this method if you provide your own implementation
+     */
+    protected void bindKrailPatternUtility() {
+        bind(KrailPatternUtility.class).to(DefaultKrailPatternUtility.class);
     }
 
     /**
@@ -163,13 +171,6 @@ public class VaadinI18NModule extends I18NModule {
      */
     protected void bindFieldScanner() {
         bind(I18NFieldScanner.class).to(DefaultI18NFieldScanner.class);
-    }
-
-    /**
-     * See javadoc for {@link PatternUtility} for an explanation of what this is for.  Override this method if you provide your own implementation
-     */
-    protected void bindPatternUtility() {
-        bind(PatternUtility.class).to(DefaultPatternUtility.class);
     }
 
 
@@ -257,7 +258,7 @@ public class VaadinI18NModule extends I18NModule {
      */
 
     @SafeVarargs
-    public final VaadinI18NModule sourcesDefaultOrder(@Nonnull Class<? extends Annotation>... sources) {
+    public final KrailI8NModule sourcesDefaultOrder(@Nonnull Class<? extends Annotation>... sources) {
         checkNotNull(sources);
         Collections.addAll(prepSourcesDefaultOrder, sources);
         return this;
@@ -277,7 +278,7 @@ public class VaadinI18NModule extends I18NModule {
      */
 
     @SafeVarargs
-    public final VaadinI18NModule sourcesOrderByBundle(@Nonnull Class<? extends I18NKey> keyClass, @Nonnull Class<? extends Annotation>... sources) {
+    public final KrailI8NModule sourcesOrderByBundle(@Nonnull Class<? extends I18NKey> keyClass, @Nonnull Class<? extends Annotation>... sources) {
         checkNotNull(keyClass);
         checkNotNull(sources);
         LinkedHashSet<Class<? extends Annotation>> sourceSet = new LinkedHashSet<>(Arrays.asList(sources));
@@ -301,7 +302,7 @@ public class VaadinI18NModule extends I18NModule {
      * @param target A BindingAnnotation identifying a Persistence Unit (or equivalent) that is providing a DAO as a source
      * @return this for fluency
      */
-    public final VaadinI18NModule target(@Nonnull Class<? extends Annotation> target) {
+    public final KrailI8NModule target(@Nonnull Class<? extends Annotation> target) {
         checkNotNull(target);
         prepTargets.add(target);
         return this;
@@ -315,7 +316,7 @@ public class VaadinI18NModule extends I18NModule {
      * @param source A BindingAnnotation identifying a Persistence Unit (or equivalent) that is providing a DAO as a source
      * @return this for fluency
      */
-    public VaadinI18NModule source(@Nonnull Class<? extends Annotation> source) {
+    public KrailI8NModule source(@Nonnull Class<? extends Annotation> source) {
         checkNotNull(source);
         prepSources.add(source);
         return this;
