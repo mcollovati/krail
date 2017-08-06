@@ -1,8 +1,8 @@
-## Release Notes for krail 10.0.0.0
+## Release Notes for krail 0.10.0.0
 
 This release is a major refactor to extract some elements which can actually stand alone from Krail itself - notably this includes I18N and Options
 
-Unfortunately there are a lot of changes which will affect existing Krail apps, many are limited to package changes, but some code changes
+Unfortunately there are a lot of changes which will affect existing Krail apps. Many changes are limited to package changes, but some code changes
 were needed to separate Option and I18N
 
 ### General
