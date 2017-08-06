@@ -67,10 +67,11 @@ repositories {
 }
 
 sourceSets {
-    test.java.srcDirs += 'src/test/kotlin'
-    main.java.srcDirs += 'src/main/kotlin'
-    test.groovy.srcDirs += 'src/test/kotlin'
+
     main.groovy.srcDirs += 'src/main/kotlin'
+    main.java.srcDirs += 'src/main/kotlin'
+
+
 }
 
 dependencies {
@@ -127,6 +128,8 @@ dependencies {
     compile 'com.mycila.testing.plugins:mycila-testing-mockito:2.8'
     compile 'org.mockito:mockito-all:1.10.19'
     compile 'org.spockframework:spock-core:1.0-groovy-2.4'
+
+    compile 'uk.q3c.util:q3c-util:0.8.0.1.ef66334'
 
     //testing
 

@@ -10,23 +10,32 @@
  *  * specific language governing permissions and limitations under the License.
  *
  */
-
-package fixture1;
+package uk.q3c.krail.testutil.i18n;
 
 import uk.q3c.krail.i18n.api.EnumResourceBundle;
-import uk.q3c.krail.testutil.i18n.TestLabelKey3;
 
 /**
- * Created by David Sowerby on 10/12/14.
+ * The base for the resource bundle of Labels. This is an arbitrary division of i18N keys & values, but is loosely
+ * defined as containing those value which are short, contain no parameters and are typically used for captions and
+ * labels. They can of course be used anywhere.
+ *
+ * @author David Sowerby 9 Feb 2013
  */
-public class TestLbls3 extends EnumResourceBundle<TestLabelKey3> {
+public class TestLabels extends EnumResourceBundle<TestLabelKey> {
 
-    public TestLbls3() {
+
+    public TestLabels() {
         super();
     }
 
     @Override
     protected void loadMap() {
-        put(TestLabelKey3.Key1, "key number 1");
+        put(TestLabelKey.Home, "home");
+        put(TestLabelKey.pattern_with_embedded_key, "Your {0} request has been refused");
+        put(TestLabelKey.Transfers, "transfers");
+        put(TestLabelKey.Opt, "option");
+        put(TestLabelKey.Yes, "Yes");
+        put(TestLabelKey.No, "No");
     }
+
 }

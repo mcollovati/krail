@@ -10,20 +10,17 @@
  *  * specific language governing permissions and limitations under the License.
  *
  */
+package uk.q3c.krail.testutil.i18n
 
-package uk.q3c.krail.core.services;
+
+import uk.q3c.krail.i18n.api.I18NKey
+
+enum class TestLabelKey : I18NKey {
+
+    Large, Home, My_Account, Transfers, Login, MoneyInOut, Private, Public, Opt, Yes, No, View1, View2, ViewA,
+    ViewA1, ViewA11, ViewB, ViewB1, ViewB11, pattern_with_embedded_key, Blank, key1, Static, Private_Static, ServiceA, ServiceB, ServiceC, ServiceD,
+    ServiceE, ServiceF, ServiceG, ServiceH,
+    ViewA111, ViewB12, ViewB121, ViewB122, key2
 
 
-import com.google.inject.Inject;
-import uk.q3c.krail.core.eventbus.GlobalBusProvider;
-import uk.q3c.krail.i18n.api.Translate;
-import uk.q3c.krail.testutil.i18n.TestLabelKey;
-
-public class MockServiceE extends MockService {
-
-    @Inject
-    protected MockServiceE(Translate translate, GlobalBusProvider globalBusProvider, RelatedServicesExecutor servicesExecutor) {
-        super(translate, globalBusProvider, servicesExecutor);
-        setNameKey(TestLabelKey.ServiceE);
-    }
 }

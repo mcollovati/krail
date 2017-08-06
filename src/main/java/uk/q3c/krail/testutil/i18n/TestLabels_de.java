@@ -10,20 +10,22 @@
  *  * specific language governing permissions and limitations under the License.
  *
  */
+package uk.q3c.krail.testutil.i18n;
 
-package uk.q3c.krail.core.services;
+/**
+ * @author David Sowerby 9 Feb 2013
+ */
+public class TestLabels_de extends TestLabels {
 
+    @Override
+    protected void loadMap() {
+        put(TestLabelKey.Home, "zu Hause");
+        put(TestLabelKey.Yes, "Ja");
+        put(TestLabelKey.No, "Nein");
+        put(TestLabelKey.ViewA, "DE_ViewA");
+        put(TestLabelKey.ViewB, "DE_ViewB");
 
-import com.google.inject.Inject;
-import uk.q3c.krail.core.eventbus.GlobalBusProvider;
-import uk.q3c.krail.i18n.api.Translate;
-import uk.q3c.krail.testutil.i18n.TestLabelKey;
-
-public class MockServiceE extends MockService {
-
-    @Inject
-    protected MockServiceE(Translate translate, GlobalBusProvider globalBusProvider, RelatedServicesExecutor servicesExecutor) {
-        super(translate, globalBusProvider, servicesExecutor);
-        setNameKey(TestLabelKey.ServiceE);
     }
+
+
 }

@@ -18,8 +18,8 @@ import com.google.inject.Injector
 import uk.q3c.krail.core.data.OptionElementConverter
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule
 import uk.q3c.krail.core.persist.common.option.DefaultOptionDao
+import uk.q3c.krail.core.persist.common.option.OptionDaoTestBase
 import uk.q3c.krail.core.persist.inmemory.common.InMemoryModule
-import uk.q3c.krail.testutil.option.OptionDaoTestBase
 import uk.q3c.krail.testutil.option.TestOptionModule
 
 /**

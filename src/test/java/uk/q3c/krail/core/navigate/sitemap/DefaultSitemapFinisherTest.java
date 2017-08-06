@@ -28,8 +28,8 @@ import uk.q3c.krail.core.i18n.KrailI18NConfigModule;
 import uk.q3c.krail.core.navigate.StrictURIFragmentHandler;
 import uk.q3c.krail.core.navigate.URIFragmentHandler;
 import uk.q3c.krail.core.shiro.PageAccessControl;
-import uk.q3c.krail.i18n.TestLabelKey;
 import uk.q3c.krail.testutil.i18n.TestI18NModule;
+import uk.q3c.krail.testutil.i18n.TestLabelKey;
 import uk.q3c.krail.testutil.option.TestOptionModule;
 import uk.q3c.krail.testutil.persist.TestPersistenceModule;
 

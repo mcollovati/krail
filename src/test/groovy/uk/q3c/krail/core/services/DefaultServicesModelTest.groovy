@@ -21,7 +21,7 @@ import uk.q3c.krail.eventbus.api.BusMessage
 import uk.q3c.krail.i18n.api.Translate
 
 import static org.assertj.core.api.Assertions.*
-import static uk.q3c.krail.i18n.TestLabelKey.*
+import static uk.q3c.krail.testutil.i18n.TestLabelKey.*
 
 /**
  *

@@ -17,7 +17,7 @@ import com.vaadin.ui.Button;
 import uk.q3c.krail.core.i18n.Caption;
 import uk.q3c.krail.core.i18n.DescriptionKey;
 import uk.q3c.krail.core.i18n.LabelKey;
-import uk.q3c.util.NotOnWeekends;
+import uk.q3c.krail.core.vaadin.NotOnWeekends;
 
 /**
  * Provides a byte-enhanced class using JPA @Transactional

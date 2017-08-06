@@ -14,6 +14,7 @@
 package uk.q3c.util
 
 import com.google.inject.Inject
+import fixture1.AOPTestModule
 import spock.guice.UseModules
 import spock.lang.Specification
 import uk.q3c.krail.core.services.Service

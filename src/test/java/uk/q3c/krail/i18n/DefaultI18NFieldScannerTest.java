@@ -18,6 +18,7 @@ import com.mycila.testing.junit.MycilaJunitRunner;
 import com.mycila.testing.plugin.guice.GuiceContext;
 import com.vaadin.ui.AbstractComponent;
 import com.vaadin.ui.Label;
+import fixture1.TestByteEnhancementModule;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -31,7 +32,6 @@ import uk.q3c.krail.testutil.i18n.TestI18NModule;
 import uk.q3c.krail.testutil.option.MockOption;
 import uk.q3c.krail.testutil.option.TestOptionModule;
 import uk.q3c.krail.testutil.persist.TestPersistenceModule;
-import uk.q3c.util.TestByteEnhancementModule;
 import uk.q3c.util.clazz.UnenhancedClassIdentifier;
 
 import java.lang.annotation.Annotation;

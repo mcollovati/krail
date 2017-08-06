@@ -16,10 +16,10 @@ package uk.q3c.krail.i18n;
 import com.google.inject.Inject;
 import com.mycila.testing.junit.MycilaJunitRunner;
 import com.mycila.testing.plugin.guice.GuiceContext;
+import fixture1.TestByteEnhancementModule;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import uk.q3c.util.TestByteEnhancementModule;
 import uk.q3c.util.clazz.DefaultUnenhancedClassIdentifier;
 
 import static org.assertj.core.api.Assertions.*;

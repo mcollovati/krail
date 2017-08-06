@@ -1,6 +1,6 @@
 package uk.q3c.krail.core.option;
 
-import uk.q3c.krail.i18n.TestLabelKey;
+import uk.q3c.krail.testutil.i18n.TestLabelKey;
 import uk.q3c.krail.testutil.option.MockOption;
 
 import javax.annotation.Nonnull;

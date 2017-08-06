@@ -11,19 +11,19 @@
  *
  */
 
-package uk.q3c.krail.core.services;
+package uk.q3c.krail.testutil.i18n
+
+import uk.q3c.krail.i18n.api.I18NKey
+
+/**
+ * Created by David Sowerby on 10/12/14.
+ */
+enum class TestLabelKey3 : I18NKey {
+
+    Key1, Key_2;
 
 
-import com.google.inject.Inject;
-import uk.q3c.krail.core.eventbus.GlobalBusProvider;
-import uk.q3c.krail.i18n.api.Translate;
-import uk.q3c.krail.testutil.i18n.TestLabelKey;
-
-public class MockServiceE extends MockService {
-
-    @Inject
-    protected MockServiceE(Translate translate, GlobalBusProvider globalBusProvider, RelatedServicesExecutor servicesExecutor) {
-        super(translate, globalBusProvider, servicesExecutor);
-        setNameKey(TestLabelKey.ServiceE);
+    override fun bundleName(): String {
+        return "TestLbls3"
     }
 }
