@@ -16,16 +16,16 @@ package uk.q3c.krail.i18n;
 import com.google.inject.Inject;
 import com.mycila.testing.junit.MycilaJunitRunner;
 import com.mycila.testing.plugin.guice.GuiceContext;
-import fixture1.TestByteEnhancementModule;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import uk.q3c.util.clazz.DefaultUnenhancedClassIdentifier;
+import uk.q3c.util.test.AOPTestModule;
 
 import static org.assertj.core.api.Assertions.*;
 
 @RunWith(MycilaJunitRunner.class)
-@GuiceContext({TestByteEnhancementModule.class})
+@GuiceContext({AOPTestModule.class})
 public class DefaultI18NHostClassIdentifierTest {
 
     DefaultUnenhancedClassIdentifier identifier;

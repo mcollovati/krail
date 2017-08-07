@@ -10,21 +10,24 @@
  *  * specific language governing permissions and limitations under the License.
  *
  */
-package uk.q3c.krail.i18n;
 
-import java.lang.annotation.Annotation;
-import java.util.Locale;
+package uk.q3c.krail.core.i18n;
 
-public interface I18NAnnotationReader<T extends Annotation> {
+import com.vaadin.ui.AbstractComponent;
 
-    String caption();
+import javax.annotation.Nonnull;
+import java.util.List;
+import java.util.Map;
 
-    Locale locale();
+/**
+ * Created by David Sowerby on 10/05/15.
+ */
+public interface I18NFieldScanner {
 
-    String description();
+    Map<AbstractComponent, AnnotationInfo> annotatedComponents();
 
-    T getAnnotation();
 
-    void setAnnotation(T annotation);
+    void scan(@Nonnull Object target);
 
+    List<Object> processedDrillDowns();
 }

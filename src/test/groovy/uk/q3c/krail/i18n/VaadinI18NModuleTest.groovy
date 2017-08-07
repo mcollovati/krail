@@ -23,6 +23,7 @@ import uk.q3c.krail.core.guice.uiscope.UIScopeModule
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule
 import uk.q3c.krail.core.i18n.DescriptionKey
 import uk.q3c.krail.core.i18n.KrailI18NConfigModule
+import uk.q3c.krail.core.i18n.KrailI8NModule
 import uk.q3c.krail.core.i18n.LabelKey
 import uk.q3c.krail.core.option.InMemory
 import uk.q3c.krail.core.persist.inmemory.common.InMemoryModule

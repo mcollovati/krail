@@ -16,7 +16,7 @@ package uk.q3c.krail.core.data
 import org.apache.commons.collections15.ListUtils
 import spock.lang.Specification
 import uk.q3c.krail.core.eventbus.SessionBus
-import uk.q3c.krail.i18n.VaadinCurrentLocale
+import uk.q3c.krail.core.i18n.VaadinCurrentLocale
 import uk.q3c.krail.i18n.clazz.ClassPatternSource
 import uk.q3c.util.collection.AnnotationList
 

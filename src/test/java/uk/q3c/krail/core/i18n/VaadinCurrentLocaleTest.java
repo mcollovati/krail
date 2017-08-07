@@ -10,7 +10,7 @@
  *  * specific language governing permissions and limitations under the License.
  *
  */
-package uk.q3c.krail.i18n;
+package uk.q3c.krail.core.i18n;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Inject;
@@ -28,8 +28,6 @@ import org.mockito.Mock;
 import uk.q3c.krail.core.eventbus.EventBusModule;
 import uk.q3c.krail.core.eventbus.SessionBusProvider;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
-import uk.q3c.krail.core.i18n.DescriptionKey;
-import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.option.Option;
 import uk.q3c.krail.core.option.OptionKey;
 import uk.q3c.krail.core.shiro.SubjectProvider;
@@ -52,7 +50,7 @@ import static org.mockito.Mockito.*;
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({EventBusModule.class, TestUIScopeModule.class, VaadinSessionScopeModule.class})
 @Listener
-public class DefaultCurrentLocaleTest {
+public class VaadinCurrentLocaleTest {
 
     boolean listenerFired = false;
 

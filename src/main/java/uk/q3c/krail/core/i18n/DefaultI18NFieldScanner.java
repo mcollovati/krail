@@ -17,7 +17,6 @@ import com.google.inject.Inject;
 import com.vaadin.ui.AbstractComponent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import uk.q3c.krail.i18n.I18NFieldScanner;
 import uk.q3c.krail.i18n.api.I18N;
 import uk.q3c.krail.i18n.api.I18NAnnotation;
 import uk.q3c.krail.i18n.api.I18NException;

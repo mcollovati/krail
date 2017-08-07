@@ -1,6 +1,5 @@
 package uk.q3c.krail.core.i18n;
 
-import uk.q3c.krail.i18n.KrailI8NModule;
 import uk.q3c.krail.i18n.api.PatternDao;
 import uk.q3c.krail.i18n.api.PatternUtility;
 

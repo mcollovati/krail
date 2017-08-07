@@ -129,7 +129,7 @@ dependencies {
     compile 'org.mockito:mockito-all:1.10.19'
     compile 'org.spockframework:spock-core:1.0-groovy-2.4'
 
-    compile 'uk.q3c.util:q3c-util:0.8.0.1.ef66334'
+    compile 'uk.q3c.util:q3c-util:0.8.0.2.347ca94'
 
     //testing
 

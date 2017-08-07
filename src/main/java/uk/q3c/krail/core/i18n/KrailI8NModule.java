@@ -10,7 +10,7 @@
  *  * specific language governing permissions and limitations under the License.
  *
  */
-package uk.q3c.krail.i18n;
+package uk.q3c.krail.core.i18n;
 
 
 import com.google.inject.Key;
@@ -19,12 +19,9 @@ import com.google.inject.multibindings.MapBinder;
 import com.google.inject.multibindings.Multibinder;
 import uk.q3c.krail.core.guice.uiscope.UIScoped;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScoped;
-import uk.q3c.krail.core.i18n.DefaultI18NFieldScanner;
-import uk.q3c.krail.core.i18n.DefaultKrailPatternUtility;
-import uk.q3c.krail.core.i18n.KrailPatternUtility;
-import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.option.Option;
 import uk.q3c.krail.core.persist.common.common.KrailPersistenceUnitHelper;
+import uk.q3c.krail.i18n.*;
 import uk.q3c.krail.i18n.api.*;
 import uk.q3c.krail.i18n.api.clazz.ClassPatternDao;
 import uk.q3c.krail.i18n.clazz.ClassPatternSource;
@@ -100,7 +97,6 @@ public class KrailI8NModule extends I18NModule {
         bindClassPatternDao();
         bindPatternDao();
         bindI18NSourceProvider();
-        bindKrailPatternUtility();
         super.configure(); // This must be at the end
     }
 
@@ -126,7 +122,9 @@ public class KrailI8NModule extends I18NModule {
     /**
      * See javadoc for {@link PatternUtility} for an explanation of what this is for.  Override this method if you provide your own implementation
      */
-    protected void bindKrailPatternUtility() {
+    @Override
+    protected void bindPatternUtility() {
+        super.bindPatternUtility();
         bind(KrailPatternUtility.class).to(DefaultKrailPatternUtility.class);
     }
 

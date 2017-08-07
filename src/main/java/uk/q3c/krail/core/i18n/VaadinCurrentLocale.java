@@ -10,7 +10,7 @@
  *  * specific language governing permissions and limitations under the License.
  *
  */
-package uk.q3c.krail.i18n;
+package uk.q3c.krail.core.i18n;
 
 import com.google.inject.Inject;
 import com.vaadin.data.Property;
@@ -22,8 +22,6 @@ import org.slf4j.LoggerFactory;
 import uk.q3c.krail.core.eventbus.SessionBusProvider;
 import uk.q3c.krail.core.guice.uiscope.UIScoped;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScoped;
-import uk.q3c.krail.core.i18n.DescriptionKey;
-import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.option.Option;
 import uk.q3c.krail.core.option.OptionKey;
 import uk.q3c.krail.core.option.VaadinOptionContext;
@@ -31,8 +29,8 @@ import uk.q3c.krail.core.shiro.SubjectProvider;
 import uk.q3c.krail.core.ui.BrowserProvider;
 import uk.q3c.krail.core.user.status.UserStatusBusMessage;
 import uk.q3c.krail.eventbus.api.BusMessage;
+import uk.q3c.krail.i18n.I18NModule;
 import uk.q3c.krail.i18n.api.*;
-import uk.q3c.krail.i18n.api.DefaultLocale;
 
 import javax.annotation.Nonnull;
 import java.util.Locale;

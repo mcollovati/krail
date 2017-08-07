@@ -24,6 +24,7 @@ import uk.q3c.krail.core.data.DataModule;
 import uk.q3c.krail.core.data.OptionElementConverter;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
 import uk.q3c.krail.core.i18n.LabelKey;
+import uk.q3c.krail.core.i18n.VaadinCurrentLocale;
 import uk.q3c.krail.core.persist.cache.option.OptionCacheKey;
 import uk.q3c.krail.core.persist.common.option.DefaultOptionDao;
 import uk.q3c.krail.core.persist.common.option.OptionDao;
@@ -37,7 +38,6 @@ import uk.q3c.krail.core.persist.inmemory.option.InMemoryOptionStore;
 import uk.q3c.krail.core.user.profile.RankOption;
 import uk.q3c.krail.core.user.profile.UserHierarchy;
 import uk.q3c.krail.core.view.component.LocaleContainer;
-import uk.q3c.krail.i18n.VaadinCurrentLocale;
 import uk.q3c.krail.i18n.api.PatternCacheKey;
 import uk.q3c.krail.testutil.option.TestOptionModule;
 

@@ -20,7 +20,7 @@ import com.google.inject.Inject;
 import com.vaadin.data.util.converter.ConverterFactory;
 import com.vaadin.server.ErrorHandler;
 import uk.q3c.krail.i18n.api.CurrentLocale;
-import uk.q3c.krail.i18n.I18NProcessor;
+import uk.q3c.krail.core.i18n.I18NProcessor;
 import uk.q3c.krail.i18n.api.Translate;
 import uk.q3c.krail.core.navigate.Navigator;
 import uk.q3c.krail.core.option.Option;

@@ -10,7 +10,7 @@
  *  * specific language governing permissions and limitations under the License.
  *
  */
-package uk.q3c.krail.i18n;
+package uk.q3c.krail.core.i18n;
 
 import com.google.inject.Inject;
 import com.google.inject.Provider;
@@ -21,7 +21,6 @@ import com.vaadin.ui.Table;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import uk.q3c.krail.core.i18n.AnnotationInfo;
 import uk.q3c.krail.core.ui.ScopedUI;
 import uk.q3c.krail.i18n.api.CurrentLocale;
 import uk.q3c.krail.i18n.api.I18NException;

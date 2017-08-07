@@ -1,8 +1,6 @@
-package uk.q3c.krail.i18n
+package uk.q3c.krail.core.i18n
 
 import com.google.inject.Inject
-import uk.q3c.krail.core.i18n.DescriptionKey
-import uk.q3c.krail.core.i18n.LabelKey
 import uk.q3c.krail.core.option.Option
 import uk.q3c.krail.core.option.OptionContext
 import uk.q3c.krail.core.option.OptionKey

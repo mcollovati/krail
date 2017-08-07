@@ -11,6 +11,8 @@
 
 package uk.q3c.krail.core.vaadin;
 
+import uk.q3c.util.test.NotOnWeekends;
+
 /**
  * Created by David Sowerby on 07/05/15.
  */

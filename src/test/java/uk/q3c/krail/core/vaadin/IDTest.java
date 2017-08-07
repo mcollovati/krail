@@ -17,16 +17,16 @@ import com.mycila.testing.junit.MycilaJunitRunner;
 import com.mycila.testing.plugin.guice.GuiceContext;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Panel;
-import fixture1.TestByteEnhancementModule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import uk.q3c.util.test.AOPTestModule;
 
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.*;
 
 @RunWith(MycilaJunitRunner.class)
-@GuiceContext({TestByteEnhancementModule.class})
+@GuiceContext({AOPTestModule.class})
 public class IDTest {
 
     Button button = new Button();

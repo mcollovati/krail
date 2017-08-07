@@ -11,27 +11,22 @@
  *
  */
 
-package uk.q3c.krail.i18n;
+package uk.q3c.krail.core.i18n;
 
-import java.util.List;
-import java.util.Locale;
-import java.util.ResourceBundle;
+import com.google.inject.BindingAnnotation;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
- * Created by David Sowerby on 08/12/14.
+ * A binding annotation to identify registered I18N annotations.  See {@link KrailI8NModule#registeredAnnotations}
+ * <p>
+ * Created by David Sowerby on 28/01/15.
  */
-public class KrailResourceBundleControl extends ResourceBundle.Control {
-
-    /**
-     * Makes this method public so it can be used by {@link DefaultPatternSource}
-     *
-     * @param baseName
-     * @param locale
-     *
-     * @return
-     */
-    @Override
-    public List<Locale> getCandidateLocales(String baseName, Locale locale) {
-        return super.getCandidateLocales(baseName, locale);
-    }
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.FIELD, ElementType.TYPE, ElementType.PARAMETER})
+@BindingAnnotation
+public @interface DrillDownExclusions {
 }
