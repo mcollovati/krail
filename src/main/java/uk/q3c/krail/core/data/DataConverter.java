@@ -24,7 +24,7 @@ import javax.annotation.Nonnull;
  * <p>
  * Created by David Sowerby on 27/06/15.
  */
-public interface DataListConverter {
+public interface DataConverter {
 
 
 

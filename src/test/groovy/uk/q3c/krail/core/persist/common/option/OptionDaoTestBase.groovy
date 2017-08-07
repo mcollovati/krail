@@ -19,7 +19,7 @@ import com.google.inject.Inject
 import com.google.inject.Singleton
 import org.apache.commons.collections15.ListUtils
 import spock.lang.Specification
-import uk.q3c.krail.core.data.DataListConverter
+import uk.q3c.krail.core.data.DataConverter
 import uk.q3c.krail.core.navigate.sitemap.comparator.DefaultUserSitemapSorters
 import uk.q3c.krail.core.option.InMemory
 import uk.q3c.krail.core.option.OptionKey
@@ -39,7 +39,7 @@ import static uk.q3c.krail.core.user.profile.RankOption.*
 abstract class OptionDaoTestBase extends Specification {
 
     @Inject
-    DataListConverter optionElementConverter
+    DataConverter optionElementConverter
 
     OptionDao dao
     String expectedConnectionUrl

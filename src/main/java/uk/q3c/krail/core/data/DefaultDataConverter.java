@@ -32,17 +32,17 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 /**
- * Default implementation for {@link DataListConverter}.
+ * Default implementation for {@link DataConverter}.
  * <p>
  * Created by David Sowerby on 27/06/15.
  */
-public class DefaultDataListConverter implements DataListConverter {
+public class DefaultDataConverter implements DataConverter {
 
 
     private MessageFormat2 messageFormat;
 
     @Inject
-    public DefaultDataListConverter(MessageFormat2 messageFormat) {
+    public DefaultDataConverter(MessageFormat2 messageFormat) {
         this.messageFormat = messageFormat;
     }
 

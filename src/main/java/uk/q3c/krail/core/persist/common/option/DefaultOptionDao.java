@@ -16,7 +16,7 @@ package uk.q3c.krail.core.persist.common.option;
 import com.google.common.collect.ImmutableList;
 import com.google.inject.Inject;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import uk.q3c.krail.core.data.DataListConverter;
+import uk.q3c.krail.core.data.DataConverter;
 import uk.q3c.krail.core.data.OptionListConverter;
 import uk.q3c.krail.core.option.Option;
 import uk.q3c.krail.core.option.OptionException;
@@ -46,11 +46,11 @@ import static com.google.common.base.Preconditions.*;
 public class DefaultOptionDao implements OptionDao {
 
     private InMemoryOptionStore optionStore;
-    private DataListConverter optionElementConverter;
+    private DataConverter optionElementConverter;
     private OptionDaoDelegate delegate;
 
     @Inject
-    public DefaultOptionDao(DataListConverter optionElementConverter, OptionSource delegateSource) {
+    public DefaultOptionDao(DataConverter optionElementConverter, OptionSource delegateSource) {
         this.optionElementConverter = optionElementConverter;
         this.delegate = delegateSource.getActiveDao();
     }

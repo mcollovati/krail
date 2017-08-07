@@ -15,8 +15,8 @@ package uk.q3c.krail.core.option;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Binder;
-import uk.q3c.krail.core.data.DataListConverter;
-import uk.q3c.krail.core.data.DefaultDataListConverter;
+import uk.q3c.krail.core.data.DataConverter;
+import uk.q3c.krail.core.data.DefaultDataConverter;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScoped;
 import uk.q3c.krail.core.persist.cache.option.*;
 import uk.q3c.krail.core.persist.common.common.KrailPersistenceUnitHelper;
@@ -52,10 +52,10 @@ public class OptionModule extends AbstractModule {
     }
 
     /**
-     * Override this method to provide your own {@link DataListConverter} implementation.
+     * Override this method to provide your own {@link DataConverter} implementation.
      */
     protected void bindOptionElementConverter() {
-        bind(DataListConverter.class).to(DefaultDataListConverter.class);
+        bind(DataConverter.class).to(DefaultDataConverter.class);
     }
 
     protected void bindDefaultActiveSource() {

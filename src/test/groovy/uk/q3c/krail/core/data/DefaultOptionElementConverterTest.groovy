@@ -32,10 +32,10 @@ import java.time.LocalDateTime
  */
 class DefaultOptionElementConverterTest extends Specification {
 
-    DefaultDataListConverter converter
+    DefaultDataConverter converter
 
     def setup() {
-        converter = new DefaultDataListConverter(new DefaultMessageFormat())
+        converter = new DefaultDataConverter(new DefaultMessageFormat())
     }
 
     def "from other to String"() {
