@@ -11,7 +11,7 @@
  *
  */
 
-package uk.q3c.krail.core.data;
+package uk.q3c.krail.util.data;
 
 import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableList;
@@ -32,11 +32,11 @@ import static com.google.common.base.Preconditions.*;
  * <p>
  * Created by David Sowerby on 04/08/15.
  */
-public class AnnotationOptionListConverter {
+public class AnnotationListConverter {
 
     public final static String separator = "~~";
 
-    public AnnotationOptionListConverter() {
+    public AnnotationListConverter() {
         super();
     }
 

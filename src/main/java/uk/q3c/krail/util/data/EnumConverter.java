@@ -11,7 +11,7 @@
  *
  */
 
-package uk.q3c.krail.core.data;
+package uk.q3c.krail.util.data;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import org.apache.commons.lang3.ClassUtils;
@@ -26,7 +26,7 @@ import static com.google.common.base.Preconditions.*;
  * <p>
  * Created by David Sowerby on 27/06/15.
  */
-public class EnumConverter implements OptionConverter<Enum> {
+public class EnumConverter implements DataConverter<Enum> {
     /**
      * {@inheritDoc}
      */

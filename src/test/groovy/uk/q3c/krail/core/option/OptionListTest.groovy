@@ -15,16 +15,16 @@ package uk.q3c.krail.core.option
 
 import com.google.common.collect.ImmutableList
 import spock.lang.Specification
-import uk.q3c.krail.core.data.DefaultOptionElementConverter
-import uk.q3c.krail.core.data.OptionElementConverter
+import uk.q3c.krail.core.data.DataListConverter
+import uk.q3c.krail.core.data.DefaultDataListConverter
 
 class OptionListTest extends Specification {
 
 
-    OptionElementConverter optionStringConverter
+    DataListConverter optionStringConverter
 
     def setup() {
-        optionStringConverter = new DefaultOptionElementConverter()
+        optionStringConverter = new DefaultDataListConverter()
     }
 
     def "construct from list"() {

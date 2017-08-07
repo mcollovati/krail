@@ -14,6 +14,8 @@
 package uk.q3c.krail.core.data
 
 import spock.lang.Specification
+import uk.q3c.krail.util.data.BigDecimalConverter
+
 /**
  *
  * Created by David Sowerby on 04/08/15.

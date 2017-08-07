@@ -11,7 +11,7 @@
  *
  */
 
-package uk.q3c.krail.core.data
+package uk.q3c.krail.util.data
 
 import com.google.common.base.Preconditions.checkNotNull
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings
@@ -23,7 +23,7 @@ import org.apache.commons.lang3.ClassUtils
  *
  * Created by David Sowerby on 27/06/15.
  */
-class ClassConverter : OptionConverter<Class<*>> {
+class ClassConverter : DataConverter<Class<*>> {
     /**
      * {@inheritDoc}
      */

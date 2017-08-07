@@ -30,10 +30,10 @@ import static com.google.common.base.Preconditions.*;
 public class OptionListConverter<E> {
 
     public final static String separator = "~~";
-    private OptionElementConverter converter;
+    private DataListConverter converter;
 
 
-    public OptionListConverter(OptionElementConverter converter) {
+    public OptionListConverter(DataListConverter converter) {
         checkNotNull(converter);
         this.converter = converter;
     }

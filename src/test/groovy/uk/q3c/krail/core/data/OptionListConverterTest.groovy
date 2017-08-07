@@ -25,7 +25,7 @@ class OptionListConverterTest extends Specification {
     OptionListConverter converter
 
     def setup() {
-        converter = new OptionListConverter(new DefaultOptionElementConverter())
+        converter = new OptionListConverter(new DefaultDataListConverter())
     }
 
 

@@ -9,17 +9,14 @@
  * specific language governing permissions and limitations under the License.
  */
 
-package uk.q3c.krail.core.data;
+package uk.q3c.krail.persist;
 
 /**
- * Created by David Sowerby on 07/08/15.
+ * Created by david on 17/08/14.
  */
-public class ConversionException extends RuntimeException {
-    public ConversionException(String msg, Exception e) {
-        super(msg, e);
-    }
+public interface KrailEntity<ID, VER> {
 
-    public ConversionException(String msg) {
-        super(msg);
-    }
+    ID getId();
+
+    VER getVersion();
 }

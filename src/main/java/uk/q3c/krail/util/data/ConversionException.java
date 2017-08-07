@@ -9,10 +9,17 @@
  * specific language governing permissions and limitations under the License.
  */
 
-package uk.q3c.krail.core.data;
+package uk.q3c.krail.util.data;
 
-public class ConverterException extends RuntimeException {
-    public ConverterException(String msg) {
+/**
+ * Created by David Sowerby on 07/08/15.
+ */
+public class ConversionException extends RuntimeException {
+    public ConversionException(String msg, Exception e) {
+        super(msg, e);
+    }
+
+    public ConversionException(String msg) {
         super(msg);
     }
 }

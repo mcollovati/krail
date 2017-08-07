@@ -11,7 +11,7 @@
  *
  */
 
-package uk.q3c.krail.core.data;
+package uk.q3c.krail.util.data;
 
 import uk.q3c.krail.i18n.api.I18NKey;
 
@@ -22,7 +22,7 @@ import javax.annotation.Nonnull;
  * <p>
  * Created by David Sowerby on 27/06/15.
  */
-public class I18NKeyConverter implements OptionConverter<I18NKey> {
+public class I18NKeyConverter implements DataConverter<I18NKey> {
     /**
      * {@inheritDoc}
      */

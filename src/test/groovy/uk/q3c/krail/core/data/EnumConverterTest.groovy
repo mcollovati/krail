@@ -15,6 +15,9 @@ package uk.q3c.krail.core.data
 
 import spock.lang.Specification
 import uk.q3c.krail.core.navigate.sitemap.comparator.DefaultUserSitemapSorters
+import uk.q3c.krail.util.data.ConversionException
+import uk.q3c.krail.util.data.EnumConverter
+
 /**
  *
  * Converts an Enum to a full String representation (the package name, class name and constannt name concatenated), and back again
@@ -32,7 +35,7 @@ class EnumConverterTest extends Specification {
     def "round trip"() {
         given:
 
-        def DefaultUserSitemapSorters.SortType testValue = DefaultUserSitemapSorters.SortType.INSERTION
+        DefaultUserSitemapSorters.SortType testValue = DefaultUserSitemapSorters.SortType.INSERTION
 
         when:
         String s = converter.convertToString(testValue)

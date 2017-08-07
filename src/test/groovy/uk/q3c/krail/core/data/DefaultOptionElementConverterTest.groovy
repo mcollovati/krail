@@ -22,6 +22,7 @@ import uk.q3c.krail.core.services.Service
 import uk.q3c.krail.i18n.DefaultMessageFormat
 import uk.q3c.krail.i18n.api.I18NKey
 import uk.q3c.krail.i18n.clazz.ClassPatternSource
+import uk.q3c.krail.util.data.ConverterException
 import uk.q3c.util.collection.AnnotationList
 
 import java.time.LocalDateTime
@@ -31,10 +32,10 @@ import java.time.LocalDateTime
  */
 class DefaultOptionElementConverterTest extends Specification {
 
-    DefaultOptionElementConverter converter
+    DefaultDataListConverter converter
 
     def setup() {
-        converter = new DefaultOptionElementConverter(new DefaultMessageFormat())
+        converter = new DefaultDataListConverter(new DefaultMessageFormat())
     }
 
     def "from other to String"() {

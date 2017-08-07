@@ -15,6 +15,8 @@ package uk.q3c.krail.core.data
 
 import spock.lang.Specification
 import uk.q3c.krail.i18n.clazz.ClassPatternSource
+import uk.q3c.krail.util.data.ClassConverter
+import uk.q3c.krail.util.data.ConversionException
 
 /**
  *

@@ -9,14 +9,14 @@
  * specific language governing permissions and limitations under the License.
  */
 
-package uk.q3c.krail.core.data;
+package uk.q3c.krail.util.data;
 
 import javax.annotation.Nonnull;
 
 /**
  * Created by David Sowerby on 06/08/15.
  */
-public interface OptionConverter<V> {
+public interface DataConverter<V> {
 
     V convertToModel(String value) throws ConversionException;
 

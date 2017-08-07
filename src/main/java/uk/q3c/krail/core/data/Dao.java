@@ -11,6 +11,8 @@
 
 package uk.q3c.krail.core.data;
 
+import uk.q3c.krail.persist.KrailEntity;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;

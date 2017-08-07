@@ -20,8 +20,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import uk.q3c.krail.core.data.DataListConverter;
 import uk.q3c.krail.core.data.DataModule;
-import uk.q3c.krail.core.data.OptionElementConverter;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
 import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.i18n.VaadinCurrentLocale;
@@ -67,7 +67,7 @@ public class InMemoryContainerTest {
 
     InMemoryOptionDaoDelegate inMemoryOptionDaoDelegate;
 
-    OptionElementConverter optionElementConverter;
+    DataListConverter optionElementConverter;
 
     @Before
     public void setup() {
@@ -77,7 +77,7 @@ public class InMemoryContainerTest {
 
         patternDao = injector.getInstance(InMemoryPatternDao.class);
         inMemoryOptionDaoDelegate = injector.getInstance(InMemoryOptionDaoDelegate.class);
-        optionElementConverter = injector.getInstance(OptionElementConverter.class);
+        optionElementConverter = injector.getInstance(DataListConverter.class);
         when(optionSource.getActiveDao()).thenReturn(inMemoryOptionDaoDelegate);
         optionDao = new DefaultOptionDao(optionElementConverter, optionSource);
         patternDao = new InMemoryPatternDao(patternStore);

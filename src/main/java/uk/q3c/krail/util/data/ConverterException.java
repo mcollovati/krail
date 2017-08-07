@@ -9,14 +9,10 @@
  * specific language governing permissions and limitations under the License.
  */
 
-package uk.q3c.krail.core.data;
+package uk.q3c.krail.util.data;
 
-/**
- * Created by david on 17/08/14.
- */
-public interface KrailEntity<ID, VER> {
-
-    ID getId();
-
-    VER getVersion();
+public class ConverterException extends RuntimeException {
+    public ConverterException(String msg) {
+        super(msg);
+    }
 }

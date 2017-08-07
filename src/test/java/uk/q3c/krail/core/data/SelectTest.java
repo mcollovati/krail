@@ -17,9 +17,10 @@ import com.mycila.testing.junit.MycilaJunitRunner;
 import com.mycila.testing.plugin.guice.GuiceContext;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import uk.q3c.krail.persist.Select;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static uk.q3c.krail.core.data.Select.Compare.GREATER_THAN;
+import static org.assertj.core.api.Assertions.*;
+import static uk.q3c.krail.persist.Select.Compare.*;
 
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({})

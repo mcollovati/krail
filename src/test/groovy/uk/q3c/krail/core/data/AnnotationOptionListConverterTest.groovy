@@ -18,6 +18,8 @@ import spock.lang.Specification
 import uk.q3c.krail.core.eventbus.SessionBus
 import uk.q3c.krail.core.i18n.VaadinCurrentLocale
 import uk.q3c.krail.i18n.clazz.ClassPatternSource
+import uk.q3c.krail.util.data.AnnotationListConverter
+import uk.q3c.krail.util.data.ConversionException
 import uk.q3c.util.collection.AnnotationList
 
 /**
@@ -26,10 +28,10 @@ import uk.q3c.util.collection.AnnotationList
  */
 class AnnotationOptionListConverterTest extends Specification {
 
-    AnnotationOptionListConverter converter
+    AnnotationListConverter converter
 
     def setup() {
-        converter = new AnnotationOptionListConverter()
+        converter = new AnnotationListConverter()
     }
 
     def "round trip empty list"() {

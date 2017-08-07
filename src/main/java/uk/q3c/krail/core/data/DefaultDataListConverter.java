@@ -16,10 +16,13 @@ package uk.q3c.krail.core.data;
 import com.google.common.primitives.Ints;
 import com.google.common.primitives.Longs;
 import com.google.inject.Inject;
-import com.vaadin.data.util.converter.ConverterFactory;
 import uk.q3c.krail.core.option.OptionList;
 import uk.q3c.krail.i18n.api.I18NKey;
 import uk.q3c.krail.i18n.api.MessageFormat2;
+import uk.q3c.krail.util.data.AnnotationListConverter;
+import uk.q3c.krail.util.data.ConverterException;
+import uk.q3c.krail.util.data.EnumConverter;
+import uk.q3c.krail.util.data.I18NKeyConverter;
 import uk.q3c.util.collection.AnnotationList;
 
 import javax.annotation.Nonnull;
@@ -29,17 +32,17 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 /**
- * Default implementation for {@link OptionElementConverter}.  Uses {@link ConverterFactory} to supply the converters
+ * Default implementation for {@link DataListConverter}.
  * <p>
  * Created by David Sowerby on 27/06/15.
  */
-public class DefaultOptionElementConverter implements OptionElementConverter {
+public class DefaultDataListConverter implements DataListConverter {
 
 
     private MessageFormat2 messageFormat;
 
     @Inject
-    public DefaultOptionElementConverter(MessageFormat2 messageFormat) {
+    public DefaultDataListConverter(MessageFormat2 messageFormat) {
         this.messageFormat = messageFormat;
     }
 
@@ -75,7 +78,7 @@ public class DefaultOptionElementConverter implements OptionElementConverter {
         } else if (OptionList.class.isAssignableFrom(modelType)) {
             return new OptionListConverter(this).convertToString((OptionList) value);
         } else if (AnnotationList.class.isAssignableFrom(modelType)) {
-            return new AnnotationOptionListConverter().convertToString((AnnotationList) value);
+            return new AnnotationListConverter().convertToString((AnnotationList) value);
         }
         String msg = messageFormat.format("Data type of {0} is not supported in Option", value.getClass());
         throw new ConverterException(msg);
@@ -107,7 +110,7 @@ public class DefaultOptionElementConverter implements OptionElementConverter {
         } else if (elementClass == BigDecimal.class) {
             return (V) new BigDecimal(valueString);
         } else if (elementClass == AnnotationList.class) {
-            return (V) new AnnotationOptionListConverter().convertToModel(valueString);
+            return (V) new AnnotationListConverter().convertToModel(valueString);
         }
         String msg = messageFormat.format("Data type of {0} is not supported in Option", elementClass);
         throw new ConverterException(msg);

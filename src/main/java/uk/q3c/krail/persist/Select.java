@@ -11,13 +11,13 @@
  *
  */
 
-package uk.q3c.krail.core.data;
+package uk.q3c.krail.persist;
 
 import javax.annotation.Nonnull;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.*;
 
 /**
  * an incredibly simple query builder - not to be confused with a real one, but it does do basic SELECT statements very simply compared to the JPA

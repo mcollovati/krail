@@ -14,17 +14,17 @@
 package uk.q3c.krail.core.data;
 
 import com.vaadin.data.util.converter.Converter;
-import uk.q3c.krail.core.option.OptionKey;
+import uk.q3c.krail.util.data.ConverterException;
 
 import javax.annotation.Nonnull;
 
 /**
- * Utility to convert Option values to and from String - usually used in persisting Option values where the persistence provider needs a single data type (for
- * example a single column in an RDBMS)
+ * Utility to convert a list of values to and from String.  These are not considered suitable for presentation to the user
+ * as conversions use a fixed Locale
  * <p>
  * Created by David Sowerby on 27/06/15.
  */
-public interface OptionElementConverter {
+public interface DataListConverter {
 
 
 
@@ -34,7 +34,7 @@ public interface OptionElementConverter {
      * @param value the value to be converted
      * @param <V>   the value type
      * @return String for persistence, null if value is null
-     * @throws ConverterException            if no converter is available for the type of {@link OptionKey#getDefaultValue()}
+     * @throws ConverterException            if no converter is available for the type of V
      * @throws Converter.ConversionException if the conversion itself fails
      */
     <V> String convertValueToString(V value);
@@ -44,7 +44,7 @@ public interface OptionElementConverter {
      *
      * @param elementClass the class of the element to be converted
      * @param valueString  the String representation of the value
-     * @throws ConverterException            if no converter is available for the type of {@link OptionKey#getDefaultValue()}
+     * @throws ConverterException            if no converter is available for the type of V
      * @throws Converter.ConversionException if the conversion itself fails
      */
     @Nonnull

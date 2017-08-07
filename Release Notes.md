@@ -51,3 +51,13 @@ Of particular note:
 
 - `TestByteEnhancementModule` replaced by `uk.q3c.util.test.AOPTestModule`
 
+### persist and data
+
+These two packages were quite badly confused.  All classes genuinely related to data manipulation moved to `uk.q3c.util.data` in **q3c-util**
+
+Generic persistence classes moved to `uk.q3c.krail.persist` or `uk.q3c.krail.persist.api` in **krail-persist** and **krail-persist-api** respectively.
+
+- `AnnotationOptionListConverter` renamed `AnnotationListConverter`
+- `OptionConverter` renamed `DataConverter` - it is used by `Option` but not specific to it
+- `OptionElementConverter` to `DataListConverter`
+- `AnnotationOptionListConverter` to `AnnotationListConverter`
