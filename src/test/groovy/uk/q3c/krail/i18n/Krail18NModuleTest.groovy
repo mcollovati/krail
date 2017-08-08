@@ -42,7 +42,7 @@ import java.lang.annotation.Annotation
  *
  * Created by David Sowerby on 21/07/15.
  */
-class VaadinI18NModuleTest extends GuiceModuleTestBase {
+class Krail18NModuleTest extends GuiceModuleTestBase {
 
 
 
