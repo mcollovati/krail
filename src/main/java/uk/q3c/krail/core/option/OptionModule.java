@@ -15,8 +15,6 @@ package uk.q3c.krail.core.option;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Binder;
-import uk.q3c.krail.core.data.DataConverter;
-import uk.q3c.krail.core.data.DefaultDataConverter;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScoped;
 import uk.q3c.krail.core.persist.cache.option.*;
 import uk.q3c.krail.core.persist.common.common.KrailPersistenceUnitHelper;
@@ -48,19 +46,13 @@ public class OptionModule extends AbstractModule {
         bindOptionPopup();
         bindDefaultActiveSource();
         bindCurrentOptionSource();
-        bindOptionElementConverter();
     }
 
-    /**
-     * Override this method to provide your own {@link DataConverter} implementation.
-     */
-    protected void bindOptionElementConverter() {
-        bind(DataConverter.class).to(DefaultDataConverter.class);
-    }
+
 
     protected void bindDefaultActiveSource() {
         bind(KrailPersistenceUnitHelper.annotationClassLiteral()).annotatedWith(DefaultActiveOptionSource.class)
-                                                                 .toInstance(activeSource);
+                .toInstance(activeSource);
     }
 
     /**
@@ -97,7 +89,7 @@ public class OptionModule extends AbstractModule {
 
     protected void bindOptionCacheConfiguration() {
         bind(GuavaCacheConfiguration.class).annotatedWith(OptionCacheConfig.class)
-                                           .toInstance(configureCache());
+                .toInstance(configureCache());
     }
 
     /**
@@ -108,7 +100,7 @@ public class OptionModule extends AbstractModule {
     protected GuavaCacheConfiguration configureCache() {
         GuavaCacheConfiguration config = new GuavaCacheConfiguration();
         config.maximumSize(5000)
-              .recordStats();
+                .recordStats();
         return config;
     }
 
@@ -125,8 +117,6 @@ public class OptionModule extends AbstractModule {
     protected void bindOptionDaoWrapper() {
         bind(OptionDao.class).to(DefaultOptionDao.class);
     }
-
-
 
 
     /**

@@ -38,6 +38,7 @@ The `MessageFormat` utility class has been deprecated and replaced by interface 
 - `AnnotationOptionList` had nothing to do with `Option`.  Renamed `AnnotationList` and moved to `uk.q3c.util.collection`
 - `OptionContext.getOption` is now `OptionContext.optionInstance()`
 - `OptionContext` is parameterised
+- `OptionList` deleted
 
 ### Util
 All of `uk.q3c.util` has been reviewed and either allocated to sub-packages or moved to somewhere more appropriate. Those remaining in the util package have also been moved to a separate library, **q3c-util** 
@@ -53,11 +54,13 @@ Of particular note:
 
 ### persist and data
 
-These two packages were quite badly confused.  All classes genuinely related to data manipulation moved to `uk.q3c.util.data` in **q3c-util**
+These two packages were quite badly confused.  All classes genuinely related to data manipulation moved to `uk.q3c.util.data` in **q3c-util**.  A number of classes had 'Option' in their name, even though they were not specific to `Option`
+These have been renamed to reflect their more general nature.
 
 Generic persistence classes moved to `uk.q3c.krail.persist` or `uk.q3c.krail.persist.api` in **krail-persist** and **krail-persist-api** respectively.
 
+- `AnnotationOptionList` renamed `AnnotationList`
 - `AnnotationOptionListConverter` renamed `AnnotationListConverter`
-- `OptionConverter` renamed `DataConverter` - it is used by `Option` but not specific to it
-- `OptionElementConverter` to `DataListConverter`
+- `OptionConverter` renamed `DataItemConverter` - it is used by `Option` but not specific to it
+- `OptionElementConverter` to `DataConverter`
 - `AnnotationOptionListConverter` to `AnnotationListConverter`

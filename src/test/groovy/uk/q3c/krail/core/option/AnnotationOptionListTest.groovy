@@ -17,7 +17,7 @@ import com.google.common.collect.ImmutableList
 import com.google.inject.Inject
 import spock.lang.Specification
 import uk.q3c.krail.i18n.clazz.ClassPatternSource
-import uk.q3c.util.collection.AnnotationList
+import uk.q3c.util.data.collection.AnnotationList
 
 /**
  *

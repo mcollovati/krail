@@ -20,7 +20,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import uk.q3c.krail.core.data.DataConverter;
 import uk.q3c.krail.core.data.DataModule;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
 import uk.q3c.krail.core.i18n.LabelKey;
@@ -40,6 +39,8 @@ import uk.q3c.krail.core.user.profile.UserHierarchy;
 import uk.q3c.krail.core.view.component.LocaleContainer;
 import uk.q3c.krail.i18n.api.PatternCacheKey;
 import uk.q3c.krail.testutil.option.TestOptionModule;
+import uk.q3c.util.UtilModule;
+import uk.q3c.util.data.DataConverter;
 
 import java.util.Locale;
 import java.util.Optional;
@@ -71,7 +72,7 @@ public class InMemoryContainerTest {
 
     @Before
     public void setup() {
-        Injector injector = Guice.createInjector(new InMemoryModule().provideOptionDao(), new TestOptionModule(), new VaadinSessionScopeModule());
+        Injector injector = Guice.createInjector(new InMemoryModule().provideOptionDao(), new TestOptionModule(), new VaadinSessionScopeModule(), new UtilModule());
         optionStore = injector.getInstance(InMemoryOptionStore.class);
         patternStore = injector.getInstance(InMemoryPatternStore.class);
 

@@ -31,6 +31,7 @@ import uk.q3c.krail.testutil.i18n.TestI18NModule;
 import uk.q3c.krail.testutil.option.MockOption;
 import uk.q3c.krail.testutil.option.TestOptionModule;
 import uk.q3c.krail.testutil.persist.TestPersistenceModule;
+import uk.q3c.util.UtilModule;
 import uk.q3c.util.clazz.UnenhancedClassIdentifier;
 import uk.q3c.util.test.AOPTestModule;
 
@@ -44,7 +45,7 @@ import static org.assertj.core.api.Assertions.*;
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({TestI18NModule.class, KrailI18NConfigModule.class, EventBusModule.class, UIScopeModule.class, TestOptionModule.class, TestPersistenceModule.class,
         VaadinSessionScopeModule.class,
-        AOPTestModule.class})
+        AOPTestModule.class, UtilModule.class})
 public class DefaultI18NFieldScannerTest {
 
     @Inject

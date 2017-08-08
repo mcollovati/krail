@@ -27,6 +27,7 @@ import uk.q3c.krail.i18n.api.Translate;
 import uk.q3c.krail.testutil.i18n.TestI18NModule;
 import uk.q3c.krail.testutil.option.TestOptionModule;
 import uk.q3c.krail.testutil.persist.TestPersistenceModule;
+import uk.q3c.krail.util.UtilsModule;
 
 import java.util.Locale;
 
@@ -35,7 +36,7 @@ import static org.assertj.core.api.Assertions.*;
 
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({TestI18NModule.class, KrailI18NConfigModule.class, VaadinSessionScopeModule.class, TestPersistenceModule.class, TestOptionModule.class, EventBusModule.class, UIScopeModule
-        .class})
+        .class, UtilsModule.class})
 public class StandardPageKeyTest {
 
     @Inject

@@ -16,7 +16,7 @@ package uk.q3c.krail.core.option
 import com.google.common.collect.ImmutableList
 import org.apache.commons.collections15.ListUtils
 import spock.lang.Specification
-import uk.q3c.util.collection.AnnotationList
+import uk.q3c.util.data.collection.AnnotationList
 
 /**
  *
@@ -32,7 +32,7 @@ class OptionKeyLocatorTest extends Specification {
 
     def "option key data types"() {
         given:
-        def expected = ImmutableList.of(Integer.class, String.class, Locale.class, Boolean.class, Enum.class, AnnotationList.class, OptionList.class, Long.class)
+        def expected = ImmutableList.of(Integer.class, String.class, Locale.class, Boolean.class, Enum.class, AnnotationList.class, Long.class)
 
 
         when:

@@ -6,7 +6,7 @@ import uk.q3c.krail.core.option.OptionContext
 import uk.q3c.krail.core.option.OptionKey
 import uk.q3c.krail.i18n.api.PatternSourceProvider
 import uk.q3c.krail.i18n.api.PatternSourceProviderConfig
-import uk.q3c.util.collection.AnnotationList
+import uk.q3c.util.data.collection.AnnotationList
 
 /**
  * Created by David Sowerby on 04 Aug 2017

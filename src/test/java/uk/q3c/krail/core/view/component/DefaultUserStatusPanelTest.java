@@ -40,6 +40,7 @@ import uk.q3c.krail.testutil.i18n.MockCurrentLocale;
 import uk.q3c.krail.testutil.i18n.TestI18NModule;
 import uk.q3c.krail.testutil.option.TestOptionModule;
 import uk.q3c.krail.testutil.persist.TestPersistenceModule;
+import uk.q3c.util.UtilModule;
 
 import java.util.Locale;
 
@@ -47,7 +48,7 @@ import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.*;
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({UIScopeModule.class, TestI18NModule.class, KrailI18NConfigModule.class, TestOptionModule.class, TestPersistenceModule.class, VaadinSessionScopeModule.class, EventBusModule
-        .class})
+        .class, UtilModule.class})
 public class DefaultUserStatusPanelTest {
 
     DefaultUserStatusPanel panel;

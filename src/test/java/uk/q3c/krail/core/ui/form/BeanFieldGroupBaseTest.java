@@ -38,10 +38,12 @@ import uk.q3c.krail.testutil.i18n.TestI18NModule;
 import uk.q3c.krail.testutil.option.MockOption;
 import uk.q3c.krail.testutil.option.TestOptionModule;
 import uk.q3c.krail.testutil.persist.TestPersistenceModule;
+import uk.q3c.util.UtilModule;
 
 import java.util.Locale;
 
 import static org.assertj.core.api.Assertions.*;
+
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext()
 public class BeanFieldGroupBaseTest {
@@ -66,12 +68,12 @@ public class BeanFieldGroupBaseTest {
     @Before
     public void setup() {
         VaadinSession.setCurrent(null);
-        injector = Guice.createInjector(new TestI18NModule(), new KrailI18NConfigModule(), new TestUIScopeModule(), new TestPersistenceModule(), new VaadinSessionScopeModule(), new EventBusModule(), new
+        injector = Guice.createInjector(new TestI18NModule(), new KrailI18NConfigModule(), new TestUIScopeModule(), new TestPersistenceModule(), new VaadinSessionScopeModule(), new UtilModule(), new EventBusModule(), new
 
                 TestOptionModule(), Modules.override(new
                 ValidationModule())
-                                           .with(new
-                                                                                                         KrailValidationModule()));
+                .with(new
+                        KrailValidationModule()));
 
 
         i18NProcessor = injector.getInstance(DefaultI18NProcessor.class);
@@ -100,9 +102,9 @@ public class BeanFieldGroupBaseTest {
         fieldSet.setBean(te);
         // then
         assertThat(fieldSet.getFirstName()
-                           .getValue()).isEqualTo("Mango");
+                .getValue()).isEqualTo("Mango");
         assertThat(fieldSet.getLastName()
-                           .getValue()).isEqualTo("Chutney");
+                .getValue()).isEqualTo("Chutney");
     }
 
     @Test
@@ -114,9 +116,9 @@ public class BeanFieldGroupBaseTest {
         fieldSet.setBean(te2);
         // then
         assertThat(fieldSet.getFirstName()
-                           .getValue()).isEqualTo("Pickled");
+                .getValue()).isEqualTo("Pickled");
         assertThat(fieldSet.getLastName()
-                           .getValue()).isEqualTo("Eggs");
+                .getValue()).isEqualTo("Eggs");
     }
 
     @Test
@@ -129,11 +131,11 @@ public class BeanFieldGroupBaseTest {
         i18NProcessor.translate(fieldSet);
         // then
         assertThat(fieldSet.getFirstName()
-                           .getCaption()).isEqualTo("First Name");
+                .getCaption()).isEqualTo("First Name");
         assertThat(fieldSet.getLastName()
-                           .getCaption()).isEqualTo("Last Name");
+                .getCaption()).isEqualTo("Last Name");
         assertThat(fieldSet.getLastName()
-                           .getDescription()).isEqualTo("the last name or family name");
+                .getDescription()).isEqualTo("the last name or family name");
 
     }
 
@@ -147,11 +149,11 @@ public class BeanFieldGroupBaseTest {
         i18NProcessor.translate(fieldSet);
         // then
         assertThat(fieldSet.getFirstName()
-                           .getCaption()).isEqualTo("Vorname");
+                .getCaption()).isEqualTo("Vorname");
         assertThat(fieldSet.getLastName()
-                           .getCaption()).isEqualTo("Nachname");
+                .getCaption()).isEqualTo("Nachname");
         assertThat(fieldSet.getLastName()
-                           .getDescription()).isEqualTo("Der Nachname oder der Familienname");
+                .getDescription()).isEqualTo("Der Nachname oder der Familienname");
 
     }
 

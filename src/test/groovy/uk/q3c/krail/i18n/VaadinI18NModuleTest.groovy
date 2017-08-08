@@ -34,6 +34,7 @@ import uk.q3c.krail.i18n.api.clazz.ClassPatternDao
 import uk.q3c.krail.i18n.clazz.ClassPatternSource
 import uk.q3c.krail.i18n.test.TestPatternSource
 import uk.q3c.krail.testutil.option.TestOptionModule
+import uk.q3c.util.UtilModule
 
 import java.lang.annotation.Annotation
 /**
@@ -49,7 +50,7 @@ class VaadinI18NModuleTest extends GuiceModuleTestBase {
     def " Using Locale objects, supported locales set, setting defaultLocale also adds to supported locales"() {
         when:
 
-        injector = createInjector(new KrailI8NModule().defaultLocale(Locale.ITALY).supportedLocales(Locale.GERMANY),)
+        injector = createInjector(new KrailI8NModule().defaultLocale(Locale.ITALY).supportedLocales(Locale.GERMANY))
 
 
         then:
@@ -222,6 +223,7 @@ class VaadinI18NModuleTest extends GuiceModuleTestBase {
         modules.add(new InMemoryModule().providePatternDao())
         modules.add(new EventBusModule())
         modules.add(new KrailI18NConfigModule())
+        modules.add(new UtilModule())
 
         return modules
     }

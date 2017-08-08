@@ -14,11 +14,10 @@
 package uk.q3c.krail.util;
 
 import com.google.inject.AbstractModule;
-import uk.q3c.util.clazz.ClassNameUtils;
-import uk.q3c.util.clazz.DefaultClassNameUtils;
+import uk.q3c.util.UtilModule;
 
 /**
- * Bindings fo utility classes
+ * Bindings for utility classes also installs {@Link UtilModule} from q3c-util
  * <p>
  * Created by David Sowerby on 03 Jan 2016
  */
@@ -26,8 +25,8 @@ public class UtilsModule extends AbstractModule {
 
     @Override
     protected void configure() {
+        install(new UtilModule());
         bindResourceUtils();
-        bindClassNameUtils();
     }
 
     /**
@@ -37,10 +36,5 @@ public class UtilsModule extends AbstractModule {
         bind(ResourceUtils.class).to(DefaultResourceUtils.class);
     }
 
-    /**
-     * Override this method to provide your own {@link ClassNameUtils} binding
-     */
-    protected void bindClassNameUtils() {
-        bind(ClassNameUtils.class).to(DefaultClassNameUtils.class);
-    }
+
 }

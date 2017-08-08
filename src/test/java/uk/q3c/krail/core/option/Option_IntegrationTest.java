@@ -46,6 +46,7 @@ import uk.q3c.krail.core.user.profile.UserHierarchy;
 import uk.q3c.krail.core.view.component.LocaleContainer;
 import uk.q3c.krail.i18n.api.Translate;
 import uk.q3c.krail.testutil.option.TestOptionModule;
+import uk.q3c.util.UtilModule;
 import uk.q3c.util.guava.GuavaCacheConfiguration;
 
 import java.lang.annotation.Annotation;
@@ -61,7 +62,7 @@ import static org.mockito.Mockito.*;
  * Running this test through the debugger sometimes causes random failures - running normally doesn't
  */
 @RunWith(MycilaJunitRunner.class)
-@GuiceContext({TestOptionModule.class, VaadinSessionScopeModule.class})
+@GuiceContext({TestOptionModule.class, VaadinSessionScopeModule.class, UtilModule.class})
 public class Option_IntegrationTest {
 
     Map<Class<? extends Annotation>, PersistenceInfo<?>> optionDaoProviders = new HashMap<>();

@@ -32,6 +32,7 @@ import uk.q3c.krail.i18n.api.Translate;
 import uk.q3c.krail.testutil.i18n.TestI18NModule;
 import uk.q3c.krail.testutil.option.TestOptionModule;
 import uk.q3c.krail.testutil.persist.TestPersistenceModule;
+import uk.q3c.util.UtilModule;
 
 import java.util.Locale;
 
@@ -40,7 +41,7 @@ import static org.mockito.Mockito.*;
 
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({TestI18NModule.class, KrailI18NConfigModule.class, TestOptionModule.class, TestPersistenceModule.class, VaadinSessionScopeModule.class, EventBusModule.class, UIScopeModule
-        .class})
+        .class, UtilModule.class})
 public class DefaultSubjectIdentifierTest {
 
 

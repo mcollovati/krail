@@ -16,18 +16,16 @@ package uk.q3c.krail.core.persist.common.option;
 import com.google.common.collect.ImmutableList;
 import com.google.inject.Inject;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import uk.q3c.krail.core.data.DataConverter;
-import uk.q3c.krail.core.data.OptionListConverter;
 import uk.q3c.krail.core.option.Option;
 import uk.q3c.krail.core.option.OptionException;
 import uk.q3c.krail.core.option.OptionKeyException;
-import uk.q3c.krail.core.option.OptionList;
 import uk.q3c.krail.core.persist.cache.option.DefaultOptionCacheLoader;
 import uk.q3c.krail.core.persist.cache.option.OptionCache;
 import uk.q3c.krail.core.persist.cache.option.OptionCacheKey;
 import uk.q3c.krail.core.persist.inmemory.option.DefaultInMemoryOptionStore;
 import uk.q3c.krail.core.persist.inmemory.option.InMemoryOptionStore;
 import uk.q3c.krail.core.user.profile.RankOption;
+import uk.q3c.util.data.DataConverter;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
@@ -101,15 +99,10 @@ public class DefaultOptionDao implements OptionDao {
 
         if (optionalStringValue.isPresent()) {
             V defaultValue = cacheKey.getOptionKey()
-                                     .getDefaultValue();
-            if (defaultValue instanceof OptionList) {
-                OptionList convertedValue = new OptionListConverter(optionElementConverter).convertToModel((OptionList) defaultValue,
-                        optionalStringValue.get());
-                return Optional.of((V) convertedValue);
-            } else {
-                Class<V> elementClass = (Class<V>) defaultValue.getClass();
-                return Optional.of(optionElementConverter.convertStringToValue(elementClass, optionalStringValue.get()));
-            }
+                    .getDefaultValue();
+            Class<V> elementClass = (Class<V>) defaultValue.getClass();
+            return Optional.of(optionElementConverter.convertStringToValue(elementClass, optionalStringValue.get()));
+
         } else {
             return Optional.empty();
         }
@@ -122,7 +115,7 @@ public class DefaultOptionDao implements OptionDao {
     @Nonnull
     protected <V> Optional<String> getRankedValue(@Nonnull OptionCacheKey<V> cacheKey, boolean lowest) {
         ImmutableList<String> ranks = cacheKey.getHierarchy()
-                                              .ranksForCurrentUser();
+                .ranksForCurrentUser();
         ImmutableList<String> ranksToUse = (lowest) ? ranks.reverse() : ranks;
         for (String rank : ranksToUse) {
             OptionCacheKey<V> specificKey = new OptionCacheKey<>(cacheKey, rank, RankOption.SPECIFIC_RANK);

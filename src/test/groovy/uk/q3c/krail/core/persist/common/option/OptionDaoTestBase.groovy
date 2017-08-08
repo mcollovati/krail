@@ -14,23 +14,21 @@
 package uk.q3c.krail.core.persist.common.option
 
 import com.google.common.collect.ImmutableList
-import com.google.common.collect.Lists
 import com.google.inject.Inject
 import com.google.inject.Singleton
 import org.apache.commons.collections15.ListUtils
 import spock.lang.Specification
-import uk.q3c.krail.core.data.DataConverter
 import uk.q3c.krail.core.navigate.sitemap.comparator.DefaultUserSitemapSorters
 import uk.q3c.krail.core.option.InMemory
 import uk.q3c.krail.core.option.OptionKey
 import uk.q3c.krail.core.option.OptionKeyException
-import uk.q3c.krail.core.option.OptionList
 import uk.q3c.krail.core.persist.cache.option.OptionCacheKey
 import uk.q3c.krail.core.user.profile.UserHierarchy
 import uk.q3c.krail.core.view.component.LocaleContainer
 import uk.q3c.krail.i18n.LabelKey
 import uk.q3c.krail.i18n.clazz.ClassPatternSource
-import uk.q3c.util.collection.AnnotationList
+import uk.q3c.util.data.DataConverter
+import uk.q3c.util.data.collection.AnnotationList
 
 import static uk.q3c.krail.core.user.profile.RankOption.*
 /**
@@ -63,7 +61,6 @@ abstract class OptionDaoTestBase extends Specification {
     OptionKey<DefaultUserSitemapSorters.SortType> optionKeyEnum = new OptionKey<>(DefaultUserSitemapSorters.SortType.INSERTION, LocaleContainer.class, LabelKey.Yes, "f")
     OptionKey<Locale> optionKeyLocale = new OptionKey<>(Locale.CHINA, LocaleContainer.class, LabelKey.Yes, "g")
 
-    OptionKey<OptionList<String>> optionKeyStringImmutableSet = new OptionKey<>(new OptionList<String>(String.class), LocaleContainer.class, LabelKey.Yes, "h")
     OptionKey<AnnotationList> optionKeyAnnotationList = new OptionKey<>(new AnnotationList(Inject.class, Singleton.class), LocaleContainer.class, LabelKey.Yes, "i")
 
 
@@ -288,19 +285,6 @@ abstract class OptionDaoTestBase extends Specification {
         dao.getValue(cacheKeySpecific12).equals(Optional.of(353))
     }
 
-    def "OptionList conversion round trip"() {
-        given:
-        OptionKey<OptionList<Integer>> listKey = new OptionKey(new OptionList<Integer>(Integer.class), LocaleContainer.class, LabelKey.Yes)
-        OptionCacheKey<OptionList<Integer>> cacheKey = new OptionCacheKey<>(hierarchy1, SPECIFIC_RANK, 0, listKey)
-        OptionList<Integer> list = new OptionList<>(Integer.class, 3, 5, 7)
-
-        when:
-        dao.write(cacheKey, Optional.of(list))
-        Optional<OptionList<Integer>> result = dao.getValue(cacheKey)
-
-        then:
-        ListUtils.isEqualList(list.getList(), result.get().getList())
-    }
 
     def "AnnotationList conversion round trip"() {
         given:
@@ -345,34 +329,7 @@ abstract class OptionDaoTestBase extends Specification {
         dao.getValue(cacheKeyLocale).get().equals(Locale.CANADA_FRENCH)
     }
 
-    def "round trip OptionList"() {
 
-        given:
-        OptionList<String> optionList = new OptionList<>(Lists.newArrayList("a", "b"), String.class)
-        OptionCacheKey cacheKey = new OptionCacheKey(hierarchy1, SPECIFIC_RANK, optionKeyStringImmutableSet)
-
-        when:
-        dao.write(cacheKey, Optional.of(optionList))
-        Optional<OptionList<String>> result = dao.getValue(cacheKey)
-        then:
-        ListUtils.isEqualList(result.get().getList(), optionList.getList())
-
-    }
-
-
-    def "round trip OptionList with comma in entry"() {
-
-        given:
-        OptionList<String> optionList = new OptionList<>(Lists.newArrayList("a,c", "b"), String.class)
-        OptionCacheKey cacheKey = new OptionCacheKey(hierarchy1, SPECIFIC_RANK, optionKeyStringImmutableSet)
-
-        when:
-        dao.write(cacheKey, Optional.of(optionList))
-        Optional<OptionList<String>> result = dao.getValue(cacheKey)
-        then:
-        ListUtils.isEqualList(result.get().getList(), optionList.getList())
-
-    }
 
     def "round trip AnnotationOptionList"() {
         given:

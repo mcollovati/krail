@@ -107,6 +107,7 @@ dependencies {
     compile 'commons-configuration:commons-configuration:1.10'
     compile 'org.reflections:reflections:0.9.10'
     compile 'net.jodah:typetools:0.4.3'
+    compile 'uk.q3c.util:q3c-util:0.10.0.0.26c6741'
 
     //Validation
     compile 'org.apache.bval:bval-jsr303:0.5'
@@ -129,7 +130,7 @@ dependencies {
     compile 'org.mockito:mockito-all:1.10.19'
     compile 'org.spockframework:spock-core:1.0-groovy-2.4'
 
-    compile 'uk.q3c.util:q3c-util:0.8.0.2.347ca94'
+
 
     //testing
 

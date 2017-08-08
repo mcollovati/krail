@@ -41,6 +41,7 @@ import uk.q3c.krail.testutil.guice.uiscope.TestUIScopeModule;
 import uk.q3c.krail.testutil.i18n.TestI18NModule;
 import uk.q3c.krail.testutil.option.TestOptionModule;
 import uk.q3c.krail.testutil.persist.TestPersistenceModule;
+import uk.q3c.util.UtilModule;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -52,7 +53,7 @@ import static org.mockito.Mockito.*;
 
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({TestUIScopeModule.class, TestI18NModule.class, KrailI18NConfigModule.class, TestOptionModule.class, TestPersistenceModule.class, VaadinSessionScopeModule.class,
-        EventBusModule.class})
+        EventBusModule.class, UtilModule.class})
 public class DefaultUserNavigationTreeTest {
 
     @Inject

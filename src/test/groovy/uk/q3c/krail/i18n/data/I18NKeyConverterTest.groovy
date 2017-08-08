@@ -11,42 +11,41 @@
  *
  */
 
-package uk.q3c.krail.core.data
+package uk.q3c.krail.i18n.data
 
 import spock.lang.Specification
-import uk.q3c.krail.core.navigate.sitemap.comparator.DefaultUserSitemapSorters
-import uk.q3c.krail.util.data.ConversionException
-import uk.q3c.krail.util.data.EnumConverter
-
+import uk.q3c.krail.core.i18n.LabelKey
+import uk.q3c.krail.i18n.api.I18NKey
+import uk.q3c.util.data.ConversionException
 /**
  *
- * Converts an Enum to a full String representation (the package name, class name and constannt name concatenated), and back again
+ * Converts an I18NKey to a full String representation (the package name, class name and constannt name concatenated), and back again
  *
  * Created by David Sowerby on 07/08/15.
  */
-class EnumConverterTest extends Specification {
+class I18NKeyConverterTest extends Specification {
 
-    EnumConverter converter
+    I18NKeyConverter converter
 
     def setup() {
-        converter = new EnumConverter()
+        converter = new I18NKeyConverter()
     }
 
     def "round trip"() {
         given:
 
-        DefaultUserSitemapSorters.SortType testValue = DefaultUserSitemapSorters.SortType.INSERTION
+        LabelKey testValue = LabelKey.Yes
 
         when:
         String s = converter.convertToString(testValue)
-        Enum returnedValue = converter.convertToModel(s)
+        I18NKey returnedValue = converter.convertToModel(s)
 
         then:
 
         returnedValue == testValue
     }
 
-    def "invalid String - no Enum found, throws ConversionException"() {
+    def "invalid String - no I18NKey found, throws ConversionException"() {
         when:
         converter.convertToModel("rubbish")
 
