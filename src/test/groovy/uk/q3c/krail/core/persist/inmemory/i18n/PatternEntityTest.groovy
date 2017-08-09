@@ -16,6 +16,7 @@ package uk.q3c.krail.core.persist.inmemory.i18n
 import spock.lang.Specification
 import uk.q3c.krail.core.i18n.LabelKey
 import uk.q3c.krail.i18n.api.PatternCacheKey
+import uk.q3c.krail.i18n.api.PatternEntity
 
 /**
  * Created by David Sowerby on 16 Jan 2016

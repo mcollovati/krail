@@ -26,10 +26,10 @@ import uk.q3c.krail.core.navigate.sitemap.UserSitemapNode;
 import uk.q3c.krail.core.navigate.sitemap.UserSitemapStructureChangeMessage;
 import uk.q3c.krail.core.navigate.sitemap.comparator.DefaultUserSitemapSorters.SortType;
 import uk.q3c.krail.core.navigate.sitemap.comparator.UserSitemapSorters;
-import uk.q3c.krail.core.option.Option;
-import uk.q3c.krail.core.option.OptionKey;
 import uk.q3c.krail.core.option.VaadinOptionContext;
 import uk.q3c.krail.i18n.api.I18N;
+import uk.q3c.krail.option.api.Option;
+import uk.q3c.krail.option.api.OptionKey;
 
 import javax.annotation.Nonnull;
 import java.util.Collections;

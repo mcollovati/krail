@@ -22,20 +22,19 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import uk.q3c.krail.core.persist.cache.option.DefaultOptionCache;
-import uk.q3c.krail.core.persist.cache.option.DefaultOptionCacheLoader;
-import uk.q3c.krail.core.persist.cache.option.DefaultOptionCacheProvider;
-import uk.q3c.krail.core.persist.cache.option.OptionCacheKey;
-import uk.q3c.krail.core.persist.common.option.OptionDao;
-import uk.q3c.krail.core.persist.common.option.OptionSource;
+import uk.q3c.krail.option.DefaultOptionCache;
+import uk.q3c.krail.option.DefaultOptionCacheLoader;
+import uk.q3c.krail.option.DefaultOptionCacheProvider;
+import uk.q3c.krail.option.api.OptionCacheKey;
+import uk.q3c.krail.option.api.OptionDao;
+import uk.q3c.krail.option.api.OptionSource;
 import uk.q3c.util.testutil.LogMonitor;
 
 import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.assertj.core.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({})

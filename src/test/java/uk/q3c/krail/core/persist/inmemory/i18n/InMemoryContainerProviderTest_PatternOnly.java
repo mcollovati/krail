@@ -21,12 +21,13 @@ import com.mycila.testing.plugin.guice.ModuleProvider;
 import com.vaadin.data.Container;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import uk.q3c.krail.core.option.InMemory;
-import uk.q3c.krail.core.persist.common.common.ContainerType;
-import uk.q3c.krail.core.persist.common.common.VaadinContainerProvider;
-import uk.q3c.krail.core.persist.inmemory.common.InMemoryModule;
+import uk.q3c.krail.core.persist.VaadinContainerProvider;
+import uk.q3c.krail.i18n.api.PatternEntity;
+import uk.q3c.krail.persist.ContainerType;
+import uk.q3c.krail.persist.inmemory.InMemory;
+import uk.q3c.krail.persist.inmemory.InMemoryModule;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({})

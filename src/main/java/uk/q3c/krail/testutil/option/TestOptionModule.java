@@ -13,13 +13,13 @@
 
 package uk.q3c.krail.testutil.option;
 
-import uk.q3c.krail.core.option.InMemory;
-import uk.q3c.krail.core.option.Option;
-import uk.q3c.krail.core.option.OptionModule;
-import uk.q3c.krail.core.persist.cache.option.DefaultOptionCache;
-import uk.q3c.krail.core.persist.cache.option.OptionCache;
 import uk.q3c.krail.i18n.DefaultMessageFormat;
 import uk.q3c.krail.i18n.api.MessageFormat2;
+import uk.q3c.krail.option.DefaultOptionCache;
+import uk.q3c.krail.option.OptionModule;
+import uk.q3c.krail.option.api.Option;
+import uk.q3c.krail.option.api.OptionCache;
+import uk.q3c.krail.persist.inmemory.InMemory;
 
 /**
  * Created by David Sowerby on 05/12/14.

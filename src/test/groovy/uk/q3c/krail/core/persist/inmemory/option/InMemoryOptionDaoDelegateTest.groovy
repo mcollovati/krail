@@ -16,9 +16,10 @@ package uk.q3c.krail.core.persist.inmemory.option
 import com.google.inject.Guice
 import com.google.inject.Injector
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule
-import uk.q3c.krail.core.persist.common.option.DefaultOptionDao
 import uk.q3c.krail.core.persist.common.option.OptionDaoTestBase
-import uk.q3c.krail.core.persist.inmemory.common.InMemoryModule
+import uk.q3c.krail.option.DefaultOptionDao
+import uk.q3c.krail.persist.inmemory.InMemoryModule
+import uk.q3c.krail.persist.inmemory.InMemoryOptionDaoDelegate
 import uk.q3c.krail.testutil.option.TestOptionModule
 import uk.q3c.util.UtilModule
 import uk.q3c.util.data.DataConverter

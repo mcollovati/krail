@@ -20,6 +20,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import uk.q3c.krail.core.i18n.DescriptionKey;
+import uk.q3c.krail.option.api.OptionDescriptor;
+import uk.q3c.krail.option.api.OptionKey;
 
 import static org.assertj.core.api.Assertions.*;
 

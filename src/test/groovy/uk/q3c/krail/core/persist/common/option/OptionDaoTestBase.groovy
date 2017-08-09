@@ -19,18 +19,16 @@ import com.google.inject.Singleton
 import org.apache.commons.collections15.ListUtils
 import spock.lang.Specification
 import uk.q3c.krail.core.navigate.sitemap.comparator.DefaultUserSitemapSorters
-import uk.q3c.krail.core.option.InMemory
-import uk.q3c.krail.core.option.OptionKey
-import uk.q3c.krail.core.option.OptionKeyException
-import uk.q3c.krail.core.persist.cache.option.OptionCacheKey
-import uk.q3c.krail.core.user.profile.UserHierarchy
 import uk.q3c.krail.core.view.component.LocaleContainer
 import uk.q3c.krail.i18n.LabelKey
 import uk.q3c.krail.i18n.clazz.ClassPatternSource
+import uk.q3c.krail.option.api.*
+import uk.q3c.krail.persist.inmemory.InMemory
 import uk.q3c.util.data.DataConverter
 import uk.q3c.util.data.collection.AnnotationList
 
-import static uk.q3c.krail.core.user.profile.RankOption.*
+import static uk.q3c.krail.option.api.RankOption.*
+
 /**
  * Created by David Sowerby on 27 Jan 2016
  */

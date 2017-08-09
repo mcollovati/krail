@@ -1,5 +1,7 @@
 package uk.q3c.krail.core.option;
 
+import uk.q3c.krail.option.api.Option;
+import uk.q3c.krail.option.api.OptionKey;
 import uk.q3c.krail.testutil.i18n.TestLabelKey;
 import uk.q3c.krail.testutil.option.MockOption;
 

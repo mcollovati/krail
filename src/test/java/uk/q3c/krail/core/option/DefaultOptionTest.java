@@ -23,13 +23,11 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-import uk.q3c.krail.core.persist.cache.option.OptionCache;
-import uk.q3c.krail.core.persist.cache.option.OptionCacheKey;
 import uk.q3c.krail.core.shiro.SubjectIdentifier;
 import uk.q3c.krail.core.shiro.SubjectProvider;
 import uk.q3c.krail.core.ui.DataTypeToUI;
-import uk.q3c.krail.core.user.profile.UserHierarchy;
 import uk.q3c.krail.i18n.api.Translate;
+import uk.q3c.krail.option.api.*;
 import uk.q3c.krail.testutil.i18n.TestLabelKey;
 
 import javax.annotation.Nonnull;
@@ -37,7 +35,7 @@ import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.*;
-import static uk.q3c.krail.core.user.profile.RankOption.*;
+import static uk.q3c.krail.option.api.RankOption.*;
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({})
 public class DefaultOptionTest {

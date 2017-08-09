@@ -39,6 +39,7 @@ The `MessageFormat` utility class has been deprecated and replaced by interface 
 - `OptionContext.getOption` is now `OptionContext.optionInstance()`
 - `OptionContext` is parameterised
 - `OptionList` deleted
+- Scope of `DefaultOptionCache` is set in `OptionModule` instead of annotation
 
 ### Util
 All of `uk.q3c.util` has been reviewed and either allocated to sub-packages or moved to somewhere more appropriate. Those remaining in the util package have also been moved to a separate library, **q3c-util** 

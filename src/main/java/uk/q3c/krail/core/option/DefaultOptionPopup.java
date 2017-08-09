@@ -26,6 +26,10 @@ import uk.q3c.krail.core.ui.DataTypeToUI;
 import uk.q3c.krail.core.vaadin.ID;
 import uk.q3c.krail.i18n.api.I18NKey;
 import uk.q3c.krail.i18n.api.Translate;
+import uk.q3c.krail.option.OptionKeyLocator;
+import uk.q3c.krail.option.api.Option;
+import uk.q3c.krail.option.api.OptionContext;
+import uk.q3c.krail.option.api.OptionKey;
 
 import javax.annotation.Nonnull;
 import java.util.Map;

@@ -1,11 +1,11 @@
 package uk.q3c.krail.core.i18n
 
 import com.google.inject.Inject
-import uk.q3c.krail.core.option.Option
-import uk.q3c.krail.core.option.OptionContext
-import uk.q3c.krail.core.option.OptionKey
 import uk.q3c.krail.i18n.api.PatternSourceProvider
 import uk.q3c.krail.i18n.api.PatternSourceProviderConfig
+import uk.q3c.krail.option.api.Option
+import uk.q3c.krail.option.api.OptionContext
+import uk.q3c.krail.option.api.OptionKey
 import uk.q3c.util.data.collection.AnnotationList
 
 /**

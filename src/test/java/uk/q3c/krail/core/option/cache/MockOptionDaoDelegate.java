@@ -13,9 +13,9 @@
 
 package uk.q3c.krail.core.option.cache;
 
-import uk.q3c.krail.core.option.OptionException;
-import uk.q3c.krail.core.persist.cache.option.OptionCacheKey;
-import uk.q3c.krail.core.persist.common.option.OptionDaoDelegate;
+import uk.q3c.krail.option.api.OptionCacheKey;
+import uk.q3c.krail.option.api.OptionDaoDelegate;
+import uk.q3c.krail.option.api.OptionException;
 
 import javax.annotation.Nonnull;
 import java.util.HashMap;

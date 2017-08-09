@@ -21,7 +21,7 @@ import spock.lang.Specification
 import uk.q3c.krail.core.data.TestEntity2
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule
 import uk.q3c.krail.core.i18n.KrailI18NConfigModule
-import uk.q3c.krail.core.persist.inmemory.common.InMemoryModule
+import uk.q3c.krail.persist.inmemory.InMemoryModule
 import uk.q3c.krail.testutil.eventbus.TestEventBusModule
 import uk.q3c.krail.testutil.guice.uiscope.TestUIScopeModule
 import uk.q3c.krail.testutil.i18n.TestI18NModule

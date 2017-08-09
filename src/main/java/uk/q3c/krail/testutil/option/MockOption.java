@@ -14,9 +14,9 @@
 package uk.q3c.krail.testutil.option;
 
 import com.google.inject.Inject;
-import uk.q3c.krail.core.option.Option;
-import uk.q3c.krail.core.option.OptionKey;
-import uk.q3c.krail.core.user.profile.UserHierarchy;
+import uk.q3c.krail.option.api.Option;
+import uk.q3c.krail.option.api.OptionKey;
+import uk.q3c.krail.option.api.UserHierarchy;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

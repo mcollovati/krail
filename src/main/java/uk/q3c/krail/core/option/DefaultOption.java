@@ -16,13 +16,11 @@ package uk.q3c.krail.core.option;
 import com.google.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import uk.q3c.krail.core.persist.cache.option.DefaultOptionCacheLoader;
-import uk.q3c.krail.core.persist.cache.option.OptionCache;
-import uk.q3c.krail.core.persist.common.option.OptionDaoDelegate;
 import uk.q3c.krail.core.shiro.SubjectIdentifier;
 import uk.q3c.krail.core.shiro.SubjectProvider;
 import uk.q3c.krail.core.user.profile.DefaultUserHierarchy;
-import uk.q3c.krail.core.user.profile.UserHierarchy;
+import uk.q3c.krail.option.DefaultOptionCacheLoader;
+import uk.q3c.krail.option.api.*;
 
 import javax.annotation.Nonnull;
 

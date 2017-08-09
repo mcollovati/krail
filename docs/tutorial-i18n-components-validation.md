@@ -443,7 +443,7 @@ import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
 import uk.q3c.krail.i18n.api.I18N;
 import uk.q3c.krail.core.i18n.I18NProcessor;
-import uk.q3c.krail.core.option.Option;
+import uk.q3c.krail.option.api.Option;
 import uk.q3c.krail.core.ui.form.BeanFieldGroupBase;
 import uk.q3c.krail.core.validation.BeanValidator;
 

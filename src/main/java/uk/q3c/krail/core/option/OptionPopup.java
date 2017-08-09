@@ -15,6 +15,8 @@ package uk.q3c.krail.core.option;
 
 
 import uk.q3c.krail.i18n.api.I18NKey;
+import uk.q3c.krail.option.api.OptionContext;
+import uk.q3c.krail.option.api.OptionKey;
 
 import javax.annotation.Nonnull;
 import java.util.Map;

@@ -12,12 +12,13 @@
 package uk.q3c.krail.core.user.profile;
 
 import com.google.inject.BindingAnnotation;
+import uk.q3c.krail.option.api.UserHierarchy;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 import static java.lang.annotation.ElementType.*;
-import static java.lang.annotation.RetentionPolicy.RUNTIME;
+import static java.lang.annotation.RetentionPolicy.*;
 
 /**
  *

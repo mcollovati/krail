@@ -25,18 +25,19 @@ import uk.q3c.krail.core.i18n.DescriptionKey
 import uk.q3c.krail.core.i18n.KrailI18NConfigModule
 import uk.q3c.krail.core.i18n.KrailI8NModule
 import uk.q3c.krail.core.i18n.LabelKey
-import uk.q3c.krail.core.option.InMemory
-import uk.q3c.krail.core.persist.inmemory.common.InMemoryModule
-import uk.q3c.krail.core.persist.inmemory.i18n.InMemoryPatternDao
 import uk.q3c.krail.core.shiro.DefaultShiroModule
 import uk.q3c.krail.i18n.api.*
 import uk.q3c.krail.i18n.api.clazz.ClassPatternDao
 import uk.q3c.krail.i18n.clazz.ClassPatternSource
 import uk.q3c.krail.i18n.test.TestPatternSource
+import uk.q3c.krail.persist.inmemory.InMemory
+import uk.q3c.krail.persist.inmemory.InMemoryModule
+import uk.q3c.krail.persist.inmemory.InMemoryPatternDao
 import uk.q3c.krail.testutil.option.TestOptionModule
 import uk.q3c.util.UtilModule
 
 import java.lang.annotation.Annotation
+
 /**
  * Unit tests for {@link I18NModule}
  *

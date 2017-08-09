@@ -19,13 +19,13 @@ import com.google.inject.multibindings.MapBinder;
 import com.google.inject.multibindings.Multibinder;
 import uk.q3c.krail.core.guice.uiscope.UIScoped;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScoped;
-import uk.q3c.krail.core.option.Option;
-import uk.q3c.krail.core.persist.common.common.KrailPersistenceUnitHelper;
 import uk.q3c.krail.i18n.*;
 import uk.q3c.krail.i18n.api.*;
 import uk.q3c.krail.i18n.api.clazz.ClassPatternDao;
 import uk.q3c.krail.i18n.clazz.ClassPatternSource;
 import uk.q3c.krail.i18n.clazz.DefaultClassPatternDao;
+import uk.q3c.krail.option.api.Option;
+import uk.q3c.krail.persist.KrailPersistenceUnitHelper;
 import uk.q3c.util.clazz.DefaultUnenhancedClassIdentifier;
 import uk.q3c.util.clazz.UnenhancedClassIdentifier;
 

@@ -1,5 +1,6 @@
 package uk.q3c.krail.core.option;
 
+import uk.q3c.krail.option.api.Option;
 import uk.q3c.krail.testutil.option.MockOption;
 
 import javax.annotation.Nonnull;

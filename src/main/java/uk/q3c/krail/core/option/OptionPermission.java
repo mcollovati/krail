@@ -15,12 +15,13 @@ package uk.q3c.krail.core.option;
 
 import org.apache.shiro.authz.permission.WildcardPermission;
 import uk.q3c.krail.core.shiro.SubjectIdentifier;
-import uk.q3c.krail.core.user.profile.UserHierarchy;
+import uk.q3c.krail.option.api.Option;
+import uk.q3c.krail.option.api.OptionKey;
+import uk.q3c.krail.option.api.UserHierarchy;
 
 import javax.annotation.Nonnull;
 
-import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.base.Preconditions.*;
 
 /**
  * Represents a Shiro permission for {@link Option}.  The permission is structured:
