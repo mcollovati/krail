@@ -51,7 +51,7 @@ A JPA persistent version is available through the **krail-jpa** module, or you c
 An option is uniquely identified by an `OptionKey`, which is described in more detail below.  The process of retrieving a value for that key is:
 
 - Call one of the `Option.getXxxx` methods
-- `OptionBase` checks user permissions and calls `OptionCache.getValue()` (Note: `OptionBase` is abstract - a consumer project needs to implement a sub-class to implement permissions - see `uk.q3c.krail.core.option.DefaultOption` as an example)
+- `OptionBase` checks user permissions using `OptionPermissionVerifier` and calls `OptionCache.getValue()` - a consumer project needs to implement and bind an implementation of `OptionPermissionVerifier`.  See `KrailOptionPermissionVerifier` in krail.core for an example.  There is a `DefaultOptionPermissionVerifier` provided, but that just gives everyone permission! 
 - If the key is not present in the cache, `OptionCacheLoader` is invoked by the cache (actually a Guava Cache) using `OptionDao`
 - `OptonDao` does some checking on hierarchy levels then passes the read operation itself to `OptionDaoDelegate` 
 - `OptionDaoDelegate` and the `OptionStore` it uses, are storage specific implementations

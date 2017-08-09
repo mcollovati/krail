@@ -94,6 +94,9 @@ public class Option_IntegrationTest {
     @Mock
     private SubjectProvider subjectProvider;
 
+
+    private OptionPermissionVerifier permissionVerifier;
+
     @Before
     public void setup() {
 
@@ -102,11 +105,12 @@ public class Option_IntegrationTest {
         when(subjectProvider.get()).thenReturn(subject1);
         when(subject1.isPermitted(any(OptionPermission.class))).thenReturn(true);
         when(subject2.isPermitted(any(OptionPermission.class))).thenReturn(true);
+        permissionVerifier = new KrailOptionPermissionVerifier(subjectProvider, subjectIdentifier);
         hierarchy = new SimpleUserHierarchy(subjectProvider, subjectIdentifier, translate);
 
         cacheLoader = new DefaultOptionCacheLoader(optionDao);
         optionCache = new DefaultOptionCache(optionDao, cacheProvider);
-        option = new DefaultOption(optionCache, hierarchy, subjectProvider, subjectIdentifier);
+        option = new DefaultOption(optionCache, hierarchy, permissionVerifier);
     }
 
 
@@ -183,7 +187,7 @@ public class Option_IntegrationTest {
         when(subjectProvider.get()).thenReturn(subject1);
         when(subject1.isAuthenticated()).thenReturn(true);
         when(subjectIdentifier.userId()).thenReturn("fbaton");
-        DefaultOption option2 = new DefaultOption(optionCache, hierarchy, subjectProvider, subjectIdentifier);
+        DefaultOption option2 = new DefaultOption(optionCache, hierarchy, permissionVerifier);
         //when
         option2.set(key1, 3);
         Integer actual = option2.get(key1);

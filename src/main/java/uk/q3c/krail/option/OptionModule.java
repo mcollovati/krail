@@ -16,7 +16,6 @@ package uk.q3c.krail.option;
 import com.google.inject.AbstractModule;
 import com.google.inject.Binder;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScoped;
-import uk.q3c.krail.core.option.DefaultOption;
 import uk.q3c.krail.core.option.DefaultOptionPopup;
 import uk.q3c.krail.core.option.OptionPopup;
 import uk.q3c.krail.option.api.*;
@@ -48,8 +47,12 @@ public class OptionModule extends AbstractModule {
         bindOptionPopup();
         bindDefaultActiveSource();
         bindCurrentOptionSource();
+        bindOptionPermissionVerifier();
     }
 
+    protected void bindOptionPermissionVerifier() {
+        bind(OptionPermissionVerifier.class).to(DefaultOptionPermissionVerifier.class);
+    }
 
 
     protected void bindDefaultActiveSource() {

@@ -1,4 +1,4 @@
-package uk.q3c.krail.core.option;
+package uk.q3c.krail.option.test;
 
 import uk.q3c.krail.option.api.Option;
 import uk.q3c.krail.option.api.OptionContext;
@@ -9,7 +9,7 @@ import javax.annotation.Nonnull;
 /**
  * Created by David Sowerby on 03 Aug 2017
  */
-class MockContext implements OptionContext<Object> {
+public class MockContext implements OptionContext<Object> {
 
     Option option = new MockOption();
 

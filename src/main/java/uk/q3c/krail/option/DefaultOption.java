@@ -11,13 +11,12 @@
  *
  */
 
-package uk.q3c.krail.option.api;
+package uk.q3c.krail.option;
 
-import org.apache.shiro.authz.UnauthorizedException;
+import com.google.inject.Inject;
 import uk.q3c.krail.core.option.OptionPermission;
-import uk.q3c.krail.core.shiro.SubjectIdentifier;
-import uk.q3c.krail.core.shiro.SubjectProvider;
-import uk.q3c.krail.option.DefaultOptionCacheLoader;
+import uk.q3c.krail.core.user.profile.DefaultUserHierarchy;
+import uk.q3c.krail.option.api.*;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -44,18 +43,17 @@ import static uk.q3c.krail.option.api.RankOption.*;
  * Created by David Sowerby on 03/12/14.
  */
 
-public abstract class OptionBase implements Option {
+public class DefaultOption implements Option {
 
     private UserHierarchy hierarchy;
     private OptionCache optionCache;
-    private SubjectIdentifier subjectIdentifier;
-    private SubjectProvider subjectProvider;
+    private OptionPermissionVerifier permissionVerifier;
 
-    protected OptionBase(OptionCache optionCache, UserHierarchy hierarchy, SubjectProvider subjectProvider, SubjectIdentifier subjectIdentifier) {
+    @Inject
+    public DefaultOption(OptionCache optionCache, @DefaultUserHierarchy UserHierarchy hierarchy, OptionPermissionVerifier permissionVerifier) {
         this.hierarchy = hierarchy;
         this.optionCache = optionCache;
-        this.subjectProvider = subjectProvider;
-        this.subjectIdentifier = subjectIdentifier;
+        this.permissionVerifier = permissionVerifier;
     }
 
     @Override
@@ -72,13 +70,11 @@ public abstract class OptionBase implements Option {
     public synchronized <T> void set(@Nonnull OptionKey<T> optionKey, int hierarchyRank, @Nonnull T value) {
         checkArgument(hierarchyRank >= 0);
         checkNotNull(optionKey);
-        OptionPermission permission = new OptionPermission(OptionPermission.Action.EDIT, hierarchy, hierarchyRank, optionKey, subjectIdentifier.userId());
-        if (subjectProvider.get()
-                           .isPermitted(permission)) {
+
+        if (permissionVerifier.userHasPermission(OptionPermission.Action.EDIT, hierarchy, hierarchyRank, optionKey)) {
             optionCache.write(new OptionCacheKey<>(hierarchy, SPECIFIC_RANK, hierarchyRank, optionKey), Optional.of(value));
-        } else {
-            throw new UnauthorizedException();
         }
+
     }
 
 
@@ -133,14 +129,10 @@ public abstract class OptionBase implements Option {
     public <T> T delete(@Nonnull OptionKey<T> optionKey, int hierarchyRank) {
         checkArgument(hierarchyRank >= 0);
         checkNotNull(optionKey);
-        OptionPermission permission = new OptionPermission(OptionPermission.Action.EDIT, hierarchy, hierarchyRank, optionKey, subjectIdentifier.userId());
-        if (subjectProvider.get()
-                           .isPermitted(permission)) {
-            //noinspection unchecked
+        if (permissionVerifier.userHasPermission(OptionPermission.Action.EDIT, hierarchy, hierarchyRank, optionKey)) {
             return (T) optionCache.delete(new OptionCacheKey(hierarchy, SPECIFIC_RANK, hierarchyRank, optionKey));
-        } else {
-            throw new UnauthorizedException();
         }
+        return null;
     }
 
 }

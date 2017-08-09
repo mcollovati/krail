@@ -32,7 +32,6 @@ import uk.q3c.krail.core.services.ServicesModel;
 import uk.q3c.krail.core.shiro.KrailSecurityManager;
 import uk.q3c.krail.testutil.dummy.Dummy;
 import uk.q3c.krail.testutil.guice.TestBindingManager;
-import uk.q3c.krail.util.UtilsModule;
 import uk.q3c.util.testutil.LogMonitor;
 
 import javax.servlet.ServletContext;
@@ -43,7 +42,7 @@ import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @RunWith(MycilaJunitRunner.class)
-@GuiceContext({UtilsModule.class})
+@GuiceContext()
 public class DefaultBindingManagerTest {
 
     static File iniDir = new File("src/test/java");

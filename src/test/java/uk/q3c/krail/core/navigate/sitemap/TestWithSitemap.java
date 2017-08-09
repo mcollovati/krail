@@ -27,7 +27,6 @@ import uk.q3c.krail.core.i18n.I18NProcessor;
 import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.navigate.StrictURIFragmentHandler;
 import uk.q3c.krail.core.navigate.URIFragmentHandler;
-import uk.q3c.krail.core.option.DefaultOption;
 import uk.q3c.krail.core.shiro.PageAccessControl;
 import uk.q3c.krail.core.shiro.PageAccessController;
 import uk.q3c.krail.core.shiro.SubjectProvider;
@@ -35,6 +34,7 @@ import uk.q3c.krail.core.view.PublicHomeView;
 import uk.q3c.krail.i18n.api.CurrentLocale;
 import uk.q3c.krail.i18n.api.I18NKey;
 import uk.q3c.krail.i18n.api.Translate;
+import uk.q3c.krail.option.DefaultOption;
 import uk.q3c.krail.option.api.Option;
 import uk.q3c.krail.testutil.i18n.TestLabelKey;
 
