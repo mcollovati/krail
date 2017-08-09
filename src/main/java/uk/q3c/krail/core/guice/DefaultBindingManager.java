@@ -40,6 +40,7 @@ import uk.q3c.krail.core.navigate.NavigationModule;
 import uk.q3c.krail.core.navigate.sitemap.MasterSitemap;
 import uk.q3c.krail.core.navigate.sitemap.SitemapModule;
 import uk.q3c.krail.core.navigate.sitemap.StandardPagesModule;
+import uk.q3c.krail.core.option.KrailOptionModule;
 import uk.q3c.krail.core.push.PushModule;
 import uk.q3c.krail.core.services.ServicesModel;
 import uk.q3c.krail.core.services.ServicesModule;
@@ -256,7 +257,7 @@ public abstract class DefaultBindingManager extends GuiceServletContextListener 
      * @return module instance
      */
     protected Module optionModule() {
-        return new OptionModule().activeSource(InMemory.class);
+        return new KrailOptionModule().activeSource(InMemory.class);
     }
 
     /**

@@ -13,120 +13,19 @@
 
 package uk.q3c.krail.core.option;
 
-import com.google.inject.AbstractModule;
-import com.google.inject.Binder;
-import uk.q3c.krail.core.guice.vsscope.VaadinSessionScoped;
-import uk.q3c.krail.option.*;
-import uk.q3c.krail.option.api.*;
-import uk.q3c.krail.persist.KrailPersistenceUnitHelper;
-import uk.q3c.util.guava.GuavaCacheConfiguration;
-
-import java.lang.annotation.Annotation;
+import uk.q3c.krail.option.OptionModule;
+import uk.q3c.krail.option.api.Option;
+import uk.q3c.krail.option.api.OptionPermissionVerifier;
 
 /**
  * Configures the use of {@link Option}
  * <p>
  * Created by David Sowerby on 16/11/14.
  */
-public class KrailOptionModule extends AbstractModule {
+public class KrailOptionModule extends OptionModule {
 
-
-    private Class<? extends Annotation> activeSource;
-
-    /**
-     * Configures a {@link Binder} via the exposed methods.
-     */
     @Override
-    protected void configure() {
-        bindOption();
-        bindOptionDaoWrapper();
-        bindOptionCacheConfiguration();
-        bindOptionCache();
-        bindOptionCacheProvider();
-        bindOptionPopup();
-        bindDefaultActiveSource();
-        bindCurrentOptionSource();
+    protected void bindOptionPermissionVerifier() {
+        bind(OptionPermissionVerifier.class).to(KrailOptionPermissionVerifier.class);
     }
-
-
-    protected void bindDefaultActiveSource() {
-        bind(KrailPersistenceUnitHelper.annotationClassLiteral()).annotatedWith(DefaultActiveOptionSource.class)
-                .toInstance(activeSource);
-    }
-
-    /**
-     * Provides a Singleton which identifies the currently selected source for {@link Option}.  Override to provide your own implementation of {@link
-     * OptionSource}.
-     */
-    protected void bindCurrentOptionSource() {
-        bind(OptionSource.class).to(DefaultOptionSource.class);
-    }
-
-
-    /**
-     * Override this method to provide your own {@link OptionPopup} implementation
-     */
-    protected void bindOptionPopup() {
-        bind(OptionPopup.class).to(DefaultOptionPopup.class);
-    }
-
-    /**
-     * Override this method to provide your own {@link OptionCacheProvider} implementation.
-     */
-    protected void bindOptionCacheProvider() {
-        bind(OptionCacheProvider.class).to(DefaultOptionCacheProvider.class);
-    }
-
-
-    /**
-     * Override this method to provide your own {@link OptionCache} implementation. The scope is usually {@link VaadinSessionScoped}, as options
-     * relate to individual users.
-     */
-    protected void bindOptionCache() {
-        bind(OptionCache.class).to(DefaultOptionCache.class).in(VaadinSessionScoped.class);
-    }
-
-    protected void bindOptionCacheConfiguration() {
-        bind(GuavaCacheConfiguration.class).annotatedWith(OptionCacheConfig.class)
-                .toInstance(configureCache());
-    }
-
-    /**
-     * Override this to configure the option cache
-     *
-     * @return a GuavaCacheConfiguration instance
-     */
-    protected GuavaCacheConfiguration configureCache() {
-        GuavaCacheConfiguration config = new GuavaCacheConfiguration();
-        config.maximumSize(5000)
-                .recordStats();
-        return config;
-    }
-
-    /**
-     * Override this method to provide your own {@link Option} implementation.
-     */
-    protected void bindOption() {
-        bind(Option.class).to(DefaultOption.class);
-    }
-
-    /**
-     * Override this method to provide your own {@link OptionDao} implementation.
-     */
-    protected void bindOptionDaoWrapper() {
-        bind(OptionDao.class).to(DefaultOptionDao.class);
-    }
-
-
-    /**
-     * Defines which source should be used to supply {@link Option} values - the source is identified by its binding annotation {@code annotationClass}
-     *
-     * @param annotationClass the binding annotation which identifies the source
-     * @return this for fluency
-     */
-    public KrailOptionModule activeSource(Class<? extends Annotation> annotationClass) {
-        activeSource = annotationClass;
-        return this;
-    }
-
 }
