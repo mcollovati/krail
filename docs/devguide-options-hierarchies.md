@@ -43,6 +43,20 @@ There can be up to 98 layers between user and system levels, though we can think
 
 #Storing the Options
 
-None of this is of any use unless the option values can be stored.  As with the rest of Krail, an interface, ```OptionStore```, and a default implementation are provided.  In this case, the default implementation is not very useful, as it only store the options in memory.  A persistent version is planned, but in the meantime you could provide your own persistent implementation and bind it through a sub-class of OptionModule.
+None of this is of any use unless the option values can be stored.  An interface, ```OptionStore```, and a default implementation (a very crude in-memory store) are provided.  In this case, the default implementation is not very useful, as it only store the options in memory.  
+A JPA persistent version is available through the **krail-jpa** module, or you could provide your own persistent implementation and bind it through a sub-class of OptionModule.
+
+## Process
+
+An option is uniquely identified by an `OptionKey`, which is described in more detail below.  The process of retrieving a value for that key is:
+
+- Call one of the `Option.getXxxx` methods
+- `OptionBase` checks user permissions and calls `OptionCache.getValue()`
+- If the key is not present in the cache, `OptionCacheLoader` is invoked by the cache (actually a Guava Cache) using `OptionDao`
+- `OptonDao` does some checking on hierarchy levels then passes the read operation itself to `OptionDaoDelegate` 
+- `OptionDaoDelegate` and the `OptionStore` it uses, are storage specific implementations
+
+The write process is essentially the same in reverse, though it is worth noting that all values in the `UserHierarchy` for the specific option are invalidated on write to ensure consistency
+ 
 
 #OptionKey
