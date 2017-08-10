@@ -22,7 +22,7 @@ This is nothing more than a simple hierarchy, represented in Krail by ```UserHie
 
 Of course, you don't have to give all users the facility to change all options - you may restrict changing some options values, for example, to sys admins, to provide consistency across the whole system.
 
-Accessing options is always through the Option interface.  This enables a simple, consistent API for storing and retrieving options.
+The ```Option``` interface provides a simple, consistent API for storing and retrieving options.
 
 #Hierarchies
 

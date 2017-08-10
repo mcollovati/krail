@@ -163,7 +163,7 @@ The real key - the one that is used in persistence - is made up of the context, 
 
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">An option value is just an object to Krail. Supported data types will be determined by your choice of persistence.  However, the core does provide <code>OptionElementConverter</code> to help with the process of translating to String for persistence</p>
+<p class="last">An option value is just an object to Krail. Supported data types will be determined by your choice of persistence.  However, the core does provide <code>DataConverter</code> to help with the process of translating to String for persistence</p>
 </div>
 
 We will make use of these keys in the ```optionValueChanged``` method, to hide or show the news channels:
@@ -351,14 +351,12 @@ The structure of these may be available from other systems - HR, Identity Manage
 
 #Option Data Types
 
-When using the default in memory store, Krail can use any data type for an option.  However, most persistence providers will want to confine Option values to a single table, and ```OptionElementConverter``` provides support for that, by translating ```Option``` values to ```String``` and back again.   
+When using the default in memory store, Krail can use any data type for an option.  However, most persistence providers will want to confine Option values to a single table, and ```DataConverter``` provides support for that, by translating ```Option``` values to ```String``` and back again.   
 
-This supports most primitive data types , ```Enum``` and ```I18NKey```.  Collections cannot be used directly, but are supported through ```OptionList```.
+This supports most primitive data types , ```Enum``` and ```I18NKey```.  Currently the only supported collection is ```AnnotationList``` which provides a list of ```Annotation``` classes.
 
-```AnnotationOptionList``` enables the use of a list of ```Annotation``` classes.
  
- 
-See ```DefaultOptionElementConverter``` for the complete list of supported types.
+See ```DefaultDataConverter``` for the complete list of supported types.
  
  
 #Summary
