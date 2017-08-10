@@ -13,15 +13,13 @@
 
 package uk.q3c.krail.option.api;
 
-import uk.q3c.krail.option.DefaultOptionCacheLoader;
-
 import javax.annotation.Nonnull;
 import java.util.Optional;
 
 /**
  * Provides data access to persistence for {@link OptionDao}
  * <br>
- * * <b>NOTE:</b> All values to and from {@link Option} are natively typed.  All values to and from {@link OptionCache}, {@link DefaultOptionCacheLoader} and
+ * * <b>NOTE:</b> All values to and from {@link Option} are natively typed.  All values to and from {@link OptionCache}, DefaultOptionCacheLoader and
  * {@link OptionDaoDelegate} are wrapped in Optional.
  * <p>
  * <p>

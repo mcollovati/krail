@@ -16,6 +16,7 @@ package uk.q3c.krail.core.option;
 import org.apache.shiro.authz.permission.WildcardPermission;
 import uk.q3c.krail.core.shiro.SubjectIdentifier;
 import uk.q3c.krail.option.api.Option;
+import uk.q3c.krail.option.api.OptionEditAction;
 import uk.q3c.krail.option.api.OptionKey;
 import uk.q3c.krail.option.api.UserHierarchy;
 
@@ -46,9 +47,7 @@ import static com.google.common.base.Preconditions.*;
  */
 public class OptionPermission extends WildcardPermission {
 
-    public enum Action {
-        EDIT, VIEW
-    }
+
 
     private final String permissionString;
 
@@ -57,7 +56,7 @@ public class OptionPermission extends WildcardPermission {
      *
      * @param hierarchy
      */
-    public OptionPermission(@Nonnull Action action, @Nonnull UserHierarchy hierarchy, int index, @Nonnull OptionKey optionKey, @Nonnull String userId) {
+    public OptionPermission(@Nonnull OptionEditAction action, @Nonnull UserHierarchy hierarchy, int index, @Nonnull OptionKey optionKey, @Nonnull String userId) {
         checkNotNull(action);
         checkNotNull(hierarchy);
         checkNotNull(optionKey);

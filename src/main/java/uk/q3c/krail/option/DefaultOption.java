@@ -71,7 +71,7 @@ public class DefaultOption implements Option {
         checkArgument(hierarchyRank >= 0);
         checkNotNull(optionKey);
 
-        if (permissionVerifier.userHasPermission(OptionPermission.Action.EDIT, hierarchy, hierarchyRank, optionKey)) {
+        if (permissionVerifier.userHasPermission(OptionEditAction.EDIT, hierarchy, hierarchyRank, optionKey)) {
             optionCache.write(new OptionCacheKey<>(hierarchy, SPECIFIC_RANK, hierarchyRank, optionKey), Optional.of(value));
         }
 
@@ -129,7 +129,7 @@ public class DefaultOption implements Option {
     public <T> T delete(@Nonnull OptionKey<T> optionKey, int hierarchyRank) {
         checkArgument(hierarchyRank >= 0);
         checkNotNull(optionKey);
-        if (permissionVerifier.userHasPermission(OptionPermission.Action.EDIT, hierarchy, hierarchyRank, optionKey)) {
+        if (permissionVerifier.userHasPermission(OptionEditAction.EDIT, hierarchy, hierarchyRank, optionKey)) {
             return (T) optionCache.delete(new OptionCacheKey(hierarchy, SPECIFIC_RANK, hierarchyRank, optionKey));
         }
         return null;

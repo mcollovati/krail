@@ -14,6 +14,7 @@
 package uk.q3c.krail.core.sysadmin.option
 
 import spock.lang.Specification
+import uk.q3c.krail.core.option.OptionContainerSource
 import uk.q3c.krail.core.option.OptionPopup
 import uk.q3c.krail.i18n.api.Translate
 import uk.q3c.krail.option.api.Option
@@ -32,9 +33,10 @@ class ActiveOptionSourcePanelTest extends Specification {
     PersistenceInfo persistenceInfo = Mock()
     Option option = Mock()
     OptionPopup optionPopup = Mock()
+    OptionContainerSource optionContainerSource = Mock()
 
 
-    def panel = new ActiveOptionSourcePanel(translate, optionSource, option, optionPopup)
+    def panel = new ActiveOptionSourcePanel(translate, optionSource, optionContainerSource, option, optionPopup)
 
 
     def "doSetPersistenceInfo gets info from optionSource using active source"() {

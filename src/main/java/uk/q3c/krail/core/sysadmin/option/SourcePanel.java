@@ -25,6 +25,7 @@ import uk.q3c.krail.core.eventbus.SubscribeTo;
 import uk.q3c.krail.core.i18n.Caption;
 import uk.q3c.krail.core.i18n.DescriptionKey;
 import uk.q3c.krail.core.i18n.LabelKey;
+import uk.q3c.krail.core.option.OptionContainerSource;
 import uk.q3c.krail.core.option.OptionPopup;
 import uk.q3c.krail.core.option.VaadinOptionContext;
 import uk.q3c.krail.i18n.api.I18N;
@@ -33,7 +34,6 @@ import uk.q3c.krail.i18n.api.LocaleChangeBusMessage;
 import uk.q3c.krail.i18n.api.Translate;
 import uk.q3c.krail.option.api.Option;
 import uk.q3c.krail.option.api.OptionKey;
-import uk.q3c.krail.option.api.OptionSource;
 import uk.q3c.krail.persist.PersistenceInfo;
 import uk.q3c.krail.util.Experimental;
 
@@ -79,7 +79,7 @@ public abstract class SourcePanel extends Panel implements VaadinOptionContext {
             .Display_style_for_the_is_volatile);
 
 
-    protected final OptionSource optionSource;
+    protected final OptionContainerSource optionContainerSource;
 
     private final Label descriptionLabel;
     private final Label connectionUrlLabel;
@@ -99,9 +99,9 @@ public abstract class SourcePanel extends Panel implements VaadinOptionContext {
     private Translate translate;
 
     @Inject
-    protected SourcePanel(Translate translate, OptionSource optionSource, Option option, OptionPopup optionPopup) {
+    protected SourcePanel(Translate translate, OptionContainerSource optionContainerSource, Option option, OptionPopup optionPopup) {
         this.translate = translate;
-        this.optionSource = optionSource;
+        this.optionContainerSource = optionContainerSource;
         this.option = option;
         this.optionPopup = optionPopup;
 
@@ -201,7 +201,7 @@ public abstract class SourcePanel extends Panel implements VaadinOptionContext {
     }
 
     protected void loadData() {
-        container = optionSource.getContainer(getAnnotationClass());
+        container = optionContainerSource.getContainer(getAnnotationClass());
         table.setContainerDataSource(container);
     }
 

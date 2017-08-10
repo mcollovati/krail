@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import org.apache.shiro.authz.UnauthorizedException;
 import uk.q3c.krail.core.shiro.SubjectIdentifier;
 import uk.q3c.krail.core.shiro.SubjectProvider;
+import uk.q3c.krail.option.api.OptionEditAction;
 import uk.q3c.krail.option.api.OptionKey;
 import uk.q3c.krail.option.api.OptionPermissionVerifier;
 import uk.q3c.krail.option.api.UserHierarchy;
@@ -23,7 +24,7 @@ public class KrailOptionPermissionVerifier implements OptionPermissionVerifier {
     }
 
     @Override
-    public <T> boolean userHasPermission(OptionPermission.Action action, UserHierarchy hierarchy,
+    public <T> boolean userHasPermission(OptionEditAction action, UserHierarchy hierarchy,
                                          int hierarchyRank, OptionKey<T> optionKey) {
         OptionPermission permission = new OptionPermission(action, hierarchy, hierarchyRank, optionKey, subjectIdentifier.userId());
         if (subjectProvider.get()

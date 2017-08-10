@@ -1,6 +1,6 @@
 package uk.q3c.krail.option;
 
-import uk.q3c.krail.core.option.OptionPermission;
+import uk.q3c.krail.option.api.OptionEditAction;
 import uk.q3c.krail.option.api.OptionKey;
 import uk.q3c.krail.option.api.OptionPermissionVerifier;
 import uk.q3c.krail.option.api.UserHierarchy;
@@ -12,7 +12,7 @@ import uk.q3c.krail.option.api.UserHierarchy;
  */
 public class DefaultOptionPermissionVerifier implements OptionPermissionVerifier {
     @Override
-    public <T> boolean userHasPermission(OptionPermission.Action action, UserHierarchy hierarchy, int hierarchyRank, OptionKey<T> optionKey) {
+    public <T> boolean userHasPermission(OptionEditAction action, UserHierarchy hierarchy, int hierarchyRank, OptionKey<T> optionKey) {
         return true;
     }
 }

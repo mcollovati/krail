@@ -16,6 +16,7 @@ package uk.q3c.krail.core.sysadmin.option
 import spock.lang.Specification
 import uk.q3c.krail.core.eventbus.SessionBus
 import uk.q3c.krail.core.i18n.LabelKey
+import uk.q3c.krail.core.option.OptionContainerSource
 import uk.q3c.krail.core.option.OptionPopup
 import uk.q3c.krail.i18n.api.Translate
 import uk.q3c.krail.option.api.Option
@@ -36,12 +37,13 @@ class SelectedOptionSourcePanelTest extends Specification {
 
     Translate translate = Mock()
     OptionSource optionSource = Mock()
+    OptionContainerSource optionContainerSource = Mock()
     PersistenceInfo persistenceInfo = Mock()
     PersistenceInfo persistenceInfo2 = Mock()
     Option option = Mock()
     OptionPopup optionPopup = Mock()
 
-    def panel = new SelectedOptionSourcePanel(translate, optionSource, option, optionPopup)
+    def panel = new SelectedOptionSourcePanel(translate, optionContainerSource, optionSource, option, optionPopup)
 
 
     def setup() {

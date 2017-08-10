@@ -16,7 +16,6 @@ package uk.q3c.krail.option.api;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheStats;
 import com.google.common.cache.LoadingCache;
-import uk.q3c.krail.option.DefaultOptionCacheLoader;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -43,7 +42,7 @@ public interface OptionCache {
 
     /**
      * If there is a value in the cache (which is actually held as an Optional<T>), then the Optional is returned.
-     * If there is no cache entry, {@link DefaultOptionCacheLoader} is invoked. This will populate the cache with a result from persistence or an
+     * If there is no cache entry, DefaultOptionCacheLoader is invoked. This will populate the cache with a result from persistence or an
      * {@link Optional#empty()} if no value is found.
      * <p>
      * The result from the loader takes into account whether the {@link OptionCacheKey#getRankOption()} is set to highest, lowest or specific

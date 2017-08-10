@@ -13,7 +13,6 @@
 
 package uk.q3c.krail.option.api;
 
-import uk.q3c.krail.option.DefaultOptionCacheLoader;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -22,8 +21,10 @@ import javax.annotation.Nullable;
  * Implementations represent an Option which can be at any rank in a {@link UserHierarchy}.  All calls reference an
  * implementation of {@link UserHierarchy} held by the implementation.
  *
- * * <b>NOTE:</b> All values to and from {@link Option} are natively typed.  All values to and from {@link OptionCache}, {@link DefaultOptionCacheLoader} and
- * {@link OptionDaoDelegate} are wrapped in Optional.
+ * * <b>NOTE:</b> All values to and from {@link Option} are natively typed.  All values to and from {@link OptionCache}, DefaultOptionCacheLoader and
+ * {@link OptionDaoDelegate} are wrapped in Optional. (
+ *
+ * Note: DefaultOptionCacheLoader has no interface and is in krail-option
  * <p>
  * Created by David Sowerby on 03/12/14.
  */

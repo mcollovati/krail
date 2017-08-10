@@ -14,6 +14,7 @@
 package uk.q3c.krail.core.sysadmin.option;
 
 import com.google.inject.Inject;
+import uk.q3c.krail.core.option.OptionContainerSource;
 import uk.q3c.krail.core.option.OptionPopup;
 import uk.q3c.krail.i18n.api.I18N;
 import uk.q3c.krail.i18n.api.Translate;
@@ -34,11 +35,13 @@ import static com.google.common.base.Preconditions.*;
 @I18N
 public class SelectedOptionSourcePanel extends SourcePanel {
 
+    private final OptionSource optionSource;
     private Class<? extends Annotation> selectedSource;
 
     @Inject
-    protected SelectedOptionSourcePanel(Translate translate, OptionSource optionSource, Option option, OptionPopup optionPopup) {
-        super(translate, optionSource, option, optionPopup);
+    protected SelectedOptionSourcePanel(Translate translate, OptionContainerSource optionContainerSource, OptionSource optionSource, Option option, OptionPopup optionPopup) {
+        super(translate, optionContainerSource, option, optionPopup);
+        this.optionSource = optionSource;
     }
 
     @Override
