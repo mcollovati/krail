@@ -31,6 +31,7 @@ import uk.q3c.krail.core.navigate.StrictURIFragmentHandler;
 import uk.q3c.krail.core.navigate.URIFragmentHandler;
 import uk.q3c.krail.core.navigate.sitemap.UserSitemapBuilderTest.TestVaadinSessionScopeModule;
 import uk.q3c.krail.core.services.ServicesModule;
+import uk.q3c.krail.core.shiro.DefaultShiroModule;
 import uk.q3c.krail.core.shiro.VaadinSessionProvider;
 import uk.q3c.krail.core.user.status.UserStatusBusMessage;
 import uk.q3c.krail.core.user.status.UserStatusChangeSource;
@@ -47,7 +48,7 @@ import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.*;
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({TestI18NModule.class, TestVaadinSessionScopeModule.class, TestOptionModule.class, TestPersistenceModule.class, EventBusModule.class,
-        UIScopeModule.class, SitemapModule.class, ServicesModule.class, UtilsModule.class, ApplicationConfigurationModule.class, KrailI18NConfigModule.class})
+        UIScopeModule.class, SitemapModule.class, ServicesModule.class, UtilsModule.class, ApplicationConfigurationModule.class, KrailI18NConfigModule.class, DefaultShiroModule.class})
 public class UserSitemapBuilderTest extends TestWithSitemap {
 
     @Mock

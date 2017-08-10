@@ -26,8 +26,8 @@ import uk.q3c.krail.core.guice.uiscope.UIScopeModule;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
 import uk.q3c.krail.core.i18n.*;
 import uk.q3c.krail.core.i18n.LabelKey;
+import uk.q3c.krail.core.shiro.DefaultShiroModule;
 import uk.q3c.krail.i18n.api.CurrentLocale;
-import uk.q3c.krail.testutil.i18n.TestI18NModule;
 import uk.q3c.krail.testutil.option.MockOption;
 import uk.q3c.krail.testutil.option.TestOptionModule;
 import uk.q3c.krail.testutil.persist.TestPersistenceModule;
@@ -43,9 +43,9 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.*;
 
 @RunWith(MycilaJunitRunner.class)
-@GuiceContext({TestI18NModule.class, KrailI18NConfigModule.class, EventBusModule.class, UIScopeModule.class, TestOptionModule.class, TestPersistenceModule.class,
+@GuiceContext({KrailI18NConfigModule.class, EventBusModule.class, UIScopeModule.class, TestOptionModule.class, TestPersistenceModule.class,
         VaadinSessionScopeModule.class,
-        AOPTestModule.class, UtilModule.class})
+        AOPTestModule.class, UtilModule.class, DefaultShiroModule.class, KrailI18NModule.class})
 public class DefaultI18NFieldScannerTest {
 
     @Inject

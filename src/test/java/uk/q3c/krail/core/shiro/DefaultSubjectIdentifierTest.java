@@ -40,7 +40,7 @@ import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @RunWith(MycilaJunitRunner.class)
-@GuiceContext({TestI18NModule.class, KrailI18NConfigModule.class, TestOptionModule.class, TestPersistenceModule.class, VaadinSessionScopeModule.class, EventBusModule.class, UIScopeModule
+@GuiceContext({TestI18NModule.class, KrailI18NConfigModule.class, DefaultShiroModule.class, TestOptionModule.class, TestPersistenceModule.class, VaadinSessionScopeModule.class, EventBusModule.class, UIScopeModule
         .class, UtilModule.class})
 public class DefaultSubjectIdentifierTest {
 

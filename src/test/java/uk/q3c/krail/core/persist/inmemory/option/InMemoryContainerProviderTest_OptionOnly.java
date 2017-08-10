@@ -21,19 +21,24 @@ import com.mycila.testing.plugin.guice.ModuleProvider;
 import com.vaadin.data.Container;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import uk.q3c.krail.core.eventbus.EventBusModule;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
+import uk.q3c.krail.core.i18n.KrailI18NConfigModule;
+import uk.q3c.krail.core.i18n.KrailI18NModule;
 import uk.q3c.krail.core.persist.VaadinContainerProvider;
+import uk.q3c.krail.core.shiro.DefaultShiroModule;
 import uk.q3c.krail.option.api.OptionEntity;
 import uk.q3c.krail.persist.ContainerType;
 import uk.q3c.krail.persist.inmemory.InMemory;
 import uk.q3c.krail.persist.inmemory.InMemoryModule;
+import uk.q3c.krail.testutil.guice.uiscope.TestUIScopeModule;
 import uk.q3c.krail.testutil.option.TestOptionModule;
 import uk.q3c.util.UtilModule;
 
 import static org.assertj.core.api.Assertions.*;
 
 @RunWith(MycilaJunitRunner.class)
-@GuiceContext({TestOptionModule.class, VaadinSessionScopeModule.class, UtilModule.class})
+@GuiceContext({TestOptionModule.class, VaadinSessionScopeModule.class, UtilModule.class, DefaultShiroModule.class, KrailI18NModule.class, KrailI18NConfigModule.class, TestUIScopeModule.class, EventBusModule.class})
 public class InMemoryContainerProviderTest_OptionOnly {
 
     @Inject

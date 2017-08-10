@@ -20,6 +20,7 @@ import uk.q3c.krail.core.data.DataModule
 import uk.q3c.krail.core.guice.uiscope.UIScopeModule
 import uk.q3c.krail.core.i18n.KrailI18NConfigModule
 import uk.q3c.krail.core.services.ServicesModule
+import uk.q3c.krail.core.shiro.DefaultShiroModule
 import uk.q3c.krail.persist.inmemory.InMemoryModule
 import uk.q3c.krail.testutil.eventbus.TestEventBusModule
 import uk.q3c.krail.testutil.guice.vsscope.TestVaadinSessionScopeModule
@@ -37,7 +38,7 @@ class ApplicationConfigurationModuleTest extends Specification {
     List<Module> modules
 
     def setup() {
-        modules = Lists.newArrayList(new TestI18NModule(), new ServicesModule(), new UtilsModule(), new TestOptionModule(), new TestEventBusModule(), new DataModule(), new TestVaadinSessionScopeModule(), new UIScopeModule(), new InMemoryModule(), new KrailI18NConfigModule())
+        modules = Lists.newArrayList(new TestI18NModule(), new ServicesModule(), new UtilsModule(), new TestOptionModule(), new TestEventBusModule(), new DataModule(), new TestVaadinSessionScopeModule(), new UIScopeModule(), new InMemoryModule(), new KrailI18NConfigModule(), new DefaultShiroModule())
 
 
     }

@@ -29,6 +29,7 @@ import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
 import uk.q3c.krail.core.i18n.KrailI18NConfigModule;
 import uk.q3c.krail.core.navigate.Navigator;
 import uk.q3c.krail.core.navigate.sitemap.StandardPageKey;
+import uk.q3c.krail.core.shiro.DefaultShiroModule;
 import uk.q3c.krail.core.shiro.DefaultSubjectIdentifier;
 import uk.q3c.krail.core.shiro.SubjectIdentifier;
 import uk.q3c.krail.core.shiro.SubjectProvider;
@@ -48,7 +49,7 @@ import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.*;
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({UIScopeModule.class, TestI18NModule.class, KrailI18NConfigModule.class, TestOptionModule.class, TestPersistenceModule.class, VaadinSessionScopeModule.class, EventBusModule
-        .class, UtilModule.class})
+        .class, UtilModule.class, DefaultShiroModule.class})
 public class DefaultUserStatusPanelTest {
 
     DefaultUserStatusPanel panel;

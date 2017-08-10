@@ -21,15 +21,20 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import uk.q3c.krail.core.data.DataModule;
+import uk.q3c.krail.core.eventbus.EventBusModule;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
+import uk.q3c.krail.core.i18n.KrailI18NConfigModule;
+import uk.q3c.krail.core.i18n.KrailI18NModule;
 import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.i18n.VaadinCurrentLocale;
+import uk.q3c.krail.core.shiro.DefaultShiroModule;
 import uk.q3c.krail.core.view.component.LocaleContainer;
 import uk.q3c.krail.i18n.api.PatternCacheKey;
 import uk.q3c.krail.i18n.api.PatternEntity;
 import uk.q3c.krail.option.DefaultOptionDao;
 import uk.q3c.krail.option.api.*;
 import uk.q3c.krail.persist.inmemory.*;
+import uk.q3c.krail.testutil.guice.uiscope.TestUIScopeModule;
 import uk.q3c.krail.testutil.option.TestOptionModule;
 import uk.q3c.util.UtilModule;
 import uk.q3c.util.data.DataConverter;
@@ -64,7 +69,7 @@ public class InMemoryContainerTest {
 
     @Before
     public void setup() {
-        Injector injector = Guice.createInjector(new InMemoryModule().provideOptionDao(), new TestOptionModule(), new VaadinSessionScopeModule(), new UtilModule());
+        Injector injector = Guice.createInjector(new InMemoryModule().provideOptionDao(), new TestOptionModule(), new VaadinSessionScopeModule(), new UtilModule(), new DefaultShiroModule(), new TestUIScopeModule(), new KrailI18NModule(), new KrailI18NConfigModule(), new EventBusModule());
         optionStore = injector.getInstance(InMemoryOptionStore.class);
         patternStore = injector.getInstance(InMemoryPatternStore.class);
 

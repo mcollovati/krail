@@ -20,7 +20,7 @@ import uk.q3c.krail.i18n.api.I18N;
 import uk.q3c.krail.i18n.api.Translate;
 import uk.q3c.krail.option.api.Option;
 import uk.q3c.krail.option.api.OptionSource;
-import uk.q3c.krail.persist.PersistenceInfo;
+import uk.q3c.krail.persist.api.PersistenceInfo;
 
 import javax.annotation.Nonnull;
 import java.lang.annotation.Annotation;

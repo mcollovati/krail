@@ -13,8 +13,11 @@
 
 package uk.q3c.krail.core.option;
 
+import uk.q3c.krail.core.guice.vsscope.VaadinSessionScoped;
+import uk.q3c.krail.option.DefaultOptionCache;
 import uk.q3c.krail.option.OptionModule;
 import uk.q3c.krail.option.api.Option;
+import uk.q3c.krail.option.api.OptionCache;
 import uk.q3c.krail.option.api.OptionPermissionVerifier;
 
 /**
@@ -27,5 +30,19 @@ public class KrailOptionModule extends OptionModule {
     @Override
     protected void bindOptionPermissionVerifier() {
         bind(OptionPermissionVerifier.class).to(KrailOptionPermissionVerifier.class);
+        bindOptionPopup();
+    }
+
+
+    /**
+     * Override this method to provide your own {@link OptionPopup} implementation
+     */
+    protected void bindOptionPopup() {
+        bind(OptionPopup.class).to(DefaultOptionPopup.class);
+    }
+
+    @Override
+    protected void bindOptionCache() {
+        bind(OptionCache.class).to(DefaultOptionCache.class).in(VaadinSessionScoped.class);
     }
 }

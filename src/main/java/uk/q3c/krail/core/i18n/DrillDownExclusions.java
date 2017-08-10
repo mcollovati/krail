@@ -21,7 +21,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * A binding annotation to identify registered I18N annotations.  See {@link KrailI8NModule#registeredAnnotations}
+ * A binding annotation to identify registered I18N annotations.  See {@link KrailI18NModule#registeredAnnotations}
  * <p>
  * Created by David Sowerby on 28/01/15.
  */

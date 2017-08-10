@@ -23,7 +23,7 @@ import uk.q3c.krail.core.guice.uiscope.UIScopeModule
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule
 import uk.q3c.krail.core.i18n.DescriptionKey
 import uk.q3c.krail.core.i18n.KrailI18NConfigModule
-import uk.q3c.krail.core.i18n.KrailI8NModule
+import uk.q3c.krail.core.i18n.KrailI18NModule
 import uk.q3c.krail.core.i18n.LabelKey
 import uk.q3c.krail.core.shiro.DefaultShiroModule
 import uk.q3c.krail.i18n.api.*
@@ -51,7 +51,7 @@ class Krail18NModuleTest extends GuiceModuleTestBase {
     def " Using Locale objects, supported locales set, setting defaultLocale also adds to supported locales"() {
         when:
 
-        injector = createInjector(new KrailI8NModule().defaultLocale(Locale.ITALY).supportedLocales(Locale.GERMANY))
+        injector = createInjector(new KrailI18NModule().defaultLocale(Locale.ITALY).supportedLocales(Locale.GERMANY))
 
 
         then:
@@ -67,7 +67,7 @@ class Krail18NModuleTest extends GuiceModuleTestBase {
     def "Using Locale language tags, supported locales set, setting defaultLocale also adds to supported locales"() {
         when:
 
-        injector = createInjector(new KrailI8NModule().defaultLocale("it_IT").supportedLocales("de_DE"))
+        injector = createInjector(new KrailI18NModule().defaultLocale("it_IT").supportedLocales("de_DE"))
 
 
         then:
@@ -82,7 +82,7 @@ class Krail18NModuleTest extends GuiceModuleTestBase {
     def "default to Locale.UK if no locales set"() {
         when:
 
-        injector = createInjector(new KrailI8NModule())
+        injector = createInjector(new KrailI18NModule())
 
 
         then:
@@ -96,7 +96,7 @@ class Krail18NModuleTest extends GuiceModuleTestBase {
     def "Throw an IllegalArgumentException for an invalid Locale language tag in defaultLocale()"() {
 
         when:
-        injector = createInjector(new KrailI8NModule().defaultLocale("rubbish"))
+        injector = createInjector(new KrailI18NModule().defaultLocale("rubbish"))
 
         then:
 
@@ -106,7 +106,7 @@ class Krail18NModuleTest extends GuiceModuleTestBase {
     def "Throw an IllegalArgumentException for an invalid Locale language tag in supportedLocales()"() {
 
         when:
-        injector = createInjector(new KrailI8NModule().supportedLocales("rubbish"))
+        injector = createInjector(new KrailI18NModule().supportedLocales("rubbish"))
 
         then:
 
@@ -115,7 +115,7 @@ class Krail18NModuleTest extends GuiceModuleTestBase {
 
     def "I18N targets explicitly set"() {
         when:
-        injector = createInjector(new KrailI8NModule().target(ClassPatternSource.class).target(InMemory.class))
+        injector = createInjector(new KrailI18NModule().target(ClassPatternSource.class).target(InMemory.class))
 
         then:
 
@@ -126,7 +126,7 @@ class Krail18NModuleTest extends GuiceModuleTestBase {
 
     def "I18N targets not set, should be an empty map"() {
         when:
-        injector = createInjector(new KrailI8NModule())
+        injector = createInjector(new KrailI18NModule())
 
         then:
 
@@ -136,7 +136,7 @@ class Krail18NModuleTest extends GuiceModuleTestBase {
 
     def "I18N sources explicitly set"() {
         when:
-        injector = createInjector(new KrailI8NModule().source(ClassPatternSource.class).source(InMemory.class))
+        injector = createInjector(new KrailI18NModule().source(ClassPatternSource.class).source(InMemory.class))
 
         then:
 
@@ -148,7 +148,7 @@ class Krail18NModuleTest extends GuiceModuleTestBase {
 
     def "I18N sources not set, default should be 'class'"() {
         when:
-        injector = createInjector(new KrailI8NModule())
+        injector = createInjector(new KrailI18NModule())
 
         then:
 
@@ -159,7 +159,7 @@ class Krail18NModuleTest extends GuiceModuleTestBase {
 
     def "I18N sources default order explicitly set"() {
         when:
-        injector = createInjector(new KrailI8NModule().sourcesDefaultOrder(TestPatternSource.class, ClassPatternSource.class, InMemory.class))
+        injector = createInjector(new KrailI18NModule().sourcesDefaultOrder(TestPatternSource.class, ClassPatternSource.class, InMemory.class))
 
         then:
 
@@ -173,7 +173,7 @@ class Krail18NModuleTest extends GuiceModuleTestBase {
 
     def "I18N source order set for individual bundles (key classes)"() {
         when:
-        injector = createInjector(new KrailI8NModule().sourcesOrderByBundle(LabelKey.class, TestPatternSource.class, ClassPatternSource.class).sourcesOrderByBundle(DescriptionKey.class, InMemory.class, TestPatternSource.class, ClassPatternSource.class))
+        injector = createInjector(new KrailI18NModule().sourcesOrderByBundle(LabelKey.class, TestPatternSource.class, ClassPatternSource.class).sourcesOrderByBundle(DescriptionKey.class, InMemory.class, TestPatternSource.class, ClassPatternSource.class))
 
         then:
 

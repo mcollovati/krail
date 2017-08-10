@@ -34,6 +34,7 @@ import uk.q3c.krail.core.navigate.sitemap.UserSitemapNode;
 import uk.q3c.krail.core.navigate.sitemap.UserSitemapStructureChangeMessage;
 import uk.q3c.krail.core.navigate.sitemap.comparator.DefaultUserSitemapSorters;
 import uk.q3c.krail.core.navigate.sitemap.comparator.DefaultUserSitemapSorters.SortType;
+import uk.q3c.krail.core.shiro.DefaultShiroModule;
 import uk.q3c.krail.eventbus.api.BusMessage;
 import uk.q3c.krail.i18n.api.CurrentLocale;
 import uk.q3c.krail.i18n.api.LocaleChangeBusMessage;
@@ -53,7 +54,7 @@ import static org.mockito.Mockito.*;
 
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({TestI18NModule.class, TestOptionModule.class, KrailI18NConfigModule.class, TestPersistenceModule.class, VaadinSessionScopeModule.class, EventBusModule.class,
-        TestUIScopeModule.class, UtilModule.class})
+        TestUIScopeModule.class, UtilModule.class, DefaultShiroModule.class})
 public class DefaultSubPagePanelTest {
 
     DefaultSubPagePanel panel;

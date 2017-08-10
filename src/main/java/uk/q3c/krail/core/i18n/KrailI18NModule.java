@@ -46,7 +46,7 @@ import static com.google.common.base.Preconditions.*;
  * An I18NKey implementation - for example, {@link LabelKey}, and its associated {@link EnumResourceBundle}s, are the equivalent to a Java Resource bundle
  */
 
-public class KrailI8NModule extends I18NModule {
+public class KrailI18NModule extends I18NModule {
 
     private final TypeLiteral<Class<? extends Annotation>> annotationLiteral = KrailPersistenceUnitHelper.annotationClassLiteral();
     private final TypeLiteral<PatternDao> patternDaoTypeLiteral = new TypeLiteral<PatternDao>() {
@@ -256,7 +256,7 @@ public class KrailI8NModule extends I18NModule {
      */
 
     @SafeVarargs
-    public final KrailI8NModule sourcesDefaultOrder(@Nonnull Class<? extends Annotation>... sources) {
+    public final KrailI18NModule sourcesDefaultOrder(@Nonnull Class<? extends Annotation>... sources) {
         checkNotNull(sources);
         Collections.addAll(prepSourcesDefaultOrder, sources);
         return this;
@@ -276,7 +276,7 @@ public class KrailI8NModule extends I18NModule {
      */
 
     @SafeVarargs
-    public final KrailI8NModule sourcesOrderByBundle(@Nonnull Class<? extends I18NKey> keyClass, @Nonnull Class<? extends Annotation>... sources) {
+    public final KrailI18NModule sourcesOrderByBundle(@Nonnull Class<? extends I18NKey> keyClass, @Nonnull Class<? extends Annotation>... sources) {
         checkNotNull(keyClass);
         checkNotNull(sources);
         LinkedHashSet<Class<? extends Annotation>> sourceSet = new LinkedHashSet<>(Arrays.asList(sources));
@@ -300,7 +300,7 @@ public class KrailI8NModule extends I18NModule {
      * @param target A BindingAnnotation identifying a Persistence Unit (or equivalent) that is providing a DAO as a source
      * @return this for fluency
      */
-    public final KrailI8NModule target(@Nonnull Class<? extends Annotation> target) {
+    public final KrailI18NModule target(@Nonnull Class<? extends Annotation> target) {
         checkNotNull(target);
         prepTargets.add(target);
         return this;
@@ -314,7 +314,7 @@ public class KrailI8NModule extends I18NModule {
      * @param source A BindingAnnotation identifying a Persistence Unit (or equivalent) that is providing a DAO as a source
      * @return this for fluency
      */
-    public KrailI8NModule source(@Nonnull Class<? extends Annotation> source) {
+    public KrailI18NModule source(@Nonnull Class<? extends Annotation> source) {
         checkNotNull(source);
         prepSources.add(source);
         return this;

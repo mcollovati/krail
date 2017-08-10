@@ -19,7 +19,7 @@ import uk.q3c.krail.core.option.OptionPopup
 import uk.q3c.krail.i18n.api.Translate
 import uk.q3c.krail.option.api.Option
 import uk.q3c.krail.option.api.OptionSource
-import uk.q3c.krail.persist.PersistenceInfo
+import uk.q3c.krail.persist.api.PersistenceInfo
 
 /**
  * Created by David Sowerby on 07/07/15.

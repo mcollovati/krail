@@ -29,6 +29,7 @@ import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
 import uk.q3c.krail.core.i18n.KrailI18NConfigModule;
 import uk.q3c.krail.core.navigate.StrictURIFragmentHandler;
 import uk.q3c.krail.core.navigate.URIFragmentHandler;
+import uk.q3c.krail.core.shiro.DefaultShiroModule;
 import uk.q3c.krail.i18n.api.CurrentLocale;
 import uk.q3c.krail.testutil.guice.uiscope.TestUIScopeModule;
 import uk.q3c.krail.testutil.i18n.TestI18NModule;
@@ -42,7 +43,7 @@ import static org.assertj.core.api.Assertions.*;
 
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({TestI18NModule.class, VaadinSessionScopeModule.class, TestPersistenceModule.class, EventBusModule.class,
-        TestUIScopeModule.class, TestOptionModule.class, KrailI18NConfigModule.class, UtilsModule.class})
+        TestUIScopeModule.class, TestOptionModule.class, KrailI18NConfigModule.class, UtilsModule.class, DefaultShiroModule.class})
 @Listener
 public class DefaultUserSitemapTest {
 

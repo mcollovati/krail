@@ -79,7 +79,10 @@ dependencies {
     //Dependency Injection
     compile 'com.google.inject.extensions:guice-servlet:' + guiceVersion
     compile 'com.google.inject.extensions:guice-assistedinject:' + guiceVersion
+
+
     compile "uk.q3c.krail:krail-i18n:0.9.0.0.5ae389b"
+    compile "uk.q3c.krail:krail-option:0.9.0.0.82529a6"
 
 // Kotlin
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -105,7 +108,7 @@ dependencies {
     compile 'org.apache.commons:commons-lang3:' + commonsLangVersion
     compile 'commons-io:commons-io:2.4'
     compile 'commons-configuration:commons-configuration:1.10'
-    compile 'org.reflections:reflections:0.9.10'
+
     compile 'net.jodah:typetools:0.4.3'
 
     //Validation

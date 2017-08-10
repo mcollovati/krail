@@ -15,6 +15,7 @@ package uk.q3c.krail.persist;
 
 import uk.q3c.krail.i18n.api.PatternDao;
 import uk.q3c.krail.option.api.OptionDaoDelegate;
+import uk.q3c.krail.persist.api.PersistenceInfo;
 
 /**
  * Interface which may be applied to Guice modules or configuration objects, to provide persistence to the Krail core.

@@ -33,6 +33,7 @@ import uk.q3c.krail.core.navigate.StrictURIFragmentHandler;
 import uk.q3c.krail.core.navigate.URIFragmentHandler;
 import uk.q3c.krail.core.navigate.sitemap.DefaultAnnotationSitemapLoaderTest.AnnotationsModule1;
 import uk.q3c.krail.core.navigate.sitemap.DefaultAnnotationSitemapLoaderTest.AnnotationsModule2;
+import uk.q3c.krail.core.shiro.DefaultShiroModule;
 import uk.q3c.krail.core.shiro.PageAccessControl;
 import uk.q3c.krail.core.view.KrailView;
 import uk.q3c.krail.core.view.component.AfterViewChangeBusMessage;
@@ -55,7 +56,7 @@ import static org.assertj.core.api.Assertions.*;
  */
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({AnnotationsModule1.class, AnnotationsModule2.class, TestPersistenceModule.class, TestI18NModule.class, KrailI18NConfigModule.class, VaadinSessionScopeModule.class,
-        EventBusModule.class, UIScopeModule.class, UtilsModule.class, TestOptionModule.class})
+        EventBusModule.class, UIScopeModule.class, UtilsModule.class, TestOptionModule.class, DefaultShiroModule.class})
 public class DefaultAnnotationSitemapLoaderTest {
 
     @Inject

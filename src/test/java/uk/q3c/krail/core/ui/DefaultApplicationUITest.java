@@ -26,14 +26,19 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import uk.q3c.krail.core.i18n.I18NProcessor;
+import uk.q3c.krail.core.i18n.KrailI18NConfigModule;
+import uk.q3c.krail.core.i18n.KrailI18NModule;
 import uk.q3c.krail.core.navigate.Navigator;
 import uk.q3c.krail.core.push.DefaultBroadcaster;
 import uk.q3c.krail.core.push.DefaultPushMessageRouter;
+import uk.q3c.krail.core.shiro.DefaultShiroModule;
 import uk.q3c.krail.core.user.notify.VaadinNotification;
 import uk.q3c.krail.core.view.component.*;
 import uk.q3c.krail.i18n.api.CurrentLocale;
 import uk.q3c.krail.i18n.api.Translate;
 import uk.q3c.krail.option.api.Option;
+import uk.q3c.krail.testutil.eventbus.TestEventBusModule;
+import uk.q3c.krail.testutil.guice.uiscope.TestUIScopeModule;
 import uk.q3c.krail.testutil.guice.vsscope.TestVaadinSessionScopeModule;
 import uk.q3c.krail.testutil.option.TestOptionModule;
 import uk.q3c.krail.testutil.persist.TestPersistenceModule;
@@ -43,7 +48,7 @@ import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @RunWith(MycilaJunitRunner.class)
-@GuiceContext({TestOptionModule.class, TestPersistenceModule.class, TestVaadinSessionScopeModule.class, UtilModule.class})
+@GuiceContext({TestOptionModule.class, TestPersistenceModule.class, TestVaadinSessionScopeModule.class, UtilModule.class, DefaultShiroModule.class, KrailI18NModule.class, KrailI18NConfigModule.class, TestUIScopeModule.class, TestEventBusModule.class})
 public class DefaultApplicationUITest {
 
 

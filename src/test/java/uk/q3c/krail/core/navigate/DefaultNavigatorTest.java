@@ -45,10 +45,7 @@ import uk.q3c.krail.core.i18n.MessageKey;
 import uk.q3c.krail.core.navigate.sitemap.*;
 import uk.q3c.krail.core.navigate.sitemap.set.MasterSitemapQueue;
 import uk.q3c.krail.core.services.ServicesModule;
-import uk.q3c.krail.core.shiro.PageAccessControl;
-import uk.q3c.krail.core.shiro.PageAccessController;
-import uk.q3c.krail.core.shiro.PagePermission;
-import uk.q3c.krail.core.shiro.SubjectProvider;
+import uk.q3c.krail.core.shiro.*;
 import uk.q3c.krail.core.ui.ScopedUI;
 import uk.q3c.krail.core.ui.ScopedUIProvider;
 import uk.q3c.krail.core.user.notify.UserNotifier;
@@ -73,7 +70,7 @@ import static org.mockito.Mockito.*;
 
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({VaadinSessionScopeModule.class, TestI18NModule.class, KrailI18NConfigModule.class, TestPersistenceModule.class, TestOptionModule.class, EventBusModule.class,
-        TestUIScopeModule.class, SitemapModule.class, ServicesModule.class, UtilsModule.class, ApplicationConfigurationModule.class})
+        TestUIScopeModule.class, SitemapModule.class, ServicesModule.class, UtilsModule.class, ApplicationConfigurationModule.class, DefaultShiroModule.class})
 public class DefaultNavigatorTest {
 
     @Mock

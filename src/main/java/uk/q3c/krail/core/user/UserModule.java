@@ -18,7 +18,7 @@ import uk.q3c.krail.core.user.notify.DefaultUserNotifier;
 import uk.q3c.krail.core.user.notify.DefaultVaadinNotification;
 import uk.q3c.krail.core.user.notify.UserNotifier;
 import uk.q3c.krail.core.user.notify.VaadinNotification;
-import uk.q3c.krail.core.user.profile.DefaultUserHierarchy;
+import uk.q3c.krail.option.api.DefaultUserHierarchy;
 import uk.q3c.krail.option.api.UserHierarchy;
 
 public class UserModule extends AbstractModule {

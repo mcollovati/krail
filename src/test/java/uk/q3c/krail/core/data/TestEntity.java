@@ -12,7 +12,7 @@
  */
 package uk.q3c.krail.core.data;
 
-import uk.q3c.krail.persist.KrailEntity;
+import uk.q3c.krail.persist.api.KrailEntity;
 
 import javax.persistence.Id;
 import javax.persistence.Version;

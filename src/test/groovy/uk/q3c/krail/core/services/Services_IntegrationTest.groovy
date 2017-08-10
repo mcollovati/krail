@@ -20,6 +20,7 @@ import uk.q3c.krail.core.eventbus.EventBusModule
 import uk.q3c.krail.core.guice.uiscope.UIScopeModule
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule
 import uk.q3c.krail.core.i18n.KrailI18NConfigModule
+import uk.q3c.krail.core.shiro.DefaultShiroModule
 import uk.q3c.krail.testutil.i18n.TestI18NModule
 import uk.q3c.krail.testutil.option.TestOptionModule
 import uk.q3c.krail.testutil.persist.TestPersistenceModule
@@ -184,7 +185,7 @@ class Services_IntegrationTest extends Specification {
     }
 
     private Injector createInjector() {
-        return Guice.createInjector([new UtilsModule(), new KrailI18NConfigModule(), new TestServiceModule(), new ServicesModule(), new TestI18NModule(), new TestOptionModule(), new TestPersistenceModule(), new EventBusModule(), new VaadinSessionScopeModule(), new UIScopeModule()])
+        return Guice.createInjector([new UtilsModule(), new DefaultShiroModule(), new KrailI18NConfigModule(), new TestServiceModule(), new ServicesModule(), new TestI18NModule(), new TestOptionModule(), new TestPersistenceModule(), new EventBusModule(), new VaadinSessionScopeModule(), new UIScopeModule()])
     }
 
 }

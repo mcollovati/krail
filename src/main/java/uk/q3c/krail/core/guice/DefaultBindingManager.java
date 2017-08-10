@@ -35,7 +35,7 @@ import uk.q3c.krail.core.guice.threadscope.ThreadScopeModule;
 import uk.q3c.krail.core.guice.uiscope.UIScopeModule;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
 import uk.q3c.krail.core.i18n.KrailI18NConfigModule;
-import uk.q3c.krail.core.i18n.KrailI8NModule;
+import uk.q3c.krail.core.i18n.KrailI18NModule;
 import uk.q3c.krail.core.navigate.NavigationModule;
 import uk.q3c.krail.core.navigate.sitemap.MasterSitemap;
 import uk.q3c.krail.core.navigate.sitemap.SitemapModule;
@@ -266,7 +266,7 @@ public abstract class DefaultBindingManager extends GuiceServletContextListener 
      * @return a Module fr I18N
      */
     protected List<Module> i18NModules() {
-        return ImmutableList.of(new KrailI18NConfigModule(), new KrailI8NModule());
+        return ImmutableList.of(new KrailI18NConfigModule(), new KrailI18NModule());
     }
 
     /**

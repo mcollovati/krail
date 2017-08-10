@@ -32,6 +32,7 @@ import uk.q3c.krail.core.navigate.StrictURIFragmentHandler;
 import uk.q3c.krail.core.navigate.URIFragmentHandler;
 import uk.q3c.krail.core.navigate.sitemap.MasterSitemap;
 import uk.q3c.krail.core.navigate.sitemap.MasterSitemapNode;
+import uk.q3c.krail.core.shiro.DefaultShiroModule;
 import uk.q3c.krail.eventbus.api.BusMessage;
 import uk.q3c.krail.i18n.api.CurrentLocale;
 import uk.q3c.krail.i18n.api.LocaleChangeBusMessage;
@@ -50,7 +51,7 @@ import static org.assertj.core.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @RunWith(MycilaJunitRunner.class)
-@GuiceContext({TestI18NModule.class, KrailI18NConfigModule.class, TestOptionModule.class, TestPersistenceModule.class, VaadinSessionScopeModule.class, EventBusModule.class,
+@GuiceContext({TestI18NModule.class, DefaultShiroModule.class, KrailI18NConfigModule.class, TestOptionModule.class, TestPersistenceModule.class, VaadinSessionScopeModule.class, EventBusModule.class,
         TestUIScopeModule.class, UtilModule.class})
 public class BreadcrumbTest {
 

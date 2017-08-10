@@ -7,7 +7,7 @@ import com.vaadin.data.Container;
 import uk.q3c.krail.core.config.ConfigurationException;
 import uk.q3c.krail.i18n.api.MessageFormat2;
 import uk.q3c.krail.option.api.OptionDaoProviders;
-import uk.q3c.krail.persist.PersistenceInfo;
+import uk.q3c.krail.persist.api.PersistenceInfo;
 
 import java.lang.annotation.Annotation;
 import java.util.Map;

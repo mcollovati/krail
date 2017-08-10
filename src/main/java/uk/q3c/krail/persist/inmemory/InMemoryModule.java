@@ -28,7 +28,7 @@ import uk.q3c.krail.option.api.OptionDaoProviders;
 import uk.q3c.krail.persist.DefaultPersistenceInfo;
 import uk.q3c.krail.persist.KrailPersistenceUnit;
 import uk.q3c.krail.persist.KrailPersistenceUnitHelper;
-import uk.q3c.krail.persist.PersistenceInfo;
+import uk.q3c.krail.persist.api.PersistenceInfo;
 
 import java.lang.annotation.Annotation;
 

@@ -20,6 +20,7 @@ import com.google.inject.multibindings.MapBinder;
 import uk.q3c.krail.i18n.api.PatternDao;
 import uk.q3c.krail.i18n.api.PatternDaoProviders;
 import uk.q3c.krail.option.api.OptionDaoDelegate;
+import uk.q3c.krail.persist.api.PersistenceInfo;
 
 import java.lang.annotation.Annotation;
 

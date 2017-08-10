@@ -13,10 +13,10 @@
 
 package uk.q3c.krail.testutil.option;
 
+import uk.q3c.krail.core.option.KrailOptionModule;
 import uk.q3c.krail.i18n.DefaultMessageFormat;
 import uk.q3c.krail.i18n.api.MessageFormat2;
 import uk.q3c.krail.option.DefaultOptionCache;
-import uk.q3c.krail.option.OptionModule;
 import uk.q3c.krail.option.api.Option;
 import uk.q3c.krail.option.api.OptionCache;
 import uk.q3c.krail.persist.inmemory.InMemory;
@@ -24,7 +24,7 @@ import uk.q3c.krail.persist.inmemory.InMemory;
 /**
  * Created by David Sowerby on 05/12/14.
  */
-public class TestOptionModule extends OptionModule {
+public class TestOptionModule extends KrailOptionModule {
     @Override
     protected void configure() {
         super.configure();

@@ -19,15 +19,15 @@ import spock.lang.Specification
 import testutil.*
 import uk.q3c.krail.core.config.ApplicationConfigurationModule
 import uk.q3c.krail.core.i18n.KrailI18NConfigModule
+import uk.q3c.krail.core.i18n.KrailI18NModule
 import uk.q3c.krail.core.services.ServicesModule
+import uk.q3c.krail.core.shiro.DefaultShiroModule
 import uk.q3c.krail.persist.inmemory.InMemoryModule
 import uk.q3c.krail.testutil.eventbus.TestEventBusModule
 import uk.q3c.krail.testutil.guice.uiscope.TestUIScopeModule
 import uk.q3c.krail.testutil.guice.vsscope.TestVaadinSessionScopeModule
-import uk.q3c.krail.testutil.i18n.TestI18NModule
 import uk.q3c.krail.testutil.option.TestOptionModule
 import uk.q3c.krail.util.UtilsModule
-
 /**
  * Created by David Sowerby on 19 Jan 2016
  */
@@ -36,7 +36,11 @@ class PushModuleTest extends Specification {
 
     def "bindings"() {
         when:
-        Injector injector = Guice.createInjector(new PushModule(), new KrailI18NConfigModule(), new ApplicationConfigurationModule(), new TestUIScopeModule(), new UtilsModule(), new TestI18NModule(), new TestEventBusModule(), new TestVaadinSessionScopeModule(), new TestOptionModule(), new ServicesModule(), new InMemoryModule())
+        Injector injector = Guice.createInjector(
+                new PushModule(), new DefaultShiroModule(), new KrailI18NModule(), new KrailI18NConfigModule(),
+                new TestUIScopeModule(), new KrailI18NConfigModule(),
+                new ApplicationConfigurationModule(), new TestUIScopeModule(), new UtilsModule(),
+                new TestEventBusModule(), new TestVaadinSessionScopeModule(), new TestOptionModule(), new ServicesModule(), new InMemoryModule())
 
 
         then:

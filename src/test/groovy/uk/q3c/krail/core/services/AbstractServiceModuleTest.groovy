@@ -17,6 +17,7 @@ import com.google.inject.*
 import spock.lang.Specification
 import uk.q3c.krail.core.eventbus.EventBusModule
 import uk.q3c.krail.core.i18n.KrailI18NConfigModule
+import uk.q3c.krail.core.shiro.DefaultShiroModule
 import uk.q3c.krail.persist.inmemory.InMemoryModule
 import uk.q3c.krail.testutil.guice.uiscope.TestUIScopeModule
 import uk.q3c.krail.testutil.guice.vsscope.TestVaadinSessionScopeModule
@@ -88,7 +89,7 @@ class AbstractServiceModuleTest extends Specification {
     }
 
     private Injector createInjector() {
-        Guice.createInjector(new TestServiceModule(), new KrailI18NConfigModule(), new EventBusModule(), new ServicesModule(), new TestI18NModule(), new UtilsModule(), new TestOptionModule(), new TestVaadinSessionScopeModule(), new TestUIScopeModule(), new InMemoryModule())
+        Guice.createInjector(new TestServiceModule(), new KrailI18NConfigModule(), new EventBusModule(), new ServicesModule(), new TestI18NModule(), new UtilsModule(), new TestOptionModule(), new TestVaadinSessionScopeModule(), new TestUIScopeModule(), new InMemoryModule(), new DefaultShiroModule())
     }
 
 

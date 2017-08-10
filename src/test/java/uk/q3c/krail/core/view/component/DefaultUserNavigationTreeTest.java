@@ -35,6 +35,7 @@ import uk.q3c.krail.core.navigate.sitemap.UserSitemapStructureChangeMessage;
 import uk.q3c.krail.core.navigate.sitemap.comparator.DefaultUserSitemapSorters;
 import uk.q3c.krail.core.navigate.sitemap.comparator.DefaultUserSitemapSorters.SortType;
 import uk.q3c.krail.core.navigate.sitemap.comparator.UserSitemapSorters;
+import uk.q3c.krail.core.shiro.DefaultShiroModule;
 import uk.q3c.krail.i18n.api.CurrentLocale;
 import uk.q3c.krail.option.api.Option;
 import uk.q3c.krail.testutil.guice.uiscope.TestUIScopeModule;
@@ -53,7 +54,7 @@ import static org.mockito.Mockito.*;
 
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({TestUIScopeModule.class, TestI18NModule.class, KrailI18NConfigModule.class, TestOptionModule.class, TestPersistenceModule.class, VaadinSessionScopeModule.class,
-        EventBusModule.class, UtilModule.class})
+        EventBusModule.class, UtilModule.class, DefaultShiroModule.class})
 public class DefaultUserNavigationTreeTest {
 
     @Inject

@@ -22,6 +22,7 @@ import uk.q3c.krail.core.eventbus.EventBusModule;
 import uk.q3c.krail.core.guice.uiscope.UIScopeModule;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
 import uk.q3c.krail.core.i18n.KrailI18NConfigModule;
+import uk.q3c.krail.core.shiro.DefaultShiroModule;
 import uk.q3c.krail.i18n.api.CurrentLocale;
 import uk.q3c.krail.i18n.api.Translate;
 import uk.q3c.krail.testutil.i18n.TestI18NModule;
@@ -36,7 +37,7 @@ import static org.assertj.core.api.Assertions.*;
 
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({TestI18NModule.class, KrailI18NConfigModule.class, VaadinSessionScopeModule.class, TestPersistenceModule.class, TestOptionModule.class, EventBusModule.class, UIScopeModule
-        .class, UtilsModule.class})
+        .class, UtilsModule.class, DefaultShiroModule.class})
 public class StandardPageKeyTest {
 
     @Inject

@@ -25,6 +25,7 @@ import uk.q3c.krail.core.eventbus.EventBusModule;
 import uk.q3c.krail.core.guice.uiscope.UIScopeModule;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
 import uk.q3c.krail.core.i18n.KrailI18NConfigModule;
+import uk.q3c.krail.core.shiro.DefaultShiroModule;
 import uk.q3c.krail.core.user.notify.UserNotifier;
 import uk.q3c.krail.i18n.api.CurrentLocale;
 import uk.q3c.krail.i18n.api.LocaleChangeBusMessage;
@@ -42,7 +43,7 @@ import java.util.Set;
 import static org.assertj.core.api.Assertions.*;
 
 @RunWith(MycilaJunitRunner.class)
-@GuiceContext({VaadinSessionScopeModule.class, KrailI18NConfigModule.class, TestOptionModule.class, TestPersistenceModule.class, EventBusModule.class, UIScopeModule.class, TestI18NModule
+@GuiceContext({VaadinSessionScopeModule.class, DefaultShiroModule.class, KrailI18NConfigModule.class, TestOptionModule.class, TestPersistenceModule.class, EventBusModule.class, UIScopeModule.class, TestI18NModule
         .class, UtilsModule.class})
 public class DefaultLocaleSelectorTest {
 

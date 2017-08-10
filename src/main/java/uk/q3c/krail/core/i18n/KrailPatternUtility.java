@@ -11,7 +11,7 @@ import uk.q3c.krail.i18n.api.PatternUtility;
 public interface KrailPatternUtility extends PatternUtility {
 
     /**
-     * Exports all the core Krail I18NKeys for all supported Locales (as defined by the {@link KrailI8NModule}
+     * Exports all the core Krail I18NKeys for all supported Locales (as defined by the {@link KrailI18NModule}
      *
      * @param target the PatternDao to export to
      * @return a count of all the keys exported

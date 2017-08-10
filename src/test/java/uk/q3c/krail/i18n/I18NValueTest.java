@@ -24,6 +24,7 @@ import uk.q3c.krail.core.guice.uiscope.UIScopeModule;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
 import uk.q3c.krail.core.i18n.*;
 import uk.q3c.krail.core.i18n.LabelKey;
+import uk.q3c.krail.core.shiro.DefaultShiroModule;
 import uk.q3c.krail.i18n.api.Translate;
 import uk.q3c.krail.persist.inmemory.DefaultInMemoryOptionStore;
 import uk.q3c.krail.persist.inmemory.InMemoryOptionStore;
@@ -38,7 +39,7 @@ import static org.assertj.core.api.Assertions.*;
 
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({TestI18NModule.class, KrailI18NConfigModule.class, TestOptionModule.class, TestPersistenceModule.class, EventBusModule.class, UIScopeModule.class, VaadinSessionScopeModule
-        .class, UtilModule.class})
+        .class, UtilModule.class, DefaultShiroModule.class})
 public class I18NValueTest {
 
     @Inject

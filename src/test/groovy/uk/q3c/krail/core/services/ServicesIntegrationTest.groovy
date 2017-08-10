@@ -18,6 +18,7 @@ import spock.guice.UseModules
 import spock.lang.Specification
 import uk.q3c.krail.core.eventbus.EventBusModule
 import uk.q3c.krail.core.i18n.KrailI18NConfigModule
+import uk.q3c.krail.core.shiro.DefaultShiroModule
 import uk.q3c.krail.persist.inmemory.InMemoryModule
 import uk.q3c.krail.testutil.guice.uiscope.TestUIScopeModule
 import uk.q3c.krail.testutil.guice.vsscope.TestVaadinSessionScopeModule
@@ -28,7 +29,7 @@ import uk.q3c.krail.util.UtilsModule
 /**
  * Created by David Sowerby on 16 Dec 2015
  */
-@UseModules([ServicesModule, TestI18NModule, EventBusModule, TestVaadinSessionScopeModule, TestUIScopeModule, TestOptionModule, InMemoryModule, UtilsModule, KrailI18NConfigModule])
+@UseModules([ServicesModule, TestI18NModule, EventBusModule, TestVaadinSessionScopeModule, TestUIScopeModule, TestOptionModule, InMemoryModule, UtilsModule, KrailI18NConfigModule, DefaultShiroModule])
 class ServicesIntegrationTest extends Specification {
 
     @Inject

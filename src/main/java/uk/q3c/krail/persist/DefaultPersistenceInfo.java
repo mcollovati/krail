@@ -14,6 +14,7 @@
 package uk.q3c.krail.persist;
 
 import uk.q3c.krail.i18n.api.I18NKey;
+import uk.q3c.krail.persist.api.PersistenceInfo;
 
 /**
  * Default implementation for {@link PersistenceInfo}
@@ -28,7 +29,7 @@ public class DefaultPersistenceInfo implements PersistenceInfo<DefaultPersistenc
     private boolean volatilePersistence;
 
     /**
-     * Copy consdtructor from another {@link PersistenceInfo} instance
+     * Copy constructor from another {@link PersistenceInfo} instance
      *
      * @param other
      */

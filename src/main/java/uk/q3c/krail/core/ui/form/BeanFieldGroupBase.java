@@ -24,7 +24,7 @@ import uk.q3c.krail.core.i18n.I18NProcessor;
 import uk.q3c.krail.core.option.VaadinOptionContext;
 import uk.q3c.krail.core.validation.BeanValidator;
 import uk.q3c.krail.option.api.Option;
-import uk.q3c.krail.persist.KrailEntity;
+import uk.q3c.krail.persist.api.KrailEntity;
 
 import javax.annotation.Nonnull;
 import java.util.HashMap;

@@ -14,7 +14,7 @@
 package uk.q3c.krail.testutil.i18n;
 
 
-import uk.q3c.krail.core.i18n.KrailI8NModule;
+import uk.q3c.krail.core.i18n.KrailI18NModule;
 import uk.q3c.krail.i18n.DefaultPatternSource;
 import uk.q3c.krail.i18n.api.CurrentLocale;
 import uk.q3c.krail.i18n.api.PatternSource;
@@ -25,7 +25,7 @@ import java.util.Locale;
  * Different from
  */
 
-public class TestI18NModule extends KrailI8NModule {
+public class TestI18NModule extends KrailI18NModule {
 
     MockCurrentLocale currentLocale = new MockCurrentLocale();
 

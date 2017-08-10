@@ -32,6 +32,7 @@ import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.navigate.Navigator;
 import uk.q3c.krail.core.navigate.StrictURIFragmentHandler;
 import uk.q3c.krail.core.navigate.URIFragmentHandler;
+import uk.q3c.krail.core.shiro.DefaultShiroModule;
 import uk.q3c.krail.i18n.api.CurrentLocale;
 import uk.q3c.krail.i18n.api.Translate;
 import uk.q3c.krail.option.api.Option;
@@ -51,7 +52,7 @@ import static org.mockito.Mockito.*;
 
 @RunWith(MycilaJunitRunner.class)
 @GuiceContext({TestUIScopeModule.class, VaadinSessionScopeModule.class, TestI18NModule.class, KrailI18NConfigModule.class, TestOptionModule.class, TestPersistenceModule.class,
-        EventBusModule.class, UtilModule.class, UtilModule.class})
+        EventBusModule.class, UtilModule.class, UtilModule.class, DefaultShiroModule.class})
 public class DefaultUserNavigationMenuTest {
 
     @Inject

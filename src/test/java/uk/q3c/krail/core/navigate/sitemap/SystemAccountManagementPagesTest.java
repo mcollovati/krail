@@ -22,7 +22,7 @@ import uk.q3c.krail.core.eventbus.EventBusModule;
 import uk.q3c.krail.core.guice.uiscope.UIScopeModule;
 import uk.q3c.krail.core.guice.vsscope.VaadinSessionScopeModule;
 import uk.q3c.krail.core.i18n.KrailI18NConfigModule;
-import uk.q3c.krail.core.i18n.KrailI8NModule;
+import uk.q3c.krail.core.i18n.KrailI18NModule;
 import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.navigate.NavigationModule;
 import uk.q3c.krail.core.services.ServicesModule;
@@ -42,7 +42,7 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.*;
 
 @RunWith(MycilaJunitRunner.class)
-@GuiceContext({ServicesModule.class, SystemAccountManagementPages.class, UIScopeModule.class, ViewModule.class, ShiroVaadinModule.class, KrailI8NModule.class,
+@GuiceContext({ServicesModule.class, SystemAccountManagementPages.class, UIScopeModule.class, ViewModule.class, ShiroVaadinModule.class, KrailI18NModule.class,
         SitemapModule.class, UserModule.class, DataTypeModule.class, ApplicationConfigurationModule.class, DefaultShiroModule.class, DefaultComponentModule
         .class, VaadinSessionScopeModule.class, NavigationModule.class, TestPersistenceModule.class, TestOptionModule.class, EventBusModule.class,
         DefaultUIModule.class, UtilsModule.class, KrailI18NConfigModule.class})
