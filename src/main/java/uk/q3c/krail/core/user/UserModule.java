@@ -13,12 +13,12 @@
 package uk.q3c.krail.core.user;
 
 import com.google.inject.AbstractModule;
+import uk.q3c.krail.core.option.SimpleUserHierarchy;
 import uk.q3c.krail.core.user.notify.DefaultUserNotifier;
 import uk.q3c.krail.core.user.notify.DefaultVaadinNotification;
 import uk.q3c.krail.core.user.notify.UserNotifier;
 import uk.q3c.krail.core.user.notify.VaadinNotification;
 import uk.q3c.krail.core.user.profile.DefaultUserHierarchy;
-import uk.q3c.krail.option.SimpleUserHierarchy;
 import uk.q3c.krail.option.api.UserHierarchy;
 
 public class UserModule extends AbstractModule {

@@ -14,7 +14,6 @@
 package uk.q3c.krail.option.api;
 
 import com.google.common.collect.ImmutableList;
-import uk.q3c.krail.core.option.OptionPermission;
 
 import javax.annotation.Nonnull;
 
@@ -45,7 +44,7 @@ import javax.annotation.Nonnull;
  * <p>
  * When used with {@link Option}, there may be some option values which should be set only at the department level, for example.  That is achieved simply by
  * not allowing anyone access to change their own option values, and for example, only allowing those with a department admin role to change the department
- * option values.  This is achieved using the Shiro integration with Krail, which in turn uses {@link OptionPermission}
+ * option values.  In Krail, for example, this is achieved using the Apache Shiro integration, which in turn uses OptionPermission
  * <p>
  * {@link UserHierarchy} implementations will often take their information from other systems - for example, an HR or
  * Identity Management system may contain the Organisation hierarchy (sometimes even different ones for the same

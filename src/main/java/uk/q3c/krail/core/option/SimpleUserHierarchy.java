@@ -11,7 +11,7 @@
  *
  */
 
-package uk.q3c.krail.option;
+package uk.q3c.krail.core.option;
 
 import com.google.common.collect.ImmutableList;
 import com.google.inject.Inject;
