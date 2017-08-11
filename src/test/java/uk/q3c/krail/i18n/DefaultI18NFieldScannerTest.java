@@ -28,7 +28,7 @@ import uk.q3c.krail.core.i18n.*;
 import uk.q3c.krail.core.i18n.LabelKey;
 import uk.q3c.krail.core.shiro.DefaultShiroModule;
 import uk.q3c.krail.i18n.api.CurrentLocale;
-import uk.q3c.krail.testutil.option.MockOption;
+import uk.q3c.krail.option.test.MockOption;
 import uk.q3c.krail.testutil.option.TestOptionModule;
 import uk.q3c.krail.testutil.persist.TestPersistenceModule;
 import uk.q3c.util.UtilModule;

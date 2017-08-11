@@ -15,7 +15,7 @@ package uk.q3c.krail.testutil
 
 import spock.lang.Specification
 import uk.q3c.krail.core.view.component.LocaleContainer
-import uk.q3c.krail.testutil.option.MockOption
+import uk.q3c.krail.option.test.MockOption
 
 /**
  * Created by David Sowerby on 06 Feb 2016

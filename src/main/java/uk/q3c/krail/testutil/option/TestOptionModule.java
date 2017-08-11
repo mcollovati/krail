@@ -19,6 +19,7 @@ import uk.q3c.krail.i18n.api.MessageFormat2;
 import uk.q3c.krail.option.DefaultOptionCache;
 import uk.q3c.krail.option.api.Option;
 import uk.q3c.krail.option.api.OptionCache;
+import uk.q3c.krail.option.test.MockOption;
 import uk.q3c.krail.persist.inmemory.InMemory;
 
 /**
